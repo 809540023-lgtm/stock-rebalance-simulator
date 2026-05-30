@@ -104,6 +104,12 @@
       color: #fff;
     }
 
+    .btn.ghost {
+      background: #fff;
+      border: 1px solid var(--line);
+      color: #344054;
+    }
+
     .btn.danger {
       background: #fee4e2;
       color: var(--danger);
@@ -299,6 +305,120 @@
       font-size: 14px;
     }
 
+    .chart-shell {
+      padding: 0 20px 20px;
+    }
+
+    .chart-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .legend {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: #475467;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .dot.blue {
+      background: #2563eb;
+    }
+
+    .dot.green {
+      background: #16a34a;
+    }
+
+    .dot.red {
+      background: #dc2626;
+    }
+
+    .chart-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    canvas {
+      width: 100%;
+      height: 360px;
+      display: block;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.8fr) minmax(420px, 1.2fr);
+      gap: 18px;
+      align-items: start;
+      margin-top: 18px;
+    }
+
+    .case-actions {
+      display: grid;
+      gap: 10px;
+      padding: 0 20px 20px;
+    }
+
+    .case-actions .btn {
+      width: 100%;
+    }
+
+    .case-list {
+      padding: 0 20px 20px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .case-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fff;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .case-item strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .case-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .case-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
     .log-wrap {
       padding: 0 20px 20px;
       overflow-x: auto;
@@ -349,6 +469,10 @@
 
     @media (max-width: 1120px) {
       .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .case-grid {
         grid-template-columns: 1fr;
       }
 
@@ -412,7 +536,9 @@
       </div>
       <div class="toolbar">
         <button class="btn primary" id="runBtn" title="重新計算">計算</button>
+        <button class="btn success" id="saveCaseBtn" title="儲存目前輸入與分析結果">儲存案例</button>
         <button class="btn success" id="addRuleBtn" title="新增一筆交易條件">新增規則</button>
+        <button class="btn ghost" id="chartPngBtn" title="下載目前曲線圖">輸出圖形</button>
         <button class="btn" id="csvBtn" title="下載交易明細 CSV">匯出 CSV</button>
         <button class="btn" id="printBtn" title="列印分析表">列印</button>
       </div>
@@ -423,6 +549,10 @@
         <h2>基本設定</h2>
         <p class="hint">數量單位保持一致即可；可以填股、張或庫存單位。</p>
         <div class="form-grid">
+          <label class="full">
+            案例名稱
+            <input id="caseName" value="0050 情境一：108 賣、100 補、110 再觀察" autocomplete="off">
+          </label>
           <label>
             股票代號
             <input id="symbol" value="0050" autocomplete="off">
@@ -507,6 +637,37 @@
       </div>
     </section>
 
+    <section class="case-grid">
+      <div class="panel">
+        <h2>案例記錄</h2>
+        <p class="hint">儲存不同股票或不同情境，之後可以載入再調整。</p>
+        <div class="case-actions">
+          <button class="btn primary" id="saveCasePanelBtn" title="儲存目前案例">儲存目前案例</button>
+          <button class="btn ghost" id="loadSampleBtn" title="套用預設範例">套用範例</button>
+        </div>
+        <div class="case-list" id="caseList"></div>
+      </div>
+
+      <div class="panel">
+        <h2>走勢曲線圖</h2>
+        <p class="hint">藍線是策略資產、綠線是持有不動、紅線是價格走勢；三條線皆以起點 100 標準化。</p>
+        <div class="chart-shell">
+          <div class="chart-toolbar">
+            <div class="legend">
+              <span><i class="dot blue"></i>策略資產</span>
+              <span><i class="dot green"></i>持有不動</span>
+              <span><i class="dot red"></i>價格走勢</span>
+            </div>
+            <button class="btn ghost" id="chartPngPanelBtn" title="下載目前曲線圖">下載 PNG</button>
+          </div>
+          <div class="chart-card">
+            <canvas id="trendChart" width="1200" height="480" aria-label="策略與價格走勢圖"></canvas>
+          </div>
+          <p class="mini" id="chartNote">曲線圖會在計算後更新。</p>
+        </div>
+      </div>
+    </section>
+
     <section class="panel" style="margin-top:18px;">
       <h2>交易規則</h2>
       <p class="hint">每一列是一個條件。系統依價格路徑前進，碰到觸發價就執行一次；可用上限控制總賣出量。</p>
@@ -542,6 +703,8 @@
     const $ = (id) => document.getElementById(id);
     const rulesBody = $("rulesBody");
     let lastRows = [];
+    let lastSummary = {};
+    const storageKey = "stock-simulator-cases-v1";
 
     const defaultRules = [
       { enabled: true, action: "sell", trigger: 108, basis: "initialPct", amount: 5, minKeep: 0, note: "漲到 108 先賣 5%" },
@@ -574,6 +737,47 @@
         .split(/[\n,，\s]+/)
         .map((part) => Number(part.trim()))
         .filter((n) => Number.isFinite(n) && n > 0);
+    }
+
+    function captureConfig() {
+      return {
+        caseName: $("caseName").value,
+        symbol: $("symbol").value,
+        currentPrice: $("currentPrice").value,
+        initialShares: $("initialShares").value,
+        avgCost: $("avgCost").value,
+        initialCash: $("initialCash").value,
+        maxSellPct: $("maxSellPct").value,
+        buyFeePct: $("buyFeePct").value,
+        sellCostPct: $("sellCostPct").value,
+        pricePath: $("pricePath").value,
+        rules: [...rulesBody.querySelectorAll("tr")].map((tr) => ({
+          enabled: tr.querySelector(".enabled").checked,
+          action: tr.querySelector(".action").value,
+          trigger: tr.querySelector(".trigger").value,
+          basis: tr.querySelector(".basis").value,
+          amount: tr.querySelector(".amount").value,
+          minKeep: tr.querySelector(".minKeep").value,
+          note: tr.querySelector(".noteInput").value
+        }))
+      };
+    }
+
+    function applyConfig(config) {
+      $("caseName").value = config.caseName || "";
+      $("symbol").value = config.symbol || "0050";
+      $("currentPrice").value = config.currentPrice || 103;
+      $("initialShares").value = config.initialShares || 100;
+      $("avgCost").value = config.avgCost || $("currentPrice").value;
+      $("initialCash").value = config.initialCash || 0;
+      $("maxSellPct").value = config.maxSellPct || 10;
+      $("buyFeePct").value = config.buyFeePct || 0.1425;
+      $("sellCostPct").value = config.sellCostPct || 0.2425;
+      $("pricePath").value = config.pricePath || "103, 108, 100, 110";
+      rulesBody.innerHTML = "";
+      const rules = Array.isArray(config.rules) && config.rules.length ? config.rules : defaultRules;
+      rules.forEach((rule) => makeRuleRow(rule));
+      runSimulation();
     }
 
     function makeRuleRow(rule = {}) {
@@ -762,6 +966,17 @@
       const delta = finalAsset - holdAsset;
       const returnRate = startCost > 0 ? (finalAsset - startCost) / startCost * 100 : 0;
       lastRows = rows;
+      lastSummary = {
+        symbol,
+        ending,
+        finalAsset,
+        holdAsset,
+        delta,
+        returnRate,
+        finalShares: shares,
+        finalCash: cash,
+        soldPct: initialShares > 0 ? totalSoldShares / initialShares * 100 : 0
+      };
 
       $("finalAsset").textContent = money(finalAsset);
       $("holdAsset").textContent = money(holdAsset);
@@ -774,6 +989,7 @@
 
       $("interpretation").textContent = buildInterpretation(symbol, finalAsset, holdAsset, delta, shares, cash, ending, totalSoldShares, initialShares);
       renderLog(rows);
+      drawChart(rows);
     }
 
     function rowData(data) {
@@ -834,12 +1050,185 @@
       `;
     }
 
+    function normalizeSeries(rows, key) {
+      const base = rows[0]?.[key] || 1;
+      return rows.map((row) => base ? row[key] / base * 100 : 100);
+    }
+
+    function drawChart(rows) {
+      const canvas = $("trendChart");
+      if (!canvas || !rows.length) return;
+      const ctx = canvas.getContext("2d");
+      const rect = canvas.getBoundingClientRect();
+      const ratio = window.devicePixelRatio || 1;
+      canvas.width = Math.max(900, Math.floor(rect.width * ratio));
+      canvas.height = Math.floor(360 * ratio);
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+      const width = canvas.width / ratio;
+      const height = canvas.height / ratio;
+      const pad = { top: 24, right: 26, bottom: 42, left: 58 };
+      const chartW = width - pad.left - pad.right;
+      const chartH = height - pad.top - pad.bottom;
+      const series = [
+        { name: "策略資產", color: "#2563eb", values: normalizeSeries(rows, "asset") },
+        { name: "持有不動", color: "#16a34a", values: normalizeSeries(rows, "holdAsset") },
+        { name: "價格走勢", color: "#dc2626", values: normalizeSeries(rows, "price") }
+      ];
+      const allValues = series.flatMap((item) => item.values);
+      const min = Math.min(...allValues);
+      const max = Math.max(...allValues);
+      const span = Math.max(8, max - min);
+      const yMin = Math.floor((min - span * 0.12) / 5) * 5;
+      const yMax = Math.ceil((max + span * 0.12) / 5) * 5;
+      const xOf = (index) => pad.left + (rows.length === 1 ? chartW / 2 : index / (rows.length - 1) * chartW);
+      const yOf = (value) => pad.top + (yMax - value) / (yMax - yMin) * chartH;
+
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.strokeStyle = "#e5e7eb";
+      ctx.lineWidth = 1;
+      ctx.fillStyle = "#667085";
+      ctx.font = "12px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif";
+      ctx.textAlign = "right";
+      ctx.textBaseline = "middle";
+      for (let i = 0; i <= 5; i += 1) {
+        const value = yMin + (yMax - yMin) / 5 * i;
+        const y = yOf(value);
+        ctx.beginPath();
+        ctx.moveTo(pad.left, y);
+        ctx.lineTo(width - pad.right, y);
+        ctx.stroke();
+        ctx.fillText(value.toFixed(0), pad.left - 10, y);
+      }
+
+      ctx.strokeStyle = "#98a2b3";
+      ctx.beginPath();
+      ctx.moveTo(pad.left, pad.top);
+      ctx.lineTo(pad.left, height - pad.bottom);
+      ctx.lineTo(width - pad.right, height - pad.bottom);
+      ctx.stroke();
+
+      ctx.textAlign = "center";
+      ctx.textBaseline = "top";
+      rows.forEach((row, index) => {
+        const show = rows.length <= 8 || index === 0 || index === rows.length - 1 || index % Math.ceil(rows.length / 6) === 0;
+        if (!show) return;
+        ctx.fillStyle = "#667085";
+        ctx.fillText(String(row.price), xOf(index), height - pad.bottom + 12);
+      });
+
+      series.forEach((item) => {
+        ctx.strokeStyle = item.color;
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        item.values.forEach((value, index) => {
+          const x = xOf(index);
+          const y = yOf(value);
+          if (index === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+        item.values.forEach((value, index) => {
+          const x = xOf(index);
+          const y = yOf(value);
+          ctx.fillStyle = "#fff";
+          ctx.beginPath();
+          ctx.arc(x, y, 4, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.strokeStyle = item.color;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+        });
+      });
+
+      const final = rows[rows.length - 1];
+      $("chartNote").textContent = `期末價格 ${final.price}，策略資產指數 ${normalizeSeries(rows, "asset").at(-1).toFixed(2)}，持有不動指數 ${normalizeSeries(rows, "holdAsset").at(-1).toFixed(2)}，價格指數 ${normalizeSeries(rows, "price").at(-1).toFixed(2)}。`;
+    }
+
     function escapeHtml(value) {
       return String(value)
         .replaceAll("&", "&amp;")
         .replaceAll("<", "&lt;")
         .replaceAll(">", "&gt;")
         .replaceAll('"', "&quot;");
+    }
+
+    function loadCases() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(storageKey) || "[]");
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function storeCases(cases) {
+      localStorage.setItem(storageKey, JSON.stringify(cases));
+      renderCases();
+    }
+
+    function saveCurrentCase() {
+      runSimulation();
+      const cases = loadCases();
+      const config = captureConfig();
+      const id = crypto.randomUUID ? crypto.randomUUID() : String(Date.now());
+      const savedAt = new Date().toISOString();
+      const name = config.caseName.trim() || `${config.symbol || "股票"} ${new Date().toLocaleString("zh-TW")}`;
+      cases.unshift({
+        id,
+        name,
+        savedAt,
+        config,
+        summary: lastSummary
+      });
+      storeCases(cases.slice(0, 30));
+    }
+
+    function renderCases() {
+      const cases = loadCases();
+      if (!cases.length) {
+        $("caseList").innerHTML = `<div class="empty">尚未儲存案例。調整參數後按「儲存目前案例」。</div>`;
+        return;
+      }
+      $("caseList").innerHTML = cases.map((item) => {
+        const savedAt = new Date(item.savedAt).toLocaleString("zh-TW", { hour12: false });
+        const summary = item.summary || {};
+        return `
+          <div class="case-item">
+            <div>
+              <strong>${escapeHtml(item.name)}</strong>
+              <p>${escapeHtml(summary.symbol || item.config?.symbol || "股票")}｜期末 ${money(summary.finalAsset || 0)}｜差異 ${summary.delta >= 0 ? "+" : ""}${money(summary.delta || 0)}｜${savedAt}</p>
+            </div>
+            <div class="case-buttons">
+              <button class="btn ghost" type="button" data-load-case="${item.id}">載入</button>
+              <button class="btn danger" type="button" data-delete-case="${item.id}">刪除</button>
+            </div>
+          </div>
+        `;
+      }).join("");
+      $("caseList").querySelectorAll("[data-load-case]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const found = loadCases().find((item) => item.id === button.dataset.loadCase);
+          if (found) applyConfig(found.config);
+        });
+      });
+      $("caseList").querySelectorAll("[data-delete-case]").forEach((button) => {
+        button.addEventListener("click", () => {
+          storeCases(loadCases().filter((item) => item.id !== button.dataset.deleteCase));
+        });
+      });
+    }
+
+    function exportChartPng() {
+      if (!lastRows.length) runSimulation();
+      const canvas = $("trendChart");
+      const link = document.createElement("a");
+      link.href = canvas.toDataURL("image/png");
+      link.download = `${$("symbol").value || "stock"}-trend-chart.png`;
+      link.click();
     }
 
     function exportCsv() {
@@ -869,17 +1258,38 @@
     }
 
     defaultRules.forEach(makeRuleRow);
-    document.querySelectorAll("#symbol, #currentPrice, #initialShares, #avgCost, #initialCash, #maxSellPct, #buyFeePct, #sellCostPct, #pricePath").forEach((el) => {
+    document.querySelectorAll("#caseName, #symbol, #currentPrice, #initialShares, #avgCost, #initialCash, #maxSellPct, #buyFeePct, #sellCostPct, #pricePath").forEach((el) => {
       el.addEventListener("input", runSimulation);
       el.addEventListener("change", runSimulation);
     });
     $("runBtn").addEventListener("click", runSimulation);
+    $("saveCaseBtn").addEventListener("click", saveCurrentCase);
+    $("saveCasePanelBtn").addEventListener("click", saveCurrentCase);
     $("addRuleBtn").addEventListener("click", () => {
       makeRuleRow({ enabled: true, action: "sell", trigger: "", basis: "initialPct", amount: 1, minKeep: 0, note: "" });
       runSimulation();
     });
+    $("loadSampleBtn").addEventListener("click", () => {
+      applyConfig({
+        caseName: "0050 情境一：108 賣、100 補、110 再觀察",
+        symbol: "0050",
+        currentPrice: 103,
+        initialShares: 100,
+        avgCost: 103,
+        initialCash: 0,
+        maxSellPct: 10,
+        buyFeePct: 0.1425,
+        sellCostPct: 0.2425,
+        pricePath: "103, 108, 100, 110",
+        rules: defaultRules
+      });
+    });
+    $("chartPngBtn").addEventListener("click", exportChartPng);
+    $("chartPngPanelBtn").addEventListener("click", exportChartPng);
     $("csvBtn").addEventListener("click", exportCsv);
     $("printBtn").addEventListener("click", () => window.print());
+    window.addEventListener("resize", () => drawChart(lastRows));
+    renderCases();
     runSimulation();
   </script>
 </body>
