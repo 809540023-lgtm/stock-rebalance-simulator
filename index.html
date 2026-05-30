@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>股票分批賣出與回補模擬器</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --ink: #182230;
+      --muted: #667085;
+      --line: #d9e0ea;
+      --accent: #2563eb;
+      --accent-2: #0f766e;
+      --danger: #b42318;
+      --warn: #b54708;
+      --good: #027a48;
+      --soft-blue: #e8f0ff;
+      --soft-green: #e7f6ef;
+      --soft-amber: #fff4df;
+      --shadow: 0 14px 40px rgba(24, 34, 48, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", sans-serif;
+      line-height: 1.5;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    .app {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 12px 0 22px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      min-height: 40px;
+      padding: 9px 14px;
+      border-radius: 8px;
+      background: #e9eef6;
+      color: var(--ink);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn.success {
+      background: var(--accent-2);
+      color: #fff;
+    }
+
+    .btn.danger {
+      background: #fee4e2;
+      color: var(--danger);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(360px, 0.95fr) minmax(560px, 1.35fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel h2 {
+      margin: 0;
+      padding: 18px 20px 4px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .panel .hint {
+      margin: 0;
+      padding: 0 20px 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: 0 20px 20px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: #344054;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #c7d0dd;
+      border-radius: 8px;
+      padding: 10px 11px;
+      background: #fff;
+      color: var(--ink);
+      outline: none;
+      min-height: 42px;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .rules-wrap {
+      padding: 0 20px 20px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 860px;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 10px 8px;
+      text-align: right;
+      vertical-align: middle;
+      font-size: 14px;
+    }
+
+    th {
+      color: #475467;
+      font-size: 12px;
+      text-transform: uppercase;
+      background: #f8fafc;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    th:first-child,
+    td:first-child,
+    th:nth-child(2),
+    td:nth-child(2) {
+      text-align: left;
+    }
+
+    td input,
+    td select {
+      min-height: 36px;
+      padding: 7px 8px;
+      border-radius: 7px;
+    }
+
+    .rule-table {
+      min-width: 980px;
+    }
+
+    .rule-table th,
+    .rule-table td {
+      min-width: 92px;
+    }
+
+    .rule-table th.note,
+    .rule-table td.note {
+      min-width: 170px;
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0 20px 18px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      background: #fff;
+      min-height: 96px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .metric span {
+      display: block;
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .metric.good {
+      background: var(--soft-green);
+      border-color: #b7e3cf;
+    }
+
+    .metric.warn {
+      background: var(--soft-amber);
+      border-color: #f6d7a5;
+    }
+
+    .metric.blue {
+      background: var(--soft-blue);
+      border-color: #c8d9ff;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+      padding: 0 20px 20px;
+    }
+
+    .note-box {
+      border-left: 4px solid var(--accent);
+      background: #f8fbff;
+      padding: 12px 14px;
+      color: #344054;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .log-wrap {
+      padding: 0 20px 20px;
+      overflow-x: auto;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 52px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .pill.sell {
+      color: var(--danger);
+      background: #fee4e2;
+    }
+
+    .pill.buy {
+      color: var(--good);
+      background: #dcfae6;
+    }
+
+    .pill.hold {
+      color: #475467;
+      background: #eef2f6;
+    }
+
+    .mini {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .empty {
+      color: var(--muted);
+      padding: 16px 20px 22px;
+    }
+
+    .footer {
+      margin: 18px 0 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 1120px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .toolbar {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .app {
+        padding: 14px;
+      }
+
+      .form-grid,
+      .results {
+        grid-template-columns: 1fr;
+      }
+
+      .toolbar {
+        width: 100%;
+      }
+
+      .btn {
+        flex: 1 1 140px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .toolbar,
+      .btn.danger {
+        display: none;
+      }
+
+      .app {
+        max-width: none;
+        padding: 0;
+      }
+
+      .panel {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <h1>股票分批賣出與回補模擬器</h1>
+        <p class="subtitle">輸入目前持股、價格路徑與多筆買賣規則，模擬漲到指定價賣出一部分、回檔再買回後，總資產與持有不動的差異。</p>
+      </div>
+      <div class="toolbar">
+        <button class="btn primary" id="runBtn" title="重新計算">計算</button>
+        <button class="btn success" id="addRuleBtn" title="新增一筆交易條件">新增規則</button>
+        <button class="btn" id="csvBtn" title="下載交易明細 CSV">匯出 CSV</button>
+        <button class="btn" id="printBtn" title="列印分析表">列印</button>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="panel">
+        <h2>基本設定</h2>
+        <p class="hint">數量單位保持一致即可；可以填股、張或庫存單位。</p>
+        <div class="form-grid">
+          <label>
+            股票代號
+            <input id="symbol" value="0050" autocomplete="off">
+          </label>
+          <label>
+            目前價格
+            <input id="currentPrice" type="number" min="0" step="0.01" value="103">
+          </label>
+          <label>
+            初始持股數量
+            <input id="initialShares" type="number" min="0" step="0.001" value="100">
+          </label>
+          <label>
+            平均成本
+            <input id="avgCost" type="number" min="0" step="0.01" value="103">
+          </label>
+          <label>
+            初始現金
+            <input id="initialCash" type="number" min="0" step="1" value="0">
+          </label>
+          <label>
+            最多賣出比例 %
+            <input id="maxSellPct" type="number" min="0" max="100" step="0.1" value="10">
+          </label>
+          <label>
+            買進手續費 %
+            <input id="buyFeePct" type="number" min="0" step="0.0001" value="0.1425">
+          </label>
+          <label>
+            賣出總成本 %
+            <input id="sellCostPct" type="number" min="0" step="0.0001" value="0.2425">
+            <span class="mini">預設含手續費 0.1425% 與 ETF 證交稅 0.1%</span>
+          </label>
+          <label class="full">
+            價格路徑
+            <textarea id="pricePath">103, 108, 100, 110</textarea>
+            <span class="mini">用逗號或換行輸入，例如 103,108,100,110。最後一個價格會作為期末估值。</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>模擬結果</h2>
+        <p class="hint">與「完全不賣、不補」相比，觀察現金、股數與資產總值的變化。</p>
+        <div class="results">
+          <div class="metric blue">
+            <strong>期末總資產</strong>
+            <span id="finalAsset">$0</span>
+          </div>
+          <div class="metric">
+            <strong>持有不動</strong>
+            <span id="holdAsset">$0</span>
+          </div>
+          <div class="metric good">
+            <strong>策略差異</strong>
+            <span id="deltaAsset">$0</span>
+          </div>
+          <div class="metric warn">
+            <strong>尚未回補現金</strong>
+            <span id="finalCash">$0</span>
+          </div>
+          <div class="metric">
+            <strong>期末持股</strong>
+            <span id="finalShares">0</span>
+          </div>
+          <div class="metric">
+            <strong>已賣出比例</strong>
+            <span id="soldPct">0%</span>
+          </div>
+          <div class="metric">
+            <strong>期末價格</strong>
+            <span id="endingPrice">$0</span>
+          </div>
+          <div class="metric">
+            <strong>策略報酬率</strong>
+            <span id="returnPct">0%</span>
+          </div>
+        </div>
+        <div class="summary">
+          <div class="note-box" id="interpretation"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px;">
+      <h2>交易規則</h2>
+      <p class="hint">每一列是一個條件。系統依價格路徑前進，碰到觸發價就執行一次；可用上限控制總賣出量。</p>
+      <div class="rules-wrap">
+        <table class="rule-table">
+          <thead>
+            <tr>
+              <th>啟用</th>
+              <th>動作</th>
+              <th>觸發價</th>
+              <th>計算基準</th>
+              <th>比例 / 數值</th>
+              <th>最低保留持股</th>
+              <th class="note">備註</th>
+              <th>刪除</th>
+            </tr>
+          </thead>
+          <tbody id="rulesBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px;">
+      <h2>交易明細</h2>
+      <p class="hint">明細會列出每個價格點是否觸發交易，以及交易後的持股、現金與資產總值。</p>
+      <div class="log-wrap" id="logWrap"></div>
+    </section>
+
+    <p class="footer">此工具是情境模擬，不構成投資建議。實際交易仍需考慮滑價、稅費、股利、零股交易限制與個人風險承受度。</p>
+  </main>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const rulesBody = $("rulesBody");
+    let lastRows = [];
+
+    const defaultRules = [
+      { enabled: true, action: "sell", trigger: 108, basis: "initialPct", amount: 5, minKeep: 0, note: "漲到 108 先賣 5%" },
+      { enabled: true, action: "buy", trigger: 100, basis: "cashPct", amount: 100, minKeep: 0, note: "回到 100 用賣出現金補回" },
+      { enabled: true, action: "sell", trigger: 110, basis: "initialPct", amount: 2, minKeep: 0, note: "若未回補又漲到 110 再賣 2%" }
+    ];
+
+    function money(value) {
+      const n = Number.isFinite(value) ? value : 0;
+      return n.toLocaleString("zh-TW", { style: "currency", currency: "TWD", maximumFractionDigits: 0 });
+    }
+
+    function num(value, digits = 3) {
+      const n = Number.isFinite(value) ? value : 0;
+      return n.toLocaleString("zh-TW", { maximumFractionDigits: digits });
+    }
+
+    function pct(value) {
+      const n = Number.isFinite(value) ? value : 0;
+      return `${n.toLocaleString("zh-TW", { maximumFractionDigits: 2 })}%`;
+    }
+
+    function readNumber(id, fallback = 0) {
+      const parsed = Number($(id).value);
+      return Number.isFinite(parsed) ? parsed : fallback;
+    }
+
+    function parsePath() {
+      return $("pricePath").value
+        .split(/[\n,，\s]+/)
+        .map((part) => Number(part.trim()))
+        .filter((n) => Number.isFinite(n) && n > 0);
+    }
+
+    function makeRuleRow(rule = {}) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><input type="checkbox" class="enabled" ${rule.enabled !== false ? "checked" : ""} aria-label="啟用"></td>
+        <td>
+          <select class="action" aria-label="動作">
+            <option value="sell">賣出</option>
+            <option value="buy">買回</option>
+          </select>
+        </td>
+        <td><input class="trigger" type="number" min="0" step="0.01" value="${rule.trigger ?? ""}" aria-label="觸發價"></td>
+        <td>
+          <select class="basis" aria-label="計算基準"></select>
+        </td>
+        <td><input class="amount" type="number" min="0" step="0.001" value="${rule.amount ?? ""}" aria-label="比例或數值"></td>
+        <td><input class="minKeep" type="number" min="0" step="0.001" value="${rule.minKeep ?? 0}" aria-label="最低保留持股"></td>
+        <td class="note"><input class="noteInput" value="${escapeAttr(rule.note ?? "")}" aria-label="備註"></td>
+        <td><button class="btn danger deleteBtn" type="button" title="刪除這筆規則">刪除</button></td>
+      `;
+      rulesBody.appendChild(tr);
+      tr.querySelector(".action").value = rule.action || "sell";
+      refreshBasisOptions(tr, rule.basis);
+      tr.querySelector(".action").addEventListener("change", () => {
+        refreshBasisOptions(tr);
+        runSimulation();
+      });
+      tr.querySelector(".deleteBtn").addEventListener("click", () => {
+        tr.remove();
+        runSimulation();
+      });
+      tr.querySelectorAll("input, select").forEach((el) => {
+        el.addEventListener("input", runSimulation);
+        el.addEventListener("change", runSimulation);
+      });
+    }
+
+    function escapeAttr(value) {
+      return String(value).replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;");
+    }
+
+    function refreshBasisOptions(row, selected) {
+      const action = row.querySelector(".action").value;
+      const basis = row.querySelector(".basis");
+      const options = action === "sell"
+        ? [
+            ["initialPct", "初始持股 %"],
+            ["currentPct", "當下持股 %"],
+            ["shares", "固定數量"]
+          ]
+        : [
+            ["cashPct", "可用現金 %"],
+            ["cashAmount", "固定金額"],
+            ["shares", "固定數量"]
+          ];
+      basis.innerHTML = options.map(([value, label]) => `<option value="${value}">${label}</option>`).join("");
+      basis.value = selected && options.some(([value]) => value === selected) ? selected : options[0][0];
+    }
+
+    function readRules() {
+      return [...rulesBody.querySelectorAll("tr")].map((tr, index) => ({
+        index: index + 1,
+        enabled: tr.querySelector(".enabled").checked,
+        action: tr.querySelector(".action").value,
+        trigger: Number(tr.querySelector(".trigger").value),
+        basis: tr.querySelector(".basis").value,
+        amount: Number(tr.querySelector(".amount").value),
+        minKeep: Number(tr.querySelector(".minKeep").value) || 0,
+        note: tr.querySelector(".noteInput").value.trim()
+      })).filter((rule) => rule.enabled && Number.isFinite(rule.trigger) && rule.trigger > 0 && Number.isFinite(rule.amount) && rule.amount > 0);
+    }
+
+    function crossed(prevPrice, price, trigger, action) {
+      if (action === "sell") {
+        return prevPrice < trigger && price >= trigger;
+      }
+      return prevPrice > trigger && price <= trigger;
+    }
+
+    function runSimulation() {
+      const symbol = $("symbol").value.trim() || "股票";
+      const currentPrice = readNumber("currentPrice", 0);
+      const initialShares = readNumber("initialShares", 0);
+      const avgCost = readNumber("avgCost", currentPrice);
+      const initialCash = readNumber("initialCash", 0);
+      const maxSellPct = readNumber("maxSellPct", 100);
+      const buyFee = readNumber("buyFeePct", 0) / 100;
+      const sellCost = readNumber("sellCostPct", 0) / 100;
+      const pricePath = parsePath();
+      const prices = pricePath.length ? pricePath : [currentPrice];
+      if (prices[0] !== currentPrice && currentPrice > 0) prices.unshift(currentPrice);
+      const rules = readRules();
+      const executed = new Set();
+      const maxSellShares = initialShares * (maxSellPct / 100);
+      let shares = initialShares;
+      let cash = initialCash;
+      let totalSoldShares = 0;
+      const rows = [];
+
+      rows.push(rowData({
+        step: 0,
+        price: prices[0] || currentPrice,
+        action: "hold",
+        detail: "起始狀態",
+        shares,
+        cash,
+        tradeShares: 0,
+        tradeCash: 0
+      }));
+
+      for (let i = 1; i < prices.length; i += 1) {
+        const prev = prices[i - 1];
+        const price = prices[i];
+        let any = false;
+        for (const rule of rules) {
+          if (executed.has(rule.index)) continue;
+          if (!crossed(prev, price, rule.trigger, rule.action)) continue;
+          executed.add(rule.index);
+          if (rule.action === "sell") {
+            const basisShares = rule.basis === "currentPct" ? shares : initialShares;
+            let sellShares = rule.basis === "shares" ? rule.amount : basisShares * (rule.amount / 100);
+            sellShares = Math.min(sellShares, shares - rule.minKeep);
+            sellShares = Math.min(sellShares, Math.max(0, maxSellShares - totalSoldShares));
+            sellShares = Math.max(0, sellShares);
+            const proceeds = sellShares * price * (1 - sellCost);
+            shares -= sellShares;
+            cash += proceeds;
+            totalSoldShares += sellShares;
+            rows.push(rowData({
+              step: i,
+              price,
+              action: "sell",
+              detail: rule.note || `規則 ${rule.index}`,
+              shares,
+              cash,
+              tradeShares: sellShares,
+              tradeCash: proceeds
+            }));
+            any = true;
+          } else {
+            let buyBudget = rule.basis === "cashAmount" ? rule.amount : cash * (rule.amount / 100);
+            if (rule.basis === "shares") buyBudget = rule.amount * price * (1 + buyFee);
+            buyBudget = Math.min(buyBudget, cash);
+            let buyShares = rule.basis === "shares" ? rule.amount : buyBudget / (price * (1 + buyFee));
+            buyShares = Math.max(0, Math.min(buyShares, cash / (price * (1 + buyFee))));
+            const cost = buyShares * price * (1 + buyFee);
+            shares += buyShares;
+            cash -= cost;
+            rows.push(rowData({
+              step: i,
+              price,
+              action: "buy",
+              detail: rule.note || `規則 ${rule.index}`,
+              shares,
+              cash,
+              tradeShares: buyShares,
+              tradeCash: cost
+            }));
+            any = true;
+          }
+        }
+        if (!any) {
+          rows.push(rowData({
+            step: i,
+            price,
+            action: "hold",
+            detail: "未觸發交易",
+            shares,
+            cash,
+            tradeShares: 0,
+            tradeCash: 0
+          }));
+        }
+      }
+
+      const startCost = initialShares * avgCost + initialCash;
+      rows.forEach((row) => {
+        row.holdAsset = initialShares * row.price + initialCash;
+        row.holdProfit = row.holdAsset - startCost;
+        row.strategyDelta = row.asset - row.holdAsset;
+      });
+      const ending = prices[prices.length - 1] || currentPrice;
+      const finalAsset = shares * ending + cash;
+      const holdAsset = initialShares * ending + initialCash;
+      const delta = finalAsset - holdAsset;
+      const returnRate = startCost > 0 ? (finalAsset - startCost) / startCost * 100 : 0;
+      lastRows = rows;
+
+      $("finalAsset").textContent = money(finalAsset);
+      $("holdAsset").textContent = money(holdAsset);
+      $("deltaAsset").textContent = `${delta >= 0 ? "+" : ""}${money(delta)}`;
+      $("finalCash").textContent = money(cash);
+      $("finalShares").textContent = num(shares);
+      $("soldPct").textContent = pct(initialShares > 0 ? totalSoldShares / initialShares * 100 : 0);
+      $("endingPrice").textContent = money(ending);
+      $("returnPct").textContent = `${returnRate >= 0 ? "+" : ""}${pct(returnRate)}`;
+
+      $("interpretation").textContent = buildInterpretation(symbol, finalAsset, holdAsset, delta, shares, cash, ending, totalSoldShares, initialShares);
+      renderLog(rows);
+    }
+
+    function rowData(data) {
+      return {
+        ...data,
+        asset: data.shares * data.price + data.cash
+      };
+    }
+
+    function buildInterpretation(symbol, finalAsset, holdAsset, delta, shares, cash, ending, totalSoldShares, initialShares) {
+      const sold = initialShares > 0 ? totalSoldShares / initialShares * 100 : 0;
+      const direction = delta >= 0 ? "高於" : "低於";
+      return `${symbol} 在期末價 ${ending} 時，策略總資產為 ${money(finalAsset)}，${direction}持有不動 ${money(Math.abs(delta))}。期末持股 ${num(shares)}，現金 ${money(cash)}，累計賣出 ${pct(sold)}。若現金偏高，代表回補條件尚未完全觸發；若股數高於原始持股，代表低檔回補增加了部位。`;
+    }
+
+    function renderLog(rows) {
+      if (!rows.length) {
+        $("logWrap").innerHTML = `<div class="empty">尚無模擬資料。</div>`;
+        return;
+      }
+      $("logWrap").innerHTML = `
+        <table>
+          <thead>
+            <tr>
+              <th>步驟</th>
+              <th>動作</th>
+              <th>價格</th>
+              <th>交易數量</th>
+              <th>交易金額</th>
+              <th>交易後持股</th>
+              <th>交易後現金</th>
+              <th>策略總資產</th>
+              <th>持有不動資產</th>
+              <th>持有不動獲利</th>
+              <th>策略差異</th>
+              <th>說明</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${rows.map((row) => `
+              <tr>
+                <td>${row.step}</td>
+                <td><span class="pill ${row.action}">${row.action === "sell" ? "賣出" : row.action === "buy" ? "買回" : "觀察"}</span></td>
+                <td>${money(row.price)}</td>
+                <td>${num(row.tradeShares)}</td>
+                <td>${money(row.tradeCash)}</td>
+                <td>${num(row.shares)}</td>
+                <td>${money(row.cash)}</td>
+                <td>${money(row.asset)}</td>
+                <td>${money(row.holdAsset)}</td>
+                <td>${money(row.holdProfit)}</td>
+                <td>${row.strategyDelta >= 0 ? "+" : ""}${money(row.strategyDelta)}</td>
+                <td style="text-align:left;">${escapeHtml(row.detail)}</td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      `;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+    }
+
+    function exportCsv() {
+      if (!lastRows.length) runSimulation();
+      const header = ["步驟", "動作", "價格", "交易數量", "交易金額", "交易後持股", "交易後現金", "策略總資產", "持有不動資產", "持有不動獲利", "策略差異", "說明"];
+      const lines = [header, ...lastRows.map((row) => [
+        row.step,
+        row.action === "sell" ? "賣出" : row.action === "buy" ? "買回" : "觀察",
+        row.price,
+        row.tradeShares,
+        row.tradeCash,
+        row.shares,
+        row.cash,
+        row.asset,
+        row.holdAsset,
+        row.holdProfit,
+        row.strategyDelta,
+        row.detail
+      ])].map((cols) => cols.map((col) => `"${String(col).replaceAll('"', '""')}"`).join(","));
+      const blob = new Blob(["\ufeff" + lines.join("\n")], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "stock-simulation.csv";
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    defaultRules.forEach(makeRuleRow);
+    document.querySelectorAll("#symbol, #currentPrice, #initialShares, #avgCost, #initialCash, #maxSellPct, #buyFeePct, #sellCostPct, #pricePath").forEach((el) => {
+      el.addEventListener("input", runSimulation);
+      el.addEventListener("change", runSimulation);
+    });
+    $("runBtn").addEventListener("click", runSimulation);
+    $("addRuleBtn").addEventListener("click", () => {
+      makeRuleRow({ enabled: true, action: "sell", trigger: "", basis: "initialPct", amount: 1, minKeep: 0, note: "" });
+      runSimulation();
+    });
+    $("csvBtn").addEventListener("click", exportCsv);
+    $("printBtn").addEventListener("click", () => window.print());
+    runSimulation();
+  </script>
+</body>
+</html>
