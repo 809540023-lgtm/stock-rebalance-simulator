@@ -245,6 +245,38 @@
       min-width: 170px;
     }
 
+    .sentiment-table {
+      min-width: 1080px;
+    }
+
+    .sentiment-table th,
+    .sentiment-table td {
+      min-width: 110px;
+    }
+
+    .sentiment-table th.source,
+    .sentiment-table td.source {
+      min-width: 150px;
+    }
+
+    .sentiment-summary {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0 20px 18px;
+    }
+
+    .sentiment-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0 20px 18px;
+    }
+
+    .sentiment-story {
+      padding: 0 20px 20px;
+    }
+
     .results {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -492,7 +524,8 @@
       }
 
       .form-grid,
-      .results {
+      .results,
+      .sentiment-summary {
         grid-template-columns: 1fr;
       }
 
@@ -669,6 +702,73 @@
     </section>
 
     <section class="panel" style="margin-top:18px;">
+      <h2>市場心理價位情境分析</h2>
+      <p class="hint">輸入法人目標價、新聞估值、AI 群組共識或網路討論價位，系統會估算大眾預期心理價，並提前 5% 推算出場價。</p>
+      <div class="form-grid">
+        <label>
+          提前出場比例 %
+          <input id="exitBufferPct" type="number" min="0" max="50" step="0.1" value="5">
+          <span class="mini">例如目標價 150，提前 5% 出場約為 142.5；若想抓 145，可改填 3.3%。</span>
+        </label>
+        <label>
+          心理價採用方式
+          <select id="sentimentMethod">
+            <option value="weighted">可信度加權平均</option>
+            <option value="median">中位數</option>
+            <option value="average">簡單平均</option>
+          </select>
+        </label>
+      </div>
+      <div class="sentiment-summary">
+        <div class="metric blue">
+          <strong>大眾心理價</strong>
+          <span id="psychPrice">$0</span>
+        </div>
+        <div class="metric good">
+          <strong>建議提前出場價</strong>
+          <span id="suggestedExitPrice">$0</span>
+        </div>
+        <div class="metric">
+          <strong>平均目標價</strong>
+          <span id="avgTargetPrice">$0</span>
+        </div>
+        <div class="metric">
+          <strong>中位數目標價</strong>
+          <span id="medianTargetPrice">$0</span>
+        </div>
+        <div class="metric warn">
+          <strong>距目前上漲空間</strong>
+          <span id="exitUpsidePct">0%</span>
+        </div>
+      </div>
+      <div class="sentiment-actions">
+        <button class="btn success" id="addSentimentBtn" type="button">新增資料來源</button>
+        <button class="btn primary" id="applyExitRuleBtn" type="button">把出場價加入賣出規則</button>
+      </div>
+      <div class="rules-wrap">
+        <table class="sentiment-table">
+          <thead>
+            <tr>
+              <th>啟用</th>
+              <th>來源類型</th>
+              <th class="source">來源名稱</th>
+              <th>目標價</th>
+              <th>可信度 1-5</th>
+              <th>提前出場價</th>
+              <th>與現價差距</th>
+              <th class="note">備註</th>
+              <th>刪除</th>
+            </tr>
+          </thead>
+          <tbody id="sentimentBody"></tbody>
+        </table>
+      </div>
+      <div class="sentiment-story">
+        <div class="note-box" id="sentimentInterpretation"></div>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px;">
       <h2>交易規則</h2>
       <p class="hint">每一列是一個條件。系統依價格路徑前進，碰到觸發價就執行一次；可用上限控制總賣出量。</p>
       <div class="rules-wrap">
@@ -702,14 +802,23 @@
   <script>
     const $ = (id) => document.getElementById(id);
     const rulesBody = $("rulesBody");
+    const sentimentBody = $("sentimentBody");
     let lastRows = [];
     let lastSummary = {};
+    let lastSentiment = {};
     const storageKey = "stock-simulator-cases-v1";
 
     const defaultRules = [
       { enabled: true, action: "sell", trigger: 108, basis: "initialPct", amount: 5, minKeep: 0, note: "漲到 108 先賣 5%" },
       { enabled: true, action: "buy", trigger: 100, basis: "cashPct", amount: 100, minKeep: 0, note: "回到 100 用賣出現金補回" },
       { enabled: true, action: "sell", trigger: 110, basis: "initialPct", amount: 2, minKeep: 0, note: "若未回補又漲到 110 再賣 2%" }
+    ];
+
+    const defaultSentimentRows = [
+      { enabled: true, type: "法人", source: "法人共識目標價", target: 150, weight: 5, note: "示範：市場主流預估" },
+      { enabled: true, type: "新聞", source: "財經媒體整理", target: 148, weight: 3, note: "示範：新聞區間估值" },
+      { enabled: true, type: "AI群組", source: "AI 群組討論", target: 145, weight: 2, note: "示範：社群心理價位" },
+      { enabled: true, type: "網路搜尋", source: "網路討論高點", target: 152, weight: 2, note: "示範：偏樂觀討論" }
     ];
 
     function money(value) {
@@ -751,6 +860,16 @@
         buyFeePct: $("buyFeePct").value,
         sellCostPct: $("sellCostPct").value,
         pricePath: $("pricePath").value,
+        exitBufferPct: $("exitBufferPct").value,
+        sentimentMethod: $("sentimentMethod").value,
+        sentimentRows: [...sentimentBody.querySelectorAll("tr")].map((tr) => ({
+          enabled: tr.querySelector(".sentimentEnabled").checked,
+          type: tr.querySelector(".sentimentType").value,
+          source: tr.querySelector(".sentimentSource").value,
+          target: tr.querySelector(".sentimentTarget").value,
+          weight: tr.querySelector(".sentimentWeight").value,
+          note: tr.querySelector(".sentimentNote").value
+        })),
         rules: [...rulesBody.querySelectorAll("tr")].map((tr) => ({
           enabled: tr.querySelector(".enabled").checked,
           action: tr.querySelector(".action").value,
@@ -774,6 +893,11 @@
       $("buyFeePct").value = config.buyFeePct || 0.1425;
       $("sellCostPct").value = config.sellCostPct || 0.2425;
       $("pricePath").value = config.pricePath || "103, 108, 100, 110";
+      $("exitBufferPct").value = config.exitBufferPct || 5;
+      $("sentimentMethod").value = config.sentimentMethod || "weighted";
+      sentimentBody.innerHTML = "";
+      const sentimentRows = Array.isArray(config.sentimentRows) && config.sentimentRows.length ? config.sentimentRows : defaultSentimentRows;
+      sentimentRows.forEach((row) => makeSentimentRow(row));
       rulesBody.innerHTML = "";
       const rules = Array.isArray(config.rules) && config.rules.length ? config.rules : defaultRules;
       rules.forEach((rule) => makeRuleRow(rule));
@@ -807,6 +931,39 @@
         runSimulation();
       });
       tr.querySelector(".deleteBtn").addEventListener("click", () => {
+        tr.remove();
+        runSimulation();
+      });
+      tr.querySelectorAll("input, select").forEach((el) => {
+        el.addEventListener("input", runSimulation);
+        el.addEventListener("change", runSimulation);
+      });
+    }
+
+    function makeSentimentRow(row = {}) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><input type="checkbox" class="sentimentEnabled" ${row.enabled !== false ? "checked" : ""} aria-label="啟用心理價來源"></td>
+        <td>
+          <select class="sentimentType" aria-label="來源類型">
+            <option value="法人">法人</option>
+            <option value="新聞">新聞</option>
+            <option value="AI群組">AI群組</option>
+            <option value="網路搜尋">網路搜尋</option>
+            <option value="自訂">自訂</option>
+          </select>
+        </td>
+        <td class="source"><input class="sentimentSource" value="${escapeAttr(row.source ?? "")}" aria-label="來源名稱"></td>
+        <td><input class="sentimentTarget" type="number" min="0" step="0.01" value="${row.target ?? ""}" aria-label="目標價"></td>
+        <td><input class="sentimentWeight" type="number" min="1" max="5" step="1" value="${row.weight ?? 3}" aria-label="可信度"></td>
+        <td class="sentimentExit">${money(0)}</td>
+        <td class="sentimentUpside">0%</td>
+        <td class="note"><input class="sentimentNote" value="${escapeAttr(row.note ?? "")}" aria-label="備註"></td>
+        <td><button class="btn danger deleteSentimentBtn" type="button" title="刪除這筆來源">刪除</button></td>
+      `;
+      sentimentBody.appendChild(tr);
+      tr.querySelector(".sentimentType").value = row.type || "法人";
+      tr.querySelector(".deleteSentimentBtn").addEventListener("click", () => {
         tr.remove();
         runSimulation();
       });
@@ -851,11 +1008,80 @@
       })).filter((rule) => rule.enabled && Number.isFinite(rule.trigger) && rule.trigger > 0 && Number.isFinite(rule.amount) && rule.amount > 0);
     }
 
+    function readSentimentRows() {
+      return [...sentimentBody.querySelectorAll("tr")].map((tr) => ({
+        enabled: tr.querySelector(".sentimentEnabled").checked,
+        type: tr.querySelector(".sentimentType").value,
+        source: tr.querySelector(".sentimentSource").value.trim(),
+        target: Number(tr.querySelector(".sentimentTarget").value),
+        weight: Math.min(5, Math.max(1, Number(tr.querySelector(".sentimentWeight").value) || 1)),
+        note: tr.querySelector(".sentimentNote").value.trim(),
+        row: tr
+      })).filter((item) => item.enabled && Number.isFinite(item.target) && item.target > 0);
+    }
+
     function crossed(prevPrice, price, trigger, action) {
       if (action === "sell") {
         return prevPrice < trigger && price >= trigger;
       }
       return prevPrice > trigger && price <= trigger;
+    }
+
+    function median(values) {
+      if (!values.length) return 0;
+      const sorted = [...values].sort((a, b) => a - b);
+      const mid = Math.floor(sorted.length / 2);
+      return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+    }
+
+    function analyzeSentiment(currentPrice) {
+      const rows = readSentimentRows();
+      const buffer = Math.min(50, Math.max(0, readNumber("exitBufferPct", 5))) / 100;
+      const method = $("sentimentMethod").value;
+      rows.forEach((item) => {
+        const exitPrice = item.target * (1 - buffer);
+        const upside = currentPrice > 0 ? (exitPrice / currentPrice - 1) * 100 : 0;
+        item.row.querySelector(".sentimentExit").textContent = money(exitPrice);
+        item.row.querySelector(".sentimentUpside").textContent = `${upside >= 0 ? "+" : ""}${pct(upside)}`;
+      });
+
+      if (!rows.length) {
+        lastSentiment = {};
+        $("psychPrice").textContent = money(0);
+        $("suggestedExitPrice").textContent = money(0);
+        $("avgTargetPrice").textContent = money(0);
+        $("medianTargetPrice").textContent = money(0);
+        $("exitUpsidePct").textContent = "0%";
+        $("sentimentInterpretation").textContent = "請先新增至少一筆市場來源與目標價。";
+        return;
+      }
+
+      const targets = rows.map((item) => item.target);
+      const totalWeight = rows.reduce((sum, item) => sum + item.weight, 0);
+      const weighted = rows.reduce((sum, item) => sum + item.target * item.weight, 0) / totalWeight;
+      const average = targets.reduce((sum, value) => sum + value, 0) / targets.length;
+      const medianTarget = median(targets);
+      const psychPrice = method === "median" ? medianTarget : method === "average" ? average : weighted;
+      const exitPrice = psychPrice * (1 - buffer);
+      const upside = currentPrice > 0 ? (exitPrice / currentPrice - 1) * 100 : 0;
+      const dispersion = average > 0 ? (Math.max(...targets) - Math.min(...targets)) / average * 100 : 0;
+      lastSentiment = {
+        psychPrice,
+        exitPrice,
+        average,
+        medianTarget,
+        upside,
+        bufferPct: buffer * 100,
+        sourceCount: rows.length,
+        dispersion
+      };
+
+      $("psychPrice").textContent = money(psychPrice);
+      $("suggestedExitPrice").textContent = money(exitPrice);
+      $("avgTargetPrice").textContent = money(average);
+      $("medianTargetPrice").textContent = money(medianTarget);
+      $("exitUpsidePct").textContent = `${upside >= 0 ? "+" : ""}${pct(upside)}`;
+      $("sentimentInterpretation").textContent = `目前收集 ${rows.length} 筆市場來源，依「${$("sentimentMethod").selectedOptions[0].textContent}」估算大眾心理價約 ${money(psychPrice)}。若提前 ${pct(buffer * 100)} 出場，建議出場價約 ${money(exitPrice)}，相對目前價 ${money(currentPrice)} 的空間為 ${upside >= 0 ? "+" : ""}${pct(upside)}。來源目標價分歧度約 ${pct(dispersion)}；分歧度越高，代表市場共識越不穩，出場價應更保守。`;
     }
 
     function runSimulation() {
@@ -988,6 +1214,7 @@
       $("returnPct").textContent = `${returnRate >= 0 ? "+" : ""}${pct(returnRate)}`;
 
       $("interpretation").textContent = buildInterpretation(symbol, finalAsset, holdAsset, delta, shares, cash, ending, totalSoldShares, initialShares);
+      analyzeSentiment(currentPrice);
       renderLog(rows);
       drawChart(rows);
     }
@@ -1182,7 +1409,10 @@
         name,
         savedAt,
         config,
-        summary: lastSummary
+        summary: {
+          ...lastSummary,
+          sentiment: lastSentiment
+        }
       });
       storeCases(cases.slice(0, 30));
     }
@@ -1231,6 +1461,21 @@
       link.click();
     }
 
+    function applySuggestedExitRule() {
+      runSimulation();
+      if (!lastSentiment.exitPrice) return;
+      makeRuleRow({
+        enabled: true,
+        action: "sell",
+        trigger: Number(lastSentiment.exitPrice.toFixed(2)),
+        basis: "initialPct",
+        amount: 5,
+        minKeep: 0,
+        note: `心理價提前 ${num(lastSentiment.bufferPct, 1)}% 出場`
+      });
+      runSimulation();
+    }
+
     function exportCsv() {
       if (!lastRows.length) runSimulation();
       const header = ["步驟", "動作", "價格", "交易數量", "交易金額", "交易後持股", "交易後現金", "策略總資產", "持有不動資產", "持有不動獲利", "策略差異", "說明"];
@@ -1257,8 +1502,9 @@
       URL.revokeObjectURL(url);
     }
 
+    defaultSentimentRows.forEach(makeSentimentRow);
     defaultRules.forEach(makeRuleRow);
-    document.querySelectorAll("#caseName, #symbol, #currentPrice, #initialShares, #avgCost, #initialCash, #maxSellPct, #buyFeePct, #sellCostPct, #pricePath").forEach((el) => {
+    document.querySelectorAll("#caseName, #symbol, #currentPrice, #initialShares, #avgCost, #initialCash, #maxSellPct, #buyFeePct, #sellCostPct, #pricePath, #exitBufferPct, #sentimentMethod").forEach((el) => {
       el.addEventListener("input", runSimulation);
       el.addEventListener("change", runSimulation);
     });
@@ -1269,6 +1515,11 @@
       makeRuleRow({ enabled: true, action: "sell", trigger: "", basis: "initialPct", amount: 1, minKeep: 0, note: "" });
       runSimulation();
     });
+    $("addSentimentBtn").addEventListener("click", () => {
+      makeSentimentRow({ enabled: true, type: "自訂", source: "", target: "", weight: 3, note: "" });
+      runSimulation();
+    });
+    $("applyExitRuleBtn").addEventListener("click", applySuggestedExitRule);
     $("loadSampleBtn").addEventListener("click", () => {
       applyConfig({
         caseName: "0050 情境一：108 賣、100 補、110 再觀察",
@@ -1280,6 +1531,9 @@
         maxSellPct: 10,
         buyFeePct: 0.1425,
         sellCostPct: 0.2425,
+        exitBufferPct: 5,
+        sentimentMethod: "weighted",
+        sentimentRows: defaultSentimentRows,
         pricePath: "103, 108, 100, 110",
         rules: defaultRules
       });
