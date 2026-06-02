@@ -571,7 +571,7 @@
         <button class="btn primary" id="runBtn" title="重新計算">計算</button>
         <button class="btn success" id="saveCaseBtn" title="儲存目前輸入與分析結果">儲存案例</button>
         <button class="btn success" id="addRuleBtn" title="新增一筆交易條件">新增規則</button>
-        <button class="btn ghost" id="chartPngBtn" title="下載目前曲線圖">輸出圖形</button>
+        <button class="btn ghost" id="chartPngBtn" title="下載目前柱狀圖">輸出圖形</button>
         <button class="btn" id="csvBtn" title="下載交易明細 CSV">匯出 CSV</button>
         <button class="btn" id="printBtn" title="列印分析表">列印</button>
       </div>
@@ -682,8 +682,8 @@
       </div>
 
       <div class="panel">
-        <h2>走勢曲線圖</h2>
-        <p class="hint">藍線是策略資產、綠線是持有不動、紅線是價格走勢；三條線皆以起點 100 標準化。</p>
+        <h2>走勢柱狀圖</h2>
+        <p class="hint">每個價格節點會顯示藍、綠、紅三根柱；三組數值皆以起點 100 標準化。</p>
         <div class="chart-shell">
           <div class="chart-toolbar">
             <div class="legend">
@@ -691,12 +691,12 @@
               <span><i class="dot green"></i>持有不動</span>
               <span><i class="dot red"></i>價格走勢</span>
             </div>
-            <button class="btn ghost" id="chartPngPanelBtn" title="下載目前曲線圖">下載 PNG</button>
+            <button class="btn ghost" id="chartPngPanelBtn" title="下載目前柱狀圖">下載 PNG</button>
           </div>
           <div class="chart-card">
-            <canvas id="trendChart" width="1200" height="480" aria-label="策略與價格走勢圖"></canvas>
+            <canvas id="trendChart" width="1200" height="480" aria-label="策略與價格柱狀圖"></canvas>
           </div>
-          <p class="mini" id="chartNote">曲線圖會在計算後更新。</p>
+          <p class="mini" id="chartNote">柱狀圖會在計算後更新。</p>
         </div>
       </div>
     </section>
@@ -1308,7 +1308,6 @@
       const span = Math.max(8, max - min);
       const yMin = Math.floor((min - span * 0.12) / 5) * 5;
       const yMax = Math.ceil((max + span * 0.12) / 5) * 5;
-      const xOf = (index) => pad.left + (rows.length === 1 ? chartW / 2 : index / (rows.length - 1) * chartW);
       const yOf = (value) => pad.top + (yMax - value) / (yMax - yMin) * chartH;
 
       ctx.clearRect(0, 0, width, height);
@@ -1344,35 +1343,35 @@
         const show = rows.length <= 8 || index === 0 || index === rows.length - 1 || index % Math.ceil(rows.length / 6) === 0;
         if (!show) return;
         ctx.fillStyle = "#667085";
-        ctx.fillText(String(row.price), xOf(index), height - pad.bottom + 12);
+        const groupW = chartW / rows.length;
+        ctx.fillText(String(row.price), pad.left + groupW * index + groupW / 2, height - pad.bottom + 12);
       });
 
-      series.forEach((item) => {
-        ctx.strokeStyle = item.color;
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        item.values.forEach((value, index) => {
-          const x = xOf(index);
+      const baseY = yOf(yMin <= 0 ? 0 : yMin);
+      const groupW = chartW / rows.length;
+      const gap = Math.max(8, groupW * 0.18);
+      const barW = Math.max(7, Math.min(28, (groupW - gap) / series.length));
+      rows.forEach((row, rowIndex) => {
+        const groupStart = pad.left + groupW * rowIndex + (groupW - barW * series.length) / 2;
+        series.forEach((item, seriesIndex) => {
+          const value = item.values[rowIndex];
+          const x = groupStart + barW * seriesIndex;
           const y = yOf(value);
-          if (index === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        });
-        ctx.stroke();
-        item.values.forEach((value, index) => {
-          const x = xOf(index);
-          const y = yOf(value);
-          ctx.fillStyle = "#fff";
-          ctx.beginPath();
-          ctx.arc(x, y, 4, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.strokeStyle = item.color;
-          ctx.lineWidth = 2;
-          ctx.stroke();
+          const barH = Math.max(2, baseY - y);
+          ctx.fillStyle = item.color;
+          ctx.fillRect(x, y, barW - 2, barH);
+          if (rows.length <= 6) {
+            ctx.fillStyle = "#344054";
+            ctx.font = "11px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "bottom";
+            ctx.fillText(value.toFixed(0), x + (barW - 2) / 2, y - 4);
+          }
         });
       });
 
       const final = rows[rows.length - 1];
-      $("chartNote").textContent = `期末價格 ${final.price}，策略資產指數 ${normalizeSeries(rows, "asset").at(-1).toFixed(2)}，持有不動指數 ${normalizeSeries(rows, "holdAsset").at(-1).toFixed(2)}，價格指數 ${normalizeSeries(rows, "price").at(-1).toFixed(2)}。`;
+      $("chartNote").textContent = `期末價格 ${final.price}，藍柱策略資產指數 ${normalizeSeries(rows, "asset").at(-1).toFixed(2)}，綠柱持有不動指數 ${normalizeSeries(rows, "holdAsset").at(-1).toFixed(2)}，紅柱價格指數 ${normalizeSeries(rows, "price").at(-1).toFixed(2)}。`;
     }
 
     function escapeHtml(value) {
