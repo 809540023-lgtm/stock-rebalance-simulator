@@ -277,6 +277,24 @@
       padding: 0 20px 20px;
     }
 
+    .investment-summary {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0 20px 18px;
+    }
+
+    .investment-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0 20px 18px;
+    }
+
+    .investment-table {
+      min-width: 900px;
+    }
+
     .results {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -525,7 +543,8 @@
 
       .form-grid,
       .results,
-      .sentiment-summary {
+      .sentiment-summary,
+      .investment-summary {
         grid-template-columns: 1fr;
       }
 
@@ -769,6 +788,95 @@
     </section>
 
     <section class="panel" style="margin-top:18px;">
+      <h2>投資管理：買進與目標價追蹤</h2>
+      <p class="hint">適合規劃想買進的股票：輸入目前價格、目標賣出價、每週或每月投入金額，系統估算累積股數、達標報酬率與追蹤進度。</p>
+      <div class="form-grid">
+        <label>
+          公司 / 股票名稱
+          <input id="investName" value="南洋公司" autocomplete="off">
+        </label>
+        <label>
+          股票代號
+          <input id="investSymbol" value="" autocomplete="off" placeholder="例如 1303 或自訂代號">
+        </label>
+        <label>
+          目前價格
+          <input id="investCurrentPrice" type="number" min="0" step="0.01" value="120">
+        </label>
+        <label>
+          目標賣出價
+          <input id="investTargetPrice" type="number" min="0" step="0.01" value="800">
+        </label>
+        <label>
+          每週可投入
+          <input id="weeklyBudget" type="number" min="0" step="100" value="1000">
+        </label>
+        <label>
+          每月可投入
+          <input id="monthlyBudget" type="number" min="0" step="100" value="4000">
+          <span class="mini">若不填，可用每週投入 x 4 估算。</span>
+        </label>
+        <label>
+          投資月數
+          <input id="investMonths" type="number" min="1" step="1" value="12">
+        </label>
+        <label>
+          目前已持股
+          <input id="existingShares" type="number" min="0" step="0.001" value="0">
+        </label>
+      </div>
+      <div class="investment-summary">
+        <div class="metric blue">
+          <strong>計畫總投入</strong>
+          <span id="investTotalBudget">$0</span>
+        </div>
+        <div class="metric">
+          <strong>預估累積股數</strong>
+          <span id="investExpectedShares">0</span>
+        </div>
+        <div class="metric good">
+          <strong>達標預估市值</strong>
+          <span id="investTargetValue">$0</span>
+        </div>
+        <div class="metric good">
+          <strong>達標預估獲利</strong>
+          <span id="investProfit">$0</span>
+        </div>
+        <div class="metric">
+          <strong>預估報酬率</strong>
+          <span id="investReturnPct">0%</span>
+        </div>
+        <div class="metric warn">
+          <strong>目標達成率</strong>
+          <span id="investTargetProgress">0%</span>
+        </div>
+      </div>
+      <div class="investment-actions">
+        <button class="btn success" id="addInvestTrackBtn" type="button">新增今日追蹤</button>
+        <button class="btn ghost" id="useLatestTrackBtn" type="button">用最新追蹤價更新目前價格</button>
+      </div>
+      <div class="rules-wrap">
+        <table class="investment-table">
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>追蹤價格</th>
+              <th>距目標達成率</th>
+              <th>首月投入可買股數</th>
+              <th>首月達標潛在獲利</th>
+              <th class="note">備註</th>
+              <th>刪除</th>
+            </tr>
+          </thead>
+          <tbody id="investmentTrackBody"></tbody>
+        </table>
+      </div>
+      <div class="sentiment-story">
+        <div class="note-box" id="investmentInterpretation"></div>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top:18px;">
       <h2>交易規則</h2>
       <p class="hint">每一列是一個條件。系統依價格路徑前進，碰到觸發價就執行一次；可用上限控制總賣出量。</p>
       <div class="rules-wrap">
@@ -803,9 +911,11 @@
     const $ = (id) => document.getElementById(id);
     const rulesBody = $("rulesBody");
     const sentimentBody = $("sentimentBody");
+    const investmentTrackBody = $("investmentTrackBody");
     let lastRows = [];
     let lastSummary = {};
     let lastSentiment = {};
+    let lastInvestment = {};
     const storageKey = "stock-simulator-cases-v1";
 
     const defaultRules = [
@@ -870,6 +980,21 @@
           weight: tr.querySelector(".sentimentWeight").value,
           note: tr.querySelector(".sentimentNote").value
         })),
+        investment: {
+          name: $("investName").value,
+          symbol: $("investSymbol").value,
+          currentPrice: $("investCurrentPrice").value,
+          targetPrice: $("investTargetPrice").value,
+          weeklyBudget: $("weeklyBudget").value,
+          monthlyBudget: $("monthlyBudget").value,
+          months: $("investMonths").value,
+          existingShares: $("existingShares").value,
+          tracks: [...investmentTrackBody.querySelectorAll("tr")].map((tr) => ({
+            date: tr.querySelector(".trackDate").value,
+            price: tr.querySelector(".trackPrice").value,
+            note: tr.querySelector(".trackNote").value
+          }))
+        },
         rules: [...rulesBody.querySelectorAll("tr")].map((tr) => ({
           enabled: tr.querySelector(".enabled").checked,
           action: tr.querySelector(".action").value,
@@ -898,6 +1023,17 @@
       sentimentBody.innerHTML = "";
       const sentimentRows = Array.isArray(config.sentimentRows) && config.sentimentRows.length ? config.sentimentRows : defaultSentimentRows;
       sentimentRows.forEach((row) => makeSentimentRow(row));
+      const investment = config.investment || {};
+      $("investName").value = investment.name || "南洋公司";
+      $("investSymbol").value = investment.symbol || "";
+      $("investCurrentPrice").value = investment.currentPrice || 120;
+      $("investTargetPrice").value = investment.targetPrice || 800;
+      $("weeklyBudget").value = investment.weeklyBudget || 1000;
+      $("monthlyBudget").value = investment.monthlyBudget || 4000;
+      $("investMonths").value = investment.months || 12;
+      $("existingShares").value = investment.existingShares || 0;
+      investmentTrackBody.innerHTML = "";
+      (Array.isArray(investment.tracks) ? investment.tracks : []).forEach((track) => makeInvestmentTrackRow(track));
       rulesBody.innerHTML = "";
       const rules = Array.isArray(config.rules) && config.rules.length ? config.rules : defaultRules;
       rules.forEach((rule) => makeRuleRow(rule));
@@ -973,6 +1109,33 @@
       });
     }
 
+    function todayText() {
+      const date = new Date();
+      return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+    }
+
+    function makeInvestmentTrackRow(track = {}) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><input class="trackDate" type="date" value="${track.date || todayText()}" aria-label="追蹤日期"></td>
+        <td><input class="trackPrice" type="number" min="0" step="0.01" value="${track.price ?? $("investCurrentPrice").value}" aria-label="追蹤價格"></td>
+        <td class="trackProgress">0%</td>
+        <td class="trackFirstMonthShares">0</td>
+        <td class="trackFirstMonthProfit">${money(0)}</td>
+        <td class="note"><input class="trackNote" value="${escapeAttr(track.note ?? "")}" aria-label="追蹤備註"></td>
+        <td><button class="btn danger deleteTrackBtn" type="button" title="刪除這筆追蹤">刪除</button></td>
+      `;
+      investmentTrackBody.appendChild(tr);
+      tr.querySelector(".deleteTrackBtn").addEventListener("click", () => {
+        tr.remove();
+        runSimulation();
+      });
+      tr.querySelectorAll("input").forEach((el) => {
+        el.addEventListener("input", runSimulation);
+        el.addEventListener("change", runSimulation);
+      });
+    }
+
     function escapeAttr(value) {
       return String(value).replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;");
     }
@@ -1018,6 +1181,15 @@
         note: tr.querySelector(".sentimentNote").value.trim(),
         row: tr
       })).filter((item) => item.enabled && Number.isFinite(item.target) && item.target > 0);
+    }
+
+    function readInvestmentTracks() {
+      return [...investmentTrackBody.querySelectorAll("tr")].map((tr) => ({
+        date: tr.querySelector(".trackDate").value,
+        price: Number(tr.querySelector(".trackPrice").value),
+        note: tr.querySelector(".trackNote").value.trim(),
+        row: tr
+      })).filter((item) => Number.isFinite(item.price) && item.price > 0);
     }
 
     function crossed(prevPrice, price, trigger, action) {
@@ -1082,6 +1254,65 @@
       $("medianTargetPrice").textContent = money(medianTarget);
       $("exitUpsidePct").textContent = `${upside >= 0 ? "+" : ""}${pct(upside)}`;
       $("sentimentInterpretation").textContent = `目前收集 ${rows.length} 筆市場來源，依「${$("sentimentMethod").selectedOptions[0].textContent}」估算大眾心理價約 ${money(psychPrice)}。若提前 ${pct(buffer * 100)} 出場，建議出場價約 ${money(exitPrice)}，相對目前價 ${money(currentPrice)} 的空間為 ${upside >= 0 ? "+" : ""}${pct(upside)}。來源目標價分歧度約 ${pct(dispersion)}；分歧度越高，代表市場共識越不穩，出場價應更保守。`;
+    }
+
+    function analyzeInvestment() {
+      const name = $("investName").value.trim() || "股票";
+      const currentPrice = readNumber("investCurrentPrice", 0);
+      const targetPrice = readNumber("investTargetPrice", 0);
+      const weeklyBudget = readNumber("weeklyBudget", 0);
+      const monthlyBudgetInput = readNumber("monthlyBudget", 0);
+      const monthlyBudget = monthlyBudgetInput > 0 ? monthlyBudgetInput : weeklyBudget * 4;
+      const months = Math.max(1, readNumber("investMonths", 1));
+      const existingShares = readNumber("existingShares", 0);
+      const plannedInvestment = monthlyBudget * months;
+      const newShares = currentPrice > 0 ? plannedInvestment / currentPrice : 0;
+      const totalShares = existingShares + newShares;
+      const currentBaseValue = existingShares * currentPrice + plannedInvestment;
+      const targetValue = totalShares * targetPrice;
+      const profit = targetValue - currentBaseValue;
+      const returnPct = currentBaseValue > 0 ? profit / currentBaseValue * 100 : 0;
+      const targetProgress = targetPrice > 0 ? currentPrice / targetPrice * 100 : 0;
+      const firstMonthShares = currentPrice > 0 ? monthlyBudget / currentPrice : 0;
+      const firstMonthTargetValue = firstMonthShares * targetPrice;
+      const firstMonthProfit = firstMonthTargetValue - monthlyBudget;
+      const tracks = readInvestmentTracks();
+
+      tracks.forEach((item) => {
+        const progress = targetPrice > 0 ? item.price / targetPrice * 100 : 0;
+        const firstSharesAtTrack = item.price > 0 ? monthlyBudget / item.price : 0;
+        const firstProfitAtTrack = firstSharesAtTrack * targetPrice - monthlyBudget;
+        item.row.querySelector(".trackProgress").textContent = pct(progress);
+        item.row.querySelector(".trackFirstMonthShares").textContent = num(firstSharesAtTrack);
+        item.row.querySelector(".trackFirstMonthProfit").textContent = money(firstProfitAtTrack);
+      });
+
+      const latestTrack = tracks.length ? tracks[tracks.length - 1] : null;
+      lastInvestment = {
+        name,
+        currentPrice,
+        targetPrice,
+        monthlyBudget,
+        months,
+        plannedInvestment,
+        newShares,
+        totalShares,
+        targetValue,
+        profit,
+        returnPct,
+        targetProgress,
+        firstMonthShares,
+        firstMonthProfit,
+        latestTrackPrice: latestTrack?.price || currentPrice
+      };
+
+      $("investTotalBudget").textContent = money(plannedInvestment);
+      $("investExpectedShares").textContent = num(totalShares);
+      $("investTargetValue").textContent = money(targetValue);
+      $("investProfit").textContent = `${profit >= 0 ? "+" : ""}${money(profit)}`;
+      $("investReturnPct").textContent = `${returnPct >= 0 ? "+" : ""}${pct(returnPct)}`;
+      $("investTargetProgress").textContent = pct(targetProgress);
+      $("investmentInterpretation").textContent = `${name} 目前價 ${money(currentPrice)}，目標賣出價 ${money(targetPrice)}。若每月投入 ${money(monthlyBudget)}、持續 ${num(months, 0)} 個月，計畫總投入 ${money(plannedInvestment)}，以目前價格估算可累積約 ${num(totalShares)} 股；若未來達到目標價，預估市值 ${money(targetValue)}、獲利 ${profit >= 0 ? "+" : ""}${money(profit)}、報酬率 ${returnPct >= 0 ? "+" : ""}${pct(returnPct)}。首月投入約可買 ${num(firstMonthShares)} 股，若達標，首月部位潛在獲利約 ${money(firstMonthProfit)}。`;
     }
 
     function runSimulation() {
@@ -1215,6 +1446,7 @@
 
       $("interpretation").textContent = buildInterpretation(symbol, finalAsset, holdAsset, delta, shares, cash, ending, totalSoldShares, initialShares);
       analyzeSentiment(currentPrice);
+      analyzeInvestment();
       renderLog(rows);
       drawChart(rows);
     }
@@ -1410,7 +1642,8 @@
         config,
         summary: {
           ...lastSummary,
-          sentiment: lastSentiment
+          sentiment: lastSentiment,
+          investment: lastInvestment
         }
       });
       storeCases(cases.slice(0, 30));
@@ -1475,6 +1708,13 @@
       runSimulation();
     }
 
+    function useLatestTrackPrice() {
+      const tracks = readInvestmentTracks();
+      if (!tracks.length) return;
+      $("investCurrentPrice").value = tracks[tracks.length - 1].price;
+      runSimulation();
+    }
+
     function exportCsv() {
       if (!lastRows.length) runSimulation();
       const header = ["步驟", "動作", "價格", "交易數量", "交易金額", "交易後持股", "交易後現金", "策略總資產", "持有不動資產", "持有不動獲利", "策略差異", "說明"];
@@ -1502,8 +1742,9 @@
     }
 
     defaultSentimentRows.forEach(makeSentimentRow);
+    makeInvestmentTrackRow({ note: "起始追蹤" });
     defaultRules.forEach(makeRuleRow);
-    document.querySelectorAll("#caseName, #symbol, #currentPrice, #initialShares, #avgCost, #initialCash, #maxSellPct, #buyFeePct, #sellCostPct, #pricePath, #exitBufferPct, #sentimentMethod").forEach((el) => {
+    document.querySelectorAll("#caseName, #symbol, #currentPrice, #initialShares, #avgCost, #initialCash, #maxSellPct, #buyFeePct, #sellCostPct, #pricePath, #exitBufferPct, #sentimentMethod, #investName, #investSymbol, #investCurrentPrice, #investTargetPrice, #weeklyBudget, #monthlyBudget, #investMonths, #existingShares").forEach((el) => {
       el.addEventListener("input", runSimulation);
       el.addEventListener("change", runSimulation);
     });
@@ -1518,6 +1759,11 @@
       makeSentimentRow({ enabled: true, type: "自訂", source: "", target: "", weight: 3, note: "" });
       runSimulation();
     });
+    $("addInvestTrackBtn").addEventListener("click", () => {
+      makeInvestmentTrackRow({ note: "新增追蹤" });
+      runSimulation();
+    });
+    $("useLatestTrackBtn").addEventListener("click", useLatestTrackPrice);
     $("applyExitRuleBtn").addEventListener("click", applySuggestedExitRule);
     $("loadSampleBtn").addEventListener("click", () => {
       applyConfig({
@@ -1533,6 +1779,17 @@
         exitBufferPct: 5,
         sentimentMethod: "weighted",
         sentimentRows: defaultSentimentRows,
+        investment: {
+          name: "南洋公司",
+          symbol: "",
+          currentPrice: 120,
+          targetPrice: 800,
+          weeklyBudget: 1000,
+          monthlyBudget: 4000,
+          months: 12,
+          existingShares: 0,
+          tracks: [{ date: todayText(), price: 120, note: "起始追蹤" }]
+        },
         pricePath: "103, 108, 100, 110",
         rules: defaultRules
       });
