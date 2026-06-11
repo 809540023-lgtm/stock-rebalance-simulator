@@ -14,4 +14,19 @@
 
 直接開啟 `index.html` 即可使用，不需要安裝套件或啟動伺服器。
 
+## LINE 投資提醒機器人
+
+專案內含 GitHub Actions 排程：`.github/workflows/line-investment-reminder.yml`。
+
+預設每天 09:00（Asia/Tokyo / Asia/Taipei）執行一次，發送 LINE 投資提醒。
+
+需要在 GitHub repo 的 `Settings -> Secrets and variables -> Actions` 新增：
+
+- `LINE_CHANNEL_ACCESS_TOKEN`：LINE Messaging API channel access token
+- `LINE_USER_ID`：要接收提醒的 LINE user ID
+- `INVESTMENT_REMINDER_TEXT`：可選，自訂提醒文字
+- `INVESTMENT_REMINDER_URL`：可選，預設為 Render 網站網址
+
+設定完成後，可到 `Actions -> LINE investment reminder -> Run workflow` 手動測試。
+
 > 本工具僅供情境試算，不構成投資建議。
