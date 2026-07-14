@@ -73,6 +73,49 @@
       max-width: 780px;
     }
 
+    .quick-guide {
+      margin: 0 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 14px 18px;
+    }
+
+    .quick-guide summary {
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .guide-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+      color: #344054;
+      font-size: 14px;
+    }
+
+    .guide-steps strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .validation {
+      display: none;
+      margin: 0 20px 16px;
+      border-left: 4px solid var(--danger);
+      background: #fff1f0;
+      color: var(--danger);
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .validation.show {
+      display: block;
+    }
+
     .toolbar {
       display: flex;
       flex-wrap: wrap;
@@ -544,7 +587,8 @@
       .form-grid,
       .results,
       .sentiment-summary,
-      .investment-summary {
+      .investment-summary,
+      .guide-steps {
         grid-template-columns: 1fr;
       }
 
@@ -592,9 +636,21 @@
         <button class="btn success" id="addRuleBtn" title="新增一筆交易條件">新增規則</button>
         <button class="btn ghost" id="chartPngBtn" title="下載目前柱狀圖">輸出圖形</button>
         <button class="btn" id="csvBtn" title="下載交易明細 CSV">匯出 CSV</button>
+        <button class="btn" id="backupBtn" title="備份全部案例為 JSON">備份案例</button>
+        <button class="btn" id="importBtn" title="從 JSON 還原案例">匯入案例</button>
+        <input id="importFile" type="file" accept="application/json,.json" hidden>
         <button class="btn" id="printBtn" title="列印分析表">列印</button>
       </div>
     </header>
+
+    <details class="quick-guide">
+      <summary>第一次使用：三步完成一個模擬</summary>
+      <div class="guide-steps">
+        <div><strong>1. 填持股</strong>輸入目前價格、股數、平均成本與可用現金。</div>
+        <div><strong>2. 排價格路徑</strong>依可能發生的先後順序填入價格，例如 103、108、100、110。</div>
+        <div><strong>3. 設交易規則</strong>設定到價賣出或回補比例，再比較策略與持有不動的差異。</div>
+      </div>
+    </details>
 
     <section class="grid">
       <div class="panel">
@@ -612,6 +668,8 @@
           <label>
             目前價格
             <input id="currentPrice" type="number" min="0" step="0.01" value="103">
+            <button class="btn ghost" id="updateSellPriceBtn" type="button">帶入證交所最新收盤價</button>
+            <span class="mini" id="sellPriceStatus" aria-live="polite">價格路徑仍由使用者自行設定。</span>
           </label>
           <label>
             初始持股數量
@@ -649,6 +707,7 @@
       <div class="panel">
         <h2>模擬結果</h2>
         <p class="hint">與「完全不賣、不補」相比，觀察現金、股數與資產總值的變化。</p>
+        <div class="validation" id="validationMessage" role="alert" aria-live="polite"></div>
         <div class="results">
           <div class="metric blue">
             <strong>期末總資產</strong>
@@ -721,8 +780,8 @@
     </section>
 
     <section class="panel" style="margin-top:18px;">
-      <h2>市場心理價位情境分析</h2>
-      <p class="hint">輸入法人目標價、新聞估值、AI 群組共識或網路討論價位，系統會估算大眾預期心理價，並提前 5% 推算出場價。</p>
+      <h2>市場心理價位情境分析（手動資料）</h2>
+      <p class="hint">輸入有來源的法人目標價、新聞估值或市場討論價位，系統會估算心理價並提前推算出場價。系統不會自動驗證這些資料，請在來源名稱或備註保留日期與網址。</p>
       <div class="form-grid">
         <label>
           提前出場比例 %
@@ -770,7 +829,7 @@
             <tr>
               <th>啟用</th>
               <th>來源類型</th>
-              <th class="source">來源名稱</th>
+              <th class="source">來源名稱 / 網址</th>
               <th>目標價</th>
               <th>可信度 1-5</th>
               <th>提前出場價</th>
@@ -802,6 +861,8 @@
         <label>
           目前價格
           <input id="investCurrentPrice" type="number" min="0" step="0.01" value="120">
+          <button class="btn ghost" id="updateInvestPriceBtn" type="button">帶入證交所最新收盤價</button>
+          <span class="mini" id="investPriceStatus" aria-live="polite"></span>
         </label>
         <label>
           目標賣出價
@@ -823,6 +884,20 @@
         <label>
           目前已持股
           <input id="existingShares" type="number" min="0" step="0.001" value="0">
+        </label>
+        <label>
+          既有持股平均成本
+          <input id="existingAvgCost" type="number" min="0" step="0.01" value="120">
+          <span class="mini">用來計算既有部位達標時的真正損益。</span>
+        </label>
+        <label>
+          每月預估價格變化 %
+          <input id="monthlyPriceChangePct" type="number" step="0.1" value="0">
+          <span class="mini">情境假設，可填負數；0 代表每月都以目前價格估算。</span>
+        </label>
+        <label>
+          定期買進手續費 %
+          <input id="investBuyFeePct" type="number" min="0" step="0.0001" value="0.1425">
         </label>
       </div>
       <div class="investment-summary">
@@ -917,6 +992,7 @@
     let lastSentiment = {};
     let lastInvestment = {};
     const storageKey = "stock-simulator-cases-v1";
+    let marketDataPromise;
 
     const defaultRules = [
       { enabled: true, action: "sell", trigger: 108, basis: "initialPct", amount: 5, minKeep: 0, note: "漲到 108 先賣 5%" },
@@ -958,6 +1034,44 @@
         .filter((n) => Number.isFinite(n) && n > 0);
     }
 
+    function loadMarketData() {
+      if (!marketDataPromise) {
+        marketDataPromise = fetch("./data/twse-latest.json", { cache: "no-cache" })
+          .then((response) => {
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return response.json();
+          })
+          .catch((error) => {
+            marketDataPromise = null;
+            throw error;
+          });
+      }
+      return marketDataPromise;
+    }
+
+    async function updatePriceFromMarket(symbolId, priceId, statusId) {
+      const symbol = $(symbolId).value.trim().toUpperCase();
+      const status = $(statusId);
+      if (!symbol) {
+        status.textContent = "請先輸入股票代號。";
+        return;
+      }
+      status.textContent = "正在讀取證交所資料...";
+      try {
+        const market = await loadMarketData();
+        const quote = market.stocks?.[symbol];
+        if (!quote) {
+          status.textContent = `找不到 ${symbol}；目前僅支援證交所上市商品。`;
+          return;
+        }
+        $(priceId).value = quote.close;
+        status.textContent = `${quote.name || symbol}｜${quote.date || market.marketDate} 收盤 ${money(quote.close)}｜證交所資料`;
+        runSimulation();
+      } catch {
+        status.textContent = "行情讀取失敗，請稍後再試或保留人工輸入。";
+      }
+    }
+
     function captureConfig() {
       return {
         caseName: $("caseName").value,
@@ -989,6 +1103,9 @@
           monthlyBudget: $("monthlyBudget").value,
           months: $("investMonths").value,
           existingShares: $("existingShares").value,
+          existingAvgCost: $("existingAvgCost").value,
+          monthlyPriceChangePct: $("monthlyPriceChangePct").value,
+          buyFeePct: $("investBuyFeePct").value,
           tracks: [...investmentTrackBody.querySelectorAll("tr")].map((tr) => ({
             date: tr.querySelector(".trackDate").value,
             price: tr.querySelector(".trackPrice").value,
@@ -1008,30 +1125,33 @@
     }
 
     function applyConfig(config) {
-      $("caseName").value = config.caseName || "";
-      $("symbol").value = config.symbol || "0050";
-      $("currentPrice").value = config.currentPrice || 103;
-      $("initialShares").value = config.initialShares || 100;
-      $("avgCost").value = config.avgCost || $("currentPrice").value;
-      $("initialCash").value = config.initialCash || 0;
-      $("maxSellPct").value = config.maxSellPct || 10;
-      $("buyFeePct").value = config.buyFeePct || 0.1425;
-      $("sellCostPct").value = config.sellCostPct || 0.2425;
-      $("pricePath").value = config.pricePath || "103, 108, 100, 110";
-      $("exitBufferPct").value = config.exitBufferPct || 5;
-      $("sentimentMethod").value = config.sentimentMethod || "weighted";
+      $("caseName").value = config.caseName ?? "";
+      $("symbol").value = config.symbol ?? "0050";
+      $("currentPrice").value = config.currentPrice ?? 103;
+      $("initialShares").value = config.initialShares ?? 100;
+      $("avgCost").value = config.avgCost ?? $("currentPrice").value;
+      $("initialCash").value = config.initialCash ?? 0;
+      $("maxSellPct").value = config.maxSellPct ?? 10;
+      $("buyFeePct").value = config.buyFeePct ?? 0.1425;
+      $("sellCostPct").value = config.sellCostPct ?? 0.2425;
+      $("pricePath").value = config.pricePath ?? "103, 108, 100, 110";
+      $("exitBufferPct").value = config.exitBufferPct ?? 5;
+      $("sentimentMethod").value = config.sentimentMethod ?? "weighted";
       sentimentBody.innerHTML = "";
       const sentimentRows = Array.isArray(config.sentimentRows) && config.sentimentRows.length ? config.sentimentRows : defaultSentimentRows;
       sentimentRows.forEach((row) => makeSentimentRow(row));
       const investment = config.investment || {};
-      $("investName").value = investment.name || "南洋公司";
-      $("investSymbol").value = investment.symbol || "";
-      $("investCurrentPrice").value = investment.currentPrice || 120;
-      $("investTargetPrice").value = investment.targetPrice || 800;
-      $("weeklyBudget").value = investment.weeklyBudget || 1000;
-      $("monthlyBudget").value = investment.monthlyBudget || 4000;
-      $("investMonths").value = investment.months || 12;
-      $("existingShares").value = investment.existingShares || 0;
+      $("investName").value = investment.name ?? "南洋公司";
+      $("investSymbol").value = investment.symbol ?? "";
+      $("investCurrentPrice").value = investment.currentPrice ?? 120;
+      $("investTargetPrice").value = investment.targetPrice ?? 800;
+      $("weeklyBudget").value = investment.weeklyBudget ?? 1000;
+      $("monthlyBudget").value = investment.monthlyBudget ?? 4000;
+      $("investMonths").value = investment.months ?? 12;
+      $("existingShares").value = investment.existingShares ?? 0;
+      $("existingAvgCost").value = investment.existingAvgCost ?? investment.currentPrice ?? 120;
+      $("monthlyPriceChangePct").value = investment.monthlyPriceChangePct ?? 0;
+      $("investBuyFeePct").value = investment.buyFeePct ?? 0.1425;
       investmentTrackBody.innerHTML = "";
       (Array.isArray(investment.tracks) ? investment.tracks : []).forEach((track) => makeInvestmentTrackRow(track));
       rulesBody.innerHTML = "";
@@ -1263,24 +1383,33 @@
       const weeklyBudget = readNumber("weeklyBudget", 0);
       const monthlyBudgetInput = readNumber("monthlyBudget", 0);
       const monthlyBudget = monthlyBudgetInput > 0 ? monthlyBudgetInput : weeklyBudget * 4;
-      const months = Math.max(1, readNumber("investMonths", 1));
+      const months = Math.max(1, Math.floor(readNumber("investMonths", 1)));
       const existingShares = readNumber("existingShares", 0);
+      const existingAvgCost = readNumber("existingAvgCost", currentPrice);
+      const monthlyPriceChange = Math.max(-0.99, readNumber("monthlyPriceChangePct", 0) / 100);
+      const buyFee = Math.max(0, readNumber("investBuyFeePct", 0) / 100);
       const plannedInvestment = monthlyBudget * months;
-      const newShares = currentPrice > 0 ? plannedInvestment / currentPrice : 0;
+      let newShares = 0;
+      let projectedPrice = currentPrice;
+      for (let month = 0; month < months; month += 1) {
+        const purchasePrice = currentPrice * Math.pow(1 + monthlyPriceChange, month);
+        if (purchasePrice > 0) newShares += monthlyBudget / (purchasePrice * (1 + buyFee));
+        projectedPrice = purchasePrice;
+      }
       const totalShares = existingShares + newShares;
-      const currentBaseValue = existingShares * currentPrice + plannedInvestment;
+      const costBasis = existingShares * existingAvgCost + plannedInvestment;
       const targetValue = totalShares * targetPrice;
-      const profit = targetValue - currentBaseValue;
-      const returnPct = currentBaseValue > 0 ? profit / currentBaseValue * 100 : 0;
+      const profit = targetValue - costBasis;
+      const returnPct = costBasis > 0 ? profit / costBasis * 100 : 0;
       const targetProgress = targetPrice > 0 ? currentPrice / targetPrice * 100 : 0;
-      const firstMonthShares = currentPrice > 0 ? monthlyBudget / currentPrice : 0;
+      const firstMonthShares = currentPrice > 0 ? monthlyBudget / (currentPrice * (1 + buyFee)) : 0;
       const firstMonthTargetValue = firstMonthShares * targetPrice;
       const firstMonthProfit = firstMonthTargetValue - monthlyBudget;
       const tracks = readInvestmentTracks();
 
       tracks.forEach((item) => {
         const progress = targetPrice > 0 ? item.price / targetPrice * 100 : 0;
-        const firstSharesAtTrack = item.price > 0 ? monthlyBudget / item.price : 0;
+        const firstSharesAtTrack = item.price > 0 ? monthlyBudget / (item.price * (1 + buyFee)) : 0;
         const firstProfitAtTrack = firstSharesAtTrack * targetPrice - monthlyBudget;
         item.row.querySelector(".trackProgress").textContent = pct(progress);
         item.row.querySelector(".trackFirstMonthShares").textContent = num(firstSharesAtTrack);
@@ -1294,6 +1423,9 @@
         targetPrice,
         monthlyBudget,
         months,
+        existingAvgCost,
+        monthlyPriceChangePct: monthlyPriceChange * 100,
+        buyFeePct: buyFee * 100,
         plannedInvestment,
         newShares,
         totalShares,
@@ -1303,6 +1435,7 @@
         targetProgress,
         firstMonthShares,
         firstMonthProfit,
+        projectedPrice,
         latestTrackPrice: latestTrack?.price || currentPrice
       };
 
@@ -1312,7 +1445,7 @@
       $("investProfit").textContent = `${profit >= 0 ? "+" : ""}${money(profit)}`;
       $("investReturnPct").textContent = `${returnPct >= 0 ? "+" : ""}${pct(returnPct)}`;
       $("investTargetProgress").textContent = pct(targetProgress);
-      $("investmentInterpretation").textContent = `${name} 目前價 ${money(currentPrice)}，目標賣出價 ${money(targetPrice)}。若每月投入 ${money(monthlyBudget)}、持續 ${num(months, 0)} 個月，計畫總投入 ${money(plannedInvestment)}，以目前價格估算可累積約 ${num(totalShares)} 股；若未來達到目標價，預估市值 ${money(targetValue)}、獲利 ${profit >= 0 ? "+" : ""}${money(profit)}、報酬率 ${returnPct >= 0 ? "+" : ""}${pct(returnPct)}。首月投入約可買 ${num(firstMonthShares)} 股，若達標，首月部位潛在獲利約 ${money(firstMonthProfit)}。`;
+      $("investmentInterpretation").textContent = `${name} 目前價 ${money(currentPrice)}，目標賣出價 ${money(targetPrice)}。情境假設每月價格變化 ${monthlyPriceChange >= 0 ? "+" : ""}${pct(monthlyPriceChange * 100)}，每月投入 ${money(monthlyBudget)}、持續 ${num(months, 0)} 個月，總投入 ${money(plannedInvestment)}，預估累積約 ${num(totalShares)} 股（最後一期試算買進價 ${money(projectedPrice)}）。若未來達到目標價，依既有持股成本與新投入金額計算，預估市值 ${money(targetValue)}、獲利 ${profit >= 0 ? "+" : ""}${money(profit)}、報酬率 ${returnPct >= 0 ? "+" : ""}${pct(returnPct)}。此為情境試算，不代表目標價一定會達成。`;
     }
 
     function runSimulation() {
@@ -1327,6 +1460,14 @@
       const pricePath = parsePath();
       const prices = pricePath.length ? pricePath : [currentPrice];
       if (prices[0] !== currentPrice && currentPrice > 0) prices.unshift(currentPrice);
+      const validationErrors = [];
+      if (currentPrice <= 0) validationErrors.push("目前價格必須大於 0");
+      if (initialShares < 0) validationErrors.push("初始持股不能是負數");
+      if (!pricePath.length) validationErrors.push("請至少輸入一個有效的價格路徑");
+      const validationMessage = $("validationMessage");
+      validationMessage.textContent = validationErrors.join("；");
+      validationMessage.classList.toggle("show", validationErrors.length > 0);
+      if (validationErrors.length) return;
       const rules = readRules();
       const executed = new Set();
       const maxSellShares = initialShares * (maxSellPct / 100);
@@ -1350,23 +1491,26 @@
         const prev = prices[i - 1];
         const price = prices[i];
         let any = false;
-        for (const rule of rules) {
-          if (executed.has(rule.index)) continue;
-          if (!crossed(prev, price, rule.trigger, rule.action)) continue;
-          executed.add(rule.index);
+        const crossedRules = rules
+          .filter((rule) => !executed.has(rule.index) && crossed(prev, price, rule.trigger, rule.action))
+          .sort((a, b) => price >= prev ? a.trigger - b.trigger : b.trigger - a.trigger);
+        for (const rule of crossedRules) {
+          const executionPrice = rule.trigger;
           if (rule.action === "sell") {
             const basisShares = rule.basis === "currentPct" ? shares : initialShares;
             let sellShares = rule.basis === "shares" ? rule.amount : basisShares * (rule.amount / 100);
             sellShares = Math.min(sellShares, shares - rule.minKeep);
             sellShares = Math.min(sellShares, Math.max(0, maxSellShares - totalSoldShares));
             sellShares = Math.max(0, sellShares);
-            const proceeds = sellShares * price * (1 - sellCost);
+            if (sellShares <= 0) continue;
+            const proceeds = sellShares * executionPrice * (1 - sellCost);
             shares -= sellShares;
             cash += proceeds;
             totalSoldShares += sellShares;
+            executed.add(rule.index);
             rows.push(rowData({
               step: i,
-              price,
+              price: executionPrice,
               action: "sell",
               detail: rule.note || `規則 ${rule.index}`,
               shares,
@@ -1377,16 +1521,18 @@
             any = true;
           } else {
             let buyBudget = rule.basis === "cashAmount" ? rule.amount : cash * (rule.amount / 100);
-            if (rule.basis === "shares") buyBudget = rule.amount * price * (1 + buyFee);
+            if (rule.basis === "shares") buyBudget = rule.amount * executionPrice * (1 + buyFee);
             buyBudget = Math.min(buyBudget, cash);
-            let buyShares = rule.basis === "shares" ? rule.amount : buyBudget / (price * (1 + buyFee));
-            buyShares = Math.max(0, Math.min(buyShares, cash / (price * (1 + buyFee))));
-            const cost = buyShares * price * (1 + buyFee);
+            let buyShares = rule.basis === "shares" ? rule.amount : buyBudget / (executionPrice * (1 + buyFee));
+            buyShares = Math.max(0, Math.min(buyShares, cash / (executionPrice * (1 + buyFee))));
+            if (buyShares <= 0) continue;
+            const cost = buyShares * executionPrice * (1 + buyFee);
             shares += buyShares;
             cash -= cost;
+            executed.add(rule.index);
             rows.push(rowData({
               step: i,
-              price,
+              price: executionPrice,
               action: "buy",
               detail: rule.note || `規則 ${rule.index}`,
               shares,
@@ -1397,12 +1543,12 @@
             any = true;
           }
         }
-        if (!any) {
+        if (!any || rows.at(-1).price !== price) {
           rows.push(rowData({
             step: i,
             price,
             action: "hold",
-            detail: "未觸發交易",
+            detail: any ? "到達價格路徑節點" : "未觸發交易",
             shares,
             cash,
             tradeShares: 0,
@@ -1693,6 +1839,48 @@
       link.click();
     }
 
+    function exportCaseBackup() {
+      const payload = {
+        version: 2,
+        exportedAt: new Date().toISOString(),
+        current: captureConfig(),
+        cases: loadCases()
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `stock-simulator-backup-${todayText()}.json`;
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    async function importCaseBackup(file) {
+      if (!file) return;
+      if (file.size > 2 * 1024 * 1024) {
+        alert("備份檔超過 2 MB，請確認檔案是否正確。");
+        return;
+      }
+      try {
+        const payload = JSON.parse(await file.text());
+        if (!payload || !Array.isArray(payload.cases)) throw new Error("Invalid backup");
+        const imported = payload.cases.slice(0, 30).map((item) => ({
+          ...item,
+          id: crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`,
+          name: String(item.name || "匯入案例"),
+          savedAt: item.savedAt || new Date().toISOString(),
+          config: item.config || {}
+        }));
+        storeCases(imported);
+        if (payload.current && typeof payload.current === "object") applyConfig(payload.current);
+        alert(`已匯入 ${imported.length} 個案例。`);
+      } catch {
+        alert("無法匯入：檔案不是有效的股票模擬器備份。");
+      } finally {
+        $("importFile").value = "";
+      }
+    }
+
     function applySuggestedExitRule() {
       runSimulation();
       if (!lastSentiment.exitPrice) return;
@@ -1744,11 +1932,13 @@
     defaultSentimentRows.forEach(makeSentimentRow);
     makeInvestmentTrackRow({ note: "起始追蹤" });
     defaultRules.forEach(makeRuleRow);
-    document.querySelectorAll("#caseName, #symbol, #currentPrice, #initialShares, #avgCost, #initialCash, #maxSellPct, #buyFeePct, #sellCostPct, #pricePath, #exitBufferPct, #sentimentMethod, #investName, #investSymbol, #investCurrentPrice, #investTargetPrice, #weeklyBudget, #monthlyBudget, #investMonths, #existingShares").forEach((el) => {
+    document.querySelectorAll("#caseName, #symbol, #currentPrice, #initialShares, #avgCost, #initialCash, #maxSellPct, #buyFeePct, #sellCostPct, #pricePath, #exitBufferPct, #sentimentMethod, #investName, #investSymbol, #investCurrentPrice, #investTargetPrice, #weeklyBudget, #monthlyBudget, #investMonths, #existingShares, #existingAvgCost, #monthlyPriceChangePct, #investBuyFeePct").forEach((el) => {
       el.addEventListener("input", runSimulation);
       el.addEventListener("change", runSimulation);
     });
     $("runBtn").addEventListener("click", runSimulation);
+    $("updateSellPriceBtn").addEventListener("click", () => updatePriceFromMarket("symbol", "currentPrice", "sellPriceStatus"));
+    $("updateInvestPriceBtn").addEventListener("click", () => updatePriceFromMarket("investSymbol", "investCurrentPrice", "investPriceStatus"));
     $("saveCaseBtn").addEventListener("click", saveCurrentCase);
     $("saveCasePanelBtn").addEventListener("click", saveCurrentCase);
     $("addRuleBtn").addEventListener("click", () => {
@@ -1788,6 +1978,9 @@
           monthlyBudget: 4000,
           months: 12,
           existingShares: 0,
+          existingAvgCost: 120,
+          monthlyPriceChangePct: 0,
+          buyFeePct: 0.1425,
           tracks: [{ date: todayText(), price: 120, note: "起始追蹤" }]
         },
         pricePath: "103, 108, 100, 110",
@@ -1797,6 +1990,9 @@
     $("chartPngBtn").addEventListener("click", exportChartPng);
     $("chartPngPanelBtn").addEventListener("click", exportChartPng);
     $("csvBtn").addEventListener("click", exportCsv);
+    $("backupBtn").addEventListener("click", exportCaseBackup);
+    $("importBtn").addEventListener("click", () => $("importFile").click());
+    $("importFile").addEventListener("change", (event) => importCaseBackup(event.target.files[0]));
     $("printBtn").addEventListener("click", () => window.print());
     window.addEventListener("resize", () => drawChart(lastRows));
     renderCases();

@@ -1,0 +1,41 @@
+name: Update TWSE market data
+
+on:
+  schedule:
+    # Weekdays at 15:30 Asia/Taipei (07:30 UTC), after the Taiwan market closes.
+    - cron: "30 7 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-twse-market-data
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Fetch official TWSE closing prices
+        run: node scripts/update-market-data.js
+
+      - name: Commit changed market data
+        run: |
+          if git diff --quiet -- data/twse-latest.json; then
+            echo "Market data is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/twse-latest.json
+          git commit -m "Update TWSE closing prices"
+          git push

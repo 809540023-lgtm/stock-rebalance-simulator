@@ -2,9 +2,16 @@ name: LINE investment reminder
 
 on:
   schedule:
-    # 09:00 in Asia/Tokyo / Asia/Taipei.
-    - cron: "0 0 * * *"
+    # GitHub cron uses UTC. 01:00 UTC is 09:00 in Asia/Taipei.
+    - cron: "0 1 * * *"
   workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: line-investment-reminder
+  cancel-in-progress: false
 
 jobs:
   send-line-reminder:
@@ -13,10 +20,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Send LINE reminder
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Run reminder script
         env:
@@ -24,5 +31,5 @@ jobs:
           LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
           INVESTMENT_REMINDER_TEXT: ${{ secrets.INVESTMENT_REMINDER_TEXT }}
           INVESTMENT_REMINDER_URL: ${{ secrets.INVESTMENT_REMINDER_URL }}
-          REMINDER_TIMEZONE: Asia/Tokyo
+          REMINDER_TIMEZONE: Asia/Taipei
         run: node scripts/send-line-reminder.js
