@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 
 const endpoint = "https://openapi.twse.com.tw/v1/exchangeReport/STOCK_DAY_ALL";
 const response = await fetch(endpoint, {
@@ -40,6 +40,18 @@ const output = {
   marketDate: marketDates.at(-1) || "",
   stocks
 };
+
+try {
+  const existing = JSON.parse(await readFile("data/twse-latest.json", "utf8"));
+  const unchanged = existing.marketDate === output.marketDate
+    && JSON.stringify(existing.stocks) === JSON.stringify(output.stocks);
+  if (unchanged) {
+    console.log(`TWSE closing prices are already current for ${output.marketDate}.`);
+    process.exit(0);
+  }
+} catch (error) {
+  if (error.code !== "ENOENT") console.warn(`Existing market data could not be compared: ${error.message}`);
+}
 
 await mkdir("data", { recursive: true });
 await writeFile("data/twse-latest.json", JSON.stringify(output), "utf8");
