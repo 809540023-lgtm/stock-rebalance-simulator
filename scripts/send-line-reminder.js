@@ -1,6 +1,8 @@
 import { appendFile } from "node:fs/promises";
 
-const token = process.env.LINE_CHANNEL_ACCESS_TOKEN?.trim();
+let token = process.env.LINE_CHANNEL_ACCESS_TOKEN?.trim();
+const channelId = process.env.LINE_CHANNEL_ID?.trim();
+const channelSecret = process.env.LINE_CHANNEL_SECRET?.trim();
 const userId = process.env.LINE_USER_ID?.trim();
 const siteUrl = process.env.INVESTMENT_REMINDER_URL || "https://stock-rebalance-simulator.onrender.com";
 const customText = process.env.INVESTMENT_REMINDER_TEXT;
@@ -10,13 +12,43 @@ async function writeSummary(message) {
   if (summaryPath) await appendFile(summaryPath, `${message}\n`, "utf8");
 }
 
-if (!token || !userId) {
-  const missing = [
-    !token && "LINE_CHANNEL_ACCESS_TOKEN",
-    !userId && "LINE_USER_ID"
-  ].filter(Boolean).join(", ");
-  console.error(`Missing required GitHub Actions secrets: ${missing}.`);
-  await writeSummary(`## LINE reminder failed\n\nMissing required secrets: \`${missing}\`.`);
+if (!token && (!channelId || !channelSecret)) {
+  console.error("Missing LINE authentication credentials.");
+  await writeSummary("## LINE reminder failed\n\nSet either `LINE_CHANNEL_ACCESS_TOKEN`, or both `LINE_CHANNEL_ID` and `LINE_CHANNEL_SECRET`.");
+  process.exit(1);
+}
+
+if (!userId) {
+  console.error("Missing required GitHub Actions secret: LINE_USER_ID.");
+  await writeSummary("## LINE reminder failed\n\nMissing required recipient secret: `LINE_USER_ID`.");
+  process.exit(1);
+}
+
+if (!token) {
+  const tokenResponse = await fetch("https://api.line.me/oauth2/v3/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    signal: AbortSignal.timeout(15000),
+    body: new URLSearchParams({
+      grant_type: "client_credentials",
+      client_id: channelId,
+      client_secret: channelSecret
+    })
+  });
+  if (!tokenResponse.ok) {
+    const body = await tokenResponse.text();
+    console.error(`LINE token request failed: ${tokenResponse.status} ${tokenResponse.statusText}`);
+    console.error(body);
+    await writeSummary(`## LINE reminder failed\n\nCould not issue a stateless channel access token (HTTP ${tokenResponse.status}). Check the Channel ID and Channel secret.`);
+    process.exit(1);
+  }
+  const tokenPayload = await tokenResponse.json();
+  token = tokenPayload.access_token;
+}
+
+if (!token) {
+  console.error("Token endpoint did not return a usable access token.");
+  await writeSummary(`## LINE reminder failed\n\nToken endpoint did not return a usable access token.`);
   process.exit(1);
 }
 

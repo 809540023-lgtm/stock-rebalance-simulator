@@ -26,7 +26,9 @@ GitHub Actions 會在台股交易日下午 15:30 更新 `data/twse-latest.json`�
 
 需要在 GitHub repo 的 `Settings -> Secrets and variables -> Actions` 新增：
 
-- `LINE_CHANNEL_ACCESS_TOKEN`：LINE Messaging API channel access token
+- `LINE_CHANNEL_ID`：LINE Messaging API Channel ID
+- `LINE_CHANNEL_SECRET`：LINE Messaging API Channel secret
+- `LINE_CHANNEL_ACCESS_TOKEN`：可選；若未設定，排程會使用 Channel ID 與 secret 自動取得短效 token
 - `LINE_USER_ID`：要接收提醒的 LINE user ID
 - `INVESTMENT_REMINDER_TEXT`：可選，自訂提醒文字
 - `INVESTMENT_REMINDER_URL`：可選，預設為 Render 網站網址
@@ -36,7 +38,8 @@ GitHub Actions 會在台股交易日下午 15:30 更新 `data/twse-latest.json`�
 也可以在已登入 GitHub CLI 的電腦執行：
 
 ```bash
-gh secret set LINE_CHANNEL_ACCESS_TOKEN --repo 809540023-lgtm/stock-rebalance-simulator
+gh secret set LINE_CHANNEL_ID --repo 809540023-lgtm/stock-rebalance-simulator
+gh secret set LINE_CHANNEL_SECRET --repo 809540023-lgtm/stock-rebalance-simulator
 gh secret set LINE_USER_ID --repo 809540023-lgtm/stock-rebalance-simulator
 ```
 
