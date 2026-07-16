@@ -31,10 +31,13 @@ test("saved cases preserve valid zero values", async ({ page }) => {
   await expect(page.locator("#buyFeePct")).toHaveValue("0");
 });
 
-test("official market data can update a listed symbol", async ({ page }) => {
+test("official market data can update a listed symbol", async ({ page, request }) => {
+  const response = await request.get("/data/twse-latest.json");
+  const market = await response.json();
+  const expectedClose = String(market.stocks["0050"].close);
   await page.locator("#symbol").fill("0050");
   await page.locator("#updateSellPriceBtn").click();
-  await expect(page.locator("#currentPrice")).toHaveValue("104.4");
+  await expect(page.locator("#currentPrice")).toHaveValue(expectedClose);
   await expect(page.locator("#sellPriceStatus")).toContainText("證交所資料");
 });
 
