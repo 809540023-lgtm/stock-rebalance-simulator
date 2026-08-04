@@ -41,14 +41,6 @@ test("official market data can update a listed symbol", async ({ page, request }
   await expect(page.locator("#sellPriceStatus")).toContainText("證交所資料");
 });
 
-test("risk scan renders the official index snapshot", async ({ page, request }) => {
-  const response = await request.get("/data/market-risk.json");
-  const data = await response.json();
-  await expect(page.locator("#riskIndexBody tr")).toHaveCount(data.index.length);
-  await expect(page.locator("#riskStatus")).not.toContainText("失敗");
-  await expect(page.locator("#riskIndexBody")).toContainText(data.index.at(-1).date);
-});
-
 test("page does not overflow the mobile viewport", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== "mobile", "Mobile-only layout check");
   const dimensions = await page.evaluate(() => ({

@@ -1,8 +1,7 @@
-name: Update Taiwan stock risk scan
+name: Update standalone Taiwan stock risk scanner
 
 on:
   schedule:
-    # Run after both Taiwan markets have published closing data.
     - cron: "30 8 * * 1-5"
   workflow_dispatch:
     inputs:
@@ -19,7 +18,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: update-taiwan-stock-risk
+  group: update-standalone-market-risk-scanner
   cancel-in-progress: true
 
 jobs:
@@ -34,7 +33,7 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Fetch official historical market data
+      - name: Fetch official historical data
         env:
           INPUT_START_DATE: ${{ inputs.start_date }}
           INPUT_END_DATE: ${{ inputs.end_date }}
@@ -43,16 +42,17 @@ jobs:
           start_date="$INPUT_START_DATE"
           if [ -z "$end_date" ]; then end_date="$(date -u +%F)"; fi
           if [ -z "$start_date" ]; then start_date="$(date -u -d '31 days ago' +%F)"; fi
+          cd market-risk-scanner
           node scripts/update-risk-data.js "$start_date" "$end_date"
 
-      - name: Commit changed risk data
+      - name: Commit standalone scanner data
         run: |
-          if git diff --quiet -- data/market-risk.json; then
-            echo "Risk data is unchanged."
+          if git diff --quiet -- market-risk-scanner/data/market-risk.json; then
+            echo "Risk scanner data is unchanged."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/market-risk.json
-          git commit -m "Update Taiwan stock risk scan"
+          git add market-risk-scanner/data/market-risk.json
+          git commit -m "Update standalone Taiwan stock risk data"
           git push

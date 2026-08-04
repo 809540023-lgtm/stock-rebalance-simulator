@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>台股下跌速度與風險掃描器</title>
+  <style>
+    :root{--bg:#f4f6f8;--surface:#fff;--ink:#182230;--muted:#667085;--line:#d8dee8;--blue:#2563eb;--blue-soft:#e8f0ff;--red:#c5221f;--red-soft:#fff0ef;--green:#087443;--green-soft:#e8f7ef;--amber:#9a5700;--amber-soft:#fff5df;--shadow:0 12px 32px rgba(24,34,48,.07)}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",sans-serif;line-height:1.5}button,input,select{font:inherit}button{border:0;cursor:pointer}.app{width:min(1440px,calc(100% - 32px));margin:0 auto;padding:28px 0 40px}header{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:20px}h1{margin:0;font-size:clamp(28px,4vw,44px);line-height:1.12;letter-spacing:0}h2{margin:0;padding:20px 22px 4px;font-size:21px} .subtitle{max-width:780px;margin:9px 0 0;color:var(--muted)}.toolbar,.actions{display:flex;flex-wrap:wrap;gap:9px}.btn{min-height:40px;padding:9px 14px;border-radius:8px;background:#e9edf3;color:var(--ink);font-weight:700;white-space:nowrap}.btn.primary{background:var(--blue);color:#fff}.btn.ghost{background:var(--surface);border:1px solid var(--line)}.panel{margin-top:18px;border:1px solid var(--line);border-radius:8px;background:var(--surface);box-shadow:var(--shadow)}.hint{margin:0;padding:0 22px 17px;color:var(--muted);font-size:14px}.controls{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:0 22px 18px}label{display:grid;gap:7px;color:#344054;font-size:14px;font-weight:700}input,select{width:100%;min-height:42px;padding:9px 10px;border:1px solid #c7d0dd;border-radius:8px;background:#fff;color:var(--ink)}input:focus,select:focus,button:focus-visible{outline:3px solid rgba(37,99,235,.22);outline-offset:1px}.actions{padding:0 22px 18px}.status{margin:0 22px 18px;padding:11px 13px;border-left:4px solid var(--blue);border-radius:7px;background:#f6f9ff;color:#344054;font-size:14px}.status.error{border-left-color:var(--red);background:var(--red-soft);color:var(--red)}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0 22px 18px}.metric{min-height:88px;padding:13px;border:1px solid var(--line);border-radius:8px;background:#fff}.metric strong{display:block;margin-bottom:7px;color:var(--muted);font-size:13px}.metric span{display:block;font-size:25px;font-weight:800}.metric.blue{background:var(--blue-soft);border-color:#c8d9ff}.metric.red{background:var(--red-soft);border-color:#ffd0cc}.metric.green{background:var(--green-soft);border-color:#b9e5ca}.metric.amber{background:var(--amber-soft);border-color:#f6d7a5}.charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;padding:0 22px 20px}.chart-box{overflow:hidden;border:1px solid var(--line);border-radius:8px;background:#fff}.chart-box strong{display:block;padding:11px 13px 0;font-size:14px}canvas{display:block;width:100%;height:270px}.table-wrap{overflow-x:auto;padding:0 22px 22px}table{width:100%;border-collapse:collapse;min-width:720px}.stock-table{min-width:1450px}th,td{padding:10px 8px;border-bottom:1px solid var(--line);text-align:right;vertical-align:middle;font-size:13px}th{position:sticky;top:0;z-index:1;background:#f8fafc;color:#475467;font-size:12px}th:first-child,td:first-child,th:nth-child(2),td:nth-child(2),th:nth-child(3),td:nth-child(3),.reason{text-align:left}.negative{color:var(--red);font-weight:800}.positive{color:var(--green);font-weight:800}.score{color:var(--red);font-weight:800}.mini{color:var(--muted);font-size:12px}.explain{margin:0 22px 22px;padding:13px 15px;border-left:4px solid var(--blue);border-radius:7px;background:#f6f9ff;color:#344054;font-size:14px}.empty{padding:18px 8px;color:var(--muted);text-align:left}.footer{margin:18px 0 0;color:var(--muted);font-size:13px}@media(max-width:980px){header{align-items:start;flex-direction:column}.controls,.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:680px){.app{width:min(100% - 20px,1440px);padding-top:16px}.controls,.metrics,.charts{grid-template-columns:1fr}.toolbar,.actions{width:100%}.btn{flex:1 1 140px}}@media print{body{background:#fff}.toolbar,.actions,.controls,.status,.charts{display:none}.app{width:100%;padding:0}.panel{box-shadow:none}}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <header><div><h1>台股下跌速度與風險掃描器</h1><p class="subtitle">用官方收盤資料找出近期跌得最快、回撤最深、量價轉弱的上市與上櫃股票，讓投資人先看清市場風險，再決定是否深入研究。</p></div><div class="toolbar"><button class="btn primary" id="runBtn" type="button">重新分析</button><button class="btn ghost" id="csvBtn" type="button">匯出 CSV</button><button class="btn ghost" id="printBtn" type="button">列印</button></div></header>
+    <section class="panel"><h2>分析條件</h2><p class="hint">日期必須落在最近一次官方資料快照範圍內。每日更新會自動建立新的可分析區間。</p><div class="controls"><label>開始日期<input id="startDate" type="date" value="2026-07-10"></label><label>結束日期<input id="endDate" type="date" value="2026-08-04"></label><label>市場範圍<select id="market"><option value="all">上市＋上櫃</option><option value="上市">上市</option><option value="上櫃">上櫃</option></select></label><label>排行筆數<select id="limit"><option value="10">前 10 名</option><option value="30" selected>前 30 名</option><option value="50">前 50 名</option></select></label></div><div class="actions"><button class="btn primary" id="applyBtn" type="button">套用條件</button></div><p class="status" id="status" aria-live="polite">正在讀取官方市場資料...</p><div class="metrics"><div class="metric blue"><strong>掃描股票數</strong><span id="stockCount">0</span></div><div class="metric red"><strong>區間下跌股票</strong><span id="declineCount">0</span></div><div class="metric amber"><strong>最快單日跌幅</strong><span id="fastestDrop">—</span></div><div class="metric green"><strong>大盤區間變化</strong><span id="indexChange">—</span></div></div><div class="charts"><div class="chart-box"><strong>風險分數排行</strong><canvas id="riskChart" width="900" height="360" aria-label="風險分數柱狀圖"></canvas></div><div class="chart-box"><strong>大盤每日漲跌幅</strong><canvas id="indexChart" width="900" height="360" aria-label="大盤每日漲跌幅柱狀圖"></canvas></div></div></section>
+    <section class="panel"><h2>大盤指數變化</h2><p class="hint">紅色為下跌，綠色為上漲；先觀察大盤下跌日，再閱讀個股排行。</p><div class="table-wrap"><table><thead><tr><th>日期</th><th>收盤指數</th><th>漲跌點</th><th>漲跌幅</th><th>方向</th></tr></thead><tbody id="indexBody"></tbody></table></div></section>
+    <section class="panel"><h2>近期弱勢股票排行</h2><p class="hint">風險分數越高，表示近期跌幅、回撤、連跌或下跌量能等訊號越集中；不代表公司一定會繼續下跌。</p><div class="table-wrap"><table class="stock-table"><thead><tr><th>排名</th><th>市場</th><th>代號 / 名稱</th><th>區間跌幅</th><th>最快單日跌幅</th><th>最大回撤</th><th>下跌日</th><th>下跌日量比</th><th>本益比</th><th>殖利率</th><th>淨值比</th><th>風險分數</th><th>主要原因</th></tr></thead><tbody id="stockBody"></tbody></table></div><p class="explain" id="explain">風險評分說明會在資料載入後顯示。</p></section>
+    <p class="footer">資料以臺灣證券交易所及櫃買中心官方收盤資料為主。本工具僅供市場篩選與研究，不構成投資建議。</p>
+  </main>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    let marketData = null;
+    let displayedStocks = [];
+    function number(value, digits = 2) { const n = Number(value); return Number.isFinite(n) ? n.toLocaleString("zh-TW", { maximumFractionDigits: digits }) : "—"; }
+    function percent(value) { const n = Number(value); return Number.isFinite(n) ? (n >= 0 ? "+" : "") + n.toLocaleString("zh-TW", { maximumFractionDigits: 2 }) + "%" : "—"; }
+    function multiple(value) { const n = Number(value); return Number.isFinite(n) ? n.toLocaleString("zh-TW", { maximumFractionDigits: 2 }) + "x" : "—"; }
+    function escapeHtml(value) { return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;"); }
+    function inRange(date, start, end) { return String(date) >= String(start) && String(date) <= String(end); }
+    function drawBars(canvasId, rows, valueKey, labelKey, color, signed = false) {
+      const canvas = $(canvasId), box = canvas.getBoundingClientRect(), width = Math.max(320, Math.floor(box.width || 640)), height = 270, dpr = window.devicePixelRatio || 1;
+      canvas.width = width * dpr; canvas.height = height * dpr;
+      const ctx = canvas.getContext("2d"); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, width, height);
+      if (!rows.length) { ctx.fillStyle = "#667085"; ctx.font = "14px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"; ctx.fillText("目前沒有可顯示資料", 18, 36); return; }
+      const pad = { top: 22, right: 14, bottom: 48, left: 42 }, chartW = width - pad.left - pad.right, chartH = height - pad.top - pad.bottom;
+      const values = rows.map((row) => Number(row[valueKey]) || 0), max = Math.max(...values.map((value) => Math.abs(value)), 1), base = signed ? pad.top + chartH / 2 : pad.top + chartH;
+      ctx.strokeStyle = "#d8dee8"; ctx.beginPath(); ctx.moveTo(pad.left, base); ctx.lineTo(width - pad.right, base); ctx.stroke();
+      const step = chartW / rows.length, barW = Math.max(8, step * .72);
+      rows.forEach((row, index) => {
+        const value = values[index], barH = Math.abs(value) / max * (signed ? chartH / 2 - 12 : chartH), x = pad.left + step * index + (step - barW) / 2, y = signed && value < 0 ? base : base - barH;
+        ctx.fillStyle = color; ctx.fillRect(x, y, barW, Math.max(2, barH));
+        ctx.fillStyle = "#475467"; ctx.font = "10px -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "top";
+        ctx.fillText(String(row[labelKey] || "").slice(0, 8), x + barW / 2, height - 32); ctx.textBaseline = "middle";
+        ctx.fillText(signed ? value.toFixed(2) + "%" : value.toFixed(0), x + barW / 2, signed && value < 0 ? y + barH + 10 : y - 9);
+      });
+    }
+    function renderIndex(rows) {
+      $("indexBody").innerHTML = rows.map((row) => {
+        const change = Number(row.changePct) || 0, klass = change < 0 ? "negative" : change > 0 ? "positive" : "";
+        return "<tr><td>" + escapeHtml(row.date) + "</td><td>" + number(row.close) + "</td><td class=\"" + klass + "\">" + number(row.changePoints) + "</td><td class=\"" + klass + "\">" + percent(change) + "</td><td class=\"" + klass + "\">" + (change < 0 ? "下跌" : change > 0 ? "上漲" : "平盤") + "</td></tr>";
+      }).join("") || "<tr><td colspan=\"5\" class=\"empty\">目前區間沒有指數資料。</td></tr>";
+    }
+    function renderStocks(rows, limit) {
+      displayedStocks = rows;
+      $("stockBody").innerHTML = rows.slice(0, limit).map((row, index) => {
+        const cum = Number(row.cumulativePct) || 0, fastest = Number(row.fastestDeclinePct) || 0, dd = Number(row.maxDrawdownPct) || 0;
+        const fund = (value, suffix = "") => Number.isFinite(Number(value)) ? number(value) + suffix : "—";
+        return "<tr><td>" + (index + 1) + "</td><td>" + escapeHtml(row.market) + "</td><td><strong>" + escapeHtml(row.code) + "</strong><br><span class=\"mini\">" + escapeHtml(row.name) + "</span></td><td class=\"" + (cum < 0 ? "negative" : "positive") + "\">" + percent(cum) + "</td><td class=\"negative\">" + percent(fastest) + "<br><span class=\"mini\">" + escapeHtml(row.fastestDeclineDate) + "</span></td><td class=\"negative\">" + percent(dd) + "</td><td>" + (row.downDays || 0) + "/" + (row.tradingDays || 0) + "<br><span class=\"mini\">最長連跌 " + (row.maxDownStreak || 0) + "</span></td><td>" + multiple(row.downVolumeRatio) + "</td><td>" + fund(row.pe) + "</td><td>" + fund(row.dividendYield, "%") + "</td><td>" + fund(row.pb) + "</td><td class=\"score\">" + number(row.riskScore, 1) + "</td><td class=\"reason\">" + escapeHtml((row.reasons || []).join("、") || "近期資料不足") + "</td></tr>";
+      }).join("") || "<tr><td colspan=\"13\" class=\"empty\">目前快照尚未包含股票排行，請等待每日資料更新。</td></tr>";
+    }
+    function render() {
+      const start = $("startDate").value, end = $("endDate").value, market = $("market").value, limit = Number($("limit").value);
+      if (!marketData || !start || !end || start > end) return;
+      const index = (marketData.index || []).filter((row) => inRange(row.date, start, end)).sort((a, b) => a.date.localeCompare(b.date));
+      const stocks = (marketData.stocks || []).filter((row) => (market === "all" || row.market === market) && (!row.startDate || inRange(row.startDate, start, end)) && (!row.endDate || inRange(row.endDate, start, end))).sort((a, b) => (Number(b.riskScore) || 0) - (Number(a.riskScore) || 0));
+      renderIndex(index); renderStocks(stocks, limit);
+      const declines = stocks.filter((row) => Number(row.cumulativePct) < 0), fastest = stocks.reduce((value, row) => Math.min(value, Number(row.fastestDeclinePct) || 0), 0), indexChange = index.length > 1 ? ((Number(index.at(-1).close) / Number(index[0].close) - 1) * 100) : null;
+      $("stockCount").textContent = number(stocks.length, 0); $("declineCount").textContent = number(declines.length, 0); $("fastestDrop").textContent = stocks.length ? percent(fastest) : "—"; $("indexChange").textContent = percent(indexChange);
+      drawBars("riskChart", stocks.slice(0, 10), "riskScore", "code", "#c5221f"); drawBars("indexChart", index, "changePct", "date", "#2563eb", true);
+      const available = marketData.range || {}, outside = available.start && available.end && (start < available.start || end > available.end);
+      $("status").classList.toggle("error", Boolean(outside)); $("status").textContent = outside ? "目前官方快照涵蓋 " + available.start + " 至 " + available.end + "，請選擇範圍內日期。" : "已完成 " + start + " 至 " + end + " 的" + (market === "all" ? "上市＋上櫃" : market) + "分析，共 " + index.length + " 個交易日。";
+      $("explain").textContent = stocks.length ? "風險分數由單日最快跌幅 30%、區間累積跌幅 25%、最大回撤 20%、下跌日比例 10%、下跌日量比 10%及基本面警示 5%組成。分數用於篩選，不是買賣指令。" : "目前快照有大盤資料，但股票排行尚未填入；每日官方更新完成後，這裡會出現上市與上櫃股票排序。";
+    }
+    async function load() {
+      try {
+        const response = await fetch("./data/market-risk.json", { cache: "no-cache" }); if (!response.ok) throw new Error("HTTP " + response.status);
+        marketData = await response.json(); if (marketData.range?.start) $("startDate").value = marketData.range.start; if (marketData.range?.end) $("endDate").value = marketData.range.end; render();
+      } catch (error) { $("status").classList.add("error"); $("status").textContent = "官方資料讀取失敗：" + error.message; }
+    }
+    function exportCsv() {
+      if (!displayedStocks.length) return;
+      const head = ["排名","市場","代號","名稱","區間跌幅%","最快單日跌幅%","最快跌幅日期","最大回撤%","下跌日","交易日","下跌日量比","本益比","殖利率%","淨值比","風險分數","主要原因"];
+      const rows = displayedStocks.map((row, index) => [index + 1,row.market,row.code,row.name,row.cumulativePct,row.fastestDeclinePct,row.fastestDeclineDate,row.maxDrawdownPct,row.downDays,row.tradingDays,row.downVolumeRatio,row.pe,row.dividendYield,row.pb,row.riskScore,(row.reasons || []).join("、")]);
+      const lines = [head].concat(rows).map((cols) => cols.map((value) => "\"" + String(value ?? "").replaceAll("\"", "\"\"") + "\"").join(","));
+      const blob = new Blob(["\ufeff" + lines.join("\n")], { type: "text/csv;charset=utf-8" }), url = URL.createObjectURL(blob), link = document.createElement("a");
+      link.href = url; link.download = "taiwan-stock-risk-scan-" + $("startDate").value + "-" + $("endDate").value + ".csv"; link.click(); URL.revokeObjectURL(url);
+    }
+    $("runBtn").addEventListener("click", render); $("applyBtn").addEventListener("click", render); $("market").addEventListener("change", render); $("limit").addEventListener("change", render); $("csvBtn").addEventListener("click", exportCsv); $("printBtn").addEventListener("click", () => window.print()); window.addEventListener("resize", render); load();
+  </script>
+</body>
+</html>
