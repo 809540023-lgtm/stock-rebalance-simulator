@@ -97,15 +97,26 @@ function parseTwseDaily(payload, date) {
 }
 
 function parseTpexDaily(payload, date) {
-  const rows = Array.isArray(payload.aaData) ? payload.aaData : [];
-  return rows.map((row) => ({
+  const table = (payload.tables || []).find((item) => {
+    const fields = item.fields || [];
+    return fields.some((field) => String(field).includes("代號"))
+      && fields.some((field) => String(field).includes("收盤"));
+  });
+  if (!table) return [];
+  const fields = table.fields || [];
+  const codeIndex = tableColumn(fields, ["代號"]);
+  const nameIndex = tableColumn(fields, ["名稱"]);
+  const closeIndex = tableColumn(fields, ["收盤"]);
+  const changeIndex = tableColumn(fields, ["漲跌"]);
+  const volumeIndex = tableColumn(fields, ["成交股數"]);
+  return (table.data || []).map((row) => ({
     market: "上櫃",
-    code: String(row[0] || "").trim(),
-    name: String(row[1] || "").trim(),
+    code: String(row[codeIndex] || "").trim(),
+    name: String(row[nameIndex] || "").trim(),
     date,
-    close: parseNumber(row[2]),
-    change: parseNumber(row[3]),
-    volume: parseNumber(row[8]) || 0
+    close: parseNumber(row[closeIndex]),
+    change: parseNumber(row[changeIndex]),
+    volume: parseNumber(row[volumeIndex]) || 0
   })).filter((item) => isCommonStock(item.code) && Number.isFinite(item.close) && item.close > 0);
 }
 
