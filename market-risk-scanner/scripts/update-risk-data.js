@@ -4,6 +4,7 @@ const startDate = process.env.RISK_START_DATE || process.argv[2] || "2026-07-10"
 const endDate = process.env.RISK_END_DATE || process.argv[3] || "2026-08-04";
 const twseBase = process.env.TWSE_BASE_URL || "https://www.twse.com.tw";
 const tpexBase = process.env.TPEX_BASE_URL || "https://www.tpex.org.tw";
+const tpexOpenApiBase = process.env.TPEX_OPENAPI_BASE_URL || "https://www.tpex.org.tw/openapi/v1";
 
 if (!/^\d{4}-\d{2}-\d{2}$/.test(startDate) || !/^\d{4}-\d{2}-\d{2}$/.test(endDate) || startDate > endDate) {
   throw new Error("RISK_START_DATE and RISK_END_DATE must be ISO dates, with start before end.");
@@ -16,7 +17,11 @@ async function fetchJson(url, attempts = 3) {
   for (let attempt = 0; attempt < attempts; attempt += 1) {
     try {
       const response = await fetch(url, {
-        headers: { "User-Agent": "stock-rebalance-simulator/1.0" },
+        headers: {
+          Accept: "application/json",
+          Referer: "https://www.tpex.org.tw/openapi/",
+          "User-Agent": "stock-rebalance-simulator/1.0"
+        },
         signal: AbortSignal.timeout(30000)
       });
       if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
@@ -97,6 +102,17 @@ function parseTwseDaily(payload, date) {
 }
 
 function parseTpexDaily(payload, date) {
+  if (Array.isArray(payload)) {
+    return payload.map((row) => ({
+      market: "上櫃",
+      code: String(row.SecuritiesCompanyCode || "").trim(),
+      name: String(row.CompanyName || "").trim(),
+      date,
+      close: parseNumber(row.Close),
+      change: parseNumber(row.Change),
+      volume: parseNumber(row.TradingShares) || 0
+    })).filter((item) => isCommonStock(item.code) && Number.isFinite(item.close) && item.close > 0);
+  }
   const table = (payload.tables || []).find((item) => {
     const fields = item.fields || [];
     return fields.some((field) => String(field).includes("代號"))
@@ -122,7 +138,7 @@ function parseTpexDaily(payload, date) {
 
 async function fetchDailyPrices(date) {
   const twseUrl = `${twseBase}/rwd/zh/afterTrading/MI_INDEX?response=json&date=${dateToCompact(date)}&type=ALLBUT0999`;
-  const tpexUrl = `${tpexBase}/web/stock/aftertrading/DAILY_CLOSE_quotes/stk_quote_result.php?l=zh-tw&o=json&d=${encodeURIComponent(isoToRoc(date))}`;
+  const tpexUrl = `${tpexOpenApiBase}/tpex_mainboard_daily_close_quotes?l=zh-tw&d=${encodeURIComponent(isoToRoc(date))}&s=0,asc,0`;
   const [twseResult, tpexResult] = await Promise.allSettled([fetchJson(twseUrl), fetchJson(tpexUrl)]);
   const rows = [];
   const warnings = [];
