@@ -1,0 +1,36 @@
+{
+  "source": {
+    "twse": "https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX",
+    "tpex": "https://www.tpex.org.tw/web/stock/aftertrading/DAILY_CLOSE_quotes/stk_quote_result.php",
+    "taiex": "https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST",
+    "fundamentals": "TWSE BWIBBU_ALL plus TPEx daily PERatio analysis"
+  },
+  "generatedAt": "2026-08-05T00:00:00.000Z",
+  "range": {
+    "start": "2026-07-10",
+    "end": "2026-08-04",
+    "tradingDays": 18
+  },
+  "index": [
+    {"date":"2026-07-10","close":45354.61,"changePoints":0,"changePct":0},
+    {"date":"2026-07-13","close":45380.52,"changePoints":25.91,"changePct":0.0571},
+    {"date":"2026-07-14","close":44737.95,"changePoints":-642.57,"changePct":-1.416},
+    {"date":"2026-07-15","close":45631.59,"changePoints":893.64,"changePct":1.9975},
+    {"date":"2026-07-16","close":45624.98,"changePoints":-6.61,"changePct":-0.0145},
+    {"date":"2026-07-17","close":42671.27,"changePoints":-2953.71,"changePct":-6.4739},
+    {"date":"2026-07-20","close":42449.70,"changePoints":-221.57,"changePct":-0.5192},
+    {"date":"2026-07-21","close":44232.87,"changePoints":1783.17,"changePct":4.2007},
+    {"date":"2026-07-22","close":44825.78,"changePoints":592.91,"changePct":1.3404},
+    {"date":"2026-07-23","close":44850.81,"changePoints":25.03,"changePct":0.0558},
+    {"date":"2026-07-24","close":43654.84,"changePoints":-1195.97,"changePct":-2.6666},
+    {"date":"2026-07-27","close":43634.19,"changePoints":-20.65,"changePct":-0.0473},
+    {"date":"2026-07-28","close":41603.36,"changePoints":-2030.83,"changePct":-4.6542},
+    {"date":"2026-07-29","close":40039.18,"changePoints":-1564.18,"changePct":-3.7597},
+    {"date":"2026-07-30","close":39933.30,"changePoints":-105.88,"changePct":-0.2644},
+    {"date":"2026-07-31","close":43119.75,"changePoints":3186.45,"changePct":7.9794},
+    {"date":"2026-08-03","close":43386.41,"changePoints":266.66,"changePct":0.6184},
+    {"date":"2026-08-04","close":43360.66,"changePoints":-25.75,"changePct":-0.0594}
+  ],
+  "stocks": [],
+  "warnings": ["股票排行將由 GitHub Actions 以每日上市與上櫃官方收盤資料更新。"]
+}
