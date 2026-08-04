@@ -348,7 +348,7 @@ const stocks = rankStocks(groups, fundamentals);
 const output = {
   source: {
     twse: `${twseBase}/rwd/zh/afterTrading/MI_INDEX`,
-    tpex: `${tpexBase}/web/stock/aftertrading/DAILY_CLOSE_quotes/stk_quote_result.php`,
+    tpex: `${tpexOpenApiBase}/tpex_mainboard_daily_close_quotes`,
     taiex: `${twseBase}/rwd/zh/TAIEX/MI_5MINS_HIST`,
     fundamentals: "TWSE BWIBBU_ALL plus TPEx daily PERatio analysis"
   },
