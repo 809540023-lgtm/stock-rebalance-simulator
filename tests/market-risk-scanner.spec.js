@@ -7,4 +7,6 @@ test("standalone risk scanner renders its own snapshot", async ({ page }) => {
   await expect(page.locator("#indexBody tr")).not.toHaveCount(0);
   await expect(page.locator("#riskChart")).toBeVisible();
   await expect(page.locator("#indexChart")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "LINE 漲停監控" })).toBeVisible();
+  await expect(page.locator("#monitorMarket")).toHaveText("上市");
 });

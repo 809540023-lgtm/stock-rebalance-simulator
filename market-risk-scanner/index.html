@@ -13,19 +13,30 @@
   <main class="app">
     <header><div><h1>台股下跌速度與風險掃描器</h1><p class="subtitle">用官方收盤資料找出近期跌得最快、回撤最深、量價轉弱的上市與上櫃股票，讓投資人先看清市場風險，再決定是否深入研究。</p></div><div class="toolbar"><button class="btn primary" id="runBtn" type="button">重新分析</button><button class="btn ghost" id="csvBtn" type="button">匯出 CSV</button><button class="btn ghost" id="printBtn" type="button">列印</button></div></header>
     <section class="panel"><h2>分析條件</h2><p class="hint">日期必須落在最近一次官方資料快照範圍內。每日更新會自動建立新的可分析區間。</p><div class="controls"><label>開始日期<input id="startDate" type="date" value="2026-07-10"></label><label>結束日期<input id="endDate" type="date" value="2026-08-04"></label><label>市場範圍<select id="market"><option value="all">上市＋上櫃</option><option value="上市">上市</option><option value="上櫃">上櫃</option></select></label><label>排行筆數<select id="limit"><option value="10">前 10 名</option><option value="30" selected>前 30 名</option><option value="50">前 50 名</option></select></label></div><div class="actions"><button class="btn primary" id="applyBtn" type="button">套用條件</button></div><p class="status" id="status" aria-live="polite">正在讀取官方市場資料...</p><div class="metrics"><div class="metric blue"><strong>掃描股票數</strong><span id="stockCount">0</span></div><div class="metric red"><strong>區間下跌股票</strong><span id="declineCount">0</span></div><div class="metric amber"><strong>最快單日跌幅</strong><span id="fastestDrop">—</span></div><div class="metric green"><strong>大盤區間變化</strong><span id="indexChange">—</span></div></div><div class="charts"><div class="chart-box"><strong>風險分數排行</strong><canvas id="riskChart" width="900" height="360" aria-label="風險分數柱狀圖"></canvas></div><div class="chart-box"><strong>大盤每日漲跌幅</strong><canvas id="indexChart" width="900" height="360" aria-label="大盤每日漲跌幅柱狀圖"></canvas></div></div></section>
+    <section class="panel"><h2>LINE 漲停監控</h2><p class="hint">雲端排程每 5 分鐘查詢臺灣證券交易所 MIS 即時行情；同一股票每日只通知一次。</p><div class="metrics"><div class="metric blue"><strong>監控股票數</strong><span id="monitorCount">—</span></div><div class="metric red"><strong>監控市場</strong><span id="monitorMarket">上市</span></div><div class="metric amber"><strong>檢查頻率</strong><span>5 分鐘</span></div><div class="metric green"><strong>監控時段</strong><span>09:00–13:30</span></div></div><div class="actions"><a class="btn ghost" href="../data/line-watchlist.json" target="_blank" rel="noreferrer">查看監控設定</a></div><p class="explain" id="monitorExplain">正在讀取監控設定。</p></section>
     <section class="panel"><h2>大盤指數變化</h2><p class="hint">紅色為下跌，綠色為上漲；先觀察大盤下跌日，再閱讀個股排行。</p><div class="table-wrap"><table><thead><tr><th>日期</th><th>收盤指數</th><th>漲跌點</th><th>漲跌幅</th><th>方向</th></tr></thead><tbody id="indexBody"></tbody></table></div></section>
     <section class="panel"><h2>近期弱勢股票排行</h2><p class="hint">風險分數越高，表示近期跌幅、回撤、連跌或下跌量能等訊號越集中；不代表公司一定會繼續下跌。</p><div class="table-wrap"><table class="stock-table"><thead><tr><th>排名</th><th>市場</th><th>代號 / 名稱</th><th>區間跌幅</th><th>最快單日跌幅</th><th>最大回撤</th><th>下跌日</th><th>下跌日量比</th><th>本益比</th><th>殖利率</th><th>淨值比</th><th>風險分數</th><th>主要原因</th></tr></thead><tbody id="stockBody"></tbody></table></div><p class="explain" id="explain">風險評分說明會在資料載入後顯示。</p></section>
     <p class="footer">資料以臺灣證券交易所及櫃買中心官方收盤資料為主。本工具僅供市場篩選與研究，不構成投資建議。</p>
   </main>
   <script>
     const $ = (id) => document.getElementById(id);
-    let marketData = null;
+    let marketData = null, monitorConfig = null;
     let displayedStocks = [];
     function number(value, digits = 2) { const n = Number(value); return Number.isFinite(n) ? n.toLocaleString("zh-TW", { maximumFractionDigits: digits }) : "—"; }
     function percent(value) { const n = Number(value); return Number.isFinite(n) ? (n >= 0 ? "+" : "") + n.toLocaleString("zh-TW", { maximumFractionDigits: 2 }) + "%" : "—"; }
     function multiple(value) { const n = Number(value); return Number.isFinite(n) ? n.toLocaleString("zh-TW", { maximumFractionDigits: 2 }) + "x" : "—"; }
     function escapeHtml(value) { return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;"); }
     function inRange(date, start, end) { return String(date) >= String(start) && String(date) <= String(end); }
+    function renderMonitor() {
+      if (!marketData || !monitorConfig) return;
+      const explicit = [...new Set((monitorConfig.symbols || []).map((value) => String(value).trim()).filter(Boolean))];
+      const limit = Math.max(1, Math.min(200, Number(monitorConfig.limit) || 50));
+      const listed = (marketData.stocks || []).filter((row) => row.market === "上市");
+      const count = monitorConfig.enabled === false ? 0 : explicit.length || Math.min(limit, listed.length);
+      $("monitorCount").textContent = number(count, 0);
+      $("monitorMarket").textContent = "上市";
+      $("monitorExplain").textContent = monitorConfig.enabled === false ? "目前已停用 LINE 漲停監控。" : explicit.length ? "目前使用監控設定檔中的自訂上市股票清單；漲停價由 TWSE MIS 回傳的當日漲停價判定。" : "目前使用風險排行前 " + limit + " 檔上市股票；若要指定股票，請在 data/line-watchlist.json 的 symbols 填入代號。GitHub Actions 可能因排程延遲數分鐘，並非逐筆成交等級的即時保證。";
+    }
     function drawBars(canvasId, rows, valueKey, labelKey, color, signed = false) {
       const canvas = $(canvasId), box = canvas.getBoundingClientRect(), width = Math.max(320, Math.floor(box.width || 640)), height = 270, dpr = window.devicePixelRatio || 1;
       canvas.width = width * dpr; canvas.height = height * dpr;
@@ -72,8 +83,9 @@
     }
     async function load() {
       try {
-        const response = await fetch("./data/market-risk.json", { cache: "no-cache" }); if (!response.ok) throw new Error("HTTP " + response.status);
-        marketData = await response.json(); if (marketData.range?.start) $("startDate").value = marketData.range.start; if (marketData.range?.end) $("endDate").value = marketData.range.end; render();
+        const [marketResponse, monitorResponse] = await Promise.all([fetch("./data/market-risk.json", { cache: "no-cache" }), fetch("../data/line-watchlist.json", { cache: "no-cache" })]);
+        if (!marketResponse.ok) throw new Error("HTTP " + marketResponse.status);
+        marketData = await marketResponse.json(); monitorConfig = monitorResponse.ok ? await monitorResponse.json() : { enabled: false }; renderMonitor(); if (marketData.range?.start) $("startDate").value = marketData.range.start; if (marketData.range?.end) $("endDate").value = marketData.range.end; render();
       } catch (error) { $("status").classList.add("error"); $("status").textContent = "官方資料讀取失敗：" + error.message; }
     }
     function exportCsv() {

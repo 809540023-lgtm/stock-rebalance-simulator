@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "source": "market-risk-scanner",
+  "limit": 50,
+  "symbols": [],
+  "markets": ["上市"],
+  "notes": "symbols 有值時優先使用；留白時監控風險排行前 limit 檔上市股票。"
+}

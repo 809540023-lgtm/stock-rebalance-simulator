@@ -1,0 +1,54 @@
+name: TWSE limit-up LINE monitor
+
+on:
+  schedule:
+    # GitHub cron uses UTC. Taiwan regular trading hours are 09:00-13:30.
+    - cron: "*/5 1-5 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: "允許在非交易時段手動測試"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: twse-limit-up-line-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Check TWSE real-time quotes and notify LINE
+        env:
+          FORCE_RUN: ${{ inputs.force_run || 'false' }}
+          LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_CHANNEL_ID: ${{ secrets.LINE_CHANNEL_ID }}
+          LINE_CHANNEL_SECRET: ${{ secrets.LINE_CHANNEL_SECRET }}
+          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+          REMINDER_TIMEZONE: Asia/Taipei
+        run: node scripts/check-line-limit-up.js
+
+      - name: Commit daily de-duplication state
+        run: |
+          if git diff --quiet -- data/line-limit-up-state.json; then
+            echo "No new limit-up notification state to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/line-limit-up-state.json
+          git commit -m "Record TWSE limit-up LINE alerts"
+          git push

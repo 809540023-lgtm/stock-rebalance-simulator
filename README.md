@@ -35,6 +35,18 @@ GitHub Actions 會在台股交易日下午 15:30 更新 `data/twse-latest.json`�
 
 設定完成後，可到 `Actions -> LINE investment reminder -> Run workflow` 手動測試。
 
+## LINE 漲停監控
+
+`.github/workflows/check-line-limit-up.yml` 會在台灣交易時段以約 5 分鐘頻率查詢證交所 MIS 即時行情。預設監控風險掃描器排行前 50 檔上市股票；同一股票同一交易日只通知一次。
+
+- 監控設定：`data/line-watchlist.json`
+- `symbols` 填入代號後，會改用自訂上市股票清單
+- `symbols` 留白時，會依 `limit` 取風險掃描器的上市排行
+- 需要已有的 `LINE_CHANNEL_ACCESS_TOKEN`，或 `LINE_CHANNEL_ID` + `LINE_CHANNEL_SECRET`，以及 `LINE_USER_ID`
+- 漲停通知狀態會寫入 `data/line-limit-up-state.json`，避免重複推播
+
+GitHub Actions 排程可能延遲數分鐘；這是雲端輪詢提醒，不是券商逐筆行情或自動下單服務。證交所即時行情也可能因網路、交易狀態或官方服務限制而暫時無法取得。
+
 也可以在已登入 GitHub CLI 的電腦執行：
 
 ```bash
