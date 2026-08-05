@@ -168,6 +168,19 @@
       "detectedAt": "2026-08-05T03:42:33.434Z",
       "trigger": "最新成交價等於漲停價",
       "touchedPrice": 112
+    },
+    {
+      "key": "2026-08-05:1515:30.9",
+      "date": "2026-08-05",
+      "code": "1515",
+      "name": "力山",
+      "latest": 30.9,
+      "high": 30.9,
+      "limitUp": 30.9,
+      "change": 4,
+      "detectedAt": "2026-08-05T04:49:00.970Z",
+      "trigger": "最新成交價等於漲停價",
+      "touchedPrice": 30.9
     }
   ]
 }
