@@ -155,6 +155,19 @@
       "detectedAt": "2026-08-05T02:31:45.461Z",
       "trigger": "盤中最高價觸及漲停價",
       "touchedPrice": 60.1
+    },
+    {
+      "key": "2026-08-05:3055:112",
+      "date": "2026-08-05",
+      "code": "3055",
+      "name": "蔚華科",
+      "latest": 112,
+      "high": 112,
+      "limitUp": 112,
+      "change": 4,
+      "detectedAt": "2026-08-05T03:42:33.434Z",
+      "trigger": "最新成交價等於漲停價",
+      "touchedPrice": 112
     }
   ]
 }
