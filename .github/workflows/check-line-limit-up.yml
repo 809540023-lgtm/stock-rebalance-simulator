@@ -11,6 +11,11 @@ on:
         required: false
         default: false
         type: boolean
+      test_notification:
+        description: "立即發送一則 LINE 連線測試訊息"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -34,6 +39,7 @@ jobs:
       - name: Check TWSE real-time quotes and notify LINE
         env:
           FORCE_RUN: ${{ inputs.force_run || 'false' }}
+          LINE_TEST_MODE: ${{ inputs.test_notification || 'false' }}
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
           LINE_CHANNEL_ID: ${{ secrets.LINE_CHANNEL_ID }}
           LINE_CHANNEL_SECRET: ${{ secrets.LINE_CHANNEL_SECRET }}

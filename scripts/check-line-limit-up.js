@@ -8,6 +8,7 @@ const misBaseUrl = process.env.TWSE_MIS_BASE_URL || "https://mis.twse.com.tw";
 const timezone = process.env.REMINDER_TIMEZONE || "Asia/Taipei";
 const forceRun = process.env.FORCE_RUN === "true";
 const dryRun = process.env.LINE_DRY_RUN === "true";
+const testMode = process.env.LINE_TEST_MODE === "true";
 
 async function writeSummary(message) {
   const summaryPath = process.env.GITHUB_STEP_SUMMARY;
@@ -212,6 +213,18 @@ function buildMessages(events, now) {
   return messages.slice(0, 5).map((text) => ({ type: "text", text: `${text}\n\n來源：臺灣證券交易所 MIS；僅供行情提醒，不構成投資建議。` }));
 }
 
+function buildTestMessage(now) {
+  return [{
+    type: "text",
+    text: [
+      "LINE 通知連線測試成功",
+      `時間：${now.date} ${now.hour}:${now.minute}`,
+      "這是由股票漲停監控系統手動發送的測試訊息。",
+      "正式監控時，只有觀察清單內的股票觸及漲停價才會通知。"
+    ].join("\n")
+  }];
+}
+
 async function pushLine(messages) {
   const userId = process.env.LINE_USER_ID?.trim();
   if (!userId) throw new Error("缺少 LINE_USER_ID，無法指定 LINE 通知對象。");
@@ -233,6 +246,16 @@ function pruneEvents(events, today) {
 
 async function main() {
   const now = taipeiNow();
+  if (testMode) {
+    if (dryRun) {
+      console.log("LINE_TEST_MODE=true 且 LINE_DRY_RUN=true，略過實際發送。");
+      return;
+    }
+    await pushLine(buildTestMessage(now));
+    await writeSummary(`## LINE 連線測試已送出\n\n- 日期：${now.date}\n- 時間：${now.hour}:${now.minute}`);
+    console.log("LINE 連線測試訊息已送出。");
+    return;
+  }
   if (!forceRun && (now.minutes < 540 || now.minutes > 810)) {
     console.log(`目前為 ${now.date} ${now.hour}:${now.minute}，不在 TWSE 09:00–13:30 監控時段。`);
     return;
