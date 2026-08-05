@@ -197,12 +197,13 @@ async function fetchFundamentals() {
     console.warn(`TWSE fundamentals unavailable: ${error.message}`);
   }
   try {
-    const payload = await fetchJson(`${tpexBase}/web/stock/aftertrading/peratio_analysis/pera_result.php?l=zh-tw&o=json&d=${encodeURIComponent(isoToRoc(endDate))}`);
-    for (const row of payload.aaData || []) {
-      output.set(`${row[0]}|上櫃`, {
-        pe: parseNumber(row[2]),
-        dividendYield: parseNumber(row[5]),
-        pb: parseNumber(row[6])
+    const payload = await fetchJson(`${tpexOpenApiBase}/tpex_mainboard_peratio_analysis`);
+    const rows = Array.isArray(payload) ? payload : payload.aaData || [];
+    for (const row of rows) {
+      output.set(`${row.SecuritiesCompanyCode || row[0]}|上櫃`, {
+        pe: parseNumber(row.PriceEarningRatio ?? row[2]),
+        dividendYield: parseNumber(row.YieldRatio ?? row.DividendYield ?? row[5]),
+        pb: parseNumber(row.PriceBookRatio ?? row[6])
       });
     }
   } catch (error) {
@@ -350,7 +351,7 @@ const output = {
     twse: `${twseBase}/rwd/zh/afterTrading/MI_INDEX`,
     tpex: `${tpexOpenApiBase}/tpex_mainboard_daily_close_quotes`,
     taiex: `${twseBase}/rwd/zh/TAIEX/MI_5MINS_HIST`,
-    fundamentals: "TWSE BWIBBU_ALL plus TPEx daily PERatio analysis"
+    fundamentals: `https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL plus ${tpexOpenApiBase}/tpex_mainboard_peratio_analysis`
   },
   generatedAt: new Date().toISOString(),
   range: { start: startDate, end: endDate, tradingDays: index.length },

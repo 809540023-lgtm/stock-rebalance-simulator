@@ -66,8 +66,8 @@
       const declines = stocks.filter((row) => Number(row.cumulativePct) < 0), fastest = stocks.reduce((value, row) => Math.min(value, Number(row.fastestDeclinePct) || 0), 0), indexChange = index.length > 1 ? ((Number(index.at(-1).close) / Number(index[0].close) - 1) * 100) : null;
       $("stockCount").textContent = number(stocks.length, 0); $("declineCount").textContent = number(declines.length, 0); $("fastestDrop").textContent = stocks.length ? percent(fastest) : "—"; $("indexChange").textContent = percent(indexChange);
       drawBars("riskChart", stocks.slice(0, 10), "riskScore", "code", "#c5221f"); drawBars("indexChart", index, "changePct", "date", "#2563eb", true);
-      const available = marketData.range || {}, outside = available.start && available.end && (start < available.start || end > available.end);
-      $("status").classList.toggle("error", Boolean(outside)); $("status").textContent = outside ? "目前官方快照涵蓋 " + available.start + " 至 " + available.end + "，請選擇範圍內日期。" : "已完成 " + start + " 至 " + end + " 的" + (market === "all" ? "上市＋上櫃" : market) + "分析，共 " + index.length + " 個交易日。";
+      const available = marketData.range || {}, outside = available.start && available.end && (start < available.start || end > available.end), warningCount = Array.isArray(marketData.warnings) ? marketData.warnings.length : 0, warningNote = warningCount ? "；快照有 " + warningCount + " 項資料警告" : "";
+      $("status").classList.toggle("error", Boolean(outside)); $("status").textContent = outside ? "目前官方快照涵蓋 " + available.start + " 至 " + available.end + "，請選擇範圍內日期。" : "已完成 " + start + " 至 " + end + " 的" + (market === "all" ? "上市＋上櫃" : market) + "分析，共 " + index.length + " 個交易日" + warningNote + "。";
       $("explain").textContent = stocks.length ? "風險分數由單日最快跌幅 30%、區間累積跌幅 25%、最大回撤 20%、下跌日比例 10%、下跌日量比 10%及基本面警示 5%組成。分數用於篩選，不是買賣指令。" : "目前快照有大盤資料，但股票排行尚未填入；每日官方更新完成後，這裡會出現上市與上櫃股票排序。";
     }
     async function load() {
