@@ -1,4 +1,4 @@
-name: TWSE limit-up LINE monitor
+name: TWSE price alert LINE monitor
 
 on:
   schedule:
@@ -36,7 +36,7 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Check TWSE real-time quotes and notify LINE
+      - name: Check TWSE price alerts and notify LINE
         env:
           FORCE_RUN: ${{ inputs.force_run || 'false' }}
           LINE_TEST_MODE: ${{ inputs.test_notification || 'false' }}
@@ -49,12 +49,12 @@ jobs:
 
       - name: Commit daily de-duplication state
         run: |
-          if git diff --quiet -- data/line-limit-up-state.json; then
-            echo "No new limit-up notification state to commit."
+          if git diff --quiet -- data/line-market-alert-state.json; then
+            echo "No new price alert state to commit."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/line-limit-up-state.json
-          git commit -m "Record TWSE limit-up LINE alerts"
+          git add data/line-market-alert-state.json
+          git commit -m "Record TWSE price LINE alerts"
           git push
