@@ -298,7 +298,10 @@ async function pushLine(messages) {
     signal: AbortSignal.timeout(15000),
     body: JSON.stringify({ to: userId, messages })
   });
-  if (!response.ok) throw new Error(`LINE push failed: HTTP ${response.status} ${response.statusText}`);
+  if (!response.ok) {
+    const detail = (await response.text()).slice(0, 1000);
+    throw new Error(`LINE push failed: HTTP ${response.status} ${response.statusText}${detail ? ` — ${detail}` : ""}`);
+  }
 }
 
 function pruneEvents(events, today) {
