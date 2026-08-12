@@ -1,0 +1,41 @@
+name: Update paper trade closing prices
+
+on:
+  schedule:
+    # Weekdays at 13:40 Asia/Taipei (05:40 UTC), after regular trading closes.
+    - cron: "40 5 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-paper-trade-closing-prices
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Fetch TWSE MIS closing prices
+        run: node scripts/update-paper-trade-prices.js
+
+      - name: Commit changed paper trade prices
+        run: |
+          if git diff --quiet -- data/paper-trade-latest.json; then
+            echo "Paper trade prices are unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/paper-trade-latest.json
+          git commit -m "Update paper trade closing prices"
+          git push

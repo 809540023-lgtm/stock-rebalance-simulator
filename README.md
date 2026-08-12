@@ -67,7 +67,9 @@ gh secret set LINE_USER_ID --repo 809540023-lgtm/stock-rebalance-simulator
 - 5% 可成交通知價：宏和 14.65、麗清 22.30
 - 三個交易日評估日：2026-08-17，13:25 後以接近收盤的最新成交價計算
 - `.github/workflows/check-paper-trade-alerts.yml` 在交易時段每 5 分鐘檢查 TWSE MIS
+- `.github/workflows/update-paper-trade-prices.yml` 於交易日 13:40 更新 `data/paper-trade-latest.json`
 - 通知去重狀態：`data/paper-trade-alert-state.json`
-- 網站投報率與 LINE 訊息均未計入手續費、證交稅及股利
+- 網站同時顯示帳面損益及「現在賣出」預估淨損益；淨額預設採 0.1425% 買賣手續費（每筆最低 NT$20）及 0.3% 股票證交稅
+- LINE 5% 觸價通知依成交價漲幅判斷，未計入交易成本及股利
 
 > 本工具僅供情境試算，不構成投資建議。

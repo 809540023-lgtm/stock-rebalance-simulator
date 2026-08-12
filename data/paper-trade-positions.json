@@ -4,6 +4,11 @@
   "recordedAt": "2026-08-12",
   "evaluationTradingDate": "2026-08-17",
   "alertGainPct": 5,
+  "costAssumptions": {
+    "commissionRatePct": 0.1425,
+    "minimumCommission": 20,
+    "stockTransactionTaxPct": 0.3
+  },
   "quantityUnit": "shares",
   "positions": [
     {
@@ -29,5 +34,5 @@
       "status": "holding"
     }
   ],
-  "notes": "依 2026-08-12 使用者提供的成交價記錄；目前假設兩檔各買進一張（1,000 股）。投報率未計入手續費、證交稅與股利。"
+  "notes": "依 2026-08-12 使用者提供的成交價記錄；目前假設兩檔各買進一張（1,000 股）。預估淨損益採一般手續費率、每筆最低手續費及股票證交稅試算，實際金額依券商為準。"
 }

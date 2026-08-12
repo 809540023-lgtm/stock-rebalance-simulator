@@ -11,6 +11,11 @@ test("paper trade tracker records both bought positions", async ({ page }) => {
   await expect(page.locator(".position").first()).toContainText("宏和");
   await expect(page.locator(".position").nth(1)).toContainText("麗清");
   await expect(page.locator("#totalCost")).toHaveText("NT$35,150");
+  await expect(page.locator("#marketValue")).toHaveText("NT$35,450");
+  await expect(page.locator("#profit")).toHaveText("NT$300");
+  await expect(page.locator("#portfolioReturn")).toHaveText("+0.85%");
+  await expect(page.locator("#netProfit")).toHaveText("NT$93");
+  await expect(page.locator("#netReturn")).toHaveText("+0.26%");
 });
 
 test("default scenario renders calculations and trades", async ({ page }) => {
