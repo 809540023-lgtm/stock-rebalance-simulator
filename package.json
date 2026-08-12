@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/line-market-alerts.test.js && playwright test"
+    "test": "node --test tests/*.test.js && playwright test"
   },
   "devDependencies": {
     "@playwright/test": "1.61.1"

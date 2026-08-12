@@ -4,6 +4,15 @@ test.beforeEach(async ({ page }) => {
   await page.goto("/index.html");
 });
 
+test("paper trade tracker records both bought positions", async ({ page }) => {
+  await page.goto("/paper-trade-tracker/index.html");
+  await expect(page.locator("h1")).toHaveText("買入實測追蹤器");
+  await expect(page.locator(".position")).toHaveCount(2);
+  await expect(page.locator(".position").first()).toContainText("宏和");
+  await expect(page.locator(".position").nth(1)).toContainText("麗清");
+  await expect(page.locator("#totalCost")).toHaveText("NT$35,150");
+});
+
 test("default scenario renders calculations and trades", async ({ page }) => {
   await expect(page.locator("#finalAsset")).not.toHaveText("NT$0");
   await expect(page.locator("#logWrap")).toContainText("賣出");
