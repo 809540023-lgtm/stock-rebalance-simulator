@@ -1,0 +1,33 @@
+{
+  "portfolioId": "reversal-test-2026-08-12",
+  "title": "反轉潛力股票實測",
+  "recordedAt": "2026-08-12",
+  "evaluationTradingDate": "2026-08-17",
+  "alertGainPct": 5,
+  "quantityUnit": "shares",
+  "positions": [
+    {
+      "id": "1446-20260812",
+      "market": "上市",
+      "code": "1446",
+      "name": "宏和",
+      "buyDate": "2026-08-12",
+      "buyPrice": 13.95,
+      "quantity": 1000,
+      "targetPrice": 14.65,
+      "status": "holding"
+    },
+    {
+      "id": "3346-20260812",
+      "market": "上市",
+      "code": "3346",
+      "name": "麗清",
+      "buyDate": "2026-08-12",
+      "buyPrice": 21.2,
+      "quantity": 1000,
+      "targetPrice": 22.3,
+      "status": "holding"
+    }
+  ],
+  "notes": "依 2026-08-12 使用者提供的成交價記錄；目前假設兩檔各買進一張（1,000 股）。投報率未計入手續費、證交稅與股利。"
+}

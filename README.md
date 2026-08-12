@@ -59,4 +59,15 @@ gh secret set LINE_USER_ID --repo 809540023-lgtm/stock-rebalance-simulator
 
 指令會安全地要求輸入值，不要把 token 寫進程式碼或聊天訊息。若執行失敗，Actions 摘要會直接指出缺少哪個 Secret 或 LINE API 回傳的狀態。
 
+## 買入實測追蹤器
+
+`paper-trade-tracker/index.html` 獨立記錄實際成交測試。目前記錄 2026-08-12 買進宏和（1446）一張、成交價 13.95，以及麗清（3346）一張、成交價 21.20。
+
+- 原始買入紀錄：`data/paper-trade-positions.json`
+- 5% 可成交通知價：宏和 14.65、麗清 22.30
+- 三個交易日評估日：2026-08-17，13:25 後以接近收盤的最新成交價計算
+- `.github/workflows/check-paper-trade-alerts.yml` 在交易時段每 5 分鐘檢查 TWSE MIS
+- 通知去重狀態：`data/paper-trade-alert-state.json`
+- 網站投報率與 LINE 訊息均未計入手續費、證交稅及股利
+
 > 本工具僅供情境試算，不構成投資建議。
