@@ -1,4 +1,5 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { computeBullishScore, computeBearishScore, applyFilters } from "./models.js";
 
 const startDate = process.env.RISK_START_DATE || process.argv[2] || "2026-07-10";
 const endDate = process.env.RISK_END_DATE || process.argv[3] || "2026-08-04";
@@ -212,6 +213,20 @@ async function fetchFundamentals() {
   return output;
 }
 
+async function fetchDisposition() {
+  const codes = new Set();
+  try {
+    const rows = await fetchJson("https://openapi.twse.com.tw/v1/announcement/punish");
+    for (const row of rows) {
+      const code = String(row.Code || "").trim();
+      if (isCommonStock(code)) codes.add(code);
+    }
+  } catch (error) {
+    console.warn(`Disposition list unavailable: ${error.message}`);
+  }
+  return codes;
+}
+
 function percentile(values, value) {
   if (!values.length) return 0;
   if (values.length === 1) return 100;
@@ -278,6 +293,8 @@ function calculateStockRisk(quotes, fundamental) {
   const average = allVolumes.length ? allVolumes.reduce((sum, value) => sum + value, 0) / allVolumes.length : 0;
   const downAverage = downVolumes.length ? downVolumes.reduce((sum, value) => sum + value, 0) / downVolumes.length : 0;
   const fundamentalResult = fundamentalRisk(fundamental);
+  const closes = ordered.map((item) => item.close);
+  const ma10 = closes.length >= 10 ? closes.slice(-10).reduce((sum, value) => sum + value, 0) / 10 : null;
   return {
     market: ordered[0].market,
     code: ordered[0].code,
@@ -294,15 +311,18 @@ function calculateStockRisk(quotes, fundamental) {
     tradingDays: Math.max(0, ordered.length - 1),
     downVolumeRatio: average && downAverage ? downAverage / average : 0,
     maxDownStreak,
+    avgVolume: average,
+    ma10,
     pe: fundamental?.pe ?? null,
     dividendYield: fundamental?.dividendYield ?? null,
     pb: fundamental?.pb ?? null,
     fundamentalRisk: fundamentalResult.score,
-    reasons: fundamentalResult.reasons
+    reasons: fundamentalResult.reasons,
+    series: ordered.map((item) => ({ date: item.date, close: item.close, volume: item.volume }))
   };
 }
 
-function rankStocks(groups, fundamentals) {
+function rankStocks(groups, fundamentals, indexCloses, dispositionSet) {
   const rows = [...groups.values()]
     .filter((quotes) => quotes.length >= 2)
     .map((quotes) => calculateStockRisk(quotes, fundamentals.get(`${quotes[0].code}|${quotes[0].market}`)));
@@ -327,6 +347,22 @@ function rankStocks(groups, fundamentals) {
     if (row.maxDownStreak >= 3) row.reasons.push("連跌天數偏長");
     if (row.downVolumeRatio >= 1.5) row.reasons.push("下跌日量能放大");
   }
+  for (const row of rows) {
+    const fundamental = fundamentals.get(`${row.code}|${row.market}`);
+    const bullish = computeBullishScore(row.series, indexCloses, fundamental);
+    const bearish = computeBearishScore(row.series, indexCloses, fundamental);
+    const filters = applyFilters(row, dispositionSet);
+    row.bullishScore = bullish.score;
+    row.bullishReasons = bullish.reasons;
+    row.bullishPassed = bullish.passed;
+    row.bearishScore = bearish.score;
+    row.bearishReasons = bearish.reasons;
+    row.bearishPassed = bearish.passed;
+    row.filterPassed = filters.passed;
+    row.filterReasons = filters.reasons;
+    row.tradingEligible = filters.tradingEligible;
+    delete row.series;
+  }
   return rows.sort((a, b) => b.riskScore - a.riskScore);
 }
 
@@ -344,19 +380,27 @@ for (const date of dates) {
   console.log(`${date}: ${result.rows.length} quotes`);
 }
 
-const [index, fundamentals] = await Promise.all([fetchTaiex(), fetchFundamentals()]);
-const stocks = rankStocks(groups, fundamentals);
+const [index, fundamentals, disposition] = await Promise.all([fetchTaiex(), fetchFundamentals(), fetchDisposition()]);
+const indexCloses = index.map((row) => row.close);
+const stocks = rankStocks(groups, fundamentals, indexCloses, disposition);
+const bullishCandidates = stocks.filter((row) => row.bullishPassed && row.filterPassed).sort((a, b) => b.bullishScore - a.bullishScore);
+const bearishCandidates = stocks.filter((row) => row.bearishPassed && row.filterPassed).sort((a, b) => b.bearishScore - a.bearishScore);
 const output = {
   source: {
     twse: `${twseBase}/rwd/zh/afterTrading/MI_INDEX`,
     tpex: `${tpexOpenApiBase}/tpex_mainboard_daily_close_quotes`,
     taiex: `${twseBase}/rwd/zh/TAIEX/MI_5MINS_HIST`,
-    fundamentals: `https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL plus ${tpexOpenApiBase}/tpex_mainboard_peratio_analysis`
+    fundamentals: `https://openapi.twse.com.tw/v1/exchangeReport/BWIBBU_ALL plus ${tpexOpenApiBase}/tpex_mainboard_peratio_analysis`,
+    disposition: "https://openapi.twse.com.tw/v1/announcement/punish"
   },
   generatedAt: new Date().toISOString(),
   range: { start: startDate, end: endDate, tradingDays: index.length },
   index,
   stocks,
+  candidates: {
+    bullish: bullishCandidates.map((row) => ({ market: row.market, code: row.code, name: row.name, endPrice: row.endPrice, bullishScore: row.bullishScore, reasons: row.bullishReasons, tradingEligible: row.tradingEligible })),
+    bearish: bearishCandidates.map((row) => ({ market: row.market, code: row.code, name: row.name, endPrice: row.endPrice, bearishScore: row.bearishScore, reasons: row.bearishReasons, tradingEligible: row.tradingEligible }))
+  },
   warnings: warnings.slice(0, 20)
 };
 
