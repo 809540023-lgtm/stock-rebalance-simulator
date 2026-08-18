@@ -4,6 +4,8 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { computeBullishScore, computeBearishScore, applyFilters } from "./models.js";
 import { buildTradeRecord, summarizeTrades, compareToBaseline } from "./evaluation.js";
+import { computeIC, quantileReturns, quantileSpread } from "./factor-analysis.js";
+import { predictNextPrice, predictChangePct } from "./price-prediction.js";
 
 const signalStart = process.env.SIGNAL_START_DATE || process.argv[2] || "2026-06-15";
 const signalEnd = process.env.SIGNAL_END_DATE || process.argv[3] || "2026-07-20";
@@ -257,9 +259,10 @@ for (const signalDate of signalDates) {
     if (!scored) continue;
     const forward = sorted.filter((bar) => bar.date > signalDate).slice(0, 20);
     if (forward.length < 1) continue;
-    const signal = { signalDate, model: "bullish", code: sorted[0].code, name: sorted[0].name, market: sorted[0].market, entryPrice: scored.upTo.at(-1).close };
+    const signal = { signalDate, model: "bullish", code: sorted[0].code, name: sorted[0].name, market: sorted[0].market, entryPrice: scored.upTo.at(-1).close, score: scored.bullish.score };
     if (scored.bullish.passed && scored.filters.passed) trades.push(buildTradeRecord(signal, forward));
     signal.model = "bearish";
+    signal.score = scored.bearish.score;
     if (scored.bearish.passed && scored.filters.passed) trades.push(buildTradeRecord(signal, forward));
   }
   console.log(`${signalDate}: ${trades.length} cumulative trades`);
@@ -269,6 +272,18 @@ const bullishTrades = trades.filter((trade) => trade.model === "bullish");
 const bearishTrades = trades.filter((trade) => trade.model === "bearish");
 const bullishSummary = summarizeTrades(bullishTrades);
 const bearishSummary = summarizeTrades(bearishTrades);
+
+// Factor analysis (alphalens concept): does the model score predict forward returns?
+function factorAnalysis(tradeList) {
+  const factors = tradeList.map((t) => t.score);
+  const returns = tradeList.map((t) => t.netReturn);
+  const quantiles = quantileReturns(factors, returns, 5);
+  return {
+    ic: computeIC(factors, returns),
+    quantiles,
+    spread: quantileSpread(quantiles)
+  };
+}
 
 // Baseline: average 20-day forward return of all liquid stocks (liquidity-matched).
 const baselineReturns = [];
@@ -298,8 +313,8 @@ const output = {
   generatedAt: new Date().toISOString(),
   signalRange: { start: signalStart, end: signalEnd },
   models: {
-    bullish: { summary: bullishSummary, comparison: compareToBaseline(bullishSummary, indexSummary, baselineSummary), trades: bullishTrades },
-    bearish: { summary: bearishSummary, comparison: compareToBaseline(bearishSummary, indexSummary, baselineSummary), trades: bearishTrades }
+    bullish: { summary: bullishSummary, comparison: compareToBaseline(bullishSummary, indexSummary, baselineSummary), factor: factorAnalysis(bullishTrades), trades: bullishTrades },
+    bearish: { summary: bearishSummary, comparison: compareToBaseline(bearishSummary, indexSummary, baselineSummary), factor: factorAnalysis(bearishTrades), trades: bearishTrades }
   },
   benchmarks: { index: indexSummary, baseline: baselineSummary }
 };
@@ -311,8 +326,8 @@ const summary = {
   generatedAt: output.generatedAt,
   signalRange: output.signalRange,
   models: {
-    bullish: { summary: output.models.bullish.summary, comparison: output.models.bullish.comparison },
-    bearish: { summary: output.models.bearish.summary, comparison: output.models.bearish.comparison }
+    bullish: { summary: output.models.bullish.summary, comparison: output.models.bullish.comparison, factor: output.models.bullish.factor },
+    bearish: { summary: output.models.bearish.summary, comparison: output.models.bearish.comparison, factor: output.models.bearish.factor }
   },
   benchmarks: output.benchmarks
 };

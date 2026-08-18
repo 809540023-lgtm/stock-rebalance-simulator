@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T00:26:52.532Z",
+  "generatedAt": "2026-08-18T14:29:07.605Z",
   "signalRange": {
     "start": "2026-06-15",
     "end": "2026-07-20"
@@ -17,9 +17,43 @@
       "comparison": {
         "modelAvgNetReturn": -1.08,
         "indexAvgReturn": -1.45,
-        "baselineAvgNetReturn": -5.32,
+        "baselineAvgNetReturn": -5.27,
         "edgeVsIndex": 0.3699999999999999,
-        "edgeVsBaseline": 4.24
+        "edgeVsBaseline": 4.1899999999999995
+      },
+      "factor": {
+        "ic": {
+          "ic": 0.0915,
+          "sampleSize": 3221
+        },
+        "quantiles": [
+          {
+            "quantile": 1,
+            "avgReturn": -1.08,
+            "count": 645
+          },
+          {
+            "quantile": 2,
+            "avgReturn": -1.44,
+            "count": 644
+          },
+          {
+            "quantile": 3,
+            "avgReturn": -0.71,
+            "count": 644
+          },
+          {
+            "quantile": 4,
+            "avgReturn": -1.36,
+            "count": 644
+          },
+          {
+            "quantile": 5,
+            "avgReturn": -0.8,
+            "count": 644
+          }
+        ],
+        "spread": 0.28
       }
     },
     "bearish": {
@@ -34,9 +68,43 @@
       "comparison": {
         "modelAvgNetReturn": 0.06,
         "indexAvgReturn": -1.45,
-        "baselineAvgNetReturn": -5.32,
+        "baselineAvgNetReturn": -5.27,
         "edgeVsIndex": 1.51,
-        "edgeVsBaseline": 5.38
+        "edgeVsBaseline": 5.329999999999999
+      },
+      "factor": {
+        "ic": {
+          "ic": 0.2167,
+          "sampleSize": 4160
+        },
+        "quantiles": [
+          {
+            "quantile": 1,
+            "avgReturn": -0.44,
+            "count": 832
+          },
+          {
+            "quantile": 2,
+            "avgReturn": -0.69,
+            "count": 832
+          },
+          {
+            "quantile": 3,
+            "avgReturn": 1.83,
+            "count": 832
+          },
+          {
+            "quantile": 4,
+            "avgReturn": -2.13,
+            "count": 832
+          },
+          {
+            "quantile": 5,
+            "avgReturn": 1.72,
+            "count": 832
+          }
+        ],
+        "spread": 2.16
       }
     }
   },
@@ -50,12 +118,12 @@
       "totalReturn": -39.03
     },
     "baseline": {
-      "sampleSize": 22904,
-      "winRate": 21.63,
-      "avgNetReturn": -5.32,
+      "sampleSize": 23112,
+      "winRate": 21.44,
+      "avgNetReturn": -5.27,
       "profitFactor": 0.27,
       "maxDrawdown": 7.98,
-      "totalReturn": -121909.85
+      "totalReturn": -121914.91
     }
   }
 }

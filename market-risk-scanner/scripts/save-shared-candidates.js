@@ -17,7 +17,9 @@ function pickCandidate(row, scoreKey) {
     endPrice: row.endPrice,
     score: row[`${scoreKey}Score`],
     reasons: row.reasons || [],
-    tradingEligible: Boolean(row.tradingEligible)
+    tradingEligible: Boolean(row.tradingEligible),
+    predictedPrice: row.predictedPrice ?? null,
+    predictedChangePct: row.predictedChangePct ?? null
   };
 }
 

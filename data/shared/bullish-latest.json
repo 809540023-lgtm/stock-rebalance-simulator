@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T13:13:52.756Z",
+  "generatedAt": "2026-08-18T14:26:50.115Z",
   "dataDate": "2026-08-18",
   "stale": false,
   "staleWarning": null,
@@ -21,7 +21,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 37.89,
+      "predictedChangePct": 0.91
     },
     {
       "market": "上市",
@@ -39,7 +41,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 39.13,
+      "predictedChangePct": -0.18
     },
     {
       "market": "上市",
@@ -57,7 +61,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 38,
+      "predictedChangePct": -1.04
     },
     {
       "market": "上市",
@@ -75,7 +81,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 18.82,
+      "predictedChangePct": -0.95
     },
     {
       "market": "上市",
@@ -93,7 +101,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 27.09,
+      "predictedChangePct": 2.81
     },
     {
       "market": "上市",
@@ -111,7 +121,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 22.38,
+      "predictedChangePct": -0.31
     },
     {
       "market": "上市",
@@ -129,7 +141,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 33,
+      "predictedChangePct": 0.92
     },
     {
       "market": "上市",
@@ -147,7 +161,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 11.32,
+      "predictedChangePct": 0.62
     },
     {
       "market": "上市",
@@ -165,7 +181,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 41.56,
+      "predictedChangePct": 3.13
     },
     {
       "market": "上市",
@@ -183,7 +201,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 23.81,
+      "predictedChangePct": -0.38
     },
     {
       "market": "上市",
@@ -201,7 +221,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 46.48,
+      "predictedChangePct": 2.49
     },
     {
       "market": "上市",
@@ -219,7 +241,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 37.49,
+      "predictedChangePct": 1.6
     },
     {
       "market": "上市",
@@ -237,7 +261,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 11.34,
+      "predictedChangePct": 2.16
     },
     {
       "market": "上市",
@@ -255,7 +281,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 26.91,
+      "predictedChangePct": -0.7
     },
     {
       "market": "上市",
@@ -273,7 +301,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 10.31,
+      "predictedChangePct": 3.1
     },
     {
       "market": "上市",
@@ -291,7 +321,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 50.54,
+      "predictedChangePct": 1.69
     },
     {
       "market": "上市",
@@ -309,7 +341,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 43.9,
+      "predictedChangePct": 3.05
     },
     {
       "market": "上市",
@@ -327,7 +361,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 24.93,
+      "predictedChangePct": 1.76
     },
     {
       "market": "上市",
@@ -345,7 +381,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 33.82,
+      "predictedChangePct": -3.92
     },
     {
       "market": "上市",
@@ -363,7 +401,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 39.86,
+      "predictedChangePct": 1.42
     },
     {
       "market": "上市",
@@ -381,7 +421,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 35.96,
+      "predictedChangePct": 0.17
     },
     {
       "market": "上市",
@@ -399,7 +441,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 30.17,
+      "predictedChangePct": 1.58
     },
     {
       "market": "上市",
@@ -417,7 +461,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 27.64,
+      "predictedChangePct": -0.58
     },
     {
       "market": "上市",
@@ -435,7 +481,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 15.6,
+      "predictedChangePct": 0.97
     },
     {
       "market": "上市",
@@ -453,7 +501,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 47.6,
+      "predictedChangePct": -0.31
     },
     {
       "market": "上市",
@@ -471,7 +521,9 @@
         "相對大盤強勢",
         "基本面偏弱"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 34.86,
+      "predictedChangePct": 2.53
     },
     {
       "market": "上市",
@@ -488,7 +540,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 33.02,
+      "predictedChangePct": 3.35
     },
     {
       "market": "上市",
@@ -506,7 +560,9 @@
         "相對大盤強勢",
         "基本面偏弱"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 17.8,
+      "predictedChangePct": 2.59
     },
     {
       "market": "上市",
@@ -524,7 +580,9 @@
         "相對大盤強勢",
         "基本面偏弱"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 39.27,
+      "predictedChangePct": -4.8
     },
     {
       "market": "上市",
@@ -542,7 +600,9 @@
         "相對大盤強勢",
         "基本面偏弱"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 41.19,
+      "predictedChangePct": 0.46
     },
     {
       "market": "上市",
@@ -559,7 +619,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 47.3,
+      "predictedChangePct": 4.76
     },
     {
       "market": "上市",
@@ -577,7 +639,9 @@
         "相對大盤強勢",
         "基本面偏弱"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 12.02,
+      "predictedChangePct": 1.01
     },
     {
       "market": "上市",
@@ -595,7 +659,9 @@
         "相對大盤強勢",
         "基本面偏弱"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 11.8,
+      "predictedChangePct": -1.67
     },
     {
       "market": "上市",
@@ -612,7 +678,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 19.74,
+      "predictedChangePct": 1.75
     },
     {
       "market": "上市",
@@ -629,7 +697,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 22.4,
+      "predictedChangePct": 0.9
     },
     {
       "market": "上市",
@@ -646,7 +716,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 13.92,
+      "predictedChangePct": 3.49
     },
     {
       "market": "上市",
@@ -664,7 +736,9 @@
         "相對大盤強勢",
         "基本面偏弱"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 10.47,
+      "predictedChangePct": 0.19
     },
     {
       "market": "上市",
@@ -681,7 +755,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 42.96,
+      "predictedChangePct": 6.6
     },
     {
       "market": "上市",
@@ -698,7 +774,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 31.96,
+      "predictedChangePct": 1.78
     },
     {
       "market": "上市",
@@ -716,7 +794,9 @@
         "相對大盤強勢",
         "基本面偏弱"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 24.05,
+      "predictedChangePct": 9.32
     },
     {
       "market": "上市",
@@ -733,7 +813,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 10.82,
+      "predictedChangePct": 3.54
     },
     {
       "market": "上市",
@@ -750,7 +832,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 12.95,
+      "predictedChangePct": 1.97
     },
     {
       "market": "上市",
@@ -767,7 +851,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 39.32,
+      "predictedChangePct": -0.2
     },
     {
       "market": "上市",
@@ -784,7 +870,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 33.07,
+      "predictedChangePct": 0.67
     },
     {
       "market": "上市",
@@ -802,7 +890,9 @@
         "相對大盤強勢",
         "基本面偏弱"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 15.31,
+      "predictedChangePct": -4.01
     },
     {
       "market": "上市",
@@ -820,7 +910,9 @@
         "相對大盤強勢",
         "基本面偏弱"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 11.11,
+      "predictedChangePct": 0.09
     },
     {
       "market": "上市",
@@ -837,7 +929,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 25.94,
+      "predictedChangePct": 0.15
     },
     {
       "market": "上市",
@@ -854,7 +948,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 12.07,
+      "predictedChangePct": 3.16
     },
     {
       "market": "上市",
@@ -871,7 +967,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 26.82,
+      "predictedChangePct": -0.11
     },
     {
       "market": "上市",
@@ -888,7 +986,9 @@
         "相對大盤強勢",
         "基本面可接受"
       ],
-      "tradingEligible": true
+      "tradingEligible": true,
+      "predictedPrice": 12.01,
+      "predictedChangePct": 0.08
     }
   ]
 }

@@ -60,6 +60,8 @@ The project is a Taiwan stock research and paper-trading system. It contains ass
 - Benchmarks: TAIEX 20-day forward return and a liquidity-matched baseline (average volume >= 500,000).
 - Latest run (signals 2026-06-15 to 2026-07-20): bullish 3,221 trades (win 43.5%, avg net -1.08%), bearish 4,160 trades (win 55.9%, avg net +0.06%). Both beat the baseline (-5.32%) and index (-1.45%).
 - `data/shared/evaluation-summary.json` is a small summary of `evaluation.json` for the UI.
+- `market-risk-scanner/scripts/factor-analysis.js` (ported from alphalens) computes IC, quantile returns, and factor spread per model; shown in the history tab.
+- `market-risk-scanner/scripts/price-prediction.js` (ported from StockPricePrediction) predicts next price/change via OLS linear regression; shown on candidate cards.
 - Note: the TAIEX index for the current month is only available after month-end, so the index series may lag the stock quotes.
 
 ## Visual Interface (Priority 3)

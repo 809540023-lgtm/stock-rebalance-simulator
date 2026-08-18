@@ -67,6 +67,7 @@ export function buildTradeRecord(signal, forward) {
     code: signal.code,
     name: signal.name,
     market: signal.market,
+    score: signal.score ?? null,
     entryPrice: entry,
     targetPrice: Number(target.toFixed(2)),
     stopPrice: Number(stop.toFixed(2)),

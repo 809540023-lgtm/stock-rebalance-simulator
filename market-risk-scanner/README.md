@@ -42,6 +42,8 @@ market-risk-scanner/index.html
 - 每筆交易記錄訊號日期、進場/目標/停損價、MFE/MAE、出場原因、毛報酬與淨報酬，以及 3/5/20 日報酬。淨報酬扣除手續費（單邊 0.1425%）與 0.3% 證交稅。
 - 基準：加權指數 20 日未來報酬，以及流動性匹配基準（日均量 >= 500,000 的全部股票）。
 - UI 的「歷史績效」分頁讀取輕量摘要 `data/shared/evaluation-summary.json`（完整交易記錄在 `evaluation.json`）。
+- `scripts/factor-analysis.js`（移植自 alphalens）計算模型分數的 IC、分位報酬與因子價差，顯示於歷史績效分頁。
+- `scripts/price-prediction.js`（移植自 StockPricePrediction）以線性迴歸預測下一收盤價與漲跌幅，顯示於候選卡片。
 
 ## 視覺介面分頁
 

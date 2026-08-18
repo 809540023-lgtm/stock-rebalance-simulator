@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { computeBullishScore, computeBearishScore, applyFilters } from "./models.js";
+import { predictNextPrice, predictChangePct } from "./price-prediction.js";
 
 const startDate = process.env.RISK_START_DATE || process.argv[2] || "2026-07-10";
 const endDate = process.env.RISK_END_DATE || process.argv[3] || "2026-08-04";
@@ -361,6 +362,9 @@ function rankStocks(groups, fundamentals, indexCloses, dispositionSet) {
     row.filterPassed = filters.passed;
     row.filterReasons = filters.reasons;
     row.tradingEligible = filters.tradingEligible;
+    const closes = row.series.map((bar) => bar.close);
+    row.predictedPrice = predictNextPrice(closes);
+    row.predictedChangePct = predictChangePct(closes);
     delete row.series;
   }
   return rows.sort((a, b) => b.riskScore - a.riskScore);
@@ -398,8 +402,8 @@ const output = {
   index,
   stocks,
   candidates: {
-    bullish: bullishCandidates.map((row) => ({ market: row.market, code: row.code, name: row.name, endPrice: row.endPrice, bullishScore: row.bullishScore, reasons: row.bullishReasons, tradingEligible: row.tradingEligible })),
-    bearish: bearishCandidates.map((row) => ({ market: row.market, code: row.code, name: row.name, endPrice: row.endPrice, bearishScore: row.bearishScore, reasons: row.bearishReasons, tradingEligible: row.tradingEligible }))
+    bullish: bullishCandidates.map((row) => ({ market: row.market, code: row.code, name: row.name, endPrice: row.endPrice, bullishScore: row.bullishScore, reasons: row.bullishReasons, tradingEligible: row.tradingEligible, predictedPrice: row.predictedPrice, predictedChangePct: row.predictedChangePct })),
+    bearish: bearishCandidates.map((row) => ({ market: row.market, code: row.code, name: row.name, endPrice: row.endPrice, bearishScore: row.bearishScore, reasons: row.bearishReasons, tradingEligible: row.tradingEligible, predictedPrice: row.predictedPrice, predictedChangePct: row.predictedChangePct }))
   },
   warnings: warnings.slice(0, 20)
 };

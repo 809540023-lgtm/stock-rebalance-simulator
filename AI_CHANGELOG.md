@@ -1,5 +1,14 @@
 # AI Changelog
 
+## 2026-08-18 Copilot (integrate alphalens + StockPricePrediction)
+
+- Added `market-risk-scanner/scripts/factor-analysis.js` (alphalens concept): IC (rank correlation of score vs forward return), quantile returns, and factor spread.
+- Added `market-risk-scanner/scripts/price-prediction.js` (StockPricePrediction concept): OLS linear-regression next-price/direction/change prediction.
+- Wired factor analysis into `evaluate-candidates.js` (per-model IC, quantiles, spread) and price prediction into `update-risk-data.js` candidate data; both shown in the scanner UI (history tab IC/spread, candidate cards predicted change/price).
+- Added `tests/factor-analysis.test.js` and `tests/price-prediction.test.js` (10 tests).
+- Regenerated candidate and evaluation data through 2026-08-18.
+- Tests run: `node --test tests/*.test.js` (40 pass) and `npx playwright test` (17 pass, 1 skipped).
+
 ## 2026-08-18 Copilot (GitHub reference list)
 
 - Added `docs/github-stock-analysis-references.md` listing the top 5 highest-starred stock-analysis repositories on GitHub (daily_stock_analysis, alphalens, stocksight, Stock_Analysis_For_Quant, StockPricePrediction).
