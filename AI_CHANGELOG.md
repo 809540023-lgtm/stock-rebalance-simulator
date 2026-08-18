@@ -1,5 +1,10 @@
 # AI Changelog
 
+## 2026-08-18 Copilot (GitHub reference list)
+
+- Added `docs/github-stock-analysis-references.md` listing the top 5 highest-starred stock-analysis repositories on GitHub (daily_stock_analysis, alphalens, stocksight, Stock_Analysis_For_Quant, StockPricePrediction).
+- Confirmed the pre-open screening pipeline is current: `data/shared/bullish-latest.json` and `bearish-latest.json` each hold 50 candidates through 2026-08-18 (not stale).
+
 ## 2026-08-18 Copilot (self-input holdings)
 
 - Added a holdings input form to the scanner UI (`market-risk-scanner/index.html`): users can add a position (code, name, buy price, buy quantity, buy date, target) and record a sell (sell quantity, sell date) for each custom holding.
