@@ -1,5 +1,10 @@
 # AI Changelog
 
+## 2026-08-18 Copilot (Render live + strategy record)
+
+- Deployed the static site to Render: https://stock-rebalance-simulator-site.onrender.com (service `srv-da261jrutv3s73bjdnl0`, deploy live).
+- Recorded the user-confirmed core intraday strategy in `PROJECT_STATE.md`: 在大盤普跌時尋找空頭標的 (when the market broadly falls, focus on bearish-continuation candidates as short/hedge targets). Intraday candidates selected: 承啟(2425)、光鼎(6226)、德淵(4720)、上海商銀(5876)、臺企銀(2834).
+
 ## 2026-08-18 Copilot (deployment)
 
 - Pushed local work and merged remote changes (Codex paper-trade work, workflow data updates) into `origin/main`.
