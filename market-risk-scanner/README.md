@@ -35,4 +35,11 @@ market-risk-scanner/index.html
 - 候選以視覺化卡片呈現：彩色分數條、排名、代號/名稱/市場/價格與通過原因標籤。
 - 資料日期過期時，頁面會顯示過期警告。
 
+## 長期評估
+
+- `scripts/evaluation.js` 提供純函式 `buildTradeRecord`、`summarizeTrades` 與 `compareToBaseline`。
+- `scripts/evaluate-candidates.js` 產生歷史訊號並計算未來報酬，寫入 `data/shared/evaluation.json`。
+- 每筆交易記錄訊號日期、進場/目標/停損價、MFE/MAE、出場原因、毛報酬與淨報酬，以及 3/5/20 日報酬。淨報酬扣除手續費（單邊 0.1425%）與 0.3% 證交稅。
+- 基準：加權指數 20 日未來報酬，以及流動性匹配基準（日均量 >= 500,000 的全部股票）。
+
 風險分數是研究篩選指標，不構成投資建議。

@@ -1,5 +1,14 @@
 # AI Changelog
 
+## 2026-08-18 Copilot (Priority 2 evaluation)
+
+- Implemented Priority 2: long-term evaluation of candidate signals.
+- Added `market-risk-scanner/scripts/evaluation.js` with pure `buildTradeRecord`, `summarizeTrades`, and `compareToBaseline` (win rate, avg net return, profit factor, max drawdown, sample size, 3/5/20-day returns, MFE/MAE, exit reason, net return after fees).
+- Added `market-risk-scanner/scripts/evaluate-candidates.js` generating historical signals and forward returns, writing `data/shared/evaluation.json`.
+- Added `tests/evaluation.test.js` (8 unit tests).
+- Generated evaluation data for signals 2026-06-15 to 2026-07-20: 3,221 bullish and 4,160 bearish trades; both models beat the TAIEX and the liquidity-matched baseline.
+- Tests run: `node --test tests/*.test.js` (30 pass).
+
 ## 2026-08-18 Copilot (UI + limit)
 
 - Limited candidate snapshots to the top 50 per model (`DEFAULT_MAX_CANDIDATES = 50` in `save-shared-candidates.js`); regenerated `data/shared/*-latest.json` and `*-history.json`.

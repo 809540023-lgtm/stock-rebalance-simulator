@@ -16,14 +16,21 @@
 
 ### Remaining
 
-- Priority 2 (long-term evaluation) and Priority 3 (visual tabs for holdings/history) are not yet implemented.
+- Priority 3 (visual tabs for holdings/history) is not yet implemented.
 
 ## Priority 2: Long-Term Evaluation
 
-- Store signal date, trigger price, target, stop, maximum favorable excursion, maximum adverse excursion, exit reason, gross return, and net return.
-- Produce 3-day, 5-day, and 20-day performance summaries.
-- Compare model candidates against the TAIEX and against a simple random or liquidity-matched baseline.
-- Report win rate, average net return, profit factor, maximum drawdown, and sample size.
+- [x] Store signal date, trigger price, target, stop, maximum favorable excursion, maximum adverse excursion, exit reason, gross return, and net return.
+- [x] Produce 3-day, 5-day, and 20-day performance summaries.
+- [x] Compare model candidates against the TAIEX and against a simple random or liquidity-matched baseline.
+- [x] Report win rate, average net return, profit factor, maximum drawdown, and sample size.
+
+### Implementation notes
+
+- `market-risk-scanner/scripts/evaluation.js` holds pure `buildTradeRecord`, `summarizeTrades`, and `compareToBaseline` functions.
+- `market-risk-scanner/scripts/evaluate-candidates.js` generates historical signals, computes forward returns, and writes `data/shared/evaluation.json`.
+- Trade records include entry/target/stop, MFE/MAE, exit reason, gross/net return, and 3/5/20-day returns. Net return subtracts commission (0.1425% per side) and 0.3% sale tax.
+- Benchmarks: TAIEX 20-day forward return and a liquidity-matched baseline (all stocks with average volume >= 500,000).
 
 ## Priority 3: Visual Interface
 

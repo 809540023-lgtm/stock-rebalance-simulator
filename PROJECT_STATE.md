@@ -50,6 +50,14 @@ The project is a Taiwan stock research and paper-trading system. It contains ass
 - `save-shared-candidates.js` writes the latest snapshots to `data/shared/bullish-latest.json` and `data/shared/bearish-latest.json`, plus immutable per-date history to `data/shared/*-history.json` (first snapshot per date is kept, never overwritten). Each snapshot keeps the top 50 candidates per model. Wired into `update-market-risk-scanner.yml` after data generation.
 - `index.html` shows separate bullish and bearish candidate tabs as visual score cards (colored score bar, rank, code/name/market/price, reason chips) with a stale-data warning.
 - `data/shared/` contains the generated candidate snapshots; treat them as research signals, not investment advice.
+
+## Long-Term Evaluation (Priority 2)
+
+- `market-risk-scanner/scripts/evaluation.js` provides pure `buildTradeRecord`, `summarizeTrades`, and `compareToBaseline` functions.
+- `market-risk-scanner/scripts/evaluate-candidates.js` generates historical signals and forward returns, writing `data/shared/evaluation.json`.
+- Trade records store signal date, entry/target/stop, MFE/MAE, exit reason, gross/net return, and 3/5/20-day returns. Net return subtracts commission (0.1425% per side) and 0.3% sale tax.
+- Benchmarks: TAIEX 20-day forward return and a liquidity-matched baseline (average volume >= 500,000).
+- Latest run (signals 2026-06-15 to 2026-07-20): bullish 3,221 trades (win 43.5%, avg net -1.08%), bearish 4,160 trades (win 55.9%, avg net +0.06%). Both beat the baseline (-5.32%) and index (-1.45%).
 - Note: the TAIEX index for the current month is only available after month-end, so the index series may lag the stock quotes.
 
 ## Recent Research Examples
