@@ -35,7 +35,7 @@ The project is a Taiwan stock research and paper-trading system. It contains ass
 
 ## Strategy Findings
 
-- **Core intraday principle (user-confirmed, 2026-08-18)**: 在大盤普跌時尋找空頭標的。當加權指數整體下跌時，優先聚焦「空頭延續」候選作為放空／避險標的；這是被使用者認定為必勝的核心原則。盤中以此規則從 50 檔空頭候選中選出並操作：承啟(2425)、光鼎(6226)、德淵(4720)、上海商銀(5876)、臺企銀(2834)。此為研究策略描述，不代表保證獲利。
+- **Core strategy rule (user-confirmed, 2026-08-18, successfully executed intraday)**: 開盤前先篩選出 50 檔上漲潛力股與 50 檔下跌潛力股。當大盤普跌時，盤中下達指令：在早上篩選出的「50 檔有潛力上漲的股票」中，找出「目前正在跌停或跌幅最高」的股票，這些即為空頭標的（空頭標的）。下次遇到相同情況（大盤普跌）時，依照此規則執行。此為研究策略描述，不代表保證獲利。
 - The original risk score identifies stocks that fell quickly; it is not by itself a bullish reversal score.
 - A bullish candidate now requires stabilization and confirmation: no new low, higher low or breakout, rising short moving average, improving up-volume, relative strength, acceptable fundamentals, liquidity, and no disposition restriction.
 - A bearish continuation candidate requires recent weakness, a lower low, price below short moving averages, failed rebound, sufficient volume, normal trading eligibility, and a conditional breakdown trigger.

@@ -3,7 +3,7 @@
 ## 2026-08-18 Copilot (Render live + strategy record)
 
 - Deployed the static site to Render: https://stock-rebalance-simulator-site.onrender.com (service `srv-da261jrutv3s73bjdnl0`, deploy live).
-- Recorded the user-confirmed core intraday strategy in `PROJECT_STATE.md`: 在大盤普跌時尋找空頭標的 (when the market broadly falls, focus on bearish-continuation candidates as short/hedge targets). Intraday candidates selected: 承啟(2425)、光鼎(6226)、德淵(4720)、上海商銀(5876)、臺企銀(2834).
+- Recorded the user-confirmed core intraday strategy in `PROJECT_STATE.md`: 開盤前篩選 50 檔上漲潛力股與 50 檔下跌潛力股；當大盤普跌時，在「50 檔上漲潛力股」中找出「正在跌停或跌幅最高」的股票作為空頭標的。下次遇到大盤普跌時依此規則執行。
 
 ## 2026-08-18 Copilot (deployment)
 
