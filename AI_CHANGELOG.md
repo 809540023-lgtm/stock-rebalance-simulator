@@ -1,5 +1,9 @@
 # AI Changelog
 
+## 2026-08-18 Copilot (strategy on website)
+
+- Added the confirmed core strategy rule to the scanner UI (`market-risk-scanner/index.html`): 開盤前篩選 50 檔上漲潛力股與 50 檔下跌潛力股；大盤普跌時，在「50 檔上漲潛力股」中挑出「正在跌停或跌幅最高」的股票作為多頭（買進）標的。
+
 ## 2026-08-18 Copilot (Render live + strategy record)
 
 - Deployed the static site to Render: https://stock-rebalance-simulator-site.onrender.com (service `srv-da261jrutv3s73bjdnl0`, deploy live).
