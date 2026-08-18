@@ -1,5 +1,10 @@
 # AI Changelog
 
+## 2026-08-18 Copilot (holdings sell fields)
+
+- Added 買入數量, 買入日期, 賣出數量, and 賣出日期 columns to the holdings tab in `market-risk-scanner/index.html`.
+- Sell quantity and sell date default to "—" until a sell record is provided in the positions data.
+
 ## 2026-08-18 Copilot (default ranking)
 
 - Changed the default ranking count of the weak-stock table in `market-risk-scanner/index.html` from 30 to 50.
