@@ -19,10 +19,8 @@
     <section class="summary" aria-label="投資組合摘要">
       <div class="metric"><strong>買入總成本</strong><span id="totalCost">—</span></div>
       <div class="metric"><strong>最新參考市值</strong><span id="marketValue">—</span></div>
-      <div class="metric" id="profitMetric"><strong>帳面損益</strong><span id="profit">—</span></div>
-      <div class="metric"><strong>帳面投報率</strong><span id="portfolioReturn">—</span></div>
-      <div class="metric" id="netProfitMetric"><strong>現在賣出預估淨損益</strong><span id="netProfit">—</span></div>
-      <div class="metric"><strong>預估淨投報率</strong><span id="netReturn">—</span></div>
+      <div class="metric" id="profitMetric"><strong>未實現損益</strong><span id="profit">—</span></div>
+      <div class="metric"><strong>組合投報率</strong><span id="portfolioReturn">—</span></div>
     </section>
     <section class="positions" id="positions" aria-label="買入股票"></section>
     <section class="panel">
@@ -30,7 +28,7 @@
       <p class="note" id="evaluationText">—</p>
       <div class="timeline"><div class="day">8/12<br>成交紀錄</div><div class="day">8/13<br>第 1 日</div><div class="day">8/14<br>第 2 日</div><div class="day">8/17<br>第 3 日評估</div></div>
     </section>
-    <p class="footer">預估淨損益採買賣各收 0.1425% 手續費（每筆最低 NT$20）及賣出 0.3% 證交稅試算，實際費用依券商折扣與帳單為準；未計入股利。盤中 5% 通知由雲端每 5 分鐘檢查一次，不構成買賣建議。</p>
+    <p class="footer">投報率以成交價與證交所最新收盤價計算，未計入手續費、證交稅與股利。盤中 5% 通知由雲端每 5 分鐘檢查一次，不構成買賣建議。</p>
   </main>
   <script>
     const money = (value) => Number.isFinite(value) ? "NT$" + Math.round(value).toLocaleString("zh-TW") : "—";
@@ -40,47 +38,32 @@
     async function load() {
       const status = document.getElementById("status");
       try {
-        const [positionResponse, trackerResponse, marketResponse] = await Promise.all([fetch("../data/paper-trade-positions.json", { cache: "no-cache" }), fetch("../data/paper-trade-latest.json", { cache: "no-cache" }), fetch("../data/twse-latest.json", { cache: "no-cache" })]);
+        const [positionResponse, marketResponse] = await Promise.all([fetch("../data/paper-trade-positions.json", { cache: "no-cache" }), fetch("../data/twse-latest.json", { cache: "no-cache" })]);
         if (!positionResponse.ok) throw new Error("買入紀錄讀取失敗");
         const portfolio = await positionResponse.json();
-        const trackerMarket = trackerResponse.ok ? await trackerResponse.json() : { stocks: {}, marketDate: "" };
-        const fallbackMarket = marketResponse.ok ? await marketResponse.json() : { stocks: {}, marketDate: "" };
-        const market = trackerMarket.marketDate >= fallbackMarket.marketDate ? trackerMarket : fallbackMarket;
-        const costs = portfolio.costAssumptions || { commissionRatePct: 0.1425, minimumCommission: 20, stockTransactionTaxPct: 0.3 };
-        const commission = (amount) => Math.max(costs.minimumCommission, Math.round(amount * costs.commissionRatePct / 100));
-        const transactionTax = (amount) => Math.floor(amount * costs.stockTransactionTaxPct / 100);
-        let totalCost = 0, totalCashCost = 0, marketValue = 0, estimatedNetProceeds = 0, completePrices = true;
+        const market = marketResponse.ok ? await marketResponse.json() : { stocks: {}, marketDate: "" };
+        let totalCost = 0, marketValue = 0, completePrices = true;
         document.getElementById("positions").innerHTML = portfolio.positions.map((position) => {
           const quote = market.stocks?.[position.code];
           const current = quote && quote.date >= position.buyDate ? Number(quote.close) : null;
           const cost = position.buyPrice * position.quantity;
-          const buyFee = commission(cost);
           const value = Number.isFinite(current) ? current * position.quantity : null;
           const gainPct = Number.isFinite(current) ? (current / position.buyPrice - 1) * 100 : null;
           const gainAmount = Number.isFinite(value) ? value - cost : null;
-          const sellFee = Number.isFinite(value) ? commission(value) : null;
-          const sellTax = Number.isFinite(value) ? transactionTax(value) : null;
-          const netPositionProfit = Number.isFinite(value) ? value - sellFee - sellTax - cost - buyFee : null;
           const targetProgress = Number.isFinite(current) ? Math.max(0, Math.min(100, ((current / position.buyPrice - 1) / (portfolio.alertGainPct / 100)) * 100)) : 0;
           totalCost += cost;
-          totalCashCost += cost + buyFee;
-          if (Number.isFinite(value)) { marketValue += value; estimatedNetProceeds += value - sellFee - sellTax; } else completePrices = false;
-          return `<article class="position"><div class="position-head"><div><h2>${escapeHtml(position.name)}</h2><span class="code">${escapeHtml(position.code)}｜上市｜${Number(position.quantity).toLocaleString("zh-TW")} 股</span></div><span class="badge">持有測試</span></div><div class="numbers"><div class="datum"><strong>成交價</strong><span>${price(position.buyPrice)}</span></div><div class="datum"><strong>5% 通知價</strong><span>${price(position.targetPrice)}</span></div><div class="datum"><strong>最新收盤</strong><span>${price(current)}</span></div><div class="datum"><strong>帳面投報率</strong><span class="${gainPct >= 0 ? "gain" : "loss"}">${percent(gainPct)}</span></div><div class="datum"><strong>股票買入金額</strong><span>${money(cost)}</span></div><div class="datum"><strong>帳面損益</strong><span class="${gainAmount >= 0 ? "gain" : "loss"}">${money(gainAmount)}</span></div><div class="datum"><strong>預估買入手續費</strong><span>${money(buyFee)}</span></div><div class="datum"><strong>現在賣出預估淨損益</strong><span class="${netPositionProfit >= 0 ? "gain" : "loss"}">${money(netPositionProfit)}</span></div></div><div class="progress-label"><span>距離 5% 目標</span><strong>${Number.isFinite(gainPct) ? percent(gainPct) + " / +5.00%" : "等待行情"}</strong></div><div class="progress"><span style="width:${targetProgress}%"></span></div><p class="note">買入日 ${position.buyDate}｜三交易日評估 ${portfolio.evaluationTradingDate}</p></article>`;
+          if (Number.isFinite(value)) marketValue += value; else completePrices = false;
+          return `<article class="position"><div class="position-head"><div><h2>${escapeHtml(position.name)}</h2><span class="code">${escapeHtml(position.code)}｜上市｜${Number(position.quantity).toLocaleString("zh-TW")} 股</span></div><span class="badge">持有測試</span></div><div class="numbers"><div class="datum"><strong>成交價</strong><span>${price(position.buyPrice)}</span></div><div class="datum"><strong>5% 通知價</strong><span>${price(position.targetPrice)}</span></div><div class="datum"><strong>最新收盤</strong><span>${price(current)}</span></div><div class="datum"><strong>未實現投報率</strong><span class="${gainPct >= 0 ? "gain" : "loss"}">${percent(gainPct)}</span></div><div class="datum"><strong>投入成本</strong><span>${money(cost)}</span></div><div class="datum"><strong>未實現損益</strong><span class="${gainAmount >= 0 ? "gain" : "loss"}">${money(gainAmount)}</span></div></div><div class="progress-label"><span>距離 5% 目標</span><strong>${Number.isFinite(gainPct) ? percent(gainPct) + " / +5.00%" : "等待行情"}</strong></div><div class="progress"><span style="width:${targetProgress}%"></span></div><p class="note">買入日 ${position.buyDate}｜三交易日評估 ${portfolio.evaluationTradingDate}</p></article>`;
         }).join("");
         const profit = completePrices ? marketValue - totalCost : null;
         const portfolioReturn = completePrices ? profit / totalCost * 100 : null;
-        const netProfit = completePrices ? estimatedNetProceeds - totalCashCost : null;
-        const netReturn = completePrices ? netProfit / totalCashCost * 100 : null;
         document.getElementById("totalCost").textContent = money(totalCost);
         document.getElementById("marketValue").textContent = completePrices ? money(marketValue) : "等待收盤";
         document.getElementById("profit").textContent = money(profit);
         document.getElementById("portfolioReturn").textContent = percent(portfolioReturn);
         document.getElementById("profitMetric").className = "metric " + (profit >= 0 ? "positive" : "negative");
-        document.getElementById("netProfit").textContent = money(netProfit);
-        document.getElementById("netReturn").textContent = percent(netReturn);
-        document.getElementById("netProfitMetric").className = "metric " + (netProfit >= 0 ? "positive" : "negative");
         document.getElementById("evaluationText").textContent = `成交紀錄日 ${portfolio.recordedAt}；第三個交易日為 ${portfolio.evaluationTradingDate}。當天將依官方行情計算兩檔與整體投報率。`;
-        status.textContent = completePrices ? `已載入證交所 ${market.marketDate} 收盤行情；專用收盤資料於交易日 13:40 更新，盤中通知每 5 分鐘檢查一次。` : `買入紀錄已保存；證交所收盤資料尚未更新到 ${portfolio.recordedAt}，目前等待當日收盤。`;
+        status.textContent = completePrices ? `已載入證交所 ${market.marketDate} 收盤行情；雲端盤中通知每 5 分鐘檢查一次。` : `買入紀錄已保存；證交所收盤資料尚未更新到 ${portfolio.recordedAt}，目前等待當日收盤。`;
       } catch (error) { status.textContent = `資料讀取失敗：${error.message}`; }
     }
     document.getElementById("refreshBtn").addEventListener("click", load);
