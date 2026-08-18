@@ -1,5 +1,13 @@
 # AI Changelog
 
+## 2026-08-18 Copilot (deployment)
+
+- Pushed local work and merged remote changes (Codex paper-trade work, workflow data updates) into `origin/main`.
+- Regenerated `market-risk.json` and `data/shared` candidate files through 2026-08-18.
+- Enabled GitHub Pages (`https://809540023-lgtm.github.io/stock-rebalance-simulator/`) with a `deploy-pages.yml` workflow.
+- Added `render.yaml` blueprint for a Render static site.
+- Tests run: `node --test tests/*.test.js` (30 pass) and `npx playwright test` (15 pass, 1 skipped).
+
 ## 2026-08-18 Copilot (holdings sell fields)
 
 - Added 買入數量, 買入日期, 賣出數量, and 賣出日期 columns to the holdings tab in `market-risk-scanner/index.html`.
