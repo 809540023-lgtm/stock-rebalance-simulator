@@ -47,8 +47,8 @@ The project is a Taiwan stock research and paper-trading system. It contains ass
 - Bearish continuation score: price below short MAs, lower low, recent weakness, failed rebound, down-volume confirmation, sufficient liquidity, and a conditional breakdown trigger.
 - `applyFilters` gates candidates by price ceiling (default 50), minimum average volume, disposition status, and trading eligibility.
 - `update-risk-data.js` fetches the TWSE disposition list (`/v1/announcement/punish`) and writes `candidates.bullish` / `candidates.bearish` into `market-risk.json`.
-- `save-shared-candidates.js` writes the latest snapshots to `data/shared/bullish-latest.json` and `data/shared/bearish-latest.json`, plus immutable per-date history to `data/shared/*-history.json` (first snapshot per date is kept, never overwritten). Wired into `update-market-risk-scanner.yml` after data generation.
-- `index.html` shows separate bullish and bearish candidate tabs with pass/fail reasons and a stale-data warning.
+- `save-shared-candidates.js` writes the latest snapshots to `data/shared/bullish-latest.json` and `data/shared/bearish-latest.json`, plus immutable per-date history to `data/shared/*-history.json` (first snapshot per date is kept, never overwritten). Each snapshot keeps the top 50 candidates per model. Wired into `update-market-risk-scanner.yml` after data generation.
+- `index.html` shows separate bullish and bearish candidate tabs as visual score cards (colored score bar, rank, code/name/market/price, reason chips) with a stale-data warning.
 - `data/shared/` contains the generated candidate snapshots; treat them as research signals, not investment advice.
 - Note: the TAIEX index for the current month is only available after month-end, so the index series may lag the stock quotes.
 

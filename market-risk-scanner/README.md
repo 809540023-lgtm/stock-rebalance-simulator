@@ -31,7 +31,8 @@ market-risk-scanner/index.html
 - 空頭延續分數：跌破短均線、低點下移、近期走弱、反彈失敗、下跌量能、流動性與跌破觸發價。
 - 候選清單套用價格上限（預設 50 元）、最低日均量、處置股與交易資格過濾。
 - 模型邏輯位於 `scripts/models.js`，資料由 `scripts/update-risk-data.js` 寫入 `data/market-risk.json` 的 `candidates` 欄位。
-- `scripts/save-shared-candidates.js` 將最新候選寫入 `data/shared/bullish-latest.json` 與 `data/shared/bearish-latest.json`，並以每日為單位累積不可覆寫的歷史到 `data/shared/bullish-history.json` 與 `data/shared/bearish-history.json`。
+- `scripts/save-shared-candidates.js` 將最新候選（每模型前 50 名）寫入 `data/shared/bullish-latest.json` 與 `data/shared/bearish-latest.json`，並以每日為單位累積不可覆寫的歷史到 `data/shared/bullish-history.json` 與 `data/shared/bearish-history.json`。
+- 候選以視覺化卡片呈現：彩色分數條、排名、代號/名稱/市場/價格與通過原因標籤。
 - 資料日期過期時，頁面會顯示過期警告。
 
 風險分數是研究篩選指標，不構成投資建議。

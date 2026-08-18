@@ -1,5 +1,12 @@
 # AI Changelog
 
+## 2026-08-18 Copilot (UI + limit)
+
+- Limited candidate snapshots to the top 50 per model (`DEFAULT_MAX_CANDIDATES = 50` in `save-shared-candidates.js`); regenerated `data/shared/*-latest.json` and `*-history.json`.
+- Replaced the candidate tables in `market-risk-scanner/index.html` with visual score cards: colored score bar, rank, code/name/market/price, and reason chips (green for bullish, red for bearish).
+- Added a unit test for the 50-candidate limit and updated the Playwright tab test for the card layout.
+- Tests run: `node --test tests/*.test.js` (22 pass) and `npx playwright test` (15 pass, 1 skipped).
+
 ## 2026-08-18 Copilot
 
 - Implemented Priority 1: separate bullish reversal and bearish continuation models.

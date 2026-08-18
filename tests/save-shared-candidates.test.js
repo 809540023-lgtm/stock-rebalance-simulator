@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { buildCandidateFiles, mergeHistory } from "../market-risk-scanner/scripts/save-shared-candidates.js";
+import { buildCandidateFiles, mergeHistory, DEFAULT_MAX_CANDIDATES } from "../market-risk-scanner/scripts/save-shared-candidates.js";
 
 const marketData = {
   generatedAt: "2026-08-18T04:00:00Z",
@@ -35,6 +35,14 @@ test("mergeHistory keeps the first record per date and never overwrites", () => 
   assert.equal(merged.records.length, 1);
   assert.equal(merged.records[0].count, 2);
   assert.equal(merged.records[0].candidates[0].code, "1515");
+});
+
+test("buildCandidateFiles limits candidates to the configured maximum", () => {
+  const many = { ...marketData, candidates: { bullish: Array.from({ length: 80 }, (_, i) => ({ market: "上市", code: String(1000 + i), name: "股", endPrice: 30, bullishScore: 100 - i, reasons: ["低點墊高"], tradingEligible: true })), bearish: [] } };
+  const files = buildCandidateFiles(many, { maxCandidates: 50 });
+  assert.equal(files.bullish.count, 50);
+  assert.equal(files.bullish.candidates.length, 50);
+  assert.equal(DEFAULT_MAX_CANDIDATES, 50);
 });
 
 test("mergeHistory appends a new data date", () => {

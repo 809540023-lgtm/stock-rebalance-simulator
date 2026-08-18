@@ -16,8 +16,8 @@ test("risk scanner shows bullish and bearish candidate tabs", async ({ page }) =
   await expect(page.getByRole("heading", { name: "多頭反轉與空頭延續候選" })).toBeVisible();
   await expect(page.locator("#bullishCount")).toHaveText(/\d+/);
   await expect(page.locator("#bearishCount")).toHaveText(/\d+/);
-  await expect(page.locator("#bullishBody tr")).not.toHaveCount(0);
+  await expect(page.locator("#bullishCards .card")).not.toHaveCount(0);
   await page.getByRole("button", { name: /空頭延續候選/ }).click();
   await expect(page.locator("#panel-bearish")).toHaveClass(/active/);
-  await expect(page.locator("#bearishBody tr")).not.toHaveCount(0);
+  await expect(page.locator("#bearishCards .card")).not.toHaveCount(0);
 });

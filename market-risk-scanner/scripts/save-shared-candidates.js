@@ -6,6 +6,9 @@ import { staleness } from "./models.js";
 
 const SHARED_DIR = new URL("../../data/shared/", import.meta.url);
 
+// Default maximum number of candidates kept per model snapshot.
+export const DEFAULT_MAX_CANDIDATES = 50;
+
 function pickCandidate(row, scoreKey) {
   return {
     market: row.market,
@@ -23,12 +26,15 @@ export function buildCandidateFiles(marketData, config) {
   const dataDate = marketData.range?.end || null;
   const generatedAt = marketData.generatedAt || new Date().toISOString();
   const stale = staleness(dataDate, generatedAt, config);
+  const max = Math.max(1, Number(config?.maxCandidates) || DEFAULT_MAX_CANDIDATES);
   const bullish = (marketData.candidates?.bullish || [])
     .map((row) => pickCandidate(row, "bullish"))
-    .sort((a, b) => b.score - a.score);
+    .sort((a, b) => b.score - a.score)
+    .slice(0, max);
   const bearish = (marketData.candidates?.bearish || [])
     .map((row) => pickCandidate(row, "bearish"))
-    .sort((a, b) => b.score - a.score);
+    .sort((a, b) => b.score - a.score)
+    .slice(0, max);
   return {
     bullish: {
       generatedAt,
