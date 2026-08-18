@@ -1,5 +1,12 @@
 # AI Changelog
 
+## 2026-08-18 Copilot (self-input holdings)
+
+- Added a holdings input form to the scanner UI (`market-risk-scanner/index.html`): users can add a position (code, name, buy price, buy quantity, buy date, target) and record a sell (sell quantity, sell date) for each custom holding.
+- Custom holdings and sell records persist in the browser via localStorage; a "清除自訂持倉" button clears them.
+- Added a Playwright test for adding a custom holding.
+- Tests run: `node --test tests/*.test.js` (30 pass) and `npx playwright test` (17 pass, 1 skipped).
+
 ## 2026-08-18 Copilot (strategy on website)
 
 - Added the confirmed core strategy rule to the scanner UI (`market-risk-scanner/index.html`): 開盤前篩選 50 檔上漲潛力股與 50 檔下跌潛力股；大盤普跌時，在「50 檔上漲潛力股」中挑出「正在跌停或跌幅最高」的股票作為多頭（買進）標的。

@@ -27,3 +27,16 @@ test("risk scanner shows candidate, holdings, and history tabs", async ({ page }
   await expect(page.locator("#panel-history")).toHaveClass(/active/);
   await expect(page.locator("#historyBody tr")).not.toHaveCount(0);
 });
+
+test("user can add a custom holding from the holdings tab", async ({ page }) => {
+  await page.goto("/market-risk-scanner/index.html");
+  await page.getByRole("button", { name: /實際持倉/ }).click();
+  await page.locator("#hCode").fill("9999");
+  await page.locator("#hName").fill("測試股");
+  await page.locator("#hBuyPrice").fill("50");
+  await page.locator("#hQty").fill("1000");
+  await page.locator("#hBuyDate").fill("2026-08-18");
+  await page.getByRole("button", { name: "新增持倉" }).click();
+  await expect(page.locator("#holdingsBody")).toContainText("9999");
+  await expect(page.locator("#holdingsBody")).toContainText("測試股");
+});

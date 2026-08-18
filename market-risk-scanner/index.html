@@ -16,7 +16,7 @@
     <section class="panel"><h2>LINE 價格異動監控</h2><p class="hint">雲端排程每 5 分鐘查詢臺灣證券交易所 MIS 即時行情；同一股票的每種事件每日只通知一次。</p><div class="metrics"><div class="metric blue"><strong>監控股票數</strong><span id="monitorCount">—</span></div><div class="metric red"><strong>監控市場</strong><span id="monitorMarket">上市</span></div><div class="metric amber"><strong>檢查頻率</strong><span>5 分鐘</span></div><div class="metric green"><strong>監控時段</strong><span>09:00–13:30</span></div></div><div class="actions"><a class="btn ghost" href="../data/line-watchlist.json" target="_blank" rel="noreferrer">查看監控設定</a></div><p class="explain" id="monitorExplain">正在讀取監控設定。</p></section>
     <section class="panel"><h2>大盤指數變化</h2><p class="hint">紅色為下跌，綠色為上漲；先觀察大盤下跌日，再閱讀個股排行。</p><div class="table-wrap"><table><thead><tr><th>日期</th><th>收盤指數</th><th>漲跌點</th><th>漲跌幅</th><th>方向</th></tr></thead><tbody id="indexBody"></tbody></table></div></section>
     <section class="panel"><h2>近期弱勢股票排行</h2><p class="hint">風險分數越高，表示近期跌幅、回撤、連跌或下跌量能等訊號越集中；不代表公司一定會繼續下跌。</p><div class="table-wrap"><table class="stock-table"><thead><tr><th>排名</th><th>市場</th><th>代號 / 名稱</th><th>區間跌幅</th><th>最快單日跌幅</th><th>最大回撤</th><th>下跌日</th><th>下跌日量比</th><th>本益比</th><th>殖利率</th><th>淨值比</th><th>風險分數</th><th>主要原因</th></tr></thead><tbody id="stockBody"></tbody></table></div><p class="explain" id="explain">風險評分說明會在資料載入後顯示。</p></section>
-    <section class="panel"><h2>候選、持倉與歷史績效</h2><p class="hint">多頭反轉與空頭延續是兩套獨立的確定性評分，與下跌風險分數分開，不構成買賣指令。候選清單已套用價格、流動性、處置股與交易資格過濾，並顯示前 50 名。實際持倉與未成交候選分開顯示。</p><p class="explain" id="strategyExplain">核心策略規則：開盤前先篩選 50 檔上漲潛力股與 50 檔下跌潛力股；當大盤普跌時，在「50 檔上漲潛力股」中挑出「正在跌停或跌幅最高」的股票作為多頭（買進）標的，而非空頭指標。此為研究策略描述，不代表保證獲利。</p><div class="tabs"><button class="tab active" data-tab="bullish" type="button">多頭候選 <span class="badge green" id="bullishCount">0</span></button><button class="tab" data-tab="bearish" type="button">空頭候選 <span class="badge red" id="bearishCount">0</span></button><button class="tab" data-tab="holdings" type="button">實際持倉 <span class="badge" id="holdingsCount">0</span></button><button class="tab" data-tab="history" type="button">歷史績效</button></div><div class="tab-panel active" id="panel-bullish"><div class="cards" id="bullishCards"></div></div><div class="tab-panel" id="panel-bearish"><div class="cards" id="bearishCards"></div></div><div class="tab-panel" id="panel-holdings"><div class="table-wrap"><table class="stock-table"><thead><tr><th>代號 / 名稱</th><th>買入數量</th><th>買入日期</th><th>買進價</th><th>目標價</th><th>賣出數量</th><th>賣出日期</th><th>最新價</th><th>損益</th><th>損益率</th><th>狀態</th></tr></thead><tbody id="holdingsBody"></tbody></table></div><p class="explain" id="holdingsExplain">持倉資料會在載入後顯示。</p></div><div class="tab-panel" id="panel-history"><div class="metrics"><div class="metric blue"><strong>多頭樣本數</strong><span id="histBullishN">—</span></div><div class="metric green"><strong>多頭勝率</strong><span id="histBullishWin">—</span></div><div class="metric red"><strong>空頭樣本數</strong><span id="histBearishN">—</span></div><div class="metric amber"><strong>空頭勝率</strong><span id="histBearishWin">—</span></div></div><div class="table-wrap"><table class="stock-table"><thead><tr><th>模型</th><th>樣本數</th><th>勝率</th><th>平均淨報酬</th><th>獲利因子</th><th>最大回撤</th><th>vs 大盤</th><th>vs 基準</th></tr></thead><tbody id="historyBody"></tbody></table></div><p class="explain" id="historyExplain">歷史績效說明會在載入後顯示。</p></div><p class="explain" id="candidateExplain">候選清單說明會在資料載入後顯示。</p></section>
+    <section class="panel"><h2>候選、持倉與歷史績效</h2><p class="hint">多頭反轉與空頭延續是兩套獨立的確定性評分，與下跌風險分數分開，不構成買賣指令。候選清單已套用價格、流動性、處置股與交易資格過濾，並顯示前 50 名。實際持倉與未成交候選分開顯示。</p><p class="explain" id="strategyExplain">核心策略規則：開盤前先篩選 50 檔上漲潛力股與 50 檔下跌潛力股；當大盤普跌時，在「50 檔上漲潛力股」中挑出「正在跌停或跌幅最高」的股票作為多頭（買進）標的，而非空頭指標。此為研究策略描述，不代表保證獲利。</p><div class="tabs"><button class="tab active" data-tab="bullish" type="button">多頭候選 <span class="badge green" id="bullishCount">0</span></button><button class="tab" data-tab="bearish" type="button">空頭候選 <span class="badge red" id="bearishCount">0</span></button><button class="tab" data-tab="holdings" type="button">實際持倉 <span class="badge" id="holdingsCount">0</span></button><button class="tab" data-tab="history" type="button">歷史績效</button></div><div class="tab-panel active" id="panel-bullish"><div class="cards" id="bullishCards"></div></div><div class="tab-panel" id="panel-bearish"><div class="cards" id="bearishCards"></div></div><div class="tab-panel" id="panel-holdings"><div class="controls"><label>代號<input id="hCode" type="text" placeholder="例如 1446"></label><label>名稱<input id="hName" type="text" placeholder="例如 宏和"></label><label>買進價<input id="hBuyPrice" type="number" step="0.01" placeholder="例如 13.95"></label><label>買入數量<input id="hQty" type="number" step="1" placeholder="例如 1000"></label><label>買入日期<input id="hBuyDate" type="date"></label><label>目標價<input id="hTarget" type="number" step="0.01" placeholder="例如 14.65"></label></div><div class="actions"><button class="btn primary" id="addHoldingBtn" type="button">新增持倉</button><button class="btn ghost" id="clearHoldingsBtn" type="button">清除自訂持倉</button></div><div class="table-wrap"><table class="stock-table"><thead><tr><th>代號 / 名稱</th><th>買入數量</th><th>買入日期</th><th>買進價</th><th>目標價</th><th>賣出數量</th><th>賣出日期</th><th>最新價</th><th>損益</th><th>損益率</th><th>狀態</th><th>操作</th></tr></thead><tbody id="holdingsBody"></tbody></table></div><p class="explain" id="holdingsExplain">持倉資料會在載入後顯示。</p></div><div class="tab-panel" id="panel-history"><div class="metrics"><div class="metric blue"><strong>多頭樣本數</strong><span id="histBullishN">—</span></div><div class="metric green"><strong>多頭勝率</strong><span id="histBullishWin">—</span></div><div class="metric red"><strong>空頭樣本數</strong><span id="histBearishN">—</span></div><div class="metric amber"><strong>空頭勝率</strong><span id="histBearishWin">—</span></div></div><div class="table-wrap"><table class="stock-table"><thead><tr><th>模型</th><th>樣本數</th><th>勝率</th><th>平均淨報酬</th><th>獲利因子</th><th>最大回撤</th><th>vs 大盤</th><th>vs 基準</th></tr></thead><tbody id="historyBody"></tbody></table></div><p class="explain" id="historyExplain">歷史績效說明會在載入後顯示。</p></div><p class="explain" id="candidateExplain">候選清單說明會在資料載入後顯示。</p></section>
     <p class="footer">資料以臺灣證券交易所及櫃買中心官方收盤資料為主。本工具僅供市場篩選與研究，不構成投資建議。</p>
   </main>
   <script>
@@ -91,8 +91,32 @@
       const dataDate = marketData.range?.end ? String(marketData.range.end) : null, staleDays = dataDate ? Math.floor((Date.now() - new Date(dataDate + "T00:00:00Z").getTime()) / 86400000) : 0;
       $("candidateExplain").textContent = (staleDays > 1 ? "⚠ 資料日期 " + dataDate + " 已過期 " + staleDays + " 天，候選清單可能不是最新。 " : "") + "多頭反轉分數由近期未創新低、低點墊高、短均線轉多、站上短均線、上漲量能、相對大盤強勢與基本面組成；空頭延續分數由跌破短均線、低點下移、近期走弱、反彈失敗、下跌量能、流動性與跌破觸發價組成。兩者皆為研究篩選，不是買賣指令。";
     }
+    function loadUserHoldings() {
+      try { return JSON.parse(localStorage.getItem("userHoldings") || "[]"); } catch { return []; }
+    }
+    function saveUserHoldings(list) {
+      localStorage.setItem("userHoldings", JSON.stringify(list));
+    }
+    function getAllPositions() {
+      const base = (positionsData?.positions || []).map((p) => ({ ...p, user: false }));
+      const user = loadUserHoldings().map((p) => ({ ...p, user: true }));
+      return base.concat(user);
+    }
+    function recordSell(code) {
+      const list = loadUserHoldings();
+      const pos = list.find((p) => String(p.code) === String(code));
+      if (!pos) return;
+      const qty = prompt("賣出數量（股）", pos.sellQuantity != null ? String(pos.sellQuantity) : "");
+      if (qty === null) return;
+      const date = prompt("賣出日期（YYYY-MM-DD）", pos.sellDate || "");
+      if (date === null) return;
+      pos.sellQuantity = qty.trim() === "" ? null : Number(qty);
+      pos.sellDate = date.trim() === "" ? null : date.trim();
+      saveUserHoldings(list);
+      renderHoldings();
+    }
     function renderHoldings() {
-      const positions = positionsData?.positions || [];
+      const positions = getAllPositions();
       const prices = latestPrices?.stocks || {};
       $("holdingsCount").textContent = number(positions.length, 0);
       $("holdingsBody").innerHTML = positions.map((pos) => {
@@ -102,9 +126,11 @@
         const pnl = Number.isFinite(current) ? (current - buy) * Number(pos.quantity) : null;
         const pnlPct = Number.isFinite(current) ? (current / buy - 1) * 100 : null;
         const pnlClass = pnlPct == null ? "" : pnlPct >= 0 ? "positive" : "negative";
-        return "<tr><td><strong>" + escapeHtml(pos.code) + "</strong> " + escapeHtml(pos.name) + "</td><td>" + number(pos.quantity, 0) + "</td><td>" + escapeHtml(pos.buyDate || "—") + "</td><td>" + number(buy) + "</td><td>" + number(pos.targetPrice) + "</td><td>" + (pos.sellQuantity != null ? number(pos.sellQuantity, 0) : "—") + "</td><td>" + escapeHtml(pos.sellDate || "—") + "</td><td>" + (current == null ? "—" : number(current)) + "</td><td class=\"" + pnlClass + "\">" + (pnl == null ? "—" : number(pnl)) + "</td><td class=\"" + pnlClass + "\">" + (pnlPct == null ? "—" : percent(pnlPct)) + "</td><td>" + escapeHtml(pos.status || "holding") + "</td></tr>";
-      }).join("") || "<tr><td colspan=\"11\" class=\"empty\">目前沒有已確認的持倉。</td></tr>";
-      $("holdingsExplain").textContent = "持倉來自 " + escapeHtml(positionsData?.title || "模擬交易") + "，以實際成交價與數量記錄，與未成交候選分開。損益以最新價格估算，尚未扣除手續費與證交稅。";
+        const sellBtn = pos.user ? "<button class=\"btn ghost\" data-sell=\"" + escapeHtml(pos.code) + "\" type=\"button\">記賣出</button>" : "—";
+        return "<tr><td><strong>" + escapeHtml(pos.code) + "</strong> " + escapeHtml(pos.name) + "</td><td>" + number(pos.quantity, 0) + "</td><td>" + escapeHtml(pos.buyDate || "—") + "</td><td>" + number(buy) + "</td><td>" + number(pos.targetPrice) + "</td><td>" + (pos.sellQuantity != null ? number(pos.sellQuantity, 0) : "—") + "</td><td>" + escapeHtml(pos.sellDate || "—") + "</td><td>" + (current == null ? "—" : number(current)) + "</td><td class=\"" + pnlClass + "\">" + (pnl == null ? "—" : number(pnl)) + "</td><td class=\"" + pnlClass + "\">" + (pnlPct == null ? "—" : percent(pnlPct)) + "</td><td>" + escapeHtml(pos.status || "holding") + "</td><td>" + sellBtn + "</td></tr>";
+      }).join("") || "<tr><td colspan=\"12\" class=\"empty\">目前沒有已確認的持倉。</td></tr>";
+      document.querySelectorAll("[data-sell]").forEach((btn) => btn.addEventListener("click", () => recordSell(btn.dataset.sell)));
+      $("holdingsExplain").textContent = "持倉來自 " + escapeHtml(positionsData?.title || "模擬交易") + "，以實際成交價與數量記錄，與未成交候選分開。損益以最新價格估算，尚未扣除手續費與證交稅。自訂持倉與賣出紀錄儲存在本機瀏覽器（localStorage）。";
     }
     function renderHistory() {
       if (!evaluationData) return;
@@ -161,7 +187,18 @@
       document.querySelectorAll(".tab").forEach((item) => item.classList.toggle("active", item === tab));
       document.querySelectorAll(".tab-panel").forEach((panel) => panel.classList.toggle("active", panel.id === "panel-" + tab.dataset.tab));
     }));
-    $("runBtn").addEventListener("click", render); $("applyBtn").addEventListener("click", render); $("market").addEventListener("change", render); $("limit").addEventListener("change", render); $("csvBtn").addEventListener("click", exportCsv); $("printBtn").addEventListener("click", () => window.print()); window.addEventListener("resize", render); load();
+    $("runBtn").addEventListener("click", render); $("applyBtn").addEventListener("click", render); $("market").addEventListener("change", render); $("limit").addEventListener("change", render); $("csvBtn").addEventListener("click", exportCsv); $("printBtn").addEventListener("click", () => window.print());
+    $("addHoldingBtn").addEventListener("click", () => {
+      const code = $("hCode").value.trim(), name = $("hName").value.trim(), buyPrice = Number($("hBuyPrice").value), quantity = Number($("hQty").value), buyDate = $("hBuyDate").value, target = Number($("hTarget").value);
+      if (!code || !buyPrice || !quantity || !buyDate) { alert("請至少填寫代號、買進價、買入數量與買入日期。"); return; }
+      const list = loadUserHoldings();
+      list.push({ code, name: name || code, buyPrice, quantity, buyDate, targetPrice: target || null, status: "holding" });
+      saveUserHoldings(list);
+      ["hCode","hName","hBuyPrice","hQty","hBuyDate","hTarget"].forEach((id) => $(id).value = "");
+      renderHoldings();
+    });
+    $("clearHoldingsBtn").addEventListener("click", () => { if (confirm("確定清除所有自訂持倉與賣出紀錄？")) { localStorage.removeItem("userHoldings"); renderHoldings(); } });
+    window.addEventListener("resize", render); load();
   </script>
 </body>
 </html>
