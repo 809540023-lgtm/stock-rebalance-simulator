@@ -1,5 +1,9 @@
 # AI Changelog
 
+## 2026-08-18 Copilot (default ranking)
+
+- Changed the default ranking count of the weak-stock table in `market-risk-scanner/index.html` from 30 to 50.
+
 ## 2026-08-18 Copilot (Priority 3 UI)
 
 - Implemented Priority 3: visual interface with four tabs (多頭候選, 空頭候選, 實際持倉, 歷史績效) in `market-risk-scanner/index.html`.
