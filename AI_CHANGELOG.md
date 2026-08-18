@@ -1,5 +1,15 @@
 # AI Changelog
 
+## 2026-08-18 Copilot (Priority 3 UI)
+
+- Implemented Priority 3: visual interface with four tabs (多頭候選, 空頭候選, 實際持倉, 歷史績效) in `market-risk-scanner/index.html`.
+- Holdings tab reads `data/paper-trade-positions.json` and `data/paper-trade-latest.json`, showing buy/current price and estimated P/L, separate from unfilled candidates.
+- History tab reads `data/shared/evaluation-summary.json` (small summary of the full `evaluation.json`).
+- Status line shows the snapshot generation timestamp and stale-data warnings.
+- Added `data/shared/evaluation-summary.json` output to `evaluate-candidates.js`.
+- Updated `tests/market-risk-scanner.spec.js` to cover the four tabs.
+- Tests run: `node --test tests/*.test.js` (30 pass) and `npx playwright test` (15 pass, 1 skipped).
+
 ## 2026-08-18 Copilot (Priority 2 evaluation)
 
 - Implemented Priority 2: long-term evaluation of candidate signals.

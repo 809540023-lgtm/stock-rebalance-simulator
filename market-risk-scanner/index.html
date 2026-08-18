@@ -16,12 +16,13 @@
     <section class="panel"><h2>LINE 價格異動監控</h2><p class="hint">雲端排程每 5 分鐘查詢臺灣證券交易所 MIS 即時行情；同一股票的每種事件每日只通知一次。</p><div class="metrics"><div class="metric blue"><strong>監控股票數</strong><span id="monitorCount">—</span></div><div class="metric red"><strong>監控市場</strong><span id="monitorMarket">上市</span></div><div class="metric amber"><strong>檢查頻率</strong><span>5 分鐘</span></div><div class="metric green"><strong>監控時段</strong><span>09:00–13:30</span></div></div><div class="actions"><a class="btn ghost" href="../data/line-watchlist.json" target="_blank" rel="noreferrer">查看監控設定</a></div><p class="explain" id="monitorExplain">正在讀取監控設定。</p></section>
     <section class="panel"><h2>大盤指數變化</h2><p class="hint">紅色為下跌，綠色為上漲；先觀察大盤下跌日，再閱讀個股排行。</p><div class="table-wrap"><table><thead><tr><th>日期</th><th>收盤指數</th><th>漲跌點</th><th>漲跌幅</th><th>方向</th></tr></thead><tbody id="indexBody"></tbody></table></div></section>
     <section class="panel"><h2>近期弱勢股票排行</h2><p class="hint">風險分數越高，表示近期跌幅、回撤、連跌或下跌量能等訊號越集中；不代表公司一定會繼續下跌。</p><div class="table-wrap"><table class="stock-table"><thead><tr><th>排名</th><th>市場</th><th>代號 / 名稱</th><th>區間跌幅</th><th>最快單日跌幅</th><th>最大回撤</th><th>下跌日</th><th>下跌日量比</th><th>本益比</th><th>殖利率</th><th>淨值比</th><th>風險分數</th><th>主要原因</th></tr></thead><tbody id="stockBody"></tbody></table></div><p class="explain" id="explain">風險評分說明會在資料載入後顯示。</p></section>
-    <section class="panel"><h2>多頭反轉與空頭延續候選</h2><p class="hint">多頭反轉與空頭延續是兩套獨立的確定性評分，與下跌風險分數分開，不構成買賣指令。候選清單已套用價格、流動性、處置股與交易資格過濾，並顯示前 50 名。</p><div class="tabs"><button class="tab active" data-tab="bullish" type="button">多頭反轉候選 <span class="badge green" id="bullishCount">0</span></button><button class="tab" data-tab="bearish" type="button">空頭延續候選 <span class="badge red" id="bearishCount">0</span></button></div><div class="tab-panel active" id="panel-bullish"><div class="cards" id="bullishCards"></div></div><div class="tab-panel" id="panel-bearish"><div class="cards" id="bearishCards"></div></div><p class="explain" id="candidateExplain">候選清單說明會在資料載入後顯示。</p></section>
+    <section class="panel"><h2>候選、持倉與歷史績效</h2><p class="hint">多頭反轉與空頭延續是兩套獨立的確定性評分，與下跌風險分數分開，不構成買賣指令。候選清單已套用價格、流動性、處置股與交易資格過濾，並顯示前 50 名。實際持倉與未成交候選分開顯示。</p><div class="tabs"><button class="tab active" data-tab="bullish" type="button">多頭候選 <span class="badge green" id="bullishCount">0</span></button><button class="tab" data-tab="bearish" type="button">空頭候選 <span class="badge red" id="bearishCount">0</span></button><button class="tab" data-tab="holdings" type="button">實際持倉 <span class="badge" id="holdingsCount">0</span></button><button class="tab" data-tab="history" type="button">歷史績效</button></div><div class="tab-panel active" id="panel-bullish"><div class="cards" id="bullishCards"></div></div><div class="tab-panel" id="panel-bearish"><div class="cards" id="bearishCards"></div></div><div class="tab-panel" id="panel-holdings"><div class="table-wrap"><table class="stock-table"><thead><tr><th>代號 / 名稱</th><th>買進日</th><th>買進價</th><th>數量</th><th>目標價</th><th>最新價</th><th>損益</th><th>損益率</th><th>狀態</th></tr></thead><tbody id="holdingsBody"></tbody></table></div><p class="explain" id="holdingsExplain">持倉資料會在載入後顯示。</p></div><div class="tab-panel" id="panel-history"><div class="metrics"><div class="metric blue"><strong>多頭樣本數</strong><span id="histBullishN">—</span></div><div class="metric green"><strong>多頭勝率</strong><span id="histBullishWin">—</span></div><div class="metric red"><strong>空頭樣本數</strong><span id="histBearishN">—</span></div><div class="metric amber"><strong>空頭勝率</strong><span id="histBearishWin">—</span></div></div><div class="table-wrap"><table class="stock-table"><thead><tr><th>模型</th><th>樣本數</th><th>勝率</th><th>平均淨報酬</th><th>獲利因子</th><th>最大回撤</th><th>vs 大盤</th><th>vs 基準</th></tr></thead><tbody id="historyBody"></tbody></table></div><p class="explain" id="historyExplain">歷史績效說明會在載入後顯示。</p></div><p class="explain" id="candidateExplain">候選清單說明會在資料載入後顯示。</p></section>
     <p class="footer">資料以臺灣證券交易所及櫃買中心官方收盤資料為主。本工具僅供市場篩選與研究，不構成投資建議。</p>
   </main>
   <script>
     const $ = (id) => document.getElementById(id);
     let marketData = null, monitorConfig = null;
+    let positionsData = null, latestPrices = null, evaluationData = null;
     let displayedStocks = [];
     function number(value, digits = 2) { const n = Number(value); return Number.isFinite(n) ? n.toLocaleString("zh-TW", { maximumFractionDigits: digits }) : "—"; }
     function percent(value) { const n = Number(value); return Number.isFinite(n) ? (n >= 0 ? "+" : "") + n.toLocaleString("zh-TW", { maximumFractionDigits: 2 }) + "%" : "—"; }
@@ -90,6 +91,33 @@
       const dataDate = marketData.range?.end ? String(marketData.range.end) : null, staleDays = dataDate ? Math.floor((Date.now() - new Date(dataDate + "T00:00:00Z").getTime()) / 86400000) : 0;
       $("candidateExplain").textContent = (staleDays > 1 ? "⚠ 資料日期 " + dataDate + " 已過期 " + staleDays + " 天，候選清單可能不是最新。 " : "") + "多頭反轉分數由近期未創新低、低點墊高、短均線轉多、站上短均線、上漲量能、相對大盤強勢與基本面組成；空頭延續分數由跌破短均線、低點下移、近期走弱、反彈失敗、下跌量能、流動性與跌破觸發價組成。兩者皆為研究篩選，不是買賣指令。";
     }
+    function renderHoldings() {
+      const positions = positionsData?.positions || [];
+      const prices = latestPrices?.stocks || {};
+      $("holdingsCount").textContent = number(positions.length, 0);
+      $("holdingsBody").innerHTML = positions.map((pos) => {
+        const quote = prices[String(pos.code)];
+        const current = quote ? Number(quote.close) : null;
+        const buy = Number(pos.buyPrice);
+        const pnl = Number.isFinite(current) ? (current - buy) * Number(pos.quantity) : null;
+        const pnlPct = Number.isFinite(current) ? (current / buy - 1) * 100 : null;
+        const pnlClass = pnlPct == null ? "" : pnlPct >= 0 ? "positive" : "negative";
+        return "<tr><td><strong>" + escapeHtml(pos.code) + "</strong> " + escapeHtml(pos.name) + "</td><td>" + escapeHtml(pos.buyDate) + "</td><td>" + number(buy) + "</td><td>" + number(pos.quantity, 0) + "</td><td>" + number(pos.targetPrice) + "</td><td>" + (current == null ? "—" : number(current)) + "</td><td class=\"" + pnlClass + "\">" + (pnl == null ? "—" : number(pnl)) + "</td><td class=\"" + pnlClass + "\">" + (pnlPct == null ? "—" : percent(pnlPct)) + "</td><td>" + escapeHtml(pos.status || "holding") + "</td></tr>";
+      }).join("") || "<tr><td colspan=\"9\" class=\"empty\">目前沒有已確認的持倉。</td></tr>";
+      $("holdingsExplain").textContent = "持倉來自 " + escapeHtml(positionsData?.title || "模擬交易") + "，以實際成交價與數量記錄，與未成交候選分開。損益以最新價格估算，尚未扣除手續費與證交稅。";
+    }
+    function renderHistory() {
+      if (!evaluationData) return;
+      const models = evaluationData.models || {}, idx = evaluationData.benchmarks?.index, base = evaluationData.benchmarks?.baseline;
+      const bull = models.bullish?.summary, bear = models.bearish?.summary;
+      $("histBullishN").textContent = bull ? number(bull.sampleSize, 0) : "—";
+      $("histBullishWin").textContent = bull ? percent(bull.winRate) : "—";
+      $("histBearishN").textContent = bear ? number(bear.sampleSize, 0) : "—";
+      $("histBearishWin").textContent = bear ? percent(bear.winRate) : "—";
+      const row = (label, sum, comp, tone) => sum ? "<tr><td class=\"" + (tone === "green" ? "positive" : tone === "red" ? "negative" : "") + "\"><strong>" + label + "</strong></td><td>" + number(sum.sampleSize, 0) + "</td><td>" + percent(sum.winRate) + "</td><td>" + percent(sum.avgNetReturn) + "</td><td>" + number(sum.profitFactor, 2) + "</td><td>" + percent(sum.maxDrawdown) + "</td><td>" + (comp && comp.edgeVsIndex != null ? percent(comp.edgeVsIndex) : "—") + "</td><td>" + (comp && comp.edgeVsBaseline != null ? percent(comp.edgeVsBaseline) : "—") + "</td></tr>" : "";
+      $("historyBody").innerHTML = row("多頭反轉", bull, models.bullish?.comparison, "green") + row("空頭延續", bear, models.bearish?.comparison, "red") || "<tr><td colspan=\"8\" class=\"empty\">目前沒有評估資料。</td></tr>";
+      $("historyExplain").textContent = "歷史績效以 " + (evaluationData.signalRange ? evaluationData.signalRange.start + " 至 " + evaluationData.signalRange.end + " 的歷史訊號" : "過往訊號") + "評估。淨報酬已扣除手續費與證交稅。大盤為加權指數 20 日未來報酬；基準為流動性匹配（日均量 ≥ 500,000）的全部股票。比較欄為模型相較基準的優勢（正數表示跑贏）。";
+    }
     function render() {
       const start = $("startDate").value, end = $("endDate").value, market = $("market").value, limit = Number($("limit").value);
       if (!marketData || !start || !end || start > end) return;
@@ -100,14 +128,25 @@
       $("stockCount").textContent = number(stocks.length, 0); $("declineCount").textContent = number(declines.length, 0); $("fastestDrop").textContent = stocks.length ? percent(fastest) : "—"; $("indexChange").textContent = percent(indexChange);
       drawBars("riskChart", stocks.slice(0, 10), "riskScore", "code", "#c5221f"); drawBars("indexChart", index, "changePct", "date", "#2563eb", true);
       const available = marketData.range || {}, outside = available.start && available.end && (start < available.start || end > available.end), warningCount = Array.isArray(marketData.warnings) ? marketData.warnings.length : 0, warningNote = warningCount ? "；快照有 " + warningCount + " 項資料警告" : "";
-      $("status").classList.toggle("error", Boolean(outside)); $("status").textContent = outside ? "目前官方快照涵蓋 " + available.start + " 至 " + available.end + "，請選擇範圍內日期。" : "已完成 " + start + " 至 " + end + " 的" + (market === "all" ? "上市＋上櫃" : market) + "分析，共 " + index.length + " 個交易日" + warningNote + "。";
+      const genAt = marketData.generatedAt ? "。快照產生於 " + new Date(marketData.generatedAt).toLocaleString("zh-TW") : "";
+      $("status").classList.toggle("error", Boolean(outside)); $("status").textContent = outside ? "目前官方快照涵蓋 " + available.start + " 至 " + available.end + "，請選擇範圍內日期。" : "已完成 " + start + " 至 " + end + " 的" + (market === "all" ? "上市＋上櫃" : market) + "分析，共 " + index.length + " 個交易日" + warningNote + genAt + "。";
       $("explain").textContent = stocks.length ? "風險分數由單日最快跌幅 30%、區間累積跌幅 25%、最大回撤 20%、下跌日比例 10%、下跌日量比 10%及基本面警示 5%組成。分數用於篩選，不是買賣指令。" : "目前快照有大盤資料，但股票排行尚未填入；每日官方更新完成後，這裡會出現上市與上櫃股票排序。";
     }
     async function load() {
       try {
-        const [marketResponse, monitorResponse] = await Promise.all([fetch("./data/market-risk.json", { cache: "no-cache" }), fetch("../data/line-watchlist.json", { cache: "no-cache" })]);
+        const [marketResponse, monitorResponse, positionsResponse, latestResponse, evaluationResponse] = await Promise.all([
+          fetch("./data/market-risk.json", { cache: "no-cache" }),
+          fetch("../data/line-watchlist.json", { cache: "no-cache" }),
+          fetch("../data/paper-trade-positions.json", { cache: "no-cache" }),
+          fetch("../data/paper-trade-latest.json", { cache: "no-cache" }),
+          fetch("../data/shared/evaluation-summary.json", { cache: "no-cache" })
+        ]);
         if (!marketResponse.ok) throw new Error("HTTP " + marketResponse.status);
-        marketData = await marketResponse.json(); monitorConfig = monitorResponse.ok ? await monitorResponse.json() : { enabled: false }; renderMonitor(); if (marketData.range?.start) $("startDate").value = marketData.range.start; if (marketData.range?.end) $("endDate").value = marketData.range.end; render();
+        marketData = await marketResponse.json(); monitorConfig = monitorResponse.ok ? await monitorResponse.json() : { enabled: false };
+        positionsData = positionsResponse.ok ? await positionsResponse.json() : null;
+        latestPrices = latestResponse.ok ? await latestResponse.json() : null;
+        evaluationData = evaluationResponse.ok ? await evaluationResponse.json() : null;
+        renderMonitor(); if (marketData.range?.start) $("startDate").value = marketData.range.start; if (marketData.range?.end) $("endDate").value = marketData.range.end; render(); renderHoldings(); renderHistory();
       } catch (error) { $("status").classList.add("error"); $("status").textContent = "官方資料讀取失敗：" + error.message; }
     }
     function exportCsv() {

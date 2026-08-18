@@ -306,4 +306,15 @@ const output = {
 
 await mkdir(new URL("../../data/shared/", import.meta.url), { recursive: true });
 await writeFile(new URL("../../data/shared/evaluation.json", import.meta.url), JSON.stringify(output, null, 2), "utf8");
+// A small summary file for the UI, omitting the full trade records.
+const summary = {
+  generatedAt: output.generatedAt,
+  signalRange: output.signalRange,
+  models: {
+    bullish: { summary: output.models.bullish.summary, comparison: output.models.bullish.comparison },
+    bearish: { summary: output.models.bearish.summary, comparison: output.models.bearish.comparison }
+  },
+  benchmarks: output.benchmarks
+};
+await writeFile(new URL("../../data/shared/evaluation-summary.json", import.meta.url), JSON.stringify(summary, null, 2), "utf8");
 console.log(`Saved evaluation: ${bullishTrades.length} bullish, ${bearishTrades.length} bearish trades.`);

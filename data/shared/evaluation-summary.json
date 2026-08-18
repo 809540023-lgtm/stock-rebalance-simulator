@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-08-18T00:26:52.532Z",
+  "signalRange": {
+    "start": "2026-06-15",
+    "end": "2026-07-20"
+  },
+  "models": {
+    "bullish": {
+      "summary": {
+        "sampleSize": 3221,
+        "winRate": 43.5,
+        "avgNetReturn": -1.08,
+        "profitFactor": 0.63,
+        "maxDrawdown": 6.71,
+        "totalReturn": -3474.89
+      },
+      "comparison": {
+        "modelAvgNetReturn": -1.08,
+        "indexAvgReturn": -1.45,
+        "baselineAvgNetReturn": -5.32,
+        "edgeVsIndex": 0.3699999999999999,
+        "edgeVsBaseline": 4.24
+      }
+    },
+    "bearish": {
+      "summary": {
+        "sampleSize": 4160,
+        "winRate": 55.87,
+        "avgNetReturn": 0.06,
+        "profitFactor": 1.02,
+        "maxDrawdown": 5.02,
+        "totalReturn": 236.15
+      },
+      "comparison": {
+        "modelAvgNetReturn": 0.06,
+        "indexAvgReturn": -1.45,
+        "baselineAvgNetReturn": -5.32,
+        "edgeVsIndex": 1.51,
+        "edgeVsBaseline": 5.38
+      }
+    }
+  },
+  "benchmarks": {
+    "index": {
+      "sampleSize": 27,
+      "winRate": 55.56,
+      "avgNetReturn": -1.45,
+      "profitFactor": 0.52,
+      "maxDrawdown": 7.23,
+      "totalReturn": -39.03
+    },
+    "baseline": {
+      "sampleSize": 22904,
+      "winRate": 21.63,
+      "avgNetReturn": -5.32,
+      "profitFactor": 0.27,
+      "maxDrawdown": 7.98,
+      "totalReturn": -121909.85
+    }
+  }
+}

@@ -16,7 +16,7 @@
 
 ### Remaining
 
-- Priority 3 (visual tabs for holdings/history) is not yet implemented.
+- Priority 4 (shared agent workflow) is ongoing; keep secrets out of the repository and update `AI_CHANGELOG.md` after meaningful work.
 
 ## Priority 2: Long-Term Evaluation
 
@@ -34,10 +34,17 @@
 
 ## Priority 3: Visual Interface
 
-- Add separate tabs for bullish candidates, bearish candidates, actual holdings, and historical performance.
-- Display data timestamp and stale-data warnings prominently.
-- Show why each candidate passed or failed each rule.
-- Keep paper trades separate from unfilled candidates.
+- [x] Add separate tabs for bullish candidates, bearish candidates, actual holdings, and historical performance.
+- [x] Display data timestamp and stale-data warnings prominently.
+- [x] Show why each candidate passed or failed each rule.
+- [x] Keep paper trades separate from unfilled candidates.
+
+### Implementation notes
+
+- `market-risk-scanner/index.html` now has four tabs: 多頭候選, 空頭候選, 實際持倉, 歷史績效.
+- Holdings tab reads `data/paper-trade-positions.json` and `data/paper-trade-latest.json`, showing buy/current price and estimated P/L; kept separate from unfilled candidates.
+- History tab reads `data/shared/evaluation-summary.json` (a small summary of `evaluation.json`) and shows model summaries and benchmark comparison.
+- The status line shows the snapshot generation timestamp and stale-data warnings.
 
 ## Priority 4: Shared Agent Workflow
 

@@ -58,7 +58,15 @@ The project is a Taiwan stock research and paper-trading system. It contains ass
 - Trade records store signal date, entry/target/stop, MFE/MAE, exit reason, gross/net return, and 3/5/20-day returns. Net return subtracts commission (0.1425% per side) and 0.3% sale tax.
 - Benchmarks: TAIEX 20-day forward return and a liquidity-matched baseline (average volume >= 500,000).
 - Latest run (signals 2026-06-15 to 2026-07-20): bullish 3,221 trades (win 43.5%, avg net -1.08%), bearish 4,160 trades (win 55.9%, avg net +0.06%). Both beat the baseline (-5.32%) and index (-1.45%).
+- `data/shared/evaluation-summary.json` is a small summary of `evaluation.json` for the UI.
 - Note: the TAIEX index for the current month is only available after month-end, so the index series may lag the stock quotes.
+
+## Visual Interface (Priority 3)
+
+- `market-risk-scanner/index.html` has four tabs: 多頭候選, 空頭候選, 實際持倉, 歷史績效.
+- The holdings tab reads `data/paper-trade-positions.json` and `data/paper-trade-latest.json`, showing buy/current price and estimated P/L, separate from unfilled candidates.
+- The history tab reads `data/shared/evaluation-summary.json` and shows model summaries and benchmark comparison.
+- The status line shows the snapshot generation timestamp and stale-data warnings; candidate cards show per-rule reasons.
 
 ## Recent Research Examples
 

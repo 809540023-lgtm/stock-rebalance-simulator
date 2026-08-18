@@ -41,5 +41,12 @@ market-risk-scanner/index.html
 - `scripts/evaluate-candidates.js` 產生歷史訊號並計算未來報酬，寫入 `data/shared/evaluation.json`。
 - 每筆交易記錄訊號日期、進場/目標/停損價、MFE/MAE、出場原因、毛報酬與淨報酬，以及 3/5/20 日報酬。淨報酬扣除手續費（單邊 0.1425%）與 0.3% 證交稅。
 - 基準：加權指數 20 日未來報酬，以及流動性匹配基準（日均量 >= 500,000 的全部股票）。
+- UI 的「歷史績效」分頁讀取輕量摘要 `data/shared/evaluation-summary.json`（完整交易記錄在 `evaluation.json`）。
+
+## 視覺介面分頁
+
+- 多頭候選、空頭候選、實際持倉、歷史績效四個分頁。
+- 實際持倉分頁讀取 `data/paper-trade-positions.json` 與 `data/paper-trade-latest.json`，顯示買進/最新價與損益，與未成交候選分開。
+- 候選卡片顯示每條規則的通過原因；狀態列顯示快照產生時間與過期警告。
 
 風險分數是研究篩選指標，不構成投資建議。

@@ -11,13 +11,19 @@ test("standalone risk scanner renders its own snapshot", async ({ page }) => {
   await expect(page.locator("#monitorMarket")).toHaveText("上市");
 });
 
-test("risk scanner shows bullish and bearish candidate tabs", async ({ page }) => {
+test("risk scanner shows candidate, holdings, and history tabs", async ({ page }) => {
   await page.goto("/market-risk-scanner/index.html");
-  await expect(page.getByRole("heading", { name: "多頭反轉與空頭延續候選" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "候選、持倉與歷史績效" })).toBeVisible();
   await expect(page.locator("#bullishCount")).toHaveText(/\d+/);
   await expect(page.locator("#bearishCount")).toHaveText(/\d+/);
   await expect(page.locator("#bullishCards .card")).not.toHaveCount(0);
-  await page.getByRole("button", { name: /空頭延續候選/ }).click();
+  await page.getByRole("button", { name: /空頭候選/ }).click();
   await expect(page.locator("#panel-bearish")).toHaveClass(/active/);
   await expect(page.locator("#bearishCards .card")).not.toHaveCount(0);
+  await page.getByRole("button", { name: /實際持倉/ }).click();
+  await expect(page.locator("#panel-holdings")).toHaveClass(/active/);
+  await expect(page.locator("#holdingsBody tr")).not.toHaveCount(0);
+  await page.getByRole("button", { name: /歷史績效/ }).click();
+  await expect(page.locator("#panel-history")).toHaveClass(/active/);
+  await expect(page.locator("#historyBody tr")).not.toHaveCount(0);
 });
