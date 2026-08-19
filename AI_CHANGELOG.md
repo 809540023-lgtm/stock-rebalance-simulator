@@ -1,5 +1,9 @@
 # AI Changelog
 
+## 2026-08-19 Copilot (dark professional UI theme)
+
+- Redesigned the scanner UI (`market-risk-scanner/index.html`) and the mobile order page (`today-orders.html`) with a dark, app-like theme inspired by 投資先生: dark gradient background, card-based panels, and clear red (down) / green (up) color coding.
+
 ## 2026-08-19 Copilot (auto live-price refresh)
 
 - The trade tracker (index.html) and mobile page (today-orders.html) now auto-refresh live prices every 60 seconds while the trades tab is open, so P/L updates without clicking.
