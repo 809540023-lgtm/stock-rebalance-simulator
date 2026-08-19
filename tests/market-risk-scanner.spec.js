@@ -40,3 +40,16 @@ test("user can add a custom holding from the holdings tab", async ({ page }) => 
   await expect(page.locator("#holdingsBody")).toContainText("9999");
   await expect(page.locator("#holdingsBody")).toContainText("測試股");
 });
+
+test("today's trade tracker loads candidates and records a trade", async ({ page }) => {
+  await page.goto("/market-risk-scanner/index.html");
+  await page.getByRole("button", { name: /今日下單追蹤/ }).click();
+  await expect(page.locator("#panel-trades")).toHaveClass(/active/);
+  await expect(page.locator("#tradeBullishBody tr")).not.toHaveCount(0);
+  await expect(page.locator("#tradeBearishBody tr")).not.toHaveCount(0);
+  const firstCode = await page.locator("#tradeBullishBody [data-record]").first().getAttribute("data-record");
+  await page.locator("[data-fill=\"" + firstCode + "\"]").fill("10");
+  await page.locator("[data-qty=\"" + firstCode + "\"]").fill("1000");
+  await page.locator("[data-record=\"" + firstCode + "\"]").click();
+  await expect(page.locator("#tradeCount")).toHaveText("1");
+});

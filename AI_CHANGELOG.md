@@ -1,5 +1,13 @@
 # AI Changelog
 
+## 2026-08-19 Copilot (today's trade tracker)
+
+- Added a "今日下單追蹤" tab to `market-risk-scanner/index.html`: auto-loads today's top 10 bullish (buy) and top 10 bearish (short) candidates; user enters fill price and quantity, records the order, and the page computes live P/L (buy vs short), with totals stored in localStorage.
+- A "更新即時價" button fetches TWSE MIS live prices (falls back to candidate latest close if the browser blocks cross-origin).
+- Regenerated candidate data through 2026-08-19 for the next trading day.
+- Added a Playwright test for the trade tracker.
+- Tests run: `node --test tests/*.test.js` (40 pass) and `npx playwright test` (19 pass, 1 skipped).
+
 ## 2026-08-18 Copilot (integrate alphalens + StockPricePrediction)
 
 - Added `market-risk-scanner/scripts/factor-analysis.js` (alphalens concept): IC (rank correlation of score vs forward return), quantile returns, and factor spread.

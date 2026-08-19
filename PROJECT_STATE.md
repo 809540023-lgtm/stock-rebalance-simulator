@@ -62,6 +62,7 @@ The project is a Taiwan stock research and paper-trading system. It contains ass
 - `data/shared/evaluation-summary.json` is a small summary of `evaluation.json` for the UI.
 - `market-risk-scanner/scripts/factor-analysis.js` (ported from alphalens) computes IC, quantile returns, and factor spread per model; shown in the history tab.
 - `market-risk-scanner/scripts/price-prediction.js` (ported from StockPricePrediction) predicts next price/change via OLS linear regression; shown on candidate cards.
+- The scanner UI has a "今日下單追蹤" tab that auto-loads the top 10 bullish (buy) and top 10 bearish (short) candidates, lets the user enter fill price/quantity, and computes live P/L (stored in localStorage).
 - Note: the TAIEX index for the current month is only available after month-end, so the index series may lag the stock quotes.
 
 ## Visual Interface (Priority 3)
