@@ -1,5 +1,9 @@
 # AI Changelog
 
+## 2026-08-19 Copilot (auto live-price refresh)
+
+- The trade tracker (index.html) and mobile page (today-orders.html) now auto-refresh live prices every 60 seconds while the trades tab is open, so P/L updates without clicking.
+
 ## 2026-08-19 Copilot (holdings delete + mobile page + live prices)
 
 - Holdings tab: added a checkbox column with "全選" and a "刪除選取" button so users can delete only selected custom holdings (instead of clearing all).

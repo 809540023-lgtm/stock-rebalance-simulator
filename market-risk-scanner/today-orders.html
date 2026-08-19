@@ -120,6 +120,7 @@
     }
     $("liveBtn").addEventListener("click", updateLive);
     $("clearBtn").addEventListener("click", () => { if (confirm("清除所有下單紀錄？")) { localStorage.removeItem("tradeRecords"); render(); } });
+    setInterval(updateLive, 60000);
     (async () => {
       try {
         const resp = await fetch("./data/market-risk.json", { cache: "no-cache" });

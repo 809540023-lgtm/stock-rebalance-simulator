@@ -286,6 +286,7 @@
     });
     $("livePriceBtn").addEventListener("click", updateLivePrices);
     $("clearTradesBtn").addEventListener("click", () => { if (confirm("確定清除所有下單紀錄？")) { localStorage.removeItem("tradeRecords"); renderTrades(); } });
+    setInterval(() => { if ($("panel-trades").classList.contains("active")) updateLivePrices(); }, 60000);
     window.addEventListener("resize", render); load();
   </script>
 </body>
