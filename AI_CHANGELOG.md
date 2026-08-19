@@ -1,5 +1,9 @@
 # AI Changelog
 
+## 2026-08-20 Copilot (friendlier copy)
+
+- Rewrote the scanner and mobile page copy in a warmer, more human tone: friendlier subtitles, hints, and explanations across the candidate, holdings, history, and trade-tracker sections.
+
 ## 2026-08-19 Copilot (dark professional UI theme)
 
 - Redesigned the scanner UI (`market-risk-scanner/index.html`) and the mobile order page (`today-orders.html`) with a dark, app-like theme inspired by 投資先生: dark gradient background, card-based panels, and clear red (down) / green (up) color coding.

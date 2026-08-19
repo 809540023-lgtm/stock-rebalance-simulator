@@ -32,7 +32,7 @@ h1{font-size:22px;margin:0 0 4px;background:linear-gradient(90deg,#fff,#7fb0ff);
 <body>
   <main class="app">
     <h1>今日下單追蹤</h1>
-    <p class="sub">自動帶入今日前 10 檔多頭（買進）與前 10 檔空頭（放空）候選，手機上快速記錄成交。</p>
+    <p class="sub">今天要下單嗎？這裡已幫你準備好前 10 檔多頭（買進）和前 10 檔空頭（放空）候選。填上成交價和數量，按「記錄」，損益自動幫你算。</p>
     <div class="nav"><a href="index.html" target="_blank">開啟完整版分析頁 →</a></div>
     <div class="actions">
       <button class="btn primary" id="liveBtn" type="button">更新即時價</button>
@@ -49,7 +49,7 @@ h1{font-size:22px;margin:0 0 4px;background:linear-gradient(90deg,#fff,#7fb0ff);
     <div id="bullishList"></div>
     <h2>📉 空頭（放空）前 10 檔</h2>
     <div id="bearishList"></div>
-    <p class="sub">損益為試算（未扣手續費/稅），不構成投資建議。</p>
+    <p class="sub">小提醒：這裡的損益是幫你快速估算的（還沒扣手續費和稅），僅供參考，不構成投資建議喔。</p>
   </main>
   <script>
     const $ = (id) => document.getElementById(id);
