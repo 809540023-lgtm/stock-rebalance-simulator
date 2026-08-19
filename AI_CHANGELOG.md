@@ -1,5 +1,13 @@
 # AI Changelog
 
+## 2026-08-19 Copilot (holdings delete + mobile page + live prices)
+
+- Holdings tab: added a checkbox column with "全選" and a "刪除選取" button so users can delete only selected custom holdings (instead of clearing all).
+- Added a mobile-friendly standalone page `market-risk-scanner/today-orders.html` for entering daily orders on a phone; shares the same localStorage records as the main page.
+- Fixed the "更新即時價" CORS error: TWSE MIS blocks browser cross-origin, so live prices are now fetched server-side by a new GitHub Actions workflow (`update-live-prices.yml` + `scripts/fetch-live-prices.js`) into `data/shared/live-prices.json`, which the site reads.
+- Added a Playwright test for deleting selected holdings.
+- Tests run: `node --test tests/*.test.js` (40 pass) and `npx playwright test` (21 pass, 1 skipped).
+
 ## 2026-08-19 Copilot (today's trade tracker)
 
 - Added a "今日下單追蹤" tab to `market-risk-scanner/index.html`: auto-loads today's top 10 bullish (buy) and top 10 bearish (short) candidates; user enters fill price and quantity, records the order, and the page computes live P/L (buy vs short), with totals stored in localStorage.

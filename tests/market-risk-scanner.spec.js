@@ -53,3 +53,19 @@ test("today's trade tracker loads candidates and records a trade", async ({ page
   await page.locator("[data-record=\"" + firstCode + "\"]").click();
   await expect(page.locator("#tradeCount")).toHaveText("1");
 });
+
+test("selected custom holdings can be deleted", async ({ page }) => {
+  await page.goto("/market-risk-scanner/index.html");
+  await page.getByRole("button", { name: /實際持倉/ }).click();
+  await page.locator("#hCode").fill("8888");
+  await page.locator("#hName").fill("刪除測試");
+  await page.locator("#hBuyPrice").fill("20");
+  await page.locator("#hQty").fill("500");
+  await page.locator("#hBuyDate").fill("2026-08-19");
+  await page.getByRole("button", { name: "新增持倉" }).click();
+  await expect(page.locator("#holdingsBody")).toContainText("8888");
+  await page.locator("[data-delcode=\"8888\"]").check();
+  page.once("dialog", (dialog) => dialog.accept());
+  await page.getByRole("button", { name: "刪除選取" }).click();
+  await expect(page.locator("#holdingsBody")).not.toContainText("8888");
+});

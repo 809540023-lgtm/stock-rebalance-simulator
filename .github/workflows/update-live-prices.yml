@@ -1,0 +1,43 @@
+name: Update live prices for trade tracker
+
+on:
+  schedule:
+    # Taiwan trading hours (01:00-05:30 UTC = 09:00-13:30 Taipei), weekdays.
+    - cron: "*/5 1-5 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-live-prices
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Fetch live prices
+        run: |
+          cd market-risk-scanner
+          node scripts/fetch-live-prices.js
+
+      - name: Commit live prices
+        run: |
+          if git diff --quiet -- data/shared/live-prices.json; then
+            echo "Live prices unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/shared/live-prices.json
+          git commit -m "Update live prices for trade tracker"
+          git push

@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>今日下單追蹤（手機版）</title>
+  <style>
+    :root{--bg:#f4f6f8;--surface:#fff;--ink:#182230;--muted:#667085;--line:#d8dee8;--blue:#2563eb;--green:#087443;--red:#c5221f;--green-soft:#e8f7ef;--red-soft:#fff0ef}
+    *{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",sans-serif;line-height:1.5}
+    .app{width:min(560px,100%);margin:0 auto;padding:16px 12px 40px}
+    h1{font-size:22px;margin:0 0 4px}h2{font-size:16px;margin:18px 0 8px}
+    .sub{color:var(--muted);font-size:13px;margin:0 0 12px}
+    .btn{min-height:44px;padding:10px 14px;border:0;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer}
+    .btn.primary{background:var(--blue);color:#fff}.btn.ghost{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+    .status{margin:0 0 12px;padding:10px 12px;border-left:4px solid var(--blue);border-radius:8px;background:#f6f9ff;font-size:13px;color:#344054}
+    .status.error{border-left-color:var(--red);background:var(--red-soft);color:var(--red)}
+    .totals{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px}
+    .total{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px}
+    .total strong{display:block;color:var(--muted);font-size:12px}.total span{font-size:20px;font-weight:800}
+    .total.green span{color:var(--green)}.total.red span{color:var(--red)}.total.blue span{color:var(--blue)}
+    .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:8px}
+    .card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+    .card-title{font-weight:800;font-size:15px}.card-sub{color:var(--muted);font-size:12px}
+    .pl{font-weight:800}.pl.up{color:var(--green)}.pl.down{color:var(--red)}
+    .row{display:flex;gap:8px;align-items:center}
+    .row input{flex:1;min-height:42px;padding:8px;border:1px solid #c7d0dd;border-radius:8px;font-size:15px}
+    .row .record{flex:0 0 auto}
+    .rec{display:inline-block;font-size:11px;color:var(--green);font-weight:700}
+    .nav{margin-bottom:14px}.nav a{color:var(--blue);font-size:13px;text-decoration:none}
+  </style>
+</head>
+<body>
+  <main class="app">
+    <h1>今日下單追蹤</h1>
+    <p class="sub">自動帶入今日前 10 檔多頭（買進）與前 10 檔空頭（放空）候選，手機上快速記錄成交。</p>
+    <div class="nav"><a href="index.html" target="_blank">開啟完整版分析頁 →</a></div>
+    <div class="actions">
+      <button class="btn primary" id="liveBtn" type="button">更新即時價</button>
+      <button class="btn ghost" id="clearBtn" type="button">清除下單紀錄</button>
+    </div>
+    <p class="status" id="status">尚未下單。</p>
+    <div class="totals">
+      <div class="total blue"><strong>已下單</strong><span id="count">0</span></div>
+      <div class="total green"><strong>多頭損益</strong><span id="bullishPl">—</span></div>
+      <div class="total red"><strong>空頭損益</strong><span id="bearishPl">—</span></div>
+      <div class="total"><strong>合計損益</strong><span id="totalPl">—</span></div>
+    </div>
+    <h2>📈 多頭（買進）前 10 檔</h2>
+    <div id="bullishList"></div>
+    <h2>📉 空頭（放空）前 10 檔</h2>
+    <div id="bearishList"></div>
+    <p class="sub">損益為試算（未扣手續費/稅），不構成投資建議。</p>
+  </main>
+  <script>
+    const $ = (id) => document.getElementById(id);
+    let marketData = null, livePrices = {};
+    const num = (v, d = 2) => Number.isFinite(Number(v)) ? Number(v).toLocaleString("zh-TW", { maximumFractionDigits: d }) : "—";
+    const pct = (v) => Number.isFinite(Number(v)) ? (v >= 0 ? "+" : "") + Number(v).toFixed(2) + "%" : "—";
+    function esc(v) { return String(v ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;"); }
+    function loadRec() { try { return JSON.parse(localStorage.getItem("tradeRecords") || "[]"); } catch { return []; } }
+    function saveRec(l) { localStorage.setItem("tradeRecords", JSON.stringify(l)); }
+    function pl(rec, cur) {
+      if (cur == null) return null;
+      const p = rec.action === "buy" ? (cur - rec.fillPrice) / rec.fillPrice * 100 : (rec.fillPrice - cur) / rec.fillPrice * 100;
+      const a = rec.action === "buy" ? (cur - rec.fillPrice) * rec.quantity : (rec.fillPrice - cur) * rec.quantity;
+      return { p, a };
+    }
+    function cardHtml(c, action) {
+      const recs = loadRec();
+      const rec = recs.find((r) => r.code === c.code);
+      const cur = livePrices[c.code] ?? c.endPrice;
+      const p = rec ? pl(rec, cur) : null;
+      const plHtml = p == null ? '<span class="pl">—</span>' : '<span class="pl ' + (p.p >= 0 ? "up" : "down") + '">' + (p.p >= 0 ? "+" : "") + p.p.toFixed(2) + "%</span>";
+      return '<div class="card"><div class="card-head"><div><div class="card-title">' + esc(c.code) + ' ' + esc(c.name) + '</div><div class="card-sub">現價 ' + num(cur) + ' · 預估 ' + (c.predictedChangePct != null ? pct(c.predictedChangePct) : "—") + '</div></div>' + plHtml + '</div><div class="row"><input type="number" step="0.01" data-fill="' + c.code + '" value="' + (rec ? rec.fillPrice : "") + '" placeholder="成交價"><input type="number" step="1" data-qty="' + c.code + '" value="' + (rec ? rec.quantity : "") + '" placeholder="數量"><button class="btn primary record" data-record="' + c.code + '" data-action="' + action + '" type="button">' + (rec ? "更新" : "記錄") + '</button></div>' + (rec ? '<span class="rec">已記錄</span>' : "") + '</div>';
+    }
+    function render() {
+      const bullish = (marketData?.candidates?.bullish || []).slice(0, 10);
+      const bearish = (marketData?.candidates?.bearish || []).slice(0, 10);
+      $("bullishList").innerHTML = bullish.map((c) => cardHtml(c, "buy")).join("") || "<p class='sub'>無資料</p>";
+      $("bearishList").innerHTML = bearish.map((c) => cardHtml(c, "short")).join("") || "<p class='sub'>無資料</p>";
+      const all = bullish.concat(bearish); const byCode = {};
+      all.forEach((c) => { byCode[c.code] = c.endPrice; });
+      let bp = 0, sp = 0, n = 0;
+      loadRec().forEach((r) => {
+        const cur = livePrices[r.code] ?? byCode[r.code];
+        if (cur == null) return;
+        const p = pl(r, cur); if (p == null) return;
+        n += 1; if (r.action === "buy") bp += p.a; else sp += p.a;
+      });
+      $("count").textContent = num(n, 0);
+      $("bullishPl").textContent = num(bp);
+      $("bearishPl").textContent = num(sp);
+      $("totalPl").textContent = num(bp + sp);
+      document.querySelectorAll("[data-record]").forEach((btn) => btn.addEventListener("click", () => {
+        const code = btn.dataset.record, action = btn.dataset.action;
+        const fillPrice = Number(document.querySelector('[data-fill="' + code + '"]').value);
+        const quantity = Number(document.querySelector('[data-qty="' + code + '"]').value);
+        if (!fillPrice || !quantity) { alert("請輸入成交價與數量。"); return; }
+        const list = loadRec();
+        const i = list.findIndex((r) => r.code === code);
+        const rec = { code, action, fillPrice, quantity };
+        if (i >= 0) list[i] = rec; else list.push(rec);
+        saveRec(list); render();
+      }));
+    }
+    async function updateLive() {
+      $("status").classList.remove("error");
+      $("status").textContent = "讀取中…";
+      try {
+        const resp = await fetch("./data/shared/live-prices.json", { cache: "no-cache" });
+        const data = await resp.json();
+        Object.entries(data.prices || {}).forEach(([code, price]) => { livePrices[code] = price; });
+        $("status").textContent = "已讀取即時價（" + (data.fetchedAt ? new Date(data.fetchedAt).toLocaleTimeString("zh-TW") : "") + "）。";
+      } catch (e) {
+        $("status").classList.add("error");
+        $("status").textContent = "讀取即時價失敗（需由伺服器端排程更新），改用候選最新價。";
+      }
+      render();
+    }
+    $("liveBtn").addEventListener("click", updateLive);
+    $("clearBtn").addEventListener("click", () => { if (confirm("清除所有下單紀錄？")) { localStorage.removeItem("tradeRecords"); render(); } });
+    (async () => {
+      try {
+        const resp = await fetch("./data/market-risk.json", { cache: "no-cache" });
+        marketData = await resp.json();
+        $("status").textContent = "候選清單已載入（資料日期 " + (marketData.range?.end || "—") + "）。";
+      } catch (e) { $("status").classList.add("error"); $("status").textContent = "資料載入失敗：" + e.message; }
+      render();
+    })();
+  </script>
+</body>
+</html>
