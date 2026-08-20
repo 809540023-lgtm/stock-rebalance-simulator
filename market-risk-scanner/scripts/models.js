@@ -1,6 +1,7 @@
 // Deterministic bullish-reversal and bearish-continuation models.
 // These are separate from the decline-risk score and are NOT buy/sell orders.
 // All functions are pure so they can be unit-tested without network access.
+import { rsi, macd, bollinger } from "./technical-indicators.js";
 
 export const DEFAULT_CONFIG = {
   // Minimum number of daily bars required to score a stock.
@@ -38,6 +39,20 @@ function avg(values) {
 function lastReturn(closes, window) {
   if (closes.length < window + 1) return null;
   return (closes.at(-1) / closes.at(-1 - window) - 1) * 100;
+}
+
+// Computes the latest technical-indicator states for a series of closes.
+function technicalSignals(closes) {
+  if (closes.length < 20) return { rsi: null, macdHist: null, bb: null };
+  const r = rsi(closes);
+  const m = macd(closes);
+  const b = bollinger(closes);
+  const last = closes.at(-1);
+  return {
+    rsi: r.at(-1),
+    macdHist: m.hist.at(-1),
+    bb: b.middle.at(-1) != null ? { mid: b.middle.at(-1), upper: b.upper.at(-1), lower: b.lower.at(-1), price: last } : null
+  };
 }
 
 // Returns { score, reasons, passed } for a bullish reversal confirmation.
@@ -125,7 +140,13 @@ export function computeBullishScore(series, indexCloses, fundamental) {
     reasons.push("基本面偏弱");
   }
 
-  return { score: Number(score.toFixed(2)), reasons, passed: score >= 60 };
+  // 8. Technical indicators (RSI / MACD / Bollinger).
+  const tech = technicalSignals(closes);
+  if (tech.rsi != null && tech.rsi > 50 && tech.rsi < 75) { score += 5; reasons.push("RSI 走強"); }
+  if (tech.macdHist != null && tech.macdHist > 0) { score += 5; reasons.push("MACD 轉多"); }
+  if (tech.bb && tech.bb.price >= tech.bb.mid) { score += 5; reasons.push("站上布林中軌"); }
+
+  return { score: Number(Math.min(100, score).toFixed(2)), reasons, passed: score >= 60 };
 }
 
 // Returns { score, reasons, passed } for a bearish continuation candidate.
@@ -202,7 +223,13 @@ export function computeBearishScore(series, indexCloses, fundamental) {
     reasons.push(`跌破 ${trigger.toFixed(2)} 觸發`);
   }
 
-  return { score: Number(score.toFixed(2)), reasons, passed: score >= 60 };
+  // 8. Technical indicators (RSI / MACD / Bollinger) for bearish confirmation.
+  const tech = technicalSignals(closes);
+  if (tech.rsi != null && tech.rsi < 50 && tech.rsi > 25) { score += 5; reasons.push("RSI 轉弱"); }
+  if (tech.macdHist != null && tech.macdHist < 0) { score += 5; reasons.push("MACD 走空"); }
+  if (tech.bb && tech.bb.price <= tech.bb.mid) { score += 5; reasons.push("跌破布林中軌"); }
+
+  return { score: Number(Math.min(100, score).toFixed(2)), reasons, passed: score >= 60 };
 }
 
 // Filters that gate whether a stock may appear in a candidate list.

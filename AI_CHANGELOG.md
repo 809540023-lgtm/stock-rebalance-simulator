@@ -1,5 +1,12 @@
 # AI Changelog
 
+## 2026-08-20 Copilot (technical indicators)
+
+- Added `market-risk-scanner/scripts/technical-indicators.js` with RSI, MACD, KDJ, and Bollinger Bands (pure functions).
+- Integrated RSI/MACD/Bollinger signals into the bullish and bearish models: bullish gets "RSI 走強 / MACD 轉多 / 站上布林中軌"; bearish gets "RSI 轉弱 / MACD 走空 / 跌破布林中軌".
+- Added `tests/technical-indicators.test.js`; regenerated candidate data through 2026-08-19.
+- Tests run: `node --test tests/*.test.js` (45 pass) and `npx playwright test` (21 pass, 1 skipped).
+
 ## 2026-08-20 Copilot (default order quantity)
 
 - Pre-filled the order quantity input to 10 shares in the trade tracker (index.html) and mobile page (today-orders.html) so users don't need to type it; still editable.
