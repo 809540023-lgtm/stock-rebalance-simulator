@@ -1,5 +1,9 @@
 # AI Changelog
 
+## 2026-08-21 Copilot (TradingView real-time chart)
+
+- Embedded a TradingView real-time chart into the scanner UI (`market-risk-scanner/index.html`): a "即時圖表（TradingView）" panel with a symbol input and interval selector, using the TradingView widget (dark theme, Taiwan stocks via TWSE:CODE).
+
 ## 2026-08-20 Copilot (international tools list)
 
 - Added TradingView and Backtrader to `docs/github-stock-analysis-references.md` as recommended international stock analysis tools.

@@ -17,6 +17,7 @@
     <section class="panel"><h2>近期弱勢股票排行</h2><p class="hint">風險分數越高，代表這檔近期跌幅、回撤、連續下跌或下跌量能等警訊比較集中。但這只是提醒你「要小心」，不代表它一定會繼續跌喔。</p><div class="table-wrap"><table class="stock-table"><thead><tr><th>排名</th><th>市場</th><th>代號 / 名稱</th><th>區間跌幅</th><th>最快單日跌幅</th><th>最大回撤</th><th>下跌日</th><th>下跌日量比</th><th>本益比</th><th>殖利率</th><th>淨值比</th><th>風險分數</th><th>主要原因</th></tr></thead><tbody id="stockBody"></tbody></table></div><p class="explain" id="explain">風險評分說明會在資料載入後顯示。</p></section>
     <section class="panel"><h2>候選、持倉與歷史績效</h2><p class="hint">這裡分兩邊看：一邊是「可能止跌反彈」的多頭候選，另一邊是「可能繼續跌」的空頭候選。都已幫你過濾過價格、成交量、處置股等條件，各顯示前 50 名。你實際買的持倉會另外分開顯示，不會跟候選混在一起。</p><p class="explain" id="strategyExplain">📌 我們的策略口訣：開盤前先挑出 50 檔「可能漲」和 50 檔「可能跌」的股票。當大盤一片綠油油、大家都在跌的時候，就從那 50 檔「可能漲」的股票裡，找出「跌最慘／跌停」的當作買進（多頭）標的。這只是研究參考，不代表穩賺喔。</p><div class="tabs"><button class="tab active" data-tab="bullish" type="button">多頭候選 <span class="badge green" id="bullishCount">0</span></button><button class="tab" data-tab="bearish" type="button">空頭候選 <span class="badge red" id="bearishCount">0</span></button><button class="tab" data-tab="holdings" type="button">實際持倉 <span class="badge" id="holdingsCount">0</span></button><button class="tab" data-tab="history" type="button">歷史績效</button><button class="tab" data-tab="trades" type="button">今日下單追蹤</button></div><div class="tab-panel active" id="panel-bullish"><div class="cards" id="bullishCards"></div></div><div class="tab-panel" id="panel-bearish"><div class="cards" id="bearishCards"></div></div><div class="tab-panel" id="panel-holdings"><div class="controls"><label>代號<input id="hCode" type="text" placeholder="例如 1446"></label><label>名稱<input id="hName" type="text" placeholder="例如 宏和"></label><label>買進價<input id="hBuyPrice" type="number" step="0.01" placeholder="例如 13.95"></label><label>買入數量<input id="hQty" type="number" step="1" placeholder="例如 1000"></label><label>買入日期<input id="hBuyDate" type="date"></label><label>目標價<input id="hTarget" type="number" step="0.01" placeholder="例如 14.65"></label></div><div class="actions"><button class="btn primary" id="addHoldingBtn" type="button">新增持倉</button><button class="btn ghost" id="deleteSelectedBtn" type="button">刪除選取</button><button class="btn ghost" id="clearHoldingsBtn" type="button">清除全部自訂持倉</button></div><div class="table-wrap"><table class="stock-table"><thead><tr><th><input type="checkbox" id="selectAllHoldings" title="全選"> 全選</th><th>代號 / 名稱</th><th>買入數量</th><th>買入日期</th><th>買進價</th><th>目標價</th><th>賣出數量</th><th>賣出日期</th><th>最新價</th><th>損益</th><th>損益率</th><th>狀態</th><th>操作</th></tr></thead><tbody id="holdingsBody"></tbody></table></div><p class="explain" id="holdingsExplain">持倉資料會在載入後顯示。</p></div><div class="tab-panel" id="panel-history"><div class="metrics"><div class="metric blue"><strong>多頭樣本數</strong><span id="histBullishN">—</span></div><div class="metric green"><strong>多頭勝率</strong><span id="histBullishWin">—</span></div><div class="metric red"><strong>空頭樣本數</strong><span id="histBearishN">—</span></div><div class="metric amber"><strong>空頭勝率</strong><span id="histBearishWin">—</span></div></div><div class="table-wrap"><table class="stock-table"><thead><tr><th>模型</th><th>樣本數</th><th>勝率</th><th>平均淨報酬</th><th>獲利因子</th><th>最大回撤</th><th>IC（因子效度）</th><th>因子價差</th><th>vs 大盤</th><th>vs 基準</th></tr></thead><tbody id="historyBody"></tbody></table></div><p class="explain" id="historyExplain">歷史績效說明會在載入後顯示。</p></div>
     <div class="tab-panel" id="panel-trades"><div class="hint">今天要下單嗎？這裡已經幫你把前 10 檔多頭（買進）和前 10 檔空頭（放空）候選準備好了。輸入你實際的「成交價」和「數量」，按一下「記錄下單」，損益就會幫你自動算好、每分鐘更新。紀錄會存在你的瀏覽器裡。</div><div class="actions"><button class="btn primary" id="livePriceBtn" type="button">更新即時價</button><button class="btn ghost" id="clearTradesBtn" type="button">清除下單紀錄</button></div><p class="status" id="tradeStatus" aria-live="polite">尚未下單。</p><h3 style="padding:6px 22px 0">多頭（買進）前 10 檔</h3><div class="table-wrap"><table class="stock-table"><thead><tr><th>代號 / 名稱</th><th>預估</th><th>成交價</th><th>數量</th><th>最新價</th><th>損益</th><th>操作</th></tr></thead><tbody id="tradeBullishBody"></tbody></table></div><h3 style="padding:6px 22px 0">空頭（放空）前 10 檔</h3><div class="table-wrap"><table class="stock-table"><thead><tr><th>代號 / 名稱</th><th>預估</th><th>成交價</th><th>數量</th><th>最新價</th><th>損益</th><th>操作</th></tr></thead><tbody id="tradeBearishBody"></tbody></table></div><div class="metrics"><div class="metric blue"><strong>已下單筆數</strong><span id="tradeCount">0</span></div><div class="metric green"><strong>多頭損益</strong><span id="tradeBullishPl">—</span></div><div class="metric red"><strong>空頭損益</strong><span id="tradeBearishPl">—</span></div><div class="metric amber"><strong>合計損益</strong><span id="tradeTotalPl">—</span></div></div><p class="explain" id="tradeExplain">本頁僅記錄與追蹤你的實際成交，損益為試算（未扣手續費/稅），不構成投資建議。</p></div><p class="explain" id="candidateExplain">候選清單說明會在資料載入後顯示。</p></section>
+    <section class="panel"><h2>📈 即時圖表（TradingView）</h2><p class="hint">輸入台股代號就能看到即時 K 線圖與技術指標（由 TradingView 提供，資料為全球串流）。</p><div class="controls"><label>股票代號<input id="tvSymbol" type="text" placeholder="例如 1515" value="1515"></label><label>區間<select id="tvInterval"><option value="1">1分</option><option value="5">5分</option><option value="60">1小時</option><option value="D" selected>日線</option><option value="W">週線</option></select></label></div><div class="actions"><button class="btn primary" id="tvBtn" type="button">載入圖表</button></div><div id="tradingview-widget" style="width:100%;height:480px"></div><p class="explain">圖表由 TradingView 提供，僅供研究參考。代號需為台灣證交所/櫃買市場之股票代號。</p></section>
     <p class="footer">資料以臺灣證券交易所及櫃買中心官方收盤資料為主。本工具僅供市場篩選與研究，不構成投資建議。</p>
   </main>
   <script>
@@ -286,6 +287,34 @@
     $("livePriceBtn").addEventListener("click", updateLivePrices);
     $("clearTradesBtn").addEventListener("click", () => { if (confirm("確定清除所有下單紀錄？")) { localStorage.removeItem("tradeRecords"); renderTrades(); } });
     setInterval(() => { if ($("panel-trades").classList.contains("active")) updateLivePrices(); }, 60000);
+    function createTvWidget(symbol, interval) {
+      new TradingView.widget({
+        autosize: true,
+        symbol: "TWSE:" + symbol,
+        interval,
+        timezone: "Asia/Taipei",
+        theme: "dark",
+        style: "1",
+        locale: "zh_TW",
+        container_id: "tradingview-widget",
+        allow_symbol_change: true
+      });
+    }
+    function loadTradingView() {
+      const symbol = ($("tvSymbol").value || "1515").trim();
+      const interval = $("tvInterval").value;
+      $("tradingview-widget").innerHTML = "";
+      if (typeof TradingView === "undefined") {
+        const s = document.createElement("script");
+        s.src = "https://s3.tradingview.com/tv.js";
+        s.onload = () => createTvWidget(symbol, interval);
+        document.head.appendChild(s);
+      } else {
+        createTvWidget(symbol, interval);
+      }
+    }
+    $("tvBtn").addEventListener("click", loadTradingView);
+    loadTradingView();
     window.addEventListener("resize", render); load();
   </script>
 </body>
