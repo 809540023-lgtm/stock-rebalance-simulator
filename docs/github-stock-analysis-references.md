@@ -11,3 +11,12 @@
 | 5 | [scorpionhiccup/StockPricePrediction](https://github.com/scorpionhiccup/StockPricePrediction) | 1,536 ★ | 使用機器學習技術進行股價預測。 |
 
 > 資料來源：GitHub 搜尋「stock analysis」依星標排序（擷取於 2026-08-18）。僅作為研究參考，不構成投資建議。
+
+## 國際知名股票分析軟體（2026-08-20 加入）
+
+| 軟體 | 類型 | 說明 | 網址 |
+|------|------|------|------|
+| TradingView | 雲端視覺分析 | 全球最熱門的繪圖與技術分析平台，內建 RSI/MACD/布林等指標，支援全球股票/加密/外匯，免費可用。 | https://www.tradingview.com |
+| Backtrader | 開源回測框架 | Python 開放原始碼回測庫，可寫程式自動回測與驗證策略，完全免費。 | https://www.backtrader.com |
+
+> 用途建議：TradingView 適合日常看盤與快速分析；Backtrader 適合驗證本專案多空策略的長期有效性。
