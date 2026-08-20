@@ -1,5 +1,9 @@
 # AI Changelog
 
+## 2026-08-20 Copilot (default order quantity)
+
+- Pre-filled the order quantity input to 10 shares in the trade tracker (index.html) and mobile page (today-orders.html) so users don't need to type it; still editable.
+
 ## 2026-08-20 Copilot (friendlier copy)
 
 - Rewrote the scanner and mobile page copy in a warmer, more human tone: friendlier subtitles, hints, and explanations across the candidate, holdings, history, and trade-tracker sections.

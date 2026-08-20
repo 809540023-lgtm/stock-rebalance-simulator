@@ -166,7 +166,7 @@
       const rowHtml = (c, action) => {
         const rec = recByCode[c.code];
         const fillPrice = rec ? rec.fillPrice : "";
-        const qty = rec ? rec.quantity : "";
+        const qty = rec ? rec.quantity : "10";
         const current = livePrices[c.code] ?? c.endPrice;
         const pl = rec ? tradePl(rec, current) : null;
         const plCell = pl == null ? "—" : "<span class=\"" + (pl.pct >= 0 ? "positive" : "negative") + "\">" + (pl.pct >= 0 ? "+" : "") + pl.pct.toFixed(2) + "%</span>";
