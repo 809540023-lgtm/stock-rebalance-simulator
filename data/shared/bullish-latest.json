@@ -1,36 +1,15 @@
 {
-  "generatedAt": "2026-08-20T08:51:01.823Z",
-  "dataDate": "2026-08-20",
+  "generatedAt": "2026-08-21T08:50:25.464Z",
+  "dataDate": "2026-08-21",
   "stale": false,
   "staleWarning": null,
   "count": 50,
   "candidates": [
     {
       "market": "上市",
-      "code": "1515",
-      "name": "力山",
-      "endPrice": 34.5,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 33.82,
-      "predictedChangePct": -1.97
-    },
-    {
-      "market": "上市",
       "code": "1436",
       "name": "華友聯",
-      "endPrice": 38.6,
+      "endPrice": 38.75,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -44,35 +23,14 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 38.2,
-      "predictedChangePct": -1.04
+      "predictedPrice": 38.46,
+      "predictedChangePct": -0.75
     },
     {
       "market": "上市",
       "code": "2491",
       "name": "吉祥全",
-      "endPrice": 36.6,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 39,
-      "predictedChangePct": 6.56
-    },
-    {
-      "market": "上市",
-      "code": "6477",
-      "name": "安集",
-      "endPrice": 38.15,
+      "endPrice": 39,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -83,17 +41,18 @@
         "上漲量能改善",
         "相對大盤強勢",
         "基本面可接受",
+        "RSI 走強",
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 39.44,
-      "predictedChangePct": 3.38
+      "predictedPrice": 39.31,
+      "predictedChangePct": 0.79
     },
     {
       "market": "上市",
-      "code": "1710",
-      "name": "東聯",
-      "endPrice": 15.2,
+      "code": "1711",
+      "name": "永光",
+      "endPrice": 40.1,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -108,14 +67,14 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 15.32,
-      "predictedChangePct": 0.79
+      "predictedPrice": 39.53,
+      "predictedChangePct": -1.42
     },
     {
       "market": "上市",
-      "code": "4976",
-      "name": "佳凌",
-      "endPrice": 38.15,
+      "code": "6226",
+      "name": "光鼎",
+      "endPrice": 21.2,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -130,8 +89,95 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 38.45,
-      "predictedChangePct": 0.79
+      "predictedPrice": 21.2,
+      "predictedChangePct": 0
+    },
+    {
+      "market": "上市",
+      "code": "1305",
+      "name": "華夏",
+      "endPrice": 12.25,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面偏弱",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 12.04,
+      "predictedChangePct": -1.71
+    },
+    {
+      "market": "上市",
+      "code": "1709",
+      "name": "和益",
+      "endPrice": 33.3,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "相對大盤強勢",
+        "基本面可接受",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 34.05,
+      "predictedChangePct": 2.25
+    },
+    {
+      "market": "上市",
+      "code": "1314",
+      "name": "中石化",
+      "endPrice": 8.23,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面偏弱",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 8.01,
+      "predictedChangePct": -2.67
+    },
+    {
+      "market": "上市",
+      "code": "1313",
+      "name": "聯成",
+      "endPrice": 11.95,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面偏弱",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 11.72,
+      "predictedChangePct": -1.92
     },
     {
       "market": "上市",
@@ -152,14 +198,56 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 17.14,
-      "predictedChangePct": 0.82
+      "predictedPrice": 16.98,
+      "predictedChangePct": -0.12
     },
     {
       "market": "上市",
-      "code": "1219",
-      "name": "福壽",
-      "endPrice": 11.15,
+      "code": "2892",
+      "name": "第一金",
+      "endPrice": 33.65,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 33.38,
+      "predictedChangePct": -0.8
+    },
+    {
+      "market": "上市",
+      "code": "9103",
+      "name": "美德醫療-DR",
+      "endPrice": 5.25,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面偏弱",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 5.2,
+      "predictedChangePct": -0.95
+    },
+    {
+      "market": "上市",
+      "code": "1789",
+      "name": "神隆",
+      "endPrice": 19.45,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -173,79 +261,14 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 11.26,
-      "predictedChangePct": 0.99
-    },
-    {
-      "market": "上市",
-      "code": "9933",
-      "name": "中鼎",
-      "endPrice": 42.5,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 43.64,
-      "predictedChangePct": 2.68
-    },
-    {
-      "market": "上市",
-      "code": "3024",
-      "name": "憶聲",
-      "endPrice": 13.7,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 13.85,
-      "predictedChangePct": 1.09
-    },
-    {
-      "market": "上市",
-      "code": "1532",
-      "name": "勤美",
-      "endPrice": 22.95,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 22.8,
-      "predictedChangePct": -0.65
+      "predictedPrice": 19.3,
+      "predictedChangePct": -0.77
     },
     {
       "market": "上市",
       "code": "2801",
       "name": "彰銀",
-      "endPrice": 23.85,
+      "endPrice": 24.1,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -256,17 +279,61 @@
         "上漲量能改善",
         "相對大盤強勢",
         "基本面可接受",
-        "RSI 走強"
+        "RSI 走強",
+        "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 24.08,
-      "predictedChangePct": 0.96
+      "predictedPrice": 24.18,
+      "predictedChangePct": 0.33
+    },
+    {
+      "market": "上市",
+      "code": "1219",
+      "name": "福壽",
+      "endPrice": 11.25,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 11.29,
+      "predictedChangePct": 0.36
+    },
+    {
+      "market": "上市",
+      "code": "1532",
+      "name": "勤美",
+      "endPrice": 23.1,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 23.09,
+      "predictedChangePct": -0.04
     },
     {
       "market": "上市",
       "code": "2371",
       "name": "大同",
-      "endPrice": 27.55,
+      "endPrice": 27.6,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -281,14 +348,14 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 27.41,
-      "predictedChangePct": -0.51
+      "predictedPrice": 27.61,
+      "predictedChangePct": 0.04
     },
     {
       "market": "上市",
-      "code": "2601",
-      "name": "益航",
-      "endPrice": 6.72,
+      "code": "3024",
+      "name": "憶聲",
+      "endPrice": 13.85,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -298,24 +365,25 @@
         "站上短均線",
         "上漲量能改善",
         "相對大盤強勢",
-        "基本面偏弱",
+        "基本面可接受",
         "RSI 走強",
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 6.78,
-      "predictedChangePct": 0.89
+      "predictedPrice": 13.86,
+      "predictedChangePct": 0.07
     },
     {
       "market": "上市",
       "code": "2103",
       "name": "台橡",
-      "endPrice": 27.85,
+      "endPrice": 28.4,
       "score": 100,
       "reasons": [
         "近期未創新低",
         "低點墊高",
         "短均線轉多",
+        "短均線上揚",
         "站上短均線",
         "上漲量能改善",
         "相對大盤強勢",
@@ -324,35 +392,14 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 28.03,
-      "predictedChangePct": 0.65
-    },
-    {
-      "market": "上市",
-      "code": "3050",
-      "name": "鈺德",
-      "endPrice": 11.55,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 11.55,
-      "predictedChangePct": 0
+      "predictedPrice": 27.79,
+      "predictedChangePct": -2.15
     },
     {
       "market": "上市",
       "code": "2104",
       "name": "國際中橡",
-      "endPrice": 10.45,
+      "endPrice": 10.65,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -367,20 +414,43 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 10.42,
-      "predictedChangePct": -0.29
+      "predictedPrice": 10.47,
+      "predictedChangePct": -1.69
     },
     {
       "market": "上市",
-      "code": "2392",
-      "name": "正崴",
-      "endPrice": 40.6,
+      "code": "2601",
+      "name": "益航",
+      "endPrice": 7.39,
       "score": 100,
       "reasons": [
         "近期未創新低",
         "低點墊高",
         "短均線轉多",
         "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面偏弱",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 7.14,
+      "predictedChangePct": -3.38
+    },
+    {
+      "market": "上市",
+      "code": "8473",
+      "name": "山林水",
+      "endPrice": 46.35,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
         "上漲量能改善",
         "相對大盤強勢",
         "基本面可接受",
@@ -388,14 +458,14 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 42.59,
-      "predictedChangePct": 4.9
+      "predictedPrice": 46.87,
+      "predictedChangePct": 1.12
     },
     {
       "market": "上市",
       "code": "1437",
       "name": "勤益控",
-      "endPrice": 32.4,
+      "endPrice": 32.35,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -409,35 +479,100 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 32.65,
-      "predictedChangePct": 0.77
+      "predictedPrice": 32.76,
+      "predictedChangePct": 1.27
+    },
+    {
+      "market": "上市",
+      "code": "1227",
+      "name": "佳格",
+      "endPrice": 29.4,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 29.13,
+      "predictedChangePct": -0.92
+    },
+    {
+      "market": "上市",
+      "code": "3056",
+      "name": "富華新",
+      "endPrice": 14.4,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 14.17,
+      "predictedChangePct": -1.6
+    },
+    {
+      "market": "上市",
+      "code": "4532",
+      "name": "瑞智",
+      "endPrice": 24.1,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 23.88,
+      "predictedChangePct": -0.91
+    },
+    {
+      "market": "上市",
+      "code": "2618",
+      "name": "長榮航",
+      "endPrice": 42.6,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 41.92,
+      "predictedChangePct": -1.6
     },
     {
       "market": "上市",
       "code": "5521",
       "name": "工信",
-      "endPrice": 10.7,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 10.85,
-      "predictedChangePct": 1.4
-    },
-    {
-      "market": "上市",
-      "code": "8422",
-      "name": "可寧衛*",
-      "endPrice": 27.1,
+      "endPrice": 10.95,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -452,8 +587,52 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 26.93,
-      "predictedChangePct": -0.63
+      "predictedPrice": 10.91,
+      "predictedChangePct": -0.37
+    },
+    {
+      "market": "上市",
+      "code": "8422",
+      "name": "可寧衛*",
+      "endPrice": 26.85,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 26.89,
+      "predictedChangePct": 0.15
+    },
+    {
+      "market": "上市",
+      "code": "1316",
+      "name": "上曜",
+      "endPrice": 11.2,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面偏弱",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 11.02,
+      "predictedChangePct": -1.61
     },
     {
       "market": "上市",
@@ -474,14 +653,36 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 18.18,
-      "predictedChangePct": 0.17
+      "predictedPrice": 18.24,
+      "predictedChangePct": 0.5
+    },
+    {
+      "market": "上市",
+      "code": "2913",
+      "name": "農林",
+      "endPrice": 11.3,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面偏弱",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 11.2,
+      "predictedChangePct": -0.88
     },
     {
       "market": "上市",
       "code": "1455",
       "name": "集盛",
-      "endPrice": 10,
+      "endPrice": 10.1,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -496,14 +697,14 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 10.19,
-      "predictedChangePct": 1.9
+      "predictedPrice": 10.09,
+      "predictedChangePct": -0.1
     },
     {
       "market": "上市",
-      "code": "3543",
-      "name": "州巧",
-      "endPrice": 43.25,
+      "code": "2897",
+      "name": "王道銀行",
+      "endPrice": 10.25,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -517,35 +718,14 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 45.08,
-      "predictedChangePct": 4.23
-    },
-    {
-      "market": "上市",
-      "code": "1440",
-      "name": "南紡",
-      "endPrice": 13.55,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 13.61,
-      "predictedChangePct": 0.44
+      "predictedPrice": 10.23,
+      "predictedChangePct": -0.2
     },
     {
       "market": "上市",
       "code": "9907",
       "name": "統一實",
-      "endPrice": 15.2,
+      "endPrice": 15.3,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -560,14 +740,78 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 15.12,
-      "predictedChangePct": -0.53
+      "predictedPrice": 15.2,
+      "predictedChangePct": -0.65
+    },
+    {
+      "market": "上市",
+      "code": "3543",
+      "name": "州巧",
+      "endPrice": 44,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 45.41,
+      "predictedChangePct": 3.2
+    },
+    {
+      "market": "上市",
+      "code": "1722",
+      "name": "台肥",
+      "endPrice": 46.55,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 46.06,
+      "predictedChangePct": -1.05
+    },
+    {
+      "market": "上市",
+      "code": "1712",
+      "name": "興農",
+      "endPrice": 39.55,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 39.4,
+      "predictedChangePct": -0.38
     },
     {
       "market": "上市",
       "code": "2030",
       "name": "彰源",
-      "endPrice": 21.85,
+      "endPrice": 22.3,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -581,36 +825,35 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 21.91,
-      "predictedChangePct": 0.27
-    },
-    {
-      "market": "上市",
-      "code": "2605",
-      "name": "新興",
-      "endPrice": 36.4,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 36.14,
-      "predictedChangePct": -0.71
+      "predictedPrice": 21.87,
+      "predictedChangePct": -1.93
     },
     {
       "market": "上市",
       "code": "9904",
       "name": "寶成",
-      "endPrice": 25.05,
+      "endPrice": 25,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 25.2,
+      "predictedChangePct": 0.8
+    },
+    {
+      "market": "上市",
+      "code": "2605",
+      "name": "新興",
+      "endPrice": 37.8,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -618,20 +861,20 @@
         "短均線轉多",
         "短均線上揚",
         "站上短均線",
+        "上漲量能改善",
         "相對大盤強勢",
         "基本面可接受",
-        "RSI 走強",
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 25.11,
-      "predictedChangePct": 0.24
+      "predictedPrice": 37.48,
+      "predictedChangePct": -0.85
     },
     {
       "market": "上市",
       "code": "1102",
       "name": "亞泥",
-      "endPrice": 34.7,
+      "endPrice": 34.95,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -646,35 +889,14 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 34.22,
-      "predictedChangePct": -1.38
+      "predictedPrice": 34.88,
+      "predictedChangePct": -0.2
     },
     {
       "market": "上市",
-      "code": "2889",
-      "name": "國票金",
-      "endPrice": 15.65,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 15.75,
-      "predictedChangePct": 0.64
-    },
-    {
-      "market": "上市",
-      "code": "1229",
-      "name": "聯華",
-      "endPrice": 42.05,
+      "code": "2838",
+      "name": "聯邦銀",
+      "endPrice": 20.35,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -689,14 +911,14 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 41.63,
-      "predictedChangePct": -1
+      "predictedPrice": 20.2,
+      "predictedChangePct": -0.74
     },
     {
       "market": "上市",
-      "code": "2201",
-      "name": "裕隆",
-      "endPrice": 29.2,
+      "code": "2884",
+      "name": "玉山金",
+      "endPrice": 38,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -704,21 +926,41 @@
         "短均線轉多",
         "短均線上揚",
         "站上短均線",
-        "上漲量能改善",
         "相對大盤強勢",
         "基本面可接受",
         "RSI 走強",
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 29.32,
-      "predictedChangePct": 0.41
+      "predictedPrice": 37.96,
+      "predictedChangePct": -0.11
     },
     {
       "market": "上市",
       "code": "2611",
       "name": "志信",
-      "endPrice": 16,
+      "endPrice": 17.2,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 16.79,
+      "predictedChangePct": -2.38
+    },
+    {
+      "market": "上市",
+      "code": "1229",
+      "name": "聯華",
+      "endPrice": 42.4,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -733,14 +975,14 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 16.04,
-      "predictedChangePct": 0.25
+      "predictedPrice": 41.93,
+      "predictedChangePct": -1.11
     },
     {
       "market": "上市",
-      "code": "1909",
-      "name": "榮成",
-      "endPrice": 11.15,
+      "code": "2201",
+      "name": "裕隆",
+      "endPrice": 29.3,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -750,61 +992,19 @@
         "站上短均線",
         "上漲量能改善",
         "相對大盤強勢",
-        "基本面偏弱",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 11.51,
-      "predictedChangePct": 3.23
-    },
-    {
-      "market": "上市",
-      "code": "2501",
-      "name": "國建",
-      "endPrice": 23,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
         "基本面可接受",
         "RSI 走強",
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 23.2,
-      "predictedChangePct": 0.87
-    },
-    {
-      "market": "上市",
-      "code": "1612",
-      "name": "宏泰",
-      "endPrice": 34.55,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 35.3,
-      "predictedChangePct": 2.17
+      "predictedPrice": 29.43,
+      "predictedChangePct": 0.44
     },
     {
       "market": "上市",
       "code": "2820",
       "name": "華票",
-      "endPrice": 16.3,
+      "endPrice": 16.4,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -814,17 +1014,39 @@
         "站上短均線",
         "上漲量能改善",
         "相對大盤強勢",
-        "基本面可接受"
+        "基本面可接受",
+        "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 16.25,
-      "predictedChangePct": -0.31
+      "predictedPrice": 16.32,
+      "predictedChangePct": -0.49
     },
     {
       "market": "上市",
-      "code": "2520",
-      "name": "冠德",
-      "endPrice": 36.55,
+      "code": "1612",
+      "name": "宏泰",
+      "endPrice": 34.65,
+      "score": 100,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "站上短均線",
+        "上漲量能改善",
+        "相對大盤強勢",
+        "基本面可接受",
+        "RSI 走強",
+        "站上布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 34.92,
+      "predictedChangePct": 0.78
+    },
+    {
+      "market": "上市",
+      "code": "1907",
+      "name": "永豐餘",
+      "endPrice": 31.2,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -839,14 +1061,14 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 36.72,
-      "predictedChangePct": 0.47
+      "predictedPrice": 30.11,
+      "predictedChangePct": -3.49
     },
     {
       "market": "上市",
-      "code": "1808",
-      "name": "潤隆",
-      "endPrice": 34.5,
+      "code": "2501",
+      "name": "國建",
+      "endPrice": 23.15,
       "score": 100,
       "reasons": [
         "近期未創新低",
@@ -861,222 +1083,8 @@
         "站上布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 33.6,
-      "predictedChangePct": -2.61
-    },
-    {
-      "market": "上市",
-      "code": "2614",
-      "name": "東森",
-      "endPrice": 18.3,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 18.2,
-      "predictedChangePct": -0.55
-    },
-    {
-      "market": "上市",
-      "code": "4306",
-      "name": "炎洲",
-      "endPrice": 15.35,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 15.77,
-      "predictedChangePct": 2.74
-    },
-    {
-      "market": "上市",
-      "code": "9945",
-      "name": "潤泰新",
-      "endPrice": 29.85,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 30.83,
-      "predictedChangePct": 3.28
-    },
-    {
-      "market": "上市",
-      "code": "2633",
-      "name": "台灣高鐵",
-      "endPrice": 26,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 26,
-      "predictedChangePct": 0
-    },
-    {
-      "market": "上市",
-      "code": "1904",
-      "name": "正隆",
-      "endPrice": 25.5,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 25.44,
-      "predictedChangePct": -0.24
-    },
-    {
-      "market": "上市",
-      "code": "1402",
-      "name": "遠東新",
-      "endPrice": 29.2,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 28.39,
-      "predictedChangePct": -2.77
-    },
-    {
-      "market": "上市",
-      "code": "2542",
-      "name": "興富發",
-      "endPrice": 48.3,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 48.97,
-      "predictedChangePct": 1.39
-    },
-    {
-      "market": "上市",
-      "code": "2845",
-      "name": "遠東銀",
-      "endPrice": 13.6,
-      "score": 100,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面可接受",
-        "RSI 走強",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 13.62,
-      "predictedChangePct": 0.15
-    },
-    {
-      "market": "上市",
-      "code": "1314",
-      "name": "中石化",
-      "endPrice": 7.82,
-      "score": 95,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善",
-        "相對大盤強勢",
-        "基本面偏弱",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 7.82,
-      "predictedChangePct": 0
-    },
-    {
-      "market": "上市",
-      "code": "2352",
-      "name": "佳世達",
-      "endPrice": 29.25,
-      "score": 95,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "相對大盤強勢",
-        "基本面可接受",
-        "站上布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 28.96,
-      "predictedChangePct": -0.99
+      "predictedPrice": 23.19,
+      "predictedChangePct": 0.17
     }
   ]
 }

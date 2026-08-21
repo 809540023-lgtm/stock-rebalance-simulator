@@ -1,10 +1,31 @@
 {
-  "generatedAt": "2026-08-20T08:51:01.823Z",
-  "dataDate": "2026-08-20",
+  "generatedAt": "2026-08-21T08:50:25.464Z",
+  "dataDate": "2026-08-21",
   "stale": false,
   "staleWarning": null,
   "count": 50,
   "candidates": [
+    {
+      "market": "上市",
+      "code": "2434",
+      "name": "統懋",
+      "endPrice": 48.65,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 48.16 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 48.88,
+      "predictedChangePct": 0.47
+    },
     {
       "market": "上市",
       "code": "8105",
@@ -30,7 +51,7 @@
       "market": "上市",
       "code": "6243",
       "name": "迅杰",
-      "endPrice": 42.85,
+      "endPrice": 42.05,
       "score": 100,
       "reasons": [
         "跌破短均線",
@@ -39,19 +60,19 @@
         "反彈失敗",
         "下跌量能放大",
         "流動性充足",
-        "跌破 42.42 觸發",
+        "跌破 41.63 觸發",
         "RSI 轉弱",
         "跌破布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 42.59,
-      "predictedChangePct": -0.61
+      "predictedPrice": 42.24,
+      "predictedChangePct": 0.45
     },
     {
       "market": "上市",
-      "code": "2338",
-      "name": "光罩",
-      "endPrice": 38.2,
+      "code": "2305",
+      "name": "全友",
+      "endPrice": 26,
       "score": 100,
       "reasons": [
         "跌破短均線",
@@ -60,162 +81,19 @@
         "反彈失敗",
         "下跌量能放大",
         "流動性充足",
-        "跌破 37.82 觸發",
+        "跌破 25.74 觸發",
         "RSI 轉弱",
         "跌破布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 38.15,
-      "predictedChangePct": -0.13
-    },
-    {
-      "market": "上市",
-      "code": "4927",
-      "name": "泰鼎-KY",
-      "endPrice": 32.85,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 32.52 觸發",
-        "RSI 轉弱"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 32.72,
-      "predictedChangePct": -0.4
-    },
-    {
-      "market": "上市",
-      "code": "2369",
-      "name": "菱生",
-      "endPrice": 30.9,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 30.59 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 30.59,
-      "predictedChangePct": -1
-    },
-    {
-      "market": "上市",
-      "code": "6695",
-      "name": "芯鼎",
-      "endPrice": 48.15,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 47.67 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 48.47,
-      "predictedChangePct": 0.66
-    },
-    {
-      "market": "上市",
-      "code": "1309",
-      "name": "台達化",
-      "endPrice": 12.75,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 12.62 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 12.73,
-      "predictedChangePct": -0.16
-    },
-    {
-      "market": "上市",
-      "code": "3481",
-      "name": "群創",
-      "endPrice": 46,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 45.54 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 47.57,
-      "predictedChangePct": 3.41
-    },
-    {
-      "market": "上市",
-      "code": "2302",
-      "name": "麗正",
-      "endPrice": 43.25,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 42.82 觸發"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 44.24,
-      "predictedChangePct": 2.29
-    },
-    {
-      "market": "上市",
-      "code": "6405",
-      "name": "悅城",
-      "endPrice": 38.8,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 38.41 觸發",
-        "RSI 轉弱"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 38.81,
-      "predictedChangePct": 0.03
+      "predictedPrice": 26.38,
+      "predictedChangePct": 1.46
     },
     {
       "market": "上市",
       "code": "2332",
       "name": "友訊",
-      "endPrice": 20.5,
+      "endPrice": 20.2,
       "score": 100,
       "reasons": [
         "跌破短均線",
@@ -224,19 +102,205 @@
         "反彈失敗",
         "下跌量能放大",
         "流動性充足",
-        "跌破 20.29 觸發",
+        "跌破 20.00 觸發",
         "RSI 轉弱",
         "跌破布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 20.54,
+      "predictedPrice": 19.85,
+      "predictedChangePct": -1.73
+    },
+    {
+      "market": "上市",
+      "code": "4564",
+      "name": "元翎",
+      "endPrice": 16.85,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 16.68 觸發",
+        "RSI 轉弱"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 17.07,
+      "predictedChangePct": 1.31
+    },
+    {
+      "market": "上市",
+      "code": "2338",
+      "name": "光罩",
+      "endPrice": 38.25,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 37.87 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 37.6,
+      "predictedChangePct": -1.7
+    },
+    {
+      "market": "上市",
+      "code": "6443",
+      "name": "元晶",
+      "endPrice": 25.95,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 25.69 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 26.06,
+      "predictedChangePct": 0.42
+    },
+    {
+      "market": "上市",
+      "code": "2539",
+      "name": "櫻花建",
+      "endPrice": 36.1,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 35.74 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 36.84,
+      "predictedChangePct": 2.05
+    },
+    {
+      "market": "上市",
+      "code": "6695",
+      "name": "芯鼎",
+      "endPrice": 47.45,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 46.98 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 47.69,
+      "predictedChangePct": 0.51
+    },
+    {
+      "market": "上市",
+      "code": "2369",
+      "name": "菱生",
+      "endPrice": 30.75,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 30.44 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 30.12,
+      "predictedChangePct": -2.05
+    },
+    {
+      "market": "上市",
+      "code": "4526",
+      "name": "東台",
+      "endPrice": 29.75,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 29.45 觸發",
+        "RSI 轉弱"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 29.75,
+      "predictedChangePct": 0
+    },
+    {
+      "market": "上市",
+      "code": "3481",
+      "name": "群創",
+      "endPrice": 46.05,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 45.59 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 45.79,
+      "predictedChangePct": -0.56
+    },
+    {
+      "market": "上市",
+      "code": "3094",
+      "name": "聯傑",
+      "endPrice": 35.75,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 35.39 觸發",
+        "RSI 轉弱"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 35.82,
       "predictedChangePct": 0.2
     },
     {
       "market": "上市",
       "code": "2457",
       "name": "飛宏",
-      "endPrice": 22.85,
+      "endPrice": 23,
       "score": 100,
       "reasons": [
         "跌破短均線",
@@ -245,81 +309,18 @@
         "反彈失敗",
         "下跌量能放大",
         "流動性充足",
-        "跌破 22.62 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 23.12,
-      "predictedChangePct": 1.18
-    },
-    {
-      "market": "上市",
-      "code": "3041",
-      "name": "揚智",
-      "endPrice": 22.4,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 22.18 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 22.26,
-      "predictedChangePct": -0.62
-    },
-    {
-      "market": "上市",
-      "code": "6282",
-      "name": "康舒",
-      "endPrice": 45,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 44.55 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 45.03,
-      "predictedChangePct": 0.07
-    },
-    {
-      "market": "上市",
-      "code": "2485",
-      "name": "兆赫",
-      "endPrice": 41.1,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 40.69 觸發",
+        "跌破 22.77 觸發",
         "RSI 轉弱"
       ],
       "tradingEligible": true,
-      "predictedPrice": 40.94,
-      "predictedChangePct": -0.39
+      "predictedPrice": 22.9,
+      "predictedChangePct": -0.43
     },
     {
       "market": "上市",
-      "code": "9136",
-      "name": "巨騰-DR",
-      "endPrice": 11.15,
+      "code": "1528",
+      "name": "恩德",
+      "endPrice": 18.6,
       "score": 100,
       "reasons": [
         "跌破短均線",
@@ -328,61 +329,18 @@
         "反彈失敗",
         "下跌量能放大",
         "流動性充足",
-        "跌破 11.04 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
+        "跌破 18.41 觸發",
+        "RSI 轉弱"
       ],
       "tradingEligible": true,
-      "predictedPrice": 11.75,
-      "predictedChangePct": 5.38
-    },
-    {
-      "market": "上市",
-      "code": "1721",
-      "name": "三晃",
-      "endPrice": 19.5,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 19.30 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 19.5,
-      "predictedChangePct": 0
-    },
-    {
-      "market": "上市",
-      "code": "3060",
-      "name": "銘異",
-      "endPrice": 27.4,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 27.13 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 27.24,
-      "predictedChangePct": -0.58
+      "predictedPrice": 18.56,
+      "predictedChangePct": -0.22
     },
     {
       "market": "上市",
       "code": "2329",
       "name": "華泰",
-      "endPrice": 42.75,
+      "endPrice": 43.15,
       "score": 100,
       "reasons": [
         "跌破短均線",
@@ -391,19 +349,18 @@
         "反彈失敗",
         "下跌量能放大",
         "流動性充足",
-        "跌破 42.32 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
+        "跌破 42.72 觸發",
+        "RSI 轉弱"
       ],
       "tradingEligible": true,
-      "predictedPrice": 42.91,
-      "predictedChangePct": 0.37
+      "predictedPrice": 42.53,
+      "predictedChangePct": -1.44
     },
     {
       "market": "上市",
-      "code": "4960",
-      "name": "誠美材",
-      "endPrice": 20.5,
+      "code": "2312",
+      "name": "金寶",
+      "endPrice": 31.05,
       "score": 100,
       "reasons": [
         "跌破短均線",
@@ -412,46 +369,526 @@
         "反彈失敗",
         "下跌量能放大",
         "流動性充足",
-        "跌破 20.29 觸發",
+        "跌破 30.74 觸發",
         "RSI 轉弱",
         "跌破布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 20.78,
-      "predictedChangePct": 1.37
+      "predictedPrice": 31.4,
+      "predictedChangePct": 1.13
+    },
+    {
+      "market": "上市",
+      "code": "6142",
+      "name": "友勁",
+      "endPrice": 8.99,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 8.90 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 8.87,
+      "predictedChangePct": -1.33
+    },
+    {
+      "market": "上市",
+      "code": "2405",
+      "name": "輔信",
+      "endPrice": 15.45,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 15.30 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 15.33,
+      "predictedChangePct": -0.78
+    },
+    {
+      "market": "上市",
+      "code": "9136",
+      "name": "巨騰-DR",
+      "endPrice": 11.25,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 11.14 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 11.59,
+      "predictedChangePct": 3.02
+    },
+    {
+      "market": "上市",
+      "code": "3652",
+      "name": "精聯",
+      "endPrice": 34.1,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 33.76 觸發"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 34.19,
+      "predictedChangePct": 0.26
+    },
+    {
+      "market": "上市",
+      "code": "1536",
+      "name": "和大",
+      "endPrice": 49.25,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 48.76 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 49.57,
+      "predictedChangePct": 0.65
+    },
+    {
+      "market": "上市",
+      "code": "8215",
+      "name": "明基材",
+      "endPrice": 23.95,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 23.71 觸發",
+        "RSI 轉弱"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 23.71,
+      "predictedChangePct": -1
+    },
+    {
+      "market": "上市",
+      "code": "3059",
+      "name": "華晶科",
+      "endPrice": 39.2,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 38.81 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 39.05,
+      "predictedChangePct": -0.38
+    },
+    {
+      "market": "上市",
+      "code": "2409",
+      "name": "友達",
+      "endPrice": 25.6,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 25.34 觸發",
+        "RSI 轉弱"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 25.81,
+      "predictedChangePct": 0.82
+    },
+    {
+      "market": "上市",
+      "code": "2413",
+      "name": "環科",
+      "endPrice": 43.8,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 43.36 觸發"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 43.45,
+      "predictedChangePct": -0.8
+    },
+    {
+      "market": "上市",
+      "code": "1605",
+      "name": "華新",
+      "endPrice": 37.3,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 36.93 觸發"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 36.8,
+      "predictedChangePct": -1.34
+    },
+    {
+      "market": "上市",
+      "code": "2349",
+      "name": "錸德",
+      "endPrice": 11,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 10.89 觸發",
+        "RSI 轉弱"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 11.18,
+      "predictedChangePct": 1.64
+    },
+    {
+      "market": "上市",
+      "code": "2417",
+      "name": "圓剛",
+      "endPrice": 43.6,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 43.16 觸發"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 44.16,
+      "predictedChangePct": 1.28
+    },
+    {
+      "market": "上市",
+      "code": "9925",
+      "name": "新保",
+      "endPrice": 39.7,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 39.30 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 39.91,
+      "predictedChangePct": 0.53
+    },
+    {
+      "market": "上市",
+      "code": "6112",
+      "name": "邁達特",
+      "endPrice": 44.4,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 43.96 觸發"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 43.84,
+      "predictedChangePct": -1.26
+    },
+    {
+      "market": "上市",
+      "code": "6177",
+      "name": "達麗",
+      "endPrice": 47.5,
+      "score": 100,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 47.02 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 47.77,
+      "predictedChangePct": 0.57
+    },
+    {
+      "market": "上市",
+      "code": "2429",
+      "name": "銘旺科",
+      "endPrice": 31.95,
+      "score": 95,
+      "reasons": [
+        "跌破短均線",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 31.63 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 33.81,
+      "predictedChangePct": 5.82
+    },
+    {
+      "market": "上市",
+      "code": "2483",
+      "name": "百容",
+      "endPrice": 36.1,
+      "score": 95,
+      "reasons": [
+        "跌破短均線",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 35.74 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 36.73,
+      "predictedChangePct": 1.75
+    },
+    {
+      "market": "上市",
+      "code": "3704",
+      "name": "合勤控",
+      "endPrice": 41.65,
+      "score": 95,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 41.23 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 39.82,
+      "predictedChangePct": -4.39
+    },
+    {
+      "market": "上市",
+      "code": "2406",
+      "name": "國碩",
+      "endPrice": 28.45,
+      "score": 95,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 28.17 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 27.42,
+      "predictedChangePct": -3.62
+    },
+    {
+      "market": "上市",
+      "code": "2425",
+      "name": "承啟",
+      "endPrice": 37.55,
+      "score": 95,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 37.17 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 35.18,
+      "predictedChangePct": -6.31
+    },
+    {
+      "market": "上市",
+      "code": "6282",
+      "name": "康舒",
+      "endPrice": 44.25,
+      "score": 95,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 43.81 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 43.73,
+      "predictedChangePct": -1.18
+    },
+    {
+      "market": "上市",
+      "code": "2401",
+      "name": "凌陽",
+      "endPrice": 25.5,
+      "score": 95,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "流動性充足",
+        "跌破 25.25 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 24.96,
+      "predictedChangePct": -2.12
+    },
+    {
+      "market": "上市",
+      "code": "3060",
+      "name": "銘異",
+      "endPrice": 27.55,
+      "score": 95,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 27.27 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 27.02,
+      "predictedChangePct": -1.92
     },
     {
       "market": "上市",
       "code": "3033",
       "name": "威健",
-      "endPrice": 45.35,
-      "score": 100,
+      "endPrice": 45.45,
+      "score": 95,
       "reasons": [
         "跌破短均線",
         "低點下移",
         "近期走弱",
-        "反彈失敗",
         "下跌量能放大",
         "流動性充足",
-        "跌破 44.90 觸發",
+        "跌破 45.00 觸發",
         "RSI 轉弱",
         "跌破布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 44.96,
-      "predictedChangePct": -0.86
+      "predictedPrice": 43.92,
+      "predictedChangePct": -3.37
+    },
+    {
+      "market": "上市",
+      "code": "1466",
+      "name": "聚隆",
+      "endPrice": 16.2,
+      "score": 95,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 16.04 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 16.12,
+      "predictedChangePct": -0.49
     },
     {
       "market": "上市",
       "code": "1617",
       "name": "榮星",
       "endPrice": 17.55,
-      "score": 100,
+      "score": 95,
       "reasons": [
         "跌破短均線",
         "低點下移",
         "近期走弱",
-        "反彈失敗",
         "下跌量能放大",
         "流動性充足",
         "跌破 17.37 觸發",
@@ -459,536 +896,14 @@
         "跌破布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 17.44,
-      "predictedChangePct": -0.63
-    },
-    {
-      "market": "上市",
-      "code": "3047",
-      "name": "訊舟",
-      "endPrice": 13.85,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 13.71 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 13.69,
-      "predictedChangePct": -1.16
-    },
-    {
-      "market": "上市",
-      "code": "2405",
-      "name": "輔信",
-      "endPrice": 15.6,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 15.44 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 15.39,
-      "predictedChangePct": -1.35
-    },
-    {
-      "market": "上市",
-      "code": "8110",
-      "name": "華東",
-      "endPrice": 44.35,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 43.91 觸發"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 44.26,
-      "predictedChangePct": -0.2
-    },
-    {
-      "market": "上市",
-      "code": "2419",
-      "name": "仲琦",
-      "endPrice": 24.5,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 24.25 觸發",
-        "RSI 轉弱"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 24.45,
-      "predictedChangePct": -0.2
-    },
-    {
-      "market": "上市",
-      "code": "3550",
-      "name": "聯穎",
-      "endPrice": 22.7,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 22.47 觸發"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 22.46,
-      "predictedChangePct": -1.06
-    },
-    {
-      "market": "上市",
-      "code": "6235",
-      "name": "華孚",
-      "endPrice": 37.85,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 37.47 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 37.45,
-      "predictedChangePct": -1.06
-    },
-    {
-      "market": "上市",
-      "code": "3062",
-      "name": "建漢",
-      "endPrice": 20.5,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 20.29 觸發",
-        "RSI 轉弱"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 20.55,
-      "predictedChangePct": 0.24
-    },
-    {
-      "market": "上市",
-      "code": "1609",
-      "name": "大亞",
-      "endPrice": 36.9,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 36.53 觸發"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 37.16,
-      "predictedChangePct": 0.7
-    },
-    {
-      "market": "上市",
-      "code": "3051",
-      "name": "力特",
-      "endPrice": 22.45,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 22.23 觸發",
-        "RSI 轉弱"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 22.46,
-      "predictedChangePct": 0.04
-    },
-    {
-      "market": "上市",
-      "code": "6165",
-      "name": "浪凡",
-      "endPrice": 47.35,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 46.88 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 46.23,
-      "predictedChangePct": -2.37
-    },
-    {
-      "market": "上市",
-      "code": "8011",
-      "name": "台通",
-      "endPrice": 15.9,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 15.74 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 15.74,
-      "predictedChangePct": -1.01
-    },
-    {
-      "market": "上市",
-      "code": "6112",
-      "name": "邁達特",
-      "endPrice": 44.8,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 44.35 觸發"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 44.3,
-      "predictedChangePct": -1.12
-    },
-    {
-      "market": "上市",
-      "code": "6177",
-      "name": "達麗",
-      "endPrice": 47.05,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 46.58 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 47.86,
-      "predictedChangePct": 1.72
-    },
-    {
-      "market": "上市",
-      "code": "2883",
-      "name": "凱基金",
-      "endPrice": 30.4,
-      "score": 100,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 30.10 觸發",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 30.77,
-      "predictedChangePct": 1.22
-    },
-    {
-      "market": "上市",
-      "code": "2483",
-      "name": "百容",
-      "endPrice": 35.5,
-      "score": 95,
-      "reasons": [
-        "跌破短均線",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 35.15 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 37.37,
-      "predictedChangePct": 5.27
-    },
-    {
-      "market": "上市",
-      "code": "2497",
-      "name": "怡利電",
-      "endPrice": 45.35,
-      "score": 95,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 44.90 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 44.54,
-      "predictedChangePct": -1.79
-    },
-    {
-      "market": "上市",
-      "code": "2305",
-      "name": "全友",
-      "endPrice": 26.55,
-      "score": 95,
-      "reasons": [
-        "跌破短均線",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 26.28 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 27.58,
-      "predictedChangePct": 3.88
-    },
-    {
-      "market": "上市",
-      "code": "2539",
-      "name": "櫻花建",
-      "endPrice": 35.5,
-      "score": 95,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "流動性充足",
-        "跌破 35.15 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 38.33,
-      "predictedChangePct": 7.97
-    },
-    {
-      "market": "上市",
-      "code": "2406",
-      "name": "國碩",
-      "endPrice": 28.6,
-      "score": 95,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 28.31 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 27.87,
-      "predictedChangePct": -2.55
-    },
-    {
-      "market": "上市",
-      "code": "3704",
-      "name": "合勤控",
-      "endPrice": 42.3,
-      "score": 95,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 41.88 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 40.16,
-      "predictedChangePct": -5.06
-    },
-    {
-      "market": "上市",
-      "code": "1467",
-      "name": "南緯",
-      "endPrice": 8.27,
-      "score": 95,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 8.19 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 7.81,
-      "predictedChangePct": -5.56
-    },
-    {
-      "market": "上市",
-      "code": "2425",
-      "name": "承啟",
-      "endPrice": 38.6,
-      "score": 95,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 38.21 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 34.62,
-      "predictedChangePct": -10.31
-    },
-    {
-      "market": "上市",
-      "code": "3380",
-      "name": "明泰",
-      "endPrice": 27.3,
-      "score": 95,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "流動性充足",
-        "跌破 27.03 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 27.06,
-      "predictedChangePct": -0.88
-    },
-    {
-      "market": "上市",
-      "code": "2401",
-      "name": "凌陽",
-      "endPrice": 25.75,
-      "score": 95,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "流動性充足",
-        "跌破 25.49 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 25.38,
-      "predictedChangePct": -1.44
-    },
-    {
-      "market": "上市",
-      "code": "2610",
-      "name": "華航",
-      "endPrice": 20,
-      "score": 95,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 19.80 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 19.46,
-      "predictedChangePct": -2.7
-    },
-    {
-      "market": "上市",
-      "code": "3011",
-      "name": "今皓",
-      "endPrice": 10.75,
-      "score": 95,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 10.64 觸發",
-        "RSI 轉弱",
-        "跌破布林中軌"
-      ],
-      "tradingEligible": true,
-      "predictedPrice": 10.42,
-      "predictedChangePct": -3.07
+      "predictedPrice": 17.11,
+      "predictedChangePct": -2.51
     },
     {
       "market": "上市",
       "code": "1526",
       "name": "日馳",
-      "endPrice": 16.7,
+      "endPrice": 16.8,
       "score": 95,
       "reasons": [
         "跌破短均線",
@@ -996,19 +911,19 @@
         "近期走弱",
         "下跌量能放大",
         "流動性充足",
-        "跌破 16.53 觸發",
+        "跌破 16.63 觸發",
         "RSI 轉弱",
         "跌破布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 16.31,
-      "predictedChangePct": -2.34
+      "predictedPrice": 16.14,
+      "predictedChangePct": -3.93
     },
     {
       "market": "上市",
-      "code": "3576",
-      "name": "聯合再生",
-      "endPrice": 17,
+      "code": "8163",
+      "name": "達方",
+      "endPrice": 31,
       "score": 95,
       "reasons": [
         "跌破短均線",
@@ -1016,13 +931,91 @@
         "近期走弱",
         "反彈失敗",
         "流動性充足",
-        "跌破 16.83 觸發",
+        "跌破 30.69 觸發",
         "RSI 轉弱",
         "跌破布林中軌"
       ],
       "tradingEligible": true,
-      "predictedPrice": 17.23,
-      "predictedChangePct": 1.35
+      "predictedPrice": 30.93,
+      "predictedChangePct": -0.23
+    },
+    {
+      "market": "上市",
+      "code": "6120",
+      "name": "達運",
+      "endPrice": 12.55,
+      "score": 95,
+      "reasons": [
+        "跌破短均線",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 12.42 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 12.43,
+      "predictedChangePct": -0.96
+    },
+    {
+      "market": "上市",
+      "code": "4763",
+      "name": "材料*-KY",
+      "endPrice": 49.65,
+      "score": 95,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 49.15 觸發",
+        "RSI 轉弱",
+        "跌破布林中軌"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 49.92,
+      "predictedChangePct": 0.54
+    },
+    {
+      "market": "上市",
+      "code": "1810",
+      "name": "和成",
+      "endPrice": 25.55,
+      "score": 90,
+      "reasons": [
+        "跌破短均線",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 25.29 觸發",
+        "RSI 轉弱"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 26.71,
+      "predictedChangePct": 4.54
+    },
+    {
+      "market": "上市",
+      "code": "2367",
+      "name": "燿華",
+      "endPrice": 42.1,
+      "score": 90,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 41.68 觸發",
+        "RSI 轉弱"
+      ],
+      "tradingEligible": true,
+      "predictedPrice": 41.58,
+      "predictedChangePct": -1.24
     }
   ]
 }
