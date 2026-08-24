@@ -1,5 +1,13 @@
 # AI Changelog
 
+## 2026-08-24 Codex (intraday directional analysis)
+
+- Added `market-risk-scanner/scripts/analyze-intraday-market.js` to combine the latest complete daily snapshot with official TWSE MIS intraday quotes for listed and OTC candidates.
+- Added three-way direction confirmation: daily model, performance relative to the live TAIEX, and OLS forecast must agree before a stock enters the intraday bullish or bearish list.
+- Added price/quote timestamps, estimated-price flags, observation triggers, risk references, source coverage, and explicit short-eligibility cautions to `market-risk-scanner/data/intraday-analysis.json`.
+- Avoided treating the partial 2026-08-24 daily-close response as a completed all-market snapshot.
+- Tests run: `node --check market-risk-scanner/scripts/analyze-intraday-market.js`; 25 focused Node unit tests passed.
+
 ## 2026-08-21 Copilot (TradingView real-time chart)
 
 - Embedded a TradingView real-time chart into the scanner UI (`market-risk-scanner/index.html`): a "即時圖表（TradingView）" panel with a symbol input and interval selector, using the TradingView widget (dark theme, Taiwan stocks via TWSE:CODE).
@@ -137,4 +145,3 @@
 - Added shared collaboration instructions and project handoff files for Codex and terminal Copilot.
 - Documented current holdings, fee rules, strategy corrections, recent research examples, and queued work.
 - No credentials were copied into the repository.
-

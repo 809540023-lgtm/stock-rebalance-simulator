@@ -1,6 +1,6 @@
 # Project State
 
-Last updated: 2026-08-18
+Last updated: 2026-08-24
 
 ## Purpose
 
@@ -35,6 +35,7 @@ The project is a Taiwan stock research and paper-trading system. It contains ass
 
 ## Strategy Findings
 
+- **Intraday three-way confirmation (2026-08-24)**: `market-risk-scanner/scripts/analyze-intraday-market.js` combines the latest complete daily-model snapshot with official TWSE MIS quotes. Bearish research candidates must underperform the TAIEX and have a non-positive price forecast; bullish candidates must outperform the TAIEX and have a non-negative forecast. The output is saved to `market-risk-scanner/data/intraday-analysis.json`. Short-sale eligibility and available shares still require broker confirmation.
 - **Core strategy rule (user-confirmed, 2026-08-18, successfully executed intraday)**: 開盤前先篩選出 50 檔上漲潛力股與 50 檔下跌潛力股。當大盤普跌時，盤中下達指令：在早上篩選出的「50 檔有潛力上漲的股票」中，挑出「目前正在跌停或跌幅最高」的股票，這些作為**多頭指標（買進標的）**，而非空頭指標。下次遇到相同情況（大盤普跌）時，依照此規則執行。此為研究策略描述，不代表保證獲利。
 - The original risk score identifies stocks that fell quickly; it is not by itself a bullish reversal score.
 - A bullish candidate now requires stabilization and confirmation: no new low, higher low or breakout, rising short moving average, improving up-volume, relative strength, acceptable fundamentals, liquidity, and no disposition restriction.
@@ -84,6 +85,7 @@ The project is a Taiwan stock research and paper-trading system. It contains ass
 ## Automation
 
 - GitHub Actions update market data and paper-trade prices.
+- The intraday analyzer must use the latest complete daily snapshot as its base. Do not feed a partial trading-day response into `market-risk.json` as if it were a completed close.
 - LINE workflows monitor configured events, but deployment credentials and LINE delivery must be verified separately.
 - Previous GitHub CLI authentication became invalid. Local commits may be ahead of `origin/main`; inspect before pushing.
 
@@ -96,4 +98,3 @@ node --test tests/*.test.js
 ```
 
 Browser tests may require a local HTTP server and Playwright browser permissions.
-

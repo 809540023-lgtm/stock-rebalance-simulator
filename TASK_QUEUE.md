@@ -51,4 +51,4 @@
 - Copilot and Codex must update `AI_CHANGELOG.md` after meaningful work.
 - Work sequentially when touching shared files.
 - Keep secrets in environment variables or platform secret stores only.
-
+- [x] Add a reusable TWSE MIS intraday analyzer that preserves the latest complete daily snapshot and requires model/relative-strength/forecast direction agreement.

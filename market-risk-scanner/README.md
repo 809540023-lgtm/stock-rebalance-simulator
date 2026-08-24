@@ -35,6 +35,12 @@ market-risk-scanner/index.html
 - 候選以視覺化卡片呈現：彩色分數條、排名、代號/名稱/市場/價格與通過原因標籤。
 - 資料日期過期時，頁面會顯示過期警告。
 
+## 盤中方向一致分析
+
+- 執行 `node market-risk-scanner/scripts/analyze-intraday-market.js`，會以最近完整收盤模型搭配 TWSE MIS 即時行情，寫入 `market-risk-scanner/data/intraday-analysis.json`。
+- 看空名單要求空方模型通過、盤中弱於加權指數且短期預測不為正；看多名單要求多方模型通過、盤中強於加權指數且短期預測不為負。
+- 沒有最新成交價時會以最佳買賣價中間值估算，並標示 `estimatedPrice: true`。看空名單仍須由券商確認信用交易資格、券源與借券成本。
+
 ## 長期評估
 
 - `scripts/evaluation.js` 提供純函式 `buildTradeRecord`、`summarizeTrades` 與 `compareToBaseline`。
