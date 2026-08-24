@@ -4,9 +4,10 @@
 
 - Added `market-risk-scanner/scripts/analyze-intraday-market.js` to combine the latest complete daily snapshot with official TWSE MIS intraday quotes for listed and OTC candidates.
 - Added three-way direction confirmation: daily model, performance relative to the live TAIEX, and OLS forecast must agree before a stock enters the intraday bullish or bearish list.
+- Regenerated the complete 2026-08-24 close and tomorrow's preliminary list after the TAIEX closed down 461.97 points. Added official TWSE `MI_MARGN` next-session short eligibility checks and Taiwan tick-size rounding; stopped/zero-limit short symbols are excluded.
 - Added price/quote timestamps, estimated-price flags, observation triggers, risk references, source coverage, and explicit short-eligibility cautions to `market-risk-scanner/data/intraday-analysis.json`.
 - Avoided treating the partial 2026-08-24 daily-close response as a completed all-market snapshot.
-- Tests run: `node --check market-risk-scanner/scripts/analyze-intraday-market.js`; 25 focused Node unit tests passed.
+- Tests run: `node --check market-risk-scanner/scripts/analyze-intraday-market.js`; all Node unit tests passed, including new tick-size and short-restriction coverage.
 
 ## 2026-08-21 Copilot (TradingView real-time chart)
 

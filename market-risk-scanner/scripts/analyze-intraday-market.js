@@ -22,6 +22,23 @@ function clamp(value, min = 0, max = 100) {
   return Math.max(min, Math.min(max, value));
 }
 
+export function priceTick(price) {
+  if (price < 10) return 0.01;
+  if (price < 50) return 0.05;
+  if (price < 100) return 0.1;
+  if (price < 500) return 0.5;
+  if (price < 1000) return 1;
+  return 5;
+}
+
+export function roundToTick(price, direction) {
+  const tick = priceTick(price);
+  const units = direction === "up"
+    ? Math.ceil((price - 1e-9) / tick)
+    : Math.floor((price + 1e-9) / tick);
+  return Number((units * tick).toFixed(2));
+}
+
 function chunks(values, size) {
   const output = [];
   for (let index = 0; index < values.length; index += size) output.push(values.slice(index, index + size));
@@ -97,6 +114,38 @@ async function fetchIndexQuote() {
   return quote;
 }
 
+async function fetchTwseShortEligibility(date) {
+  const url = new URL("https://www.twse.com.tw/rwd/zh/marginTrading/MI_MARGN");
+  url.searchParams.set("date", compactDate(date));
+  url.searchParams.set("selectType", "ALL");
+  url.searchParams.set("response", "json");
+  const payload = await fetchJson(url);
+  return parseTwseShortEligibility(payload);
+}
+
+export function parseTwseShortEligibility(payload) {
+  const table = (payload.tables || []).find((item) => item.fields?.includes("代號") && item.fields?.includes("註記"));
+  if (!table) throw new Error("TWSE margin report does not contain the expected stock table.");
+  const fields = table.fields;
+  const codeIndex = fields.indexOf("代號");
+  const noteIndex = fields.indexOf("註記");
+  // The second limit column belongs to short selling in the grouped report.
+  const limitIndexes = fields.map((field, index) => field === "次一營業日限額" ? index : -1).filter((index) => index >= 0);
+  const shortLimitIndex = limitIndexes.at(-1);
+  const output = new Map();
+  for (const row of table.data || []) {
+    const code = String(row[codeIndex] || "").trim();
+    const note = String(row[noteIndex] || "").trim();
+    const nextDayLimit = Number(String(row[shortLimitIndex] || "0").replaceAll(",", "")) || 0;
+    if (code) output.set(code, {
+      allowed: !note.includes("X") && nextDayLimit > 0,
+      nextDayLimit,
+      note: note || null
+    });
+  }
+  return output;
+}
+
 function enrich(stock, quote, indexChangePct) {
   if (!quote || String(quote["^"] || quote.d || "") !== compactDate(expectedDate)) return null;
   const previousClose = number(quote.y);
@@ -143,17 +192,20 @@ function bullishRank(row) {
     + 0.15 * forecastStrength - chasePenalty;
 }
 
-function pickLists(rows) {
+function pickLists(rows, shortEligibility) {
   const bearish = rows
     .filter((row) => row.bearishScore >= 60
+      && row.market === "上市"
       && row.relativePct < 0
       && row.changePct > -7
-      && Number(row.predictedChangePct) <= 0)
+      && Number(row.predictedChangePct) <= 0
+      && shortEligibility.get(String(row.code))?.allowed)
     .map((row) => ({
       ...row,
       researchScore: Number(bearishRank(row).toFixed(2)),
-      observationTrigger: Number((row.currentPrice * 0.99).toFixed(2)),
-      riskReference: Number((row.currentPrice * 1.03).toFixed(2)),
+      observationTrigger: roundToTick(row.currentPrice * 0.99, "down"),
+      riskReference: roundToTick(row.currentPrice * 1.03, "up"),
+      shortSale: shortEligibility.get(String(row.code)),
       reasons: [
         `盤中落後大盤 ${Math.abs(row.relativePct).toFixed(2)}%`,
         `空方模型 ${row.bearishScore.toFixed(0)} 分`,
@@ -173,8 +225,8 @@ function pickLists(rows) {
     .map((row) => ({
       ...row,
       researchScore: Number(bullishRank(row).toFixed(2)),
-      observationTrigger: Number((row.currentPrice * 1.01).toFixed(2)),
-      riskReference: Number((row.currentPrice * 0.97).toFixed(2)),
+      observationTrigger: roundToTick(row.currentPrice * 1.01, "up"),
+      riskReference: roundToTick(row.currentPrice * 0.97, "down"),
       reasons: [
         `盤中領先大盤 ${row.relativePct.toFixed(2)}%`,
         `多方模型 ${row.bullishScore.toFixed(0)} 分`,
@@ -190,7 +242,11 @@ function pickLists(rows) {
 export async function analyzeIntradayMarket() {
   const daily = JSON.parse(await readFile(inputPath, "utf8"));
   const eligible = daily.stocks.filter((stock) => stock.filterPassed && stock.tradingEligible && stock.endPrice <= 50);
-  const [indexQuote, stockQuotes] = await Promise.all([fetchIndexQuote(), fetchQuotes(eligible)]);
+  const [indexQuote, stockQuotes, shortEligibility] = await Promise.all([
+    fetchIndexQuote(),
+    fetchQuotes(eligible),
+    fetchTwseShortEligibility(expectedDate)
+  ]);
   const indexDate = String(indexQuote["^"] || indexQuote.d || "");
   if (indexDate !== compactDate(expectedDate)) {
     throw new Error(`TWSE MIS index date ${indexDate || "missing"} does not match ${expectedDate}.`);
@@ -200,7 +256,7 @@ export async function analyzeIntradayMarket() {
   if (!indexPreviousClose || !indexCurrent) throw new Error("TWSE MIS index quote is incomplete.");
   const indexChangePct = (indexCurrent / indexPreviousClose - 1) * 100;
   const rows = eligible.map((stock) => enrich(stock, stockQuotes.get(String(stock.code)), indexChangePct)).filter(Boolean);
-  const lists = pickLists(rows);
+  const lists = pickLists(rows, shortEligibility);
   return {
     generatedAt: new Date().toISOString(),
     marketDate: expectedDate,
@@ -218,7 +274,7 @@ export async function analyzeIntradayMarket() {
     candidates: lists,
     cautions: [
       "研究分數不是報酬保證，也不是自動下單指令。",
-      "看空候選尚須向券商確認信用交易資格、券源、借券成本與處置狀態。",
+      "看空候選已排除證交所次一營業日融券註記 X 或限額為 0 的股票，但實際券源與借券成本仍須向券商確認。",
       "沒有最新成交價時以最佳買賣價中間值估算，estimatedPrice 會標示 true。"
     ]
   };

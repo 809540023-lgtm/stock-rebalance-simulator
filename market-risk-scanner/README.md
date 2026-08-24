@@ -39,6 +39,7 @@ market-risk-scanner/index.html
 
 - 執行 `node market-risk-scanner/scripts/analyze-intraday-market.js`，會以最近完整收盤模型搭配 TWSE MIS 即時行情，寫入 `market-risk-scanner/data/intraday-analysis.json`。
 - 看空名單要求空方模型通過、盤中弱於加權指數且短期預測不為正；看多名單要求多方模型通過、盤中強於加權指數且短期預測不為負。
+- 明日看空名單會讀取證交所 `MI_MARGN` 信用交易報表，排除次一營業日融券限額為 0 或註記含 `X` 的股票；觸發價與風險參考價會依臺股合法跳動單位取整。
 - 沒有最新成交價時會以最佳買賣價中間值估算，並標示 `estimatedPrice: true`。看空名單仍須由券商確認信用交易資格、券源與借券成本。
 
 ## 長期評估

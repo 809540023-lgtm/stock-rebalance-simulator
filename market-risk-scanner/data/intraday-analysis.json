@@ -1,37 +1,129 @@
 {
-  "generatedAt": "2026-08-24T01:44:12.931Z",
+  "generatedAt": "2026-08-24T14:25:16.257Z",
   "marketDate": "2026-08-24",
   "source": "TWSE MIS intraday quotes plus the latest complete TWSE/TPEx daily-model snapshot",
-  "dailyModelDate": "2026-08-21",
+  "dailyModelDate": "2026-08-24",
   "index": {
     "name": "發行量加權股價指數",
-    "current": 45356.08,
+    "current": 44762.32,
     "previousClose": 45224.29,
-    "changePoints": 131.79,
-    "changePct": 0.29,
-    "quoteTime": "09:44:00"
+    "changePoints": -461.97,
+    "changePct": -1.02,
+    "quoteTime": "13:33:00"
   },
   "coverage": {
-    "eligibleStocks": 307,
-    "liveQuotes": 305
+    "eligibleStocks": 315,
+    "liveQuotes": 313
   },
   "candidates": {
     "bearish": [
       {
         "market": "上市",
-        "code": "1466",
-        "name": "聚隆",
-        "previousClose": 16.2,
-        "currentPrice": 15.95,
-        "estimatedPrice": true,
-        "changePct": -1.54,
-        "relativePct": -1.83,
-        "quoteTime": "09:43:03",
-        "avgVolume": 635029.25,
-        "cumulativePct": -10.743801652892559,
-        "bullishScore": 10,
+        "code": "3011",
+        "name": "今皓",
+        "previousClose": 10.8,
+        "currentPrice": 10.6,
+        "estimatedPrice": false,
+        "changePct": -1.85,
+        "relativePct": -0.83,
+        "quoteTime": "13:30:00",
+        "avgVolume": 600376.9090909091,
+        "cumulativePct": -12.0331950207469,
+        "bullishScore": 15,
         "bearishScore": 95,
-        "predictedChangePct": -0.49,
+        "predictedChangePct": -1.79,
+        "bullishReasons": [
+          "近期未創新低",
+          "基本面偏弱"
+        ],
+        "bearishReasons": [
+          "跌破短均線",
+          "低點下移",
+          "近期走弱",
+          "下跌量能放大",
+          "流動性充足",
+          "跌破 10.49 觸發",
+          "RSI 轉弱",
+          "跌破布林中軌"
+        ],
+        "tradingEligible": true,
+        "researchScore": 76.55,
+        "observationTrigger": 10.45,
+        "riskReference": 10.95,
+        "shortSale": {
+          "allowed": true,
+          "nextDayLimit": 29293,
+          "note": null
+        },
+        "reasons": [
+          "盤中落後大盤 0.83%",
+          "空方模型 95 分",
+          "短期預測 -1.79% 與空方一致"
+        ],
+        "direction": "bearish"
+      },
+      {
+        "market": "上市",
+        "code": "1517",
+        "name": "利奇",
+        "previousClose": 11.6,
+        "currentPrice": 11.3,
+        "estimatedPrice": false,
+        "changePct": -2.59,
+        "relativePct": -1.56,
+        "quoteTime": "13:30:00",
+        "avgVolume": 881618.0909090909,
+        "cumulativePct": 0,
+        "bullishScore": 45,
+        "bearishScore": 95,
+        "predictedChangePct": -1.24,
+        "bullishReasons": [
+          "近期未創新低",
+          "上漲量能改善",
+          "相對大盤強勢",
+          "基本面可接受"
+        ],
+        "bearishReasons": [
+          "跌破短均線",
+          "低點下移",
+          "近期走弱",
+          "反彈失敗",
+          "流動性充足",
+          "跌破 11.19 觸發",
+          "RSI 轉弱",
+          "跌破布林中軌"
+        ],
+        "tradingEligible": true,
+        "researchScore": 76.24,
+        "observationTrigger": 11.15,
+        "riskReference": 11.65,
+        "shortSale": {
+          "allowed": true,
+          "nextDayLimit": 55000,
+          "note": null
+        },
+        "reasons": [
+          "盤中落後大盤 1.56%",
+          "空方模型 95 分",
+          "短期預測 -1.24% 與空方一致"
+        ],
+        "direction": "bearish"
+      },
+      {
+        "market": "上市",
+        "code": "3652",
+        "name": "精聯",
+        "previousClose": 34.1,
+        "currentPrice": 33.25,
+        "estimatedPrice": false,
+        "changePct": -2.49,
+        "relativePct": -1.47,
+        "quoteTime": "13:30:00",
+        "avgVolume": 1192336.4090909092,
+        "cumulativePct": 2.782071097372474,
+        "bullishScore": 10,
+        "bearishScore": 100,
+        "predictedChangePct": -0.57,
         "bullishReasons": [
           "仍在近期低點附近",
           "基本面可接受"
@@ -40,20 +132,163 @@
           "跌破短均線",
           "低點下移",
           "近期走弱",
+          "反彈失敗",
           "下跌量能放大",
           "流動性充足",
-          "跌破 16.04 觸發",
+          "跌破 32.92 觸發",
           "RSI 轉弱",
           "跌破布林中軌"
         ],
         "tradingEligible": true,
-        "researchScore": 78.26,
-        "observationTrigger": 15.79,
-        "riskReference": 16.43,
+        "researchScore": 76.15,
+        "observationTrigger": 32.9,
+        "riskReference": 34.25,
+        "shortSale": {
+          "allowed": true,
+          "nextDayLimit": 18774,
+          "note": null
+        },
         "reasons": [
-          "盤中落後大盤 1.83%",
+          "盤中落後大盤 1.47%",
+          "空方模型 100 分",
+          "短期預測 -0.57% 與空方一致"
+        ],
+        "direction": "bearish"
+      },
+      {
+        "market": "上市",
+        "code": "3669",
+        "name": "圓展",
+        "previousClose": 38.2,
+        "currentPrice": 37.45,
+        "estimatedPrice": false,
+        "changePct": -1.96,
+        "relativePct": -0.94,
+        "quoteTime": "13:30:00",
+        "avgVolume": 895645.2727272727,
+        "cumulativePct": -7.985257985257988,
+        "bullishScore": 35,
+        "bearishScore": 95,
+        "predictedChangePct": -0.85,
+        "bullishReasons": [
+          "近期未創新低",
+          "上漲量能改善",
+          "基本面可接受"
+        ],
+        "bearishReasons": [
+          "跌破短均線",
+          "低點下移",
+          "近期走弱",
+          "反彈失敗",
+          "流動性充足",
+          "跌破 37.08 觸發",
+          "RSI 轉弱",
+          "跌破布林中軌"
+        ],
+        "tradingEligible": true,
+        "researchScore": 75.15,
+        "observationTrigger": 37.05,
+        "riskReference": 38.6,
+        "shortSale": {
+          "allowed": true,
+          "nextDayLimit": 23229,
+          "note": null
+        },
+        "reasons": [
+          "盤中落後大盤 0.94%",
           "空方模型 95 分",
-          "短期預測 -0.49% 與空方一致"
+          "短期預測 -0.85% 與空方一致"
+        ],
+        "direction": "bearish"
+      },
+      {
+        "market": "上市",
+        "code": "3481",
+        "name": "群創",
+        "previousClose": 46.05,
+        "currentPrice": 45.45,
+        "estimatedPrice": false,
+        "changePct": -1.3,
+        "relativePct": -0.28,
+        "quoteTime": "13:30:00",
+        "avgVolume": 290263874.6363636,
+        "cumulativePct": -8.18181818181818,
+        "bullishScore": 10,
+        "bearishScore": 100,
+        "predictedChangePct": -0.7,
+        "bullishReasons": [
+          "仍在近期低點附近",
+          "基本面可接受"
+        ],
+        "bearishReasons": [
+          "跌破短均線",
+          "低點下移",
+          "近期走弱",
+          "反彈失敗",
+          "下跌量能放大",
+          "流動性充足",
+          "跌破 45.00 觸發",
+          "RSI 轉弱",
+          "跌破布林中軌"
+        ],
+        "tradingEligible": true,
+        "researchScore": 73.47,
+        "observationTrigger": 44.95,
+        "riskReference": 46.85,
+        "shortSale": {
+          "allowed": true,
+          "nextDayLimit": 1997299,
+          "note": null
+        },
+        "reasons": [
+          "盤中落後大盤 0.28%",
+          "空方模型 100 分",
+          "短期預測 -0.70% 與空方一致"
+        ],
+        "direction": "bearish"
+      },
+      {
+        "market": "上市",
+        "code": "6405",
+        "name": "悅城",
+        "previousClose": 39,
+        "currentPrice": 38.15,
+        "estimatedPrice": false,
+        "changePct": -2.18,
+        "relativePct": -1.16,
+        "quoteTime": "13:30:00",
+        "avgVolume": 592306.6363636364,
+        "cumulativePct": -1.8018018018018056,
+        "bullishScore": 5,
+        "bearishScore": 90,
+        "predictedChangePct": -0.97,
+        "bullishReasons": [
+          "仍在近期低點附近",
+          "基本面偏弱",
+          "站上布林中軌"
+        ],
+        "bearishReasons": [
+          "跌破短均線",
+          "低點下移",
+          "近期走弱",
+          "下跌量能放大",
+          "流動性充足",
+          "跌破 37.77 觸發",
+          "RSI 轉弱"
+        ],
+        "tradingEligible": true,
+        "researchScore": 72.76,
+        "observationTrigger": 37.75,
+        "riskReference": 39.3,
+        "shortSale": {
+          "allowed": true,
+          "nextDayLimit": 16450,
+          "note": null
+        },
+        "reasons": [
+          "盤中落後大盤 1.16%",
+          "空方模型 90 分",
+          "短期預測 -0.97% 與空方一致"
         ],
         "direction": "bearish"
       },
@@ -62,204 +297,45 @@
         "code": "1467",
         "name": "南緯",
         "previousClose": 8.65,
-        "currentPrice": 8.44,
-        "estimatedPrice": true,
-        "changePct": -2.43,
-        "relativePct": -2.72,
-        "quoteTime": "09:40:10",
-        "avgVolume": 784328.5833333334,
-        "cumulativePct": -17.619047619047613,
+        "currentPrice": 8.41,
+        "estimatedPrice": false,
+        "changePct": -2.77,
+        "relativePct": -1.75,
+        "quoteTime": "13:30:00",
+        "avgVolume": 577314.9545454546,
+        "cumulativePct": -15.900000000000002,
         "bullishScore": 55,
         "bearishScore": 60,
-        "predictedChangePct": -7.63,
+        "predictedChangePct": -3.21,
         "bullishReasons": [
           "近期未創新低",
-          "短均線上揚",
           "站上短均線",
+          "上漲量能改善",
           "相對大盤強勢",
           "基本面可接受"
         ],
         "bearishReasons": [
           "未跌破短均線",
           "低點下移",
-          "下跌量能放大",
+          "近期走弱",
           "流動性充足",
-          "跌破 8.56 觸發",
+          "跌破 8.33 觸發",
           "RSI 轉弱",
           "跌破布林中軌"
         ],
         "tradingEligible": true,
-        "researchScore": 76.94,
-        "observationTrigger": 8.36,
-        "riskReference": 8.69,
+        "researchScore": 71.29,
+        "observationTrigger": 8.32,
+        "riskReference": 8.67,
+        "shortSale": {
+          "allowed": true,
+          "nextDayLimit": 42052,
+          "note": null
+        },
         "reasons": [
-          "盤中落後大盤 2.72%",
+          "盤中落後大盤 1.75%",
           "空方模型 60 分",
-          "短期預測 -7.63% 與空方一致"
-        ],
-        "direction": "bearish"
-      },
-      {
-        "market": "上市",
-        "code": "1526",
-        "name": "日馳",
-        "previousClose": 16.8,
-        "currentPrice": 16.65,
-        "estimatedPrice": true,
-        "changePct": -0.89,
-        "relativePct": -1.18,
-        "quoteTime": "09:41:40",
-        "avgVolume": 1463856.9583333333,
-        "cumulativePct": 0,
-        "bullishScore": 15,
-        "bearishScore": 95,
-        "predictedChangePct": -3.93,
-        "bullishReasons": [
-          "近期未創新低",
-          "基本面偏弱"
-        ],
-        "bearishReasons": [
-          "跌破短均線",
-          "低點下移",
-          "近期走弱",
-          "下跌量能放大",
-          "流動性充足",
-          "跌破 16.63 觸發",
-          "RSI 轉弱",
-          "跌破布林中軌"
-        ],
-        "tradingEligible": true,
-        "researchScore": 74.48,
-        "observationTrigger": 16.48,
-        "riskReference": 17.15,
-        "reasons": [
-          "盤中落後大盤 1.18%",
-          "空方模型 95 分",
-          "短期預測 -3.93% 與空方一致"
-        ],
-        "direction": "bearish"
-      },
-      {
-        "market": "上市",
-        "code": "6142",
-        "name": "友勁",
-        "previousClose": 8.99,
-        "currentPrice": 8.96,
-        "estimatedPrice": true,
-        "changePct": -0.33,
-        "relativePct": -0.63,
-        "quoteTime": "09:43:34",
-        "avgVolume": 813034.5416666666,
-        "cumulativePct": -8.26530612244898,
-        "bullishScore": 0,
-        "bearishScore": 100,
-        "predictedChangePct": -1.33,
-        "bullishReasons": [
-          "仍在近期低點附近",
-          "基本面偏弱"
-        ],
-        "bearishReasons": [
-          "跌破短均線",
-          "低點下移",
-          "近期走弱",
-          "反彈失敗",
-          "下跌量能放大",
-          "流動性充足",
-          "跌破 8.90 觸發",
-          "RSI 轉弱",
-          "跌破布林中軌"
-        ],
-        "tradingEligible": true,
-        "researchScore": 73.81,
-        "observationTrigger": 8.87,
-        "riskReference": 9.23,
-        "reasons": [
-          "盤中落後大盤 0.63%",
-          "空方模型 100 分",
-          "短期預測 -1.33% 與空方一致"
-        ],
-        "direction": "bearish"
-      },
-      {
-        "market": "上市",
-        "code": "1218",
-        "name": "泰山",
-        "previousClose": 14.7,
-        "currentPrice": 14.55,
-        "estimatedPrice": true,
-        "changePct": -1.02,
-        "relativePct": -1.31,
-        "quoteTime": "09:43:52",
-        "avgVolume": 1642243.8260869565,
-        "cumulativePct": -9.81595092024541,
-        "bullishScore": 45,
-        "bearishScore": 75,
-        "predictedChangePct": -3.54,
-        "bullishReasons": [
-          "近期未創新低",
-          "站上短均線",
-          "相對大盤強勢",
-          "基本面可接受"
-        ],
-        "bearishReasons": [
-          "未跌破短均線",
-          "低點下移",
-          "近期走弱",
-          "下跌量能放大",
-          "流動性充足",
-          "跌破 14.55 觸發",
-          "RSI 轉弱",
-          "跌破布林中軌"
-        ],
-        "tradingEligible": true,
-        "researchScore": 70.77,
-        "observationTrigger": 14.4,
-        "riskReference": 14.99,
-        "reasons": [
-          "盤中落後大盤 1.31%",
-          "空方模型 75 分",
-          "短期預測 -3.54% 與空方一致"
-        ],
-        "direction": "bearish"
-      },
-      {
-        "market": "上市",
-        "code": "3011",
-        "name": "今皓",
-        "previousClose": 10.8,
-        "currentPrice": 10.7,
-        "estimatedPrice": true,
-        "changePct": -0.93,
-        "relativePct": -1.22,
-        "quoteTime": "09:43:54",
-        "avgVolume": 576038.25,
-        "cumulativePct": -11.111111111111105,
-        "bullishScore": 25,
-        "bearishScore": 75,
-        "predictedChangePct": -3.24,
-        "bullishReasons": [
-          "近期未創新低",
-          "站上短均線",
-          "基本面偏弱"
-        ],
-        "bearishReasons": [
-          "未跌破短均線",
-          "低點下移",
-          "近期走弱",
-          "下跌量能放大",
-          "流動性充足",
-          "跌破 10.69 觸發",
-          "RSI 轉弱",
-          "跌破布林中軌"
-        ],
-        "tradingEligible": true,
-        "researchScore": 70.46,
-        "observationTrigger": 10.59,
-        "riskReference": 11.02,
-        "reasons": [
-          "盤中落後大盤 1.22%",
-          "空方模型 75 分",
-          "短期預測 -3.24% 與空方一致"
+          "短期預測 -3.21% 與空方一致"
         ],
         "direction": "bearish"
       },
@@ -268,18 +344,18 @@
         "code": "1617",
         "name": "榮星",
         "previousClose": 17.55,
-        "currentPrice": 17.6,
-        "estimatedPrice": true,
-        "changePct": 0.28,
-        "relativePct": -0.01,
-        "quoteTime": "09:42:14",
-        "avgVolume": 1037252.9583333334,
-        "cumulativePct": -8.831168831168823,
-        "bullishScore": 25,
+        "currentPrice": 17.35,
+        "estimatedPrice": false,
+        "changePct": -1.14,
+        "relativePct": -0.12,
+        "quoteTime": "13:30:00",
+        "avgVolume": 950964.3181818182,
+        "cumulativePct": -4.407713498622579,
+        "bullishScore": 10,
         "bearishScore": 95,
-        "predictedChangePct": -2.51,
+        "predictedChangePct": -2.36,
         "bullishReasons": [
-          "近期未創新低",
+          "仍在近期低點附近",
           "基本面可接受"
         ],
         "bearishReasons": [
@@ -288,39 +364,45 @@
           "近期走弱",
           "下跌量能放大",
           "流動性充足",
-          "跌破 17.37 觸發",
+          "跌破 17.18 觸發",
           "RSI 轉弱",
           "跌破布林中軌"
         ],
         "tradingEligible": true,
-        "researchScore": 70.02,
-        "observationTrigger": 17.42,
-        "riskReference": 18.13,
+        "researchScore": 71.1,
+        "observationTrigger": 17.15,
+        "riskReference": 17.9,
+        "shortSale": {
+          "allowed": true,
+          "nextDayLimit": 42378,
+          "note": null
+        },
         "reasons": [
-          "盤中落後大盤 0.01%",
+          "盤中落後大盤 0.12%",
           "空方模型 95 分",
-          "短期預測 -2.51% 與空方一致"
+          "短期預測 -2.36% 與空方一致"
         ],
         "direction": "bearish"
       },
       {
         "market": "上市",
-        "code": "6112",
-        "name": "邁達特",
-        "previousClose": 44.4,
-        "currentPrice": 44.42,
-        "estimatedPrice": true,
-        "changePct": 0.06,
-        "relativePct": -0.24,
-        "quoteTime": "09:43:57",
-        "avgVolume": 571096.7916666666,
-        "cumulativePct": 5.714285714285716,
+        "code": "3701",
+        "name": "大眾控",
+        "previousClose": 40.75,
+        "currentPrice": 39.8,
+        "estimatedPrice": false,
+        "changePct": -2.33,
+        "relativePct": -1.31,
+        "quoteTime": "13:30:00",
+        "avgVolume": 1121161.5,
+        "cumulativePct": 1.2722646310432628,
         "bullishScore": 35,
-        "bearishScore": 100,
-        "predictedChangePct": -1.26,
+        "bearishScore": 85,
+        "predictedChangePct": -0.65,
         "bullishReasons": [
           "近期未創新低",
-          "基本面可接受",
+          "上漲量能改善",
+          "基本面偏弱",
           "RSI 走強",
           "站上布林中軌"
         ],
@@ -329,100 +411,67 @@
           "低點下移",
           "近期走弱",
           "反彈失敗",
-          "下跌量能放大",
           "流動性充足",
-          "跌破 43.96 觸發"
+          "跌破 39.40 觸發"
         ],
         "tradingEligible": true,
-        "researchScore": 67.57,
-        "observationTrigger": 43.98,
-        "riskReference": 45.75,
+        "researchScore": 70.6,
+        "observationTrigger": 39.4,
+        "riskReference": 41,
+        "shortSale": {
+          "allowed": true,
+          "nextDayLimit": 53917,
+          "note": null
+        },
         "reasons": [
-          "盤中落後大盤 0.24%",
-          "空方模型 100 分",
-          "短期預測 -1.26% 與空方一致"
+          "盤中落後大盤 1.31%",
+          "空方模型 85 分",
+          "短期預測 -0.65% 與空方一致"
         ],
         "direction": "bearish"
       },
       {
         "market": "上市",
-        "code": "4720",
-        "name": "德淵",
-        "previousClose": 18,
-        "currentPrice": 17.83,
-        "estimatedPrice": true,
-        "changePct": -0.97,
-        "relativePct": -1.26,
-        "quoteTime": "09:43:59",
-        "avgVolume": 685380.9166666666,
-        "cumulativePct": -11.54791154791155,
-        "bullishScore": 45,
-        "bearishScore": 60,
-        "predictedChangePct": -4.28,
+        "code": "6235",
+        "name": "華孚",
+        "previousClose": 38.2,
+        "currentPrice": 37.7,
+        "estimatedPrice": false,
+        "changePct": -1.31,
+        "relativePct": -0.29,
+        "quoteTime": "13:30:00",
+        "avgVolume": 512683.95454545453,
+        "cumulativePct": -2.5839793281653756,
+        "bullishScore": 25,
+        "bearishScore": 95,
+        "predictedChangePct": -0.95,
         "bullishReasons": [
           "近期未創新低",
-          "站上短均線",
-          "上漲量能改善",
           "基本面可接受"
         ],
         "bearishReasons": [
-          "未跌破短均線",
-          "低點下移",
-          "近期走弱",
-          "流動性充足",
-          "跌破 17.82 觸發",
-          "RSI 轉弱",
-          "跌破布林中軌"
-        ],
-        "tradingEligible": true,
-        "researchScore": 66.38,
-        "observationTrigger": 17.65,
-        "riskReference": 18.36,
-        "reasons": [
-          "盤中落後大盤 1.26%",
-          "空方模型 60 分",
-          "短期預測 -4.28% 與空方一致"
-        ],
-        "direction": "bearish"
-      },
-      {
-        "market": "上市",
-        "code": "2497",
-        "name": "怡利電",
-        "previousClose": 45.6,
-        "currentPrice": 45.65,
-        "estimatedPrice": true,
-        "changePct": 0.11,
-        "relativePct": -0.18,
-        "quoteTime": "09:43:35",
-        "avgVolume": 671299.75,
-        "cumulativePct": -15.555555555555555,
-        "bullishScore": 35,
-        "bearishScore": 75,
-        "predictedChangePct": -2.83,
-        "bullishReasons": [
-          "近期未創新低",
-          "站上短均線",
-          "基本面可接受"
-        ],
-        "bearishReasons": [
-          "未跌破短均線",
+          "跌破短均線",
           "低點下移",
           "近期走弱",
           "下跌量能放大",
           "流動性充足",
-          "跌破 45.14 觸發",
+          "跌破 37.32 觸發",
           "RSI 轉弱",
           "跌破布林中軌"
         ],
         "tradingEligible": true,
-        "researchScore": 66.16,
-        "observationTrigger": 45.19,
-        "riskReference": 47.02,
+        "researchScore": 70.29,
+        "observationTrigger": 37.3,
+        "riskReference": 38.85,
+        "shortSale": {
+          "allowed": true,
+          "nextDayLimit": 49976,
+          "note": null
+        },
         "reasons": [
-          "盤中落後大盤 0.18%",
-          "空方模型 75 分",
-          "短期預測 -2.83% 與空方一致"
+          "盤中落後大盤 0.29%",
+          "空方模型 95 分",
+          "短期預測 -0.95% 與空方一致"
         ],
         "direction": "bearish"
       }
@@ -430,19 +479,62 @@
     "bullish": [
       {
         "market": "上市",
-        "code": "6226",
-        "name": "光鼎",
-        "previousClose": 21.2,
-        "currentPrice": 22.45,
-        "estimatedPrice": true,
-        "changePct": 5.9,
-        "relativePct": 5.6,
-        "quoteTime": "09:44:01",
-        "avgVolume": 17589521.25,
-        "cumulativePct": 15.846994535519121,
+        "code": "1709",
+        "name": "和益",
+        "previousClose": 33.3,
+        "currentPrice": 34.65,
+        "estimatedPrice": false,
+        "changePct": 4.05,
+        "relativePct": 5.08,
+        "quoteTime": "13:30:00",
+        "avgVolume": 7733840.909090909,
+        "cumulativePct": 31.999999999999986,
         "bullishScore": 100,
         "bearishScore": 20,
-        "predictedChangePct": 0,
+        "predictedChangePct": 0.55,
+        "bullishReasons": [
+          "近期未創新低",
+          "低點墊高",
+          "短均線轉多",
+          "短均線上揚",
+          "站上短均線",
+          "上漲量能改善",
+          "相對大盤強勢",
+          "基本面可接受",
+          "RSI 走強",
+          "站上布林中軌"
+        ],
+        "bearishReasons": [
+          "未跌破短均線",
+          "流動性充足",
+          "跌破 34.30 觸發"
+        ],
+        "tradingEligible": true,
+        "researchScore": 91.4,
+        "observationTrigger": 35,
+        "riskReference": 33.6,
+        "reasons": [
+          "盤中領先大盤 5.08%",
+          "多方模型 100 分",
+          "短期預測 +0.55% 與多方一致"
+        ],
+        "direction": "bullish"
+      },
+      {
+        "market": "上市",
+        "code": "6141",
+        "name": "柏承",
+        "previousClose": 45.4,
+        "currentPrice": 46.05,
+        "estimatedPrice": false,
+        "changePct": 1.43,
+        "relativePct": 2.45,
+        "quoteTime": "13:30:00",
+        "avgVolume": 2641927.0454545454,
+        "cumulativePct": 19.146183699870623,
+        "bullishScore": 100,
+        "bearishScore": 20,
+        "predictedChangePct": 4.13,
         "bullishReasons": [
           "近期未創新低",
           "低點墊高",
@@ -458,77 +550,34 @@
         "bearishReasons": [
           "未跌破短均線",
           "流動性充足",
-          "跌破 20.99 觸發"
+          "跌破 45.59 觸發"
         ],
         "tradingEligible": true,
-        "researchScore": 92.22,
-        "observationTrigger": 22.67,
-        "riskReference": 21.78,
+        "researchScore": 87.42,
+        "observationTrigger": 46.55,
+        "riskReference": 44.65,
         "reasons": [
-          "盤中領先大盤 5.60%",
+          "盤中領先大盤 2.45%",
           "多方模型 100 分",
-          "短期預測 +0.00% 與多方一致"
+          "短期預測 +4.13% 與多方一致"
         ],
         "direction": "bullish"
       },
       {
         "market": "上市",
-        "code": "2399",
-        "name": "映泰",
-        "previousClose": 45.7,
-        "currentPrice": 47.4,
-        "estimatedPrice": true,
-        "changePct": 3.72,
-        "relativePct": 3.43,
-        "quoteTime": "09:44:01",
-        "avgVolume": 5458275.083333333,
-        "cumulativePct": 19.79030144167759,
-        "bullishScore": 90,
-        "bearishScore": 50,
-        "predictedChangePct": 0.85,
-        "bullishReasons": [
-          "近期未創新低",
-          "低點墊高",
-          "短均線轉多",
-          "站上短均線",
-          "相對大盤強勢",
-          "基本面可接受",
-          "RSI 走強",
-          "站上布林中軌"
-        ],
-        "bearishReasons": [
-          "未跌破短均線",
-          "近期走弱",
-          "下跌量能放大",
-          "流動性充足",
-          "跌破 45.24 觸發"
-        ],
-        "tradingEligible": true,
-        "researchScore": 84.34,
-        "observationTrigger": 47.87,
-        "riskReference": 45.98,
-        "reasons": [
-          "盤中領先大盤 3.43%",
-          "多方模型 90 分",
-          "短期預測 +0.85% 與多方一致"
-        ],
-        "direction": "bullish"
-      },
-      {
-        "market": "上市",
-        "code": "3024",
-        "name": "憶聲",
-        "previousClose": 13.85,
-        "currentPrice": 14.22,
-        "estimatedPrice": true,
-        "changePct": 2.71,
-        "relativePct": 2.42,
-        "quoteTime": "09:44:02",
-        "avgVolume": 1484474.1666666667,
-        "cumulativePct": 0.727272727272732,
+        "code": "2812",
+        "name": "台中銀",
+        "previousClose": 18.85,
+        "currentPrice": 19.05,
+        "estimatedPrice": false,
+        "changePct": 1.06,
+        "relativePct": 2.08,
+        "quoteTime": "13:30:00",
+        "avgVolume": 18979310.181818184,
+        "cumulativePct": -6.845965770171148,
         "bullishScore": 100,
-        "bearishScore": 20,
-        "predictedChangePct": 0.07,
+        "bearishScore": 30,
+        "predictedChangePct": 0.1,
         "bullishReasons": [
           "近期未創新低",
           "低點墊高",
@@ -537,66 +586,23 @@
           "站上短均線",
           "上漲量能改善",
           "相對大盤強勢",
-          "基本面可接受",
-          "RSI 走強",
-          "站上布林中軌"
+          "基本面可接受"
         ],
         "bearishReasons": [
           "未跌破短均線",
           "流動性充足",
-          "跌破 13.71 觸發"
+          "跌破 18.86 觸發",
+          "RSI 轉弱",
+          "跌破布林中軌"
         ],
         "tradingEligible": true,
-        "researchScore": 83.46,
-        "observationTrigger": 14.36,
-        "riskReference": 13.79,
+        "researchScore": 80.96,
+        "observationTrigger": 19.25,
+        "riskReference": 18.45,
         "reasons": [
-          "盤中領先大盤 2.42%",
+          "盤中領先大盤 2.08%",
           "多方模型 100 分",
-          "短期預測 +0.07% 與多方一致"
-        ],
-        "direction": "bullish"
-      },
-      {
-        "market": "上市",
-        "code": "8422",
-        "name": "可寧衛*",
-        "previousClose": 26.85,
-        "currentPrice": 27.38,
-        "estimatedPrice": true,
-        "changePct": 1.96,
-        "relativePct": 1.66,
-        "quoteTime": "09:44:01",
-        "avgVolume": 6159638.75,
-        "cumulativePct": 1.7045454545454586,
-        "bullishScore": 100,
-        "bearishScore": 20,
-        "predictedChangePct": 0.15,
-        "bullishReasons": [
-          "近期未創新低",
-          "低點墊高",
-          "短均線轉多",
-          "短均線上揚",
-          "站上短均線",
-          "上漲量能改善",
-          "相對大盤強勢",
-          "基本面可接受",
-          "RSI 走強",
-          "站上布林中軌"
-        ],
-        "bearishReasons": [
-          "未跌破短均線",
-          "流動性充足",
-          "跌破 26.58 觸發"
-        ],
-        "tradingEligible": true,
-        "researchScore": 80.22,
-        "observationTrigger": 27.65,
-        "riskReference": 26.56,
-        "reasons": [
-          "盤中領先大盤 1.66%",
-          "多方模型 100 分",
-          "短期預測 +0.15% 與多方一致"
+          "短期預測 +0.10% 與多方一致"
         ],
         "direction": "bullish"
       },
@@ -605,16 +611,16 @@
         "code": "1416",
         "name": "廣豐",
         "previousClose": 12,
-        "currentPrice": 12.2,
-        "estimatedPrice": true,
-        "changePct": 1.67,
-        "relativePct": 1.38,
-        "quoteTime": "09:43:47",
-        "avgVolume": 581957.875,
-        "cumulativePct": 8.597285067873294,
+        "currentPrice": 12.05,
+        "estimatedPrice": false,
+        "changePct": 0.42,
+        "relativePct": 1.44,
+        "quoteTime": "13:30:00",
+        "avgVolume": 658496.1363636364,
+        "cumulativePct": 10.550458715596323,
         "bullishScore": 100,
         "bearishScore": 20,
-        "predictedChangePct": 1.17,
+        "predictedChangePct": 0.91,
         "bullishReasons": [
           "近期未創新低",
           "低點墊高",
@@ -630,16 +636,59 @@
         "bearishReasons": [
           "未跌破短均線",
           "流動性充足",
-          "跌破 11.88 觸發"
+          "跌破 11.93 觸發"
         ],
         "tradingEligible": true,
-        "researchScore": 80.21,
-        "observationTrigger": 12.32,
-        "riskReference": 11.83,
+        "researchScore": 79.11,
+        "observationTrigger": 12.2,
+        "riskReference": 11.65,
         "reasons": [
-          "盤中領先大盤 1.38%",
+          "盤中領先大盤 1.44%",
           "多方模型 100 分",
-          "短期預測 +1.17% 與多方一致"
+          "短期預測 +0.91% 與多方一致"
+        ],
+        "direction": "bullish"
+      },
+      {
+        "market": "上市",
+        "code": "2884",
+        "name": "玉山金",
+        "previousClose": 38,
+        "currentPrice": 38.15,
+        "estimatedPrice": false,
+        "changePct": 0.39,
+        "relativePct": 1.42,
+        "quoteTime": "13:30:00",
+        "avgVolume": 41850911.95454545,
+        "cumulativePct": 6.119610570236422,
+        "bullishScore": 100,
+        "bearishScore": 35,
+        "predictedChangePct": 0.34,
+        "bullishReasons": [
+          "近期未創新低",
+          "低點墊高",
+          "短均線轉多",
+          "短均線上揚",
+          "站上短均線",
+          "相對大盤強勢",
+          "基本面可接受",
+          "RSI 走強",
+          "站上布林中軌"
+        ],
+        "bearishReasons": [
+          "未跌破短均線",
+          "下跌量能放大",
+          "流動性充足",
+          "跌破 37.77 觸發"
+        ],
+        "tradingEligible": true,
+        "researchScore": 78.33,
+        "observationTrigger": 38.55,
+        "riskReference": 37,
+        "reasons": [
+          "盤中領先大盤 1.42%",
+          "多方模型 100 分",
+          "短期預測 +0.34% 與多方一致"
         ],
         "direction": "bullish"
       }
@@ -647,7 +696,7 @@
   },
   "cautions": [
     "研究分數不是報酬保證，也不是自動下單指令。",
-    "看空候選尚須向券商確認信用交易資格、券源、借券成本與處置狀態。",
+    "看空候選已排除證交所次一營業日融券註記 X 或限額為 0 的股票，但實際券源與借券成本仍須向券商確認。",
     "沒有最新成交價時以最佳買賣價中間值估算，estimatedPrice 會標示 true。"
   ]
 }
