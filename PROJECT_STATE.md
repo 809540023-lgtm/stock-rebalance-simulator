@@ -1,6 +1,6 @@
 # Project State
 
-Last updated: 2026-08-24
+Last updated: 2026-09-15
 
 ## Purpose
 
@@ -86,6 +86,8 @@ The project is a Taiwan stock research and paper-trading system. It contains ass
 ## Automation
 
 - GitHub Actions update market data and paper-trade prices.
+- **Pre-open research report (2026-09-15)**: `.github/workflows/preopen-research-report.yml` runs at 07:00 Asia/Taipei on weekdays (23:00 UTC Sunday-Thursday), refreshes the risk scanner, saves shared candidates, and writes `data/shared/preopen-report.json` plus immutable `data/shared/preopen-history.json`. The report keeps up to 5 long research candidates and 10 short research candidates, filters out ineligible legacy rows, DR listings, and candidates whose OLS prediction conflicts with the requested direction. It remains a research list, not an order list.
+- `market-risk-scanner/scripts/preopen-research.js` adds the stricter next-generation engine: official-session pre-open context, Taiwan tick rounding, 61-bar feature validation, price/liquidity/disposition/trading-eligibility gates, independent long/short scoring, next-open entry simulation, stop-first same-bar handling, locked-limit unfilled handling, and commission/tax-aware net return calculation. Current published reports still use the existing shared snapshots until the project stores 61+ days of OHLC history per symbol.
 - The intraday analyzer must use the latest complete daily snapshot as its base. Do not feed a partial trading-day response into `market-risk.json` as if it were a completed close.
 - LINE workflows monitor configured events, but deployment credentials and LINE delivery must be verified separately.
 - Previous GitHub CLI authentication became invalid. Local commits may be ahead of `origin/main`; inspect before pushing.

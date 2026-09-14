@@ -1,0 +1,47 @@
+name: Pre-open Taiwan stock research report
+
+on:
+  schedule:
+    # 23:00 UTC = 07:00 Asia/Taipei. Runs Monday-Friday Taipei time.
+    - cron: "0 23 * * 0-4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: preopen-taiwan-stock-research-report
+  cancel-in-progress: true
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Refresh scanner data
+        run: |
+          end_date="$(TZ=Asia/Taipei date +%F)"
+          start_date="$(TZ=Asia/Taipei date -d '90 days ago' +%F)"
+          cd market-risk-scanner
+          node scripts/update-risk-data.js "$start_date" "$end_date"
+          node scripts/save-shared-candidates.js
+          node scripts/build-preopen-report.js
+
+      - name: Commit pre-open report
+        run: |
+          if git diff --quiet -- market-risk-scanner/data/market-risk.json data/shared; then
+            echo "Pre-open report data is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add market-risk-scanner/data/market-risk.json data/shared
+          git commit -m "Update pre-open Taiwan stock research report"
+          git push

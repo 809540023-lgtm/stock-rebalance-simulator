@@ -1,5 +1,15 @@
 # AI Changelog
 
+## 2026-09-15 Codex (pre-open quant research upgrade)
+
+- Added `market-risk-scanner/scripts/preopen-research.js`, a strict pre-open research engine with Taipei 07:00 context, Taiwan tick-size rounding, 61-bar feature validation, independent long/short scoring, price/liquidity/disposition/trading-eligibility gates, next-open simulation, stop-first same-bar handling, locked-limit unfilled handling, and commission/tax-aware net returns.
+- Added `market-risk-scanner/scripts/build-preopen-report.js` to publish `data/shared/preopen-report.json` and append immutable records to `data/shared/preopen-history.json`.
+- Added `.github/workflows/preopen-research-report.yml` to refresh scanner data and generate the report at 07:00 Asia/Taipei on weekdays.
+- Added `tests/preopen-research.test.js` and `tests/preopen-report.test.js`.
+- Updated `PROJECT_STATE.md` and `TASK_QUEUE.md` with the new report flow and remaining data-layer work.
+- Tests run: `node --test tests/*.test.js` (59 pass).
+- Note: the published report currently uses existing shared candidate snapshots with stronger report-level filters. Full replacement by the strict engine requires persisting 61+ trading days of OHLCV history per symbol.
+
 ## 2026-08-24 Codex (intraday directional analysis)
 
 - Added `market-risk-scanner/scripts/analyze-intraday-market.js` to combine the latest complete daily snapshot with official TWSE MIS intraday quotes for listed and OTC candidates.

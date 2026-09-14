@@ -52,3 +52,12 @@
 - Work sequentially when touching shared files.
 - Keep secrets in environment variables or platform secret stores only.
 - [x] Add a reusable TWSE MIS intraday analyzer that preserves the latest complete daily snapshot and requires model/relative-strength/forecast direction agreement.
+
+## Priority 5: Pre-open Quant Research Upgrade
+
+- [x] Add a strict pre-open research engine with Taiwan tick sizes, 61-bar feature validation, liquidity/price/disposition/trading-eligibility gates, next-open simulation, stop-first same-bar handling, locked-limit unfilled handling, and fee/tax-aware net returns.
+- [x] Add a 07:00 Asia/Taipei GitHub Actions workflow that refreshes scanner data and publishes `data/shared/preopen-report.json` plus immutable `data/shared/preopen-history.json`.
+- [x] Keep the published report capped at 5 long candidates and 10 short candidates, and filter out legacy rows that are ineligible, DR listings, or direction-conflicting with the OLS prediction.
+- [ ] Persist 61+ trading days of OHLCV history per stock so `preopen-research.js` can fully replace the legacy snapshot ranking in the published report.
+- [ ] Add broker-side short inventory / borrow availability confirmation before labeling any short candidate as tradable.
+- [ ] Add a UI panel for `preopen-report.json` so non-technical users can view the 07:00 long/short report directly on the scanner page.
