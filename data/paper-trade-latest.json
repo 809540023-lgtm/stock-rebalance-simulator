@@ -1,22 +1,22 @@
 {
   "source": "Taiwan Stock Exchange MIS",
-  "fetchedAt": "2026-09-11T05:42:29.642Z",
-  "marketDate": "2026-09-11",
+  "fetchedAt": "2026-09-14T05:44:29.098Z",
+  "marketDate": "2026-09-14",
   "stocks": {
     "1446": {
       "name": "宏和",
-      "close": 13.3,
-      "high": 13.35,
+      "close": 13.35,
+      "high": 13.45,
       "low": 13.25,
-      "date": "2026-09-11",
+      "date": "2026-09-14",
       "time": "13:30:00"
     },
     "3346": {
       "name": "麗清",
-      "close": 19.8,
-      "high": 20.7,
-      "low": 19,
-      "date": "2026-09-11",
+      "close": 19.4,
+      "high": 19.6,
+      "low": 19.25,
+      "date": "2026-09-14",
       "time": "13:30:00"
     }
   }
