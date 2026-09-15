@@ -210,13 +210,24 @@ export function buildSnapshot(quotes, report, now) {
       high,
       low,
       exitType,
-      exitPrice: round(exitPrice),
+      quantity: qty,
+      buyPrice: round(basis),
+      buyAmount: round(qty * basis),
+      sellPrice: round(exitPrice),
+      sellAmount: round(qty * exitPrice),
+      commission: round(commission),
+      tax: round(tax),
       grossPnl: round(gross),
       grossPct,
       netPnl: round(net),
       netPct: net / notional * 100
     });
   }
+
+  const totalBuy = rows.reduce((sum, p) => sum + ((p.buyAmount || 0) || 0), 0);
+  const totalSell = rows.reduce((sum, p) => sum + ((p.sellAmount || 0) || 0), 0);
+  const totalCommission = rows.reduce((sum, p) => sum + ((p.commission || 0) || 0), 0);
+  const totalTax = rows.reduce((sum, p) => sum + ((p.tax || 0) || 0), 0);
 
   return {
     reportDataDate: report.dataDate,
@@ -231,6 +242,10 @@ export function buildSnapshot(quotes, report, now) {
     },
     exitCount,
     notionalBasis: round(costTotal),
+    totalBuyAmount: round(totalBuy),
+    totalSellAmount: round(totalSell),
+    totalCommission: round(totalCommission),
+    totalTax: round(totalTax),
     grossPnl: round(grossPnl),
     grossPct: costTotal ? grossPnl / costTotal * 100 : null,
     fees: round(feesTotal),
@@ -249,18 +264,19 @@ export function buildSummaryText(snapshot, now) {
   lines.push(`時間：${now.date} ${now.time}`);
   lines.push(`策略：+${snapshot.strategy.takeProfitPct}%停利 / -${snapshot.strategy.stopLossPct}%停損 / ${snapshot.strategy.forceCloseLocalTime}強制平倉`);
   lines.push(`基準市值 ${formatMoney(snapshot.notionalBasis)}｜淨損益 ${formatMoney(snapshot.netPnl)}（${formatPercent(snapshot.netPct)}）`);
+  lines.push(`買入 ${formatMoney(snapshot.totalBuyAmount)}｜賣出 ${formatMoney(snapshot.totalSellAmount)}｜手續費 ${formatMoney(snapshot.totalCommission)}｜證交稅 ${formatMoney(snapshot.totalTax)}`);
   lines.push("");
 
   lines.push(`【做多｜${longs.length}】`);
   for (const p of longs) {
     if (p.price == null) { lines.push(`${p.code} ${p.name}：無即時報價`); continue; }
-    lines.push(`${p.rank}. ${p.code} ${p.name} 現${formatPrice(p.price)}｜${exitLabel(p)}${formatPercent(p.netPct)}`);
+    lines.push(`${p.rank}. ${p.code} ${p.name} 買${formatMoney(p.buyAmount)}→賣${formatMoney(p.sellAmount)}｜費${formatMoney(p.commission)} 稅${formatMoney(p.tax)}｜${exitLabel(p)}淨${formatMoney(p.netPnl)}（${formatPercent(p.netPct)}）`);
   }
   lines.push("");
   lines.push(`【放空｜${shorts.length}】`);
   for (const p of shorts) {
     if (p.price == null) { lines.push(`${p.code} ${p.name}：無即時報價`); continue; }
-    lines.push(`${p.rank}. ${p.code} ${p.name} 現${formatPrice(p.price)}｜${exitLabel(p)}${formatPercent(p.netPct)}`);
+    lines.push(`${p.rank}. ${p.code} ${p.name} 買${formatMoney(p.buyAmount)}→賣${formatMoney(p.sellAmount)}｜費${formatMoney(p.commission)} 稅${formatMoney(p.tax)}｜${exitLabel(p)}淨${formatMoney(p.netPnl)}（${formatPercent(p.netPct)}）`);
   }
   lines.push("");
   lines.push("來源：臺灣證券交易所 MIS；基準價為報告前收盤，停利/停損用當日高低點判定，淨損益含賣出成本估算，供研究參考、非下單依據。");
@@ -336,6 +352,9 @@ async function main() {
 
   const history = await readJson(historyPath, { simulations: [] });
   history.simulations = history.simulations || [];
+  // Keep only the final snapshot of each trading day (keyed by marketDate),
+  // so a 30-day window is 30 clean records for cumulative analysis.
+  history.simulations = history.simulations.filter((r) => String(r.marketDate || "") !== String(snapshot.marketDate || ""));
   history.simulations.push({
     simulatedAt: snapshot.simulatedAt,
     localDate: snapshot.localDate,
@@ -345,7 +364,12 @@ async function main() {
     quoteTime: snapshot.quoteTime,
     strategy: snapshot.strategy,
     exitCount: snapshot.exitCount,
+    investedCapital: snapshot.notionalBasis,
     notionalBasis: snapshot.notionalBasis,
+    totalBuyAmount: snapshot.totalBuyAmount,
+    totalSellAmount: snapshot.totalSellAmount,
+    totalCommission: snapshot.totalCommission,
+    totalTax: snapshot.totalTax,
     grossPnl: snapshot.grossPnl,
     grossPct: snapshot.grossPct,
     fees: snapshot.fees,

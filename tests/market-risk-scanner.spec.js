@@ -77,4 +77,12 @@ test("candidate simulation tab renders the latest snapshot", async ({ page }) =>
   await expect(page.locator("#simReportDate")).not.toHaveText("—");
   await expect(page.locator("#simLongBody tr")).not.toHaveCount(0);
   await expect(page.locator("#simShortBody tr")).not.toHaveCount(0);
+  await expect(page.locator("#simInvested")).toHaveText(/\$\d/);
+  await expect(page.locator("#simCommission")).toHaveText(/\$\d/);
+  await expect(page.locator("#simTax")).toHaveText(/\$\d/);
+  await expect(page.locator("#simCumDays")).toHaveText(/\d/);
+  await expect(page.locator("#simCumNet")).toHaveText(/\$\d/);
+  await expect(page.locator("#panel-simulation table").first().getByRole("columnheader", { name: "手續費" })).toBeVisible();
+  await expect(page.locator("#panel-simulation table").first().getByRole("columnheader", { name: "證交稅" })).toBeVisible();
+  await expect(page.locator("#simLongBody")).toContainText(/\$\d+/);
 });

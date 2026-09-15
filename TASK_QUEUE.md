@@ -71,5 +71,7 @@
 - [x] Add `.github/workflows/simulate-preopen-candidates.yml` running every 30 min during Taipei 09:00-13:30 on weekdays.
 - [x] Add `tests/preopen-simulation.test.js` covering tick sizes, long/short exits, and force-close.
 - [x] Add a "候選模擬" tab to `market-risk-scanner/index.html` rendering the latest simulation snapshot (report date, net P/L, exit counts, long/short tables with live prices and exit status).
+- [x] Report detailed per-trade amounts: quantity, buy/sell price and amount, commission, sale tax, gross/net P/L; plus snapshot totals for buy, sell, commission, and tax.
+- [x] Keep one final simulation record per trading day (`marketDate`) so a 30-day window is 30 clean daily records.
+- [x] Add daily fund detail and a rolling 30-day cumulative view (days, net P/L, return %, invested capital, buy/sell, commission, tax) to the 候選模擬 tab.
 - [ ] Enable optional LINE push by setting `LINE_USER_ID` (and channel token or channel id/secret) as repo secrets.
-- [ ] Consider a UI panel to view the latest simulation snapshot on the scanner page.

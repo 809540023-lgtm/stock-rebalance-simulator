@@ -3,14 +3,14 @@
 ## 2026-09-15 Copilot (daily pre-open candidate simulator)
 
 - Added `scripts/simulate-preopen-candidates.js`, an intraday simulator over the daily pre-open report's 15 candidates (5 long + 10 short). Each run fetches official TWSE MIS live quotes, then computes per-candidate P/L assuming a fill at the report's `close` basis.
-- Exit strategy (user-confirmed): take-profit +6%, stop-loss -4%, force-close at 13:00 Taipei (30 min before the 13:30 close), no overnight holding. Long/short thresholds are mirrored (long takes profit on a rise; short takes profit on a fall). Net P/L includes commission (0.1425%/side, min TWD 20) and 0.3% sale transaction tax, per AGENTS.md.
-- Writes `data/preopen-simulation-latest.json` (overwrite each run) and appends an aggregate row to `data/preopen-simulation-history.json`.
-- Added `.github/workflows/simulate-preopen-candidates.yml` to run every 30 min during Taipei 09:00-13:30 on weekdays (UTC 01:00-05:30).
+- Per-trade detail now includes: quantity, buy price/amount, sell price/amount, commission (0.1425%/side, min TWD 20), sale transaction tax (0.3%), gross/net P/L. Snapshot aggregates include total buy amount, total sell amount, total commission, total tax.
+- Exit strategy (user-confirmed): take-profit +6%, stop-loss -4%, force-close at 13:00 Taipei (30 min before the 13:30 close), no overnight holding. Long/short thresholds are mirrored.
+- History now keeps only the final snapshot per trading day (keyed by `marketDate`), so a 30-day window is 30 clean daily records for cumulative analysis.
+- The "候選模擬" tab on `market-risk-scanner/index.html` now shows per-trade amounts, daily fund detail (invested capital, total buy/sell, fees, commission, tax), and a 30-day cumulative view (days, net P/L, return %, invested, buy/sell, commission, tax), plus the long/short tables with live prices and exit status.
+- Added `.github/workflows/simulate-preopen-candidates.yml` to run every 30 min during Taipei 09:00-13:30 on weekdays.
 - Added `tests/preopen-simulation.test.js` covering tick sizes, long/short take-profit/stop-loss, force-close, and summary formatting.
 - Optional LINE push when `LINE_USER_ID` and channel secrets are configured (currently not set, so push is skipped).
-- Added a "候選模擬" tab to `market-risk-scanner/index.html` that renders the latest simulation snapshot (report date, net P/L, exit-count metrics, and long/short tables with live prices and exit status).
-- Tests run: `node --test tests/*.test.js` (65 pass); `npx playwright test tests/market-risk-scanner.spec.js --project=desktop` (6 pass incl. the new simulation-tab test).
-- Note: uses the day's high/low to decide exits, so each run's snapshot reflects intraday extremes up to that moment; it is a research simulation, not an order list.
+- Tests run: `node --test tests/*.test.js` (65 pass); `npx playwright test tests/market-risk-scanner.spec.js --project=desktop` (6 pass incl. the simulation-tab test).
 
 ## 2026-09-15 Codex (pre-open quant research upgrade)
 
