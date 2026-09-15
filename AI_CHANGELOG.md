@@ -1,5 +1,12 @@
 # AI Changelog
 
+## 2026-09-15 Copilot (LINE notifications enabled)
+
+- Acquired the user's personal LINE userId (`U1901968...f2ba4`) via a webhook capture over an HTTP/2 cloudflared tunnel (after localtunnel's POST/503 issues), and pushed a live end-to-end test message that the user confirmed received.
+- Set GitHub Actions secrets `LINE_CHANNEL_ID` (2011605044), `LINE_CHANNEL_SECRET`, and `LINE_USER_ID` for repo `809540023-lgtm/stock-rebalance-simulator`. No secrets stored in the repository.
+- With secrets present, these push flows are now live: 08:00 pre-open report LINE push (`send-preopen-line.js`), the intraday candidate simulation summary, and paper-trade alert monitors. The simulate workflow already forwards the channel/secrets/user-id to the script.
+- Kept the user's decision to NOT add a "平盤以下禁空" (no-short-below-flat) filter, since shorting is the strategy's main side. The short-sale transaction-tax fix (`b536872`) remains.
+
 ## 2026-09-15 Copilot (fix short-sale transaction tax side)
 
 - Fixed `scripts/simulate-preopen-candidates.js` so the day-trade sale transaction tax is charged on the correct side: long positions tax the exit (sell) price; short (margin sell) positions now tax the opening sell at the base price instead of the buy-back price, since the tax applies on the short-sale opening. `sideFees` now takes the position side. Regenerated today's simulation data.
