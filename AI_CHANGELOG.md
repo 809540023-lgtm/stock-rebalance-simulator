@@ -3,7 +3,9 @@
 ## 2026-09-15 Copilot (daily pre-open candidate simulator)
 
 - Added `scripts/simulate-preopen-candidates.js`, an intraday simulator over the daily pre-open report's 15 candidates (5 long + 10 short). Each run fetches official TWSE MIS live quotes, then computes per-candidate P/L assuming a fill at the report's `close` basis.
-- Per-trade detail now includes: quantity, buy price/amount, sell price/amount, commission (0.1425%/side, min TWD 20), sale transaction tax (0.3%), gross/net P/L. Snapshot aggregates include total buy amount, total sell amount, total commission, total tax.
+- Per-trade detail now includes: quantity, buy price/amount, sell price/amount, margin ratio (invested amount), commission (0.1425%/side, min TWD 20), day-trade sale transaction tax (0.15%), gross/net P/L. Snapshot aggregates include total buy amount, total sell amount, total commission, total tax.
+- Day-trade margin basis (user-confirmed, 定稿): long uses margin buy at 40% self-provided capital, short uses margin sell at 90% deposit; sale transaction tax is 0.15% because positions close the same day. `investedCapital` is the margin-basis capital and `netPct` (投報率) is computed as net P/L ÷ investedCapital.
+- Added a "每日盈虧（累積）" chart to the 候選模擬 tab showing per-day net P/L bars (green=profit/red=loss) plus a cumulative curve, with a cumulative-detail card (days, cumulative net P/L, return %, invested capital).
 - Exit strategy (user-confirmed): take-profit +6%, stop-loss -4%, force-close at 13:00 Taipei (30 min before the 13:30 close), no overnight holding. Long/short thresholds are mirrored.
 - History now keeps only the final snapshot per trading day (keyed by `marketDate`), so a 30-day window is 30 clean daily records for cumulative analysis.
 - The "候選模擬" tab on `market-risk-scanner/index.html` now shows per-trade amounts, daily fund detail (invested capital, total buy/sell, fees, commission, tax), and a 30-day cumulative view (days, net P/L, return %, invested, buy/sell, commission, tax), plus the long/short tables with live prices and exit status.

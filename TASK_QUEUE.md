@@ -74,4 +74,6 @@
 - [x] Report detailed per-trade amounts: quantity, buy/sell price and amount, commission, sale tax, gross/net P/L; plus snapshot totals for buy, sell, commission, and tax.
 - [x] Keep one final simulation record per trading day (`marketDate`) so a 30-day window is 30 clean daily records.
 - [x] Add daily fund detail and a rolling 30-day cumulative view (days, net P/L, return %, invested capital, buy/sell, commission, tax) to the 候選模擬 tab.
+- [x] Switch to day-trade margin basis (定稿): long = 40% margin buy, short = 90% margin sell, day-trade sale tax 0.15%, invested capital = 市值×保證金比例, 投報率 = 淨損益 ÷ investedCapital.
+- [x] Add a "每日盈虧（累積）" chart to the 候選模擬 tab showing per-day net P/L bars plus a cumulative curve and cumulative-detail card.
 - [ ] Enable optional LINE push by setting `LINE_USER_ID` (and channel token or channel id/secret) as repo secrets.

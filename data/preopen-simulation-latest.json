@@ -1,9 +1,9 @@
 {
   "version": "preopen-sim-v1",
-  "simulatedAt": "2026-09-15T07:55:10.452Z",
+  "simulatedAt": "2026-09-15T08:59:24.293Z",
   "tz": "Asia/Taipei",
   "localDate": "2026-09-15",
-  "localTime": "15:55:09",
+  "localTime": "16:59:21",
   "sharesPerCandidate": 1000,
   "reportDataDate": "2026-09-15",
   "generatedAt": "2026-09-15T00:22:54.701Z",
@@ -22,15 +22,18 @@
     "holding": 0
   },
   "notionalBasis": 417000,
+  "investedCapital": 315325,
+  "marginLongPct": 40,
+  "marginShortPct": 90,
   "totalBuyAmount": 417000,
   "totalSellAmount": 411300,
   "totalCommission": 1189.72,
-  "totalTax": 1233.9,
+  "totalTax": 616.97,
   "grossPnl": 4500,
-  "grossPct": 1.079136690647483,
-  "fees": 2423.62,
-  "netPnl": 2076.38,
-  "netPct": 0.49793315347721917,
+  "grossPct": 1.4270990248156679,
+  "fees": 1806.67,
+  "netPnl": 2693.33,
+  "netPct": 0.8541445334179036,
   "positions": [
     {
       "rank": 1,
@@ -47,12 +50,14 @@
       "buyAmount": 29950,
       "sellPrice": 29.55,
       "sellAmount": 29550,
+      "marginRatio": 0.4,
+      "investedAmount": 11980,
       "commission": 84.79,
-      "tax": 88.65,
+      "tax": 44.33,
       "grossPnl": -400,
       "grossPct": -1.3355592654423991,
-      "netPnl": -573.44,
-      "netPct": -1.9146494156928164
+      "netPnl": -529.11,
+      "netPct": -4.41663188647745
     },
     {
       "rank": 2,
@@ -78,12 +83,14 @@
       "buyAmount": 29950,
       "sellPrice": 29.25,
       "sellAmount": 29250,
+      "marginRatio": 0.4,
+      "investedAmount": 11980,
       "commission": 84.36,
-      "tax": 87.75,
+      "tax": 43.88,
       "grossPnl": -700,
       "grossPct": -2.3372287145242048,
-      "netPnl": -872.11,
-      "netPct": -2.9118864774624353
+      "netPnl": -828.23,
+      "netPct": -6.913480801335553
     },
     {
       "rank": 4,
@@ -100,12 +107,14 @@
       "buyAmount": 13750,
       "sellPrice": 13.65,
       "sellAmount": 13650,
+      "marginRatio": 0.4,
+      "investedAmount": 5500,
       "commission": 40,
-      "tax": 40.95,
+      "tax": 20.48,
       "grossPnl": -100,
       "grossPct": -0.7272727272727246,
-      "netPnl": -180.95,
-      "netPct": -1.3159999999999974
+      "netPnl": -160.47,
+      "netPct": -2.9177272727272663
     },
     {
       "rank": 5,
@@ -122,12 +131,14 @@
       "buyAmount": 46300,
       "sellPrice": 46.9,
       "sellAmount": 46900,
+      "marginRatio": 0.4,
+      "investedAmount": 18520,
       "commission": 132.81,
-      "tax": 140.7,
+      "tax": 70.35,
       "grossPnl": 600,
       "grossPct": 1.2958963282937395,
-      "netPnl": 326.49,
-      "netPct": 0.7051619870410397
+      "netPnl": 396.84,
+      "netPct": 2.1427645788337006
     },
     {
       "rank": 1,
@@ -144,12 +155,14 @@
       "buyAmount": 39900,
       "sellPrice": 39.55,
       "sellAmount": 39550,
+      "marginRatio": 0.9,
+      "investedAmount": 35910,
       "commission": 113.22,
-      "tax": 118.65,
+      "tax": 59.33,
       "grossPnl": 350,
       "grossPct": 0.877192982456144,
-      "netPnl": 118.13,
-      "netPct": 0.2960745614035123
+      "netPnl": 177.46,
+      "netPct": 0.49417641325536465
     },
     {
       "rank": 2,
@@ -166,12 +179,14 @@
       "buyAmount": 23350,
       "sellPrice": 22.7,
       "sellAmount": 22700,
+      "marginRatio": 0.9,
+      "investedAmount": 21015,
       "commission": 65.62,
-      "tax": 68.1,
+      "tax": 34.05,
       "grossPnl": 650,
       "grossPct": 2.783725910064249,
-      "netPnl": 516.28,
-      "netPct": 2.211043897216283
+      "netPnl": 550.33,
+      "netPct": 2.618742564834652
     },
     {
       "rank": 3,
@@ -188,12 +203,14 @@
       "buyAmount": 44700,
       "sellPrice": 44.25,
       "sellAmount": 44250,
+      "marginRatio": 0.9,
+      "investedAmount": 40230,
       "commission": 126.75,
-      "tax": 132.75,
+      "tax": 66.38,
       "grossPnl": 450,
       "grossPct": 1.0067114093959795,
-      "netPnl": 190.5,
-      "netPct": 0.4261661073825566
+      "netPnl": 256.87,
+      "netPct": 0.638506711409403
     },
     {
       "rank": 4,
@@ -210,12 +227,14 @@
       "buyAmount": 11100,
       "sellPrice": 11.05,
       "sellAmount": 11050,
+      "marginRatio": 0.9,
+      "investedAmount": 9990,
       "commission": 40,
-      "tax": 33.15,
+      "tax": 16.57,
       "grossPnl": 50,
       "grossPct": 0.4504504504504408,
-      "netPnl": -23.15,
-      "netPct": -0.20855855855856814
+      "netPnl": -6.58,
+      "netPct": -0.06581581581582648
     },
     {
       "rank": 5,
@@ -232,12 +251,14 @@
       "buyAmount": 38500,
       "sellPrice": 37.55,
       "sellAmount": 37550,
+      "marginRatio": 0.9,
+      "investedAmount": 34650,
       "commission": 108.37,
-      "tax": 112.65,
+      "tax": 56.33,
       "grossPnl": 950,
       "grossPct": 2.467532467532475,
-      "netPnl": 728.98,
-      "netPct": 1.8934512987013061
+      "netPnl": 785.3,
+      "netPct": 2.266388888888897
     },
     {
       "rank": 6,
@@ -254,12 +275,14 @@
       "buyAmount": 29700,
       "sellPrice": 29.05,
       "sellAmount": 29050,
+      "marginRatio": 0.9,
+      "investedAmount": 26730,
       "commission": 83.72,
-      "tax": 87.15,
+      "tax": 43.58,
       "grossPnl": 650,
       "grossPct": 2.1885521885521837,
-      "netPnl": 479.13,
-      "netPct": 1.6132365319865276
+      "netPnl": 522.71,
+      "netPct": 1.9555041152263322
     },
     {
       "rank": 7,
@@ -276,12 +299,14 @@
       "buyAmount": 26500,
       "sellPrice": 25.85,
       "sellAmount": 25850,
+      "marginRatio": 0.9,
+      "investedAmount": 23850,
       "commission": 74.6,
-      "tax": 77.55,
+      "tax": 38.77,
       "grossPnl": 650,
       "grossPct": 2.4528301886792403,
-      "netPnl": 497.85,
-      "netPct": 1.8786839622641458
+      "netPnl": 536.63,
+      "netPct": 2.2500052410901414
     },
     {
       "rank": 8,
@@ -298,12 +323,14 @@
       "buyAmount": 38400,
       "sellPrice": 37.85,
       "sellAmount": 37850,
+      "marginRatio": 0.9,
+      "investedAmount": 34560,
       "commission": 108.66,
-      "tax": 113.55,
+      "tax": 56.77,
       "grossPnl": 550,
       "grossPct": 1.4322916666666594,
-      "netPnl": 327.79,
-      "netPct": 0.8536295572916592
+      "netPnl": 384.57,
+      "netPct": 1.1127567997685104
     },
     {
       "rank": 9,
@@ -320,12 +347,14 @@
       "buyAmount": 15700,
       "sellPrice": 15.25,
       "sellAmount": 15250,
+      "marginRatio": 0.9,
+      "investedAmount": 14130,
       "commission": 44.1,
-      "tax": 45.75,
+      "tax": 22.88,
       "grossPnl": 450,
       "grossPct": 2.866242038216556,
-      "netPnl": 360.15,
-      "netPct": 2.2939251592356644
+      "netPnl": 383.02,
+      "netPct": 2.710695329087044
     },
     {
       "rank": 10,
@@ -342,12 +371,14 @@
       "buyAmount": 29200,
       "sellPrice": 28.85,
       "sellAmount": 28850,
+      "marginRatio": 0.9,
+      "investedAmount": 26280,
       "commission": 82.72,
-      "tax": 86.55,
+      "tax": 43.27,
       "grossPnl": 350,
       "grossPct": 1.198630136986294,
-      "netPnl": 180.73,
-      "netPct": 0.6189340753424583
+      "netPnl": 224,
+      "netPct": 0.8523734779299765
     }
   ]
 }

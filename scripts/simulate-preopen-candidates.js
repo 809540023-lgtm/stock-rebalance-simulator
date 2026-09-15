@@ -30,11 +30,15 @@ const STOP_LOSS_PCT = Number(process.env.SIM_STOP_LOSS_PCT || "4");
 // 13:00 Taipei in minutes since midnight.
 const FORCE_CLOSE_MINUTES = Number(process.env.SIM_FORCE_CLOSE_MINUTES || "780");
 
-// Fee model (matches AGENTS.md): commission 0.1425% per side (min TWD 20),
-// sale transaction tax 0.3% on normal trades.
+// Fee model (user-confirmed, margin/day-trade): commission 0.1425% per side
+// (min TWD 20), and day-trade sale transaction tax 0.15% (half of the normal
+// 0.3%) because positions are closed the same day. Financing/margin ratios:
+// long (margin buy) self-provided 40%, short (margin sell) deposit 90%.
 const COMMISSION_RATE = 0.001425;
 const MIN_COMMISSION = 20;
-const SALE_TAX_RATE = 0.003;
+const SALE_TAX_RATE = 0.0015;
+const MARGIN_LONG = 0.4;
+const MARGIN_SHORT = 0.9;
 
 async function writeSummary(message) {
   if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `${message}\n`, "utf8");
@@ -148,6 +152,7 @@ export function buildSnapshot(quotes, report, now) {
   const byCode = new Map(quotes.map((quote) => [String(quote.c || "").trim(), quote]));
   const rows = [];
   let costTotal = 0;
+  let investedTotal = 0;
   let grossPnl = 0;
   let feesTotal = 0;
   let exitCount = { takeProfit: 0, stopLoss: 0, forceClose: 0, holding: 0 };
@@ -196,9 +201,13 @@ export function buildSnapshot(quotes, report, now) {
     const { commission, tax } = sideFees(qty, basis, exitPrice);
     const net = gross - commission - tax;
     const grossPct = gross / notional * 100;
+    // Margin/deposit required for the position (margin buy 40%, margin sell 90%).
+    const marginRatio = candidate.side === "long" ? MARGIN_LONG : MARGIN_SHORT;
+    const investedAmount = notional * marginRatio;
     costTotal += notional;
     grossPnl += gross;
     feesTotal += commission + tax;
+    investedTotal += investedAmount;
     exitCount[exitType] += 1;
     rows.push({
       rank: candidate.rank,
@@ -215,12 +224,14 @@ export function buildSnapshot(quotes, report, now) {
       buyAmount: round(qty * basis),
       sellPrice: round(exitPrice),
       sellAmount: round(qty * exitPrice),
+      marginRatio,
+      investedAmount: round(investedAmount),
       commission: round(commission),
       tax: round(tax),
       grossPnl: round(gross),
       grossPct,
       netPnl: round(net),
-      netPct: net / notional * 100
+      netPct: net / investedAmount * 100
     });
   }
 
@@ -242,15 +253,18 @@ export function buildSnapshot(quotes, report, now) {
     },
     exitCount,
     notionalBasis: round(costTotal),
+    investedCapital: round(investedTotal),
+    marginLongPct: MARGIN_LONG * 100,
+    marginShortPct: MARGIN_SHORT * 100,
     totalBuyAmount: round(totalBuy),
     totalSellAmount: round(totalSell),
     totalCommission: round(totalCommission),
     totalTax: round(totalTax),
     grossPnl: round(grossPnl),
-    grossPct: costTotal ? grossPnl / costTotal * 100 : null,
+    grossPct: investedTotal ? grossPnl / investedTotal * 100 : null,
     fees: round(feesTotal),
     netPnl: round(grossPnl - feesTotal),
-    netPct: costTotal ? (grossPnl - feesTotal) / costTotal * 100 : null,
+    netPct: investedTotal ? (grossPnl - feesTotal) / investedTotal * 100 : null,
     positions: rows
   };
 }
@@ -263,8 +277,9 @@ export function buildSummaryText(snapshot, now) {
   lines.push(`📊 開盤前候選模擬 · 報告 ${snapshot.reportDataDate}｜行情 ${snapshot.marketDate} ${snapshot.quoteTime || ""}`);
   lines.push(`時間：${now.date} ${now.time}`);
   lines.push(`策略：+${snapshot.strategy.takeProfitPct}%停利 / -${snapshot.strategy.stopLossPct}%停損 / ${snapshot.strategy.forceCloseLocalTime}強制平倉`);
-  lines.push(`基準市值 ${formatMoney(snapshot.notionalBasis)}｜淨損益 ${formatMoney(snapshot.netPnl)}（${formatPercent(snapshot.netPct)}）`);
-  lines.push(`買入 ${formatMoney(snapshot.totalBuyAmount)}｜賣出 ${formatMoney(snapshot.totalSellAmount)}｜手續費 ${formatMoney(snapshot.totalCommission)}｜證交稅 ${formatMoney(snapshot.totalTax)}`);
+  lines.push(`基準市值 ${formatMoney(snapshot.notionalBasis)}｜投入資金(融資融券) ${formatMoney(snapshot.investedCapital)}（做多${snapshot.marginLongPct}% 放空${snapshot.marginShortPct}%）`);
+  lines.push(`淨損益 ${formatMoney(snapshot.netPnl)}｜投報率(除以投入資金) ${formatPercent(snapshot.netPct)}`);
+  lines.push(`買入 ${formatMoney(snapshot.totalBuyAmount)}｜賣出 ${formatMoney(snapshot.totalSellAmount)}｜手續費 ${formatMoney(snapshot.totalCommission)}｜證交稅(當沖0.15%) ${formatMoney(snapshot.totalTax)}`);
   lines.push("");
 
   lines.push(`【做多｜${longs.length}】`);
@@ -364,8 +379,10 @@ async function main() {
     quoteTime: snapshot.quoteTime,
     strategy: snapshot.strategy,
     exitCount: snapshot.exitCount,
-    investedCapital: snapshot.notionalBasis,
+    investedCapital: snapshot.investedCapital,
     notionalBasis: snapshot.notionalBasis,
+    marginLongPct: snapshot.marginLongPct,
+    marginShortPct: snapshot.marginShortPct,
     totalBuyAmount: snapshot.totalBuyAmount,
     totalSellAmount: snapshot.totalSellAmount,
     totalCommission: snapshot.totalCommission,
