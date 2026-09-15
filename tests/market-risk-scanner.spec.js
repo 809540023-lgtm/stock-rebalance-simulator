@@ -69,3 +69,12 @@ test("selected custom holdings can be deleted", async ({ page }) => {
   await page.getByRole("button", { name: "刪除選取" }).click();
   await expect(page.locator("#holdingsBody")).not.toContainText("8888");
 });
+
+test("candidate simulation tab renders the latest snapshot", async ({ page }) => {
+  await page.goto("/market-risk-scanner/index.html");
+  await page.getByRole("button", { name: "候選模擬" }).click();
+  await expect(page.locator("#panel-simulation")).toHaveClass(/active/);
+  await expect(page.locator("#simReportDate")).not.toHaveText("—");
+  await expect(page.locator("#simLongBody tr")).not.toHaveCount(0);
+  await expect(page.locator("#simShortBody tr")).not.toHaveCount(0);
+});

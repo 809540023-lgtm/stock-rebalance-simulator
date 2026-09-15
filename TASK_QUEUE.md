@@ -70,5 +70,6 @@
 - [x] Add `data/preopen-simulation-latest.json` (overwrite) and `data/preopen-simulation-history.json` (append) outputs.
 - [x] Add `.github/workflows/simulate-preopen-candidates.yml` running every 30 min during Taipei 09:00-13:30 on weekdays.
 - [x] Add `tests/preopen-simulation.test.js` covering tick sizes, long/short exits, and force-close.
+- [x] Add a "候選模擬" tab to `market-risk-scanner/index.html` rendering the latest simulation snapshot (report date, net P/L, exit counts, long/short tables with live prices and exit status).
 - [ ] Enable optional LINE push by setting `LINE_USER_ID` (and channel token or channel id/secret) as repo secrets.
 - [ ] Consider a UI panel to view the latest simulation snapshot on the scanner page.

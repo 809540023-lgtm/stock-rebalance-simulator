@@ -8,7 +8,8 @@
 - Added `.github/workflows/simulate-preopen-candidates.yml` to run every 30 min during Taipei 09:00-13:30 on weekdays (UTC 01:00-05:30).
 - Added `tests/preopen-simulation.test.js` covering tick sizes, long/short take-profit/stop-loss, force-close, and summary formatting.
 - Optional LINE push when `LINE_USER_ID` and channel secrets are configured (currently not set, so push is skipped).
-- Tests run: `node --test tests/*.test.js` (65 pass).
+- Added a "候選模擬" tab to `market-risk-scanner/index.html` that renders the latest simulation snapshot (report date, net P/L, exit-count metrics, and long/short tables with live prices and exit status).
+- Tests run: `node --test tests/*.test.js` (65 pass); `npx playwright test tests/market-risk-scanner.spec.js --project=desktop` (6 pass incl. the new simulation-tab test).
 - Note: uses the day's high/low to decide exits, so each run's snapshot reflects intraday extremes up to that moment; it is a research simulation, not an order list.
 
 ## 2026-09-15 Codex (pre-open quant research upgrade)
