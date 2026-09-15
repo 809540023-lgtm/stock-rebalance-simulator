@@ -1,5 +1,11 @@
 # AI Changelog
 
+## 2026-09-15 Copilot (fix LINE push auth)
+
+- Fixed `market-risk-scanner/scripts/send-preopen-line.js` so the 08:00 pre-open report LINE push now accepts either a long-lived `LINE_CHANNEL_ACCESS_TOKEN` or a runtime-derived token from `LINE_CHANNEL_ID` + `LINE_CHANNEL_SECRET` (matching the other LINE scripts). Previously only the long-lived token path existed, so a Channel ID+Secret setup would silently skip the push.
+- Updated `.github/workflows/preopen-research-report.yml` send step's `if` gate to evaluate `secrets` (not a step-scoped `env`, which is unavailable in its own `if`) and to require the recipient `LINE_USER_ID` plus at least one auth path.
+- Verified the runtime token endpoint returns a valid token with the provided Channel ID+Secret; no secrets stored in the repo.
+
 ## 2026-09-15 Copilot (daily pre-open candidate simulator)
 
 - Added `scripts/simulate-preopen-candidates.js`, an intraday simulator over the daily pre-open report's 15 candidates (5 long + 10 short). Each run fetches official TWSE MIS live quotes, then computes per-candidate P/L assuming a fill at the report's `close` basis.

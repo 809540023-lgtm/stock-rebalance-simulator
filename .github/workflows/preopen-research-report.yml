@@ -47,12 +47,16 @@ jobs:
           git push
 
       - name: Send pre-open report to LINE
-        # Fires only when the report secrets exist. Set these in the repo's
-        # GitHub Actions secrets (Settings -> Secrets and variables -> Actions):
-        #   LINE_CHANNEL_ACCESS_TOKEN, LINE_USER_ID
-        if: ${{ env.LINE_CHANNEL_ACCESS_TOKEN != '' && env.LINE_USER_ID != '' }}
+        # Fires only when a recipient is set AND either a long-lived access
+        # token or channel id/secret exists. Choose ONE auth path for the
+        # secrets (Settings -> Secrets and variables -> Actions):
+        #   - Long-lived: LINE_CHANNEL_ACCESS_TOKEN + LINE_USER_ID
+        #   - Derived at runtime: LINE_CHANNEL_ID + LINE_CHANNEL_SECRET + LINE_USER_ID
+        if: ${{ secrets.LINE_USER_ID != '' && ((secrets.LINE_CHANNEL_ACCESS_TOKEN != '' || secrets.LINE_CHANNEL_ID != '') && secrets.LINE_CHANNEL_SECRET != '') }}
         env:
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_CHANNEL_ID: ${{ secrets.LINE_CHANNEL_ID }}
+          LINE_CHANNEL_SECRET: ${{ secrets.LINE_CHANNEL_SECRET }}
           LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
         run: |
           cd market-risk-scanner
