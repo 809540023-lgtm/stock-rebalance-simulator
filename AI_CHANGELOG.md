@@ -1,5 +1,16 @@
 # AI Changelog
 
+## 2026-09-15 Copilot (daily pre-open candidate simulator)
+
+- Added `scripts/simulate-preopen-candidates.js`, an intraday simulator over the daily pre-open report's 15 candidates (5 long + 10 short). Each run fetches official TWSE MIS live quotes, then computes per-candidate P/L assuming a fill at the report's `close` basis.
+- Exit strategy (user-confirmed): take-profit +6%, stop-loss -4%, force-close at 13:00 Taipei (30 min before the 13:30 close), no overnight holding. Long/short thresholds are mirrored (long takes profit on a rise; short takes profit on a fall). Net P/L includes commission (0.1425%/side, min TWD 20) and 0.3% sale transaction tax, per AGENTS.md.
+- Writes `data/preopen-simulation-latest.json` (overwrite each run) and appends an aggregate row to `data/preopen-simulation-history.json`.
+- Added `.github/workflows/simulate-preopen-candidates.yml` to run every 30 min during Taipei 09:00-13:30 on weekdays (UTC 01:00-05:30).
+- Added `tests/preopen-simulation.test.js` covering tick sizes, long/short take-profit/stop-loss, force-close, and summary formatting.
+- Optional LINE push when `LINE_USER_ID` and channel secrets are configured (currently not set, so push is skipped).
+- Tests run: `node --test tests/*.test.js` (65 pass).
+- Note: uses the day's high/low to decide exits, so each run's snapshot reflects intraday extremes up to that moment; it is a research simulation, not an order list.
+
 ## 2026-09-15 Codex (pre-open quant research upgrade)
 
 - Added `market-risk-scanner/scripts/preopen-research.js`, a strict pre-open research engine with Taipei 07:00 context, Taiwan tick-size rounding, 61-bar feature validation, independent long/short scoring, price/liquidity/disposition/trading-eligibility gates, next-open simulation, stop-first same-bar handling, locked-limit unfilled handling, and commission/tax-aware net returns.

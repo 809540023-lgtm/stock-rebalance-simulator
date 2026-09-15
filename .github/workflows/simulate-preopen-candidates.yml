@@ -1,0 +1,54 @@
+name: Simulate pre-open candidates
+
+on:
+  schedule:
+    # Taipei 09:00-13:30 every 30 min = UTC 01:00-05:30 every 30 min.
+    # Weekdays only.
+    - cron: "0,30 1-5 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: "立即執行一次候選模擬"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: preopen-candidate-simulation
+  cancel-in-progress: true
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Simulate pre-open candidates
+        env:
+          REMINDER_TIMEZONE: Asia/Taipei
+          LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_CHANNEL_ID: ${{ secrets.LINE_CHANNEL_ID }}
+          LINE_CHANNEL_SECRET: ${{ secrets.LINE_CHANNEL_SECRET }}
+          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+        run: node scripts/simulate-preopen-candidates.js
+
+      - name: Commit simulation snapshots
+        run: |
+          if git diff --quiet -- data/preopen-simulation-latest.json data/preopen-simulation-history.json; then
+            echo "Simulation data unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/preopen-simulation-latest.json data/preopen-simulation-history.json
+          git commit -m "Record pre-open candidate simulation"
+          git push

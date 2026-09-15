@@ -61,3 +61,14 @@
 - [ ] Persist 61+ trading days of OHLCV history per stock so `preopen-research.js` can fully replace the legacy snapshot ranking in the published report.
 - [ ] Add broker-side short inventory / borrow availability confirmation before labeling any short candidate as tradable.
 - [ ] Add a UI panel for `preopen-report.json` so non-technical users can view the 07:00 long/short report directly on the scanner page.
+
+## Priority 6: Daily Pre-open Candidate Intraday Simulator
+
+- [x] Add `scripts/simulate-preopen-candidates.js` to simulate the given day's 15 report candidates (5 long + 10 short) at intraday moments using official TWSE MIS live quotes, with a fill at the report `close` basis.
+- [x] Implement the user-confirmed exit strategy: +6% take-profit, -4% stop-loss, force-close at 13:00 Taipei, no overnight; long/short thresholds mirrored.
+- [x] Include commission (0.1425%/side, min TWD 20) and 0.3% sale transaction tax in net P/L, per AGENTS.md.
+- [x] Add `data/preopen-simulation-latest.json` (overwrite) and `data/preopen-simulation-history.json` (append) outputs.
+- [x] Add `.github/workflows/simulate-preopen-candidates.yml` running every 30 min during Taipei 09:00-13:30 on weekdays.
+- [x] Add `tests/preopen-simulation.test.js` covering tick sizes, long/short exits, and force-close.
+- [ ] Enable optional LINE push by setting `LINE_USER_ID` (and channel token or channel id/secret) as repo secrets.
+- [ ] Consider a UI panel to view the latest simulation snapshot on the scanner page.
