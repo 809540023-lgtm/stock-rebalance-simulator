@@ -1,9 +1,9 @@
 {
   "simulations": [
     {
-      "simulatedAt": "2026-09-15T08:59:24.293Z",
+      "simulatedAt": "2026-09-15T13:53:50.222Z",
       "localDate": "2026-09-15",
-      "localTime": "16:59:21",
+      "localTime": "21:53:46",
       "reportDataDate": "2026-09-15",
       "marketDate": "2026-09-15",
       "quoteTime": "13:30:00",
@@ -26,12 +26,12 @@
       "totalBuyAmount": 417000,
       "totalSellAmount": 411300,
       "totalCommission": 1189.72,
-      "totalTax": 616.97,
+      "totalTax": 624.61,
       "grossPnl": 4500,
       "grossPct": 1.4270990248156679,
-      "fees": 1806.67,
-      "netPnl": 2693.33,
-      "netPct": 0.8541445334179036
+      "fees": 1814.32,
+      "netPnl": 2685.68,
+      "netPct": 0.8517184650757171
     }
   ]
 }

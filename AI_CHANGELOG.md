@@ -1,5 +1,9 @@
 # AI Changelog
 
+## 2026-09-15 Copilot (fix short-sale transaction tax side)
+
+- Fixed `scripts/simulate-preopen-candidates.js` so the day-trade sale transaction tax is charged on the correct side: long positions tax the exit (sell) price; short (margin sell) positions now tax the opening sell at the base price instead of the buy-back price, since the tax applies on the short-sale opening. `sideFees` now takes the position side. Regenerated today's simulation data.
+
 ## 2026-09-15 Copilot (fix LINE push auth)
 
 - Fixed `market-risk-scanner/scripts/send-preopen-line.js` so the 08:00 pre-open report LINE push now accepts either a long-lived `LINE_CHANNEL_ACCESS_TOKEN` or a runtime-derived token from `LINE_CHANNEL_ID` + `LINE_CHANNEL_SECRET` (matching the other LINE scripts). Previously only the long-lived token path existed, so a Channel ID+Secret setup would silently skip the push.

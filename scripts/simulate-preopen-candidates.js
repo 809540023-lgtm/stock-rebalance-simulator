@@ -112,9 +112,15 @@ async function fetchQuotes(codes) {
   return Array.isArray(payload.msgArray) ? payload.msgArray : [];
 }
 
-function sideFees(qty, refPrice, fillPrice) {
+// Fees for one position. `refPrice` is the position's base price and
+// `fillPrice` the exit price. Commission applies on both sides. For long
+// (buy first, sell to exit) the day-trade sale tax is on the exit price;
+// for short (sell to open at refPrice, buy back to close) the sale tax is
+// on the opening sell at refPrice, not the buy-back.
+function sideFees(qty, refPrice, fillPrice, side) {
   const commission = Math.max(MIN_COMMISSION, qty * refPrice * COMMISSION_RATE) + Math.max(MIN_COMMISSION, qty * fillPrice * COMMISSION_RATE);
-  const tax = qty * fillPrice * SALE_TAX_RATE;
+  const taxablePrice = side === "short" ? refPrice : fillPrice;
+  const tax = qty * taxablePrice * SALE_TAX_RATE;
   return { commission, tax };
 }
 
@@ -198,7 +204,7 @@ export function buildSnapshot(quotes, report, now) {
 
     // gross: long gains on rise; short gains on fall.
     const gross = candidate.side === "long" ? (exitPrice - basis) * qty : (basis - exitPrice) * qty;
-    const { commission, tax } = sideFees(qty, basis, exitPrice);
+    const { commission, tax } = sideFees(qty, basis, exitPrice, candidate.side);
     const net = gross - commission - tax;
     const grossPct = gross / notional * 100;
     // Margin/deposit required for the position (margin buy 40%, margin sell 90%).

@@ -1,9 +1,9 @@
 {
   "version": "preopen-sim-v1",
-  "simulatedAt": "2026-09-15T08:59:24.293Z",
+  "simulatedAt": "2026-09-15T13:53:50.222Z",
   "tz": "Asia/Taipei",
   "localDate": "2026-09-15",
-  "localTime": "16:59:21",
+  "localTime": "21:53:46",
   "sharesPerCandidate": 1000,
   "reportDataDate": "2026-09-15",
   "generatedAt": "2026-09-15T00:22:54.701Z",
@@ -28,12 +28,12 @@
   "totalBuyAmount": 417000,
   "totalSellAmount": 411300,
   "totalCommission": 1189.72,
-  "totalTax": 616.97,
+  "totalTax": 624.61,
   "grossPnl": 4500,
   "grossPct": 1.4270990248156679,
-  "fees": 1806.67,
-  "netPnl": 2693.33,
-  "netPct": 0.8541445334179036,
+  "fees": 1814.32,
+  "netPnl": 2685.68,
+  "netPct": 0.8517184650757171,
   "positions": [
     {
       "rank": 1,
@@ -158,11 +158,11 @@
       "marginRatio": 0.9,
       "investedAmount": 35910,
       "commission": 113.22,
-      "tax": 59.33,
+      "tax": 59.85,
       "grossPnl": 350,
       "grossPct": 0.877192982456144,
-      "netPnl": 177.46,
-      "netPct": 0.49417641325536465
+      "netPnl": 176.93,
+      "netPct": 0.49271442495127105
     },
     {
       "rank": 2,
@@ -182,11 +182,11 @@
       "marginRatio": 0.9,
       "investedAmount": 21015,
       "commission": 65.62,
-      "tax": 34.05,
+      "tax": 35.02,
       "grossPnl": 650,
       "grossPct": 2.783725910064249,
-      "netPnl": 550.33,
-      "netPct": 2.618742564834652
+      "netPnl": 549.35,
+      "netPct": 2.6141030216512116
     },
     {
       "rank": 3,
@@ -206,11 +206,11 @@
       "marginRatio": 0.9,
       "investedAmount": 40230,
       "commission": 126.75,
-      "tax": 66.38,
+      "tax": 67.05,
       "grossPnl": 450,
       "grossPct": 1.0067114093959795,
-      "netPnl": 256.87,
-      "netPct": 0.638506711409403
+      "netPnl": 256.2,
+      "netPct": 0.6368288590604096
     },
     {
       "rank": 4,
@@ -230,11 +230,11 @@
       "marginRatio": 0.9,
       "investedAmount": 9990,
       "commission": 40,
-      "tax": 16.57,
+      "tax": 16.65,
       "grossPnl": 50,
       "grossPct": 0.4504504504504408,
-      "netPnl": -6.58,
-      "netPct": -0.06581581581582648
+      "netPnl": -6.65,
+      "netPct": -0.06656656656657722
     },
     {
       "rank": 5,
@@ -254,11 +254,11 @@
       "marginRatio": 0.9,
       "investedAmount": 34650,
       "commission": 108.37,
-      "tax": 56.33,
+      "tax": 57.75,
       "grossPnl": 950,
       "grossPct": 2.467532467532475,
-      "netPnl": 785.3,
-      "netPct": 2.266388888888897
+      "netPnl": 783.88,
+      "netPct": 2.262276334776343
     },
     {
       "rank": 6,
@@ -278,11 +278,11 @@
       "marginRatio": 0.9,
       "investedAmount": 26730,
       "commission": 83.72,
-      "tax": 43.58,
+      "tax": 44.55,
       "grossPnl": 650,
       "grossPct": 2.1885521885521837,
-      "netPnl": 522.71,
-      "netPct": 1.9555041152263322
+      "netPnl": 521.73,
+      "netPct": 1.9518565282454121
     },
     {
       "rank": 7,
@@ -302,11 +302,11 @@
       "marginRatio": 0.9,
       "investedAmount": 23850,
       "commission": 74.6,
-      "tax": 38.77,
+      "tax": 39.75,
       "grossPnl": 650,
       "grossPct": 2.4528301886792403,
-      "netPnl": 536.63,
-      "netPct": 2.2500052410901414
+      "netPnl": 535.65,
+      "netPct": 2.2459171907756756
     },
     {
       "rank": 8,
@@ -326,11 +326,11 @@
       "marginRatio": 0.9,
       "investedAmount": 34560,
       "commission": 108.66,
-      "tax": 56.77,
+      "tax": 57.6,
       "grossPnl": 550,
       "grossPct": 1.4322916666666594,
-      "netPnl": 384.57,
-      "netPct": 1.1127567997685104
+      "netPnl": 383.74,
+      "netPct": 1.1103696469907325
     },
     {
       "rank": 9,
@@ -350,11 +350,11 @@
       "marginRatio": 0.9,
       "investedAmount": 14130,
       "commission": 44.1,
-      "tax": 22.88,
+      "tax": 23.55,
       "grossPnl": 450,
       "grossPct": 2.866242038216556,
-      "netPnl": 383.02,
-      "netPct": 2.710695329087044
+      "netPnl": 382.35,
+      "netPct": 2.70591825902335
     },
     {
       "rank": 10,
@@ -374,11 +374,11 @@
       "marginRatio": 0.9,
       "investedAmount": 26280,
       "commission": 82.72,
-      "tax": 43.27,
+      "tax": 43.8,
       "grossPnl": 350,
       "grossPct": 1.198630136986294,
-      "netPnl": 224,
-      "netPct": 0.8523734779299765
+      "netPnl": 223.48,
+      "netPct": 0.8503757610349993
     }
   ]
 }
