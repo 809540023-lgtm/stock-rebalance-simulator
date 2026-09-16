@@ -77,3 +77,9 @@
 - [x] Switch to day-trade margin basis (定稿): long = 40% margin buy, short = 90% margin sell, day-trade sale tax 0.15%, invested capital = 市值×保證金比例, 投報率 = 淨損益 ÷ investedCapital.
 - [x] Add a "每日盈虧（累積）" chart to the 候選模擬 tab showing per-day net P/L bars plus a cumulative curve and cumulative-detail card.
 - [x] Enable LINE push: `LINE_CHANNEL_ID`, `LINE_CHANNEL_SECRET`, and `LINE_USER_ID` are set as repo secrets; a live test push was confirmed received on 2026-09-15. Pre-open report (08:00), candidate simulation summaries, and paper-trade alert monitors can now push to the user's LINE.
+
+## Priority 7: Restore 08:00 Pre-open Report Schedule
+
+- [x] Diagnose why the 08:00 pre-open report LINE push stopped firing on 2026-09-16: the send step's `if:` referenced `secrets.LINE_USER_ID` / `secrets.LINE_CHANNEL_*` directly, which GitHub rejects at workflow validation; the failing validation also disables the workflow's `schedule` trigger, so the 08:00 run never started.
+- [x] Fix `.github/workflows/preopen-research-report.yml`: move LINE secrets to job-level `env` and make the send step's `if` read them via the `env` context; require `LINE_USER_ID` plus either a long-lived token OR (channel id + secret). No secrets stored in the repo.
+- [ ] Deploy the fix and re-run the pre-open workflow manually once so GitHub re-registers the schedule; confirm the 08:00 push the following morning. Until then, the simulate workflow and other LINE pushes continue to run unaffected.

@@ -1,5 +1,13 @@
 # AI Changelog
 
+## 2026-09-16 Copilot (restore 08:00 pre-open report schedule)
+
+- Root cause: `.github/workflows/preopen-research-report.yml` send step's `if:` referenced `secrets.LINE_USER_ID` / `secrets.LINE_CHANNEL_*` directly. GitHub rejects that at workflow validation (step job counts = 0) and disables the workflow's `schedule` trigger, so the 08:00 pre-open run never fired on 2026-09-16 and no LINE push was sent. Other schedule-based workflows kept running normally, which confirmed the issue was specific to this file.
+- Fix: moved the four LINE secrets to job-level `env` and changed the send step's `if` to read them via the `env` context: fires when `LINE_USER_ID` is set AND (long-lived `LINE_CHANNEL_ACCESS_TOKEN` OR (`LINE_CHANNEL_ID` + `LINE_CHANNEL_SECRET`)). Corrected the previous logic that wrongly required `LINE_CHANNEL_SECRET` even for a long-lived-token setup.
+- Files changed: `.github/workflows/preopen-research-report.yml`, `PROJECT_STATE.md`, `TASK_QUEUE.md`, `AI_CHANGELOG.md`.
+- Tests: `node --test tests/preopen-report.test.js tests/preopen-research.test.js tests/preopen-simulation.test.js tests/line-market-alerts.test.js` — 20/20 pass. YAML re-validated (`YAML OK`).
+- Remaining: deploy and re-run the pre-open workflow manually once so GitHub re-registers the schedule; verify the next-morning 08:00 push.
+
 ## 2026-09-15 Copilot (LINE notifications enabled)
 
 - Acquired the user's personal LINE userId (`U1901968...f2ba4`) via a webhook capture over an HTTP/2 cloudflared tunnel (after localtunnel's POST/503 issues), and pushed a live end-to-end test message that the user confirmed received.
