@@ -1,0 +1,43 @@
+{
+  "snapshots": [
+    {
+      "generatedAt": "2026-09-17T17:37:00.833Z",
+      "days": 3,
+      "start": "2026-09-15",
+      "end": "2026-09-17",
+      "metrics": {
+        "cumulativeNetPnl": -2706.2999999999997,
+        "totalNetPct": -0.8693031248828904,
+        "avgDailyNetPnl": -902.0999999999999,
+        "winDays": 2,
+        "lossDays": 1,
+        "winRate": 66.66666666666666,
+        "maxDrawdown": 6409.86,
+        "maxDrawdownPct": 2.0589407412562704,
+        "grossPnl": 2800,
+        "fees": 5506.299999999999,
+        "avgInvestedCapital": 311318.3333333333
+      },
+      "exitCount": {
+        "takeProfit": 2,
+        "stopLoss": 3,
+        "forceClose": 37,
+        "holding": 0
+      },
+      "perDay": [
+        {
+          "date": "2026-09-15",
+          "netPnl": 2685.68
+        },
+        {
+          "date": "2026-09-16",
+          "netPnl": 1017.88
+        },
+        {
+          "date": "2026-09-17",
+          "netPnl": -6409.86
+        }
+      ]
+    }
+  ]
+}
