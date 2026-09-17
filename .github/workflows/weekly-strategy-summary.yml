@@ -39,6 +39,10 @@ jobs:
 
       - name: Commit weekly summary
         run: |
+          # git diff ignores brand-new (untracked) files, so mark the weekly
+          # outputs intent-to-add first or a first run would wrongly skip the
+          # commit and never publish them.
+          git add -N data/shared/strategy-weekly-latest.json data/shared/strategy-weekly-history.json || true
           if git diff --quiet -- data/shared/strategy-weekly-latest.json data/shared/strategy-weekly-history.json; then
             echo "Weekly summary unchanged."
             exit 0
