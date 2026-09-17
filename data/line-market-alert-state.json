@@ -1,3 +1,20 @@
 {
-  "events": []
+  "events": [
+    {
+      "date": "2026-09-17",
+      "code": "6405",
+      "name": "悅城",
+      "latest": null,
+      "high": 41.35,
+      "low": 37.6,
+      "previousClose": 37.6,
+      "changePct": null,
+      "detectedAt": "2026-09-17T01:21:53.256Z",
+      "key": "2026-09-17:6405:limit-up",
+      "type": "limit-up",
+      "limitPrice": 41.35,
+      "triggerPrice": 41.35,
+      "trigger": "盤中最高價觸及漲停價"
+    }
+  ]
 }
