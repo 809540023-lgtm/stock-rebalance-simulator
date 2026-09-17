@@ -83,3 +83,11 @@
 - [x] Diagnose why the 08:00 pre-open report LINE push stopped firing on 2026-09-16: the send step's `if:` referenced `secrets.LINE_USER_ID` / `secrets.LINE_CHANNEL_*` directly, which GitHub rejects at workflow validation; the failing validation also disables the workflow's `schedule` trigger, so the 08:00 run never started.
 - [x] Fix `.github/workflows/preopen-research-report.yml`: move LINE secrets to job-level `env` and make the send step's `if` read them via the `env` context; require `LINE_USER_ID` plus either a long-lived token OR (channel id + secret). No secrets stored in the repo.
 - [ ] Deploy the fix and re-run the pre-open workflow manually once so GitHub re-registers the schedule; confirm the 08:00 push the following morning. Until then, the simulate workflow and other LINE pushes continue to run unaffected.
+
+## Priority 8: Weekly Strategy Sample Accumulation
+
+- [x] Confirm the strategy's long-term record is `data/preopen-simulation-history.json`, currently only 3 days (9/15–9/17). Sample is too small to judge viability; plan is to accumulate one record per trading day and review once enough weeks accumulate.
+- [x] Add `scripts/weekly-strategy-summary.js` (pure, tested): aggregates daily records into cumulative net P/L, total return %, win rate, max drawdown (and %), expected value (avg daily), exit breakdown; renders a Chinese LINE-friendly summary; writes `data/shared/strategy-weekly-latest.json` + `data/shared/strategy-weekly-history.json`; pushes to LINE via job-level env.
+- [x] Add `.github/workflows/weekly-strategy-summary.yml` running every Monday 09:00 Taipei (01:00 UTC, cron `0 1 * * 1`) + `workflow_dispatch`. Uses job-level `env` for LINE secrets (never `secrets.*` in an `if:`).
+- [x] Add `tests/weekly-strategy-summary.test.js` (5 cases: aggregation, sorting/mix, max drawdown, invalid rows, text rendering).
+- [ ] Review accumulated strategy stats every few weeks; decide strategy viability only after a meaningful sample (e.g. 15–20+ trading days).

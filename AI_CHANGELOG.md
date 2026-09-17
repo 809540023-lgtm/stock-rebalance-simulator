@@ -1,5 +1,13 @@
 # AI Changelog
 
+## 2026-09-18 Copilot (weekly strategy summary)
+
+- Added `scripts/weekly-strategy-summary.js`: aggregates every day in `data/preopen-simulation-history.json` into cumulative net P/L, total return %, win rate, expected value (avg daily), max drawdown (TWD and %), and exit breakdown; renders a Chinese LINE-friendly summary. Writes `data/shared/strategy-weekly-latest.json` (overwrite) + `strategy-weekly-history.json` (append), and pushes the summary to LINE via job-level env credentials.
+- Added `.github/workflows/weekly-strategy-summary.yml`: runs every Monday 09:00 Taipei (`0 1 * * 1`) plus `workflow_dispatch`. LINE secrets are passed via job-level `env` (never `secrets.*` in an `if:`, learning from the 9/16 schedule outage).
+- Added `tests/weekly-strategy-summary.test.js` (5 cases). Full suite: 70 tests pass.
+- Context: strategy sample is only 3 trading days (9/15–9/17). The plan is to accumulate one daily simulation record per trading day and judge viability only after a meaningful sample (weeks), not on 3 days.
+- Files changed: `scripts/weekly-strategy-summary.js`, `.github/workflows/weekly-strategy-summary.yml`, `tests/weekly-strategy-summary.test.js`, `PROJECT_STATE.md`, `TASK_QUEUE.md`, `AI_CHANGELOG.md`.
+
 ## 2026-09-16 Copilot (restore 08:00 pre-open report schedule)
 
 - Root cause: `.github/workflows/preopen-research-report.yml` send step's `if:` referenced `secrets.LINE_USER_ID` / `secrets.LINE_CHANNEL_*` directly. GitHub rejects that at workflow validation (step job counts = 0) and disables the workflow's `schedule` trigger, so the 08:00 pre-open run never fired on 2026-09-16 and no LINE push was sent. Other schedule-based workflows kept running normally, which confirmed the issue was specific to this file.

@@ -1,0 +1,62 @@
+name: Weekly strategy summary
+
+on:
+  schedule:
+    # 01:00 UTC = 09:00 Asia/Taipei, Mondays (after the prior week's data).
+    - cron: "0 1 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-strategy-summary
+  cancel-in-progress: true
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    # LINE secrets live here (job-level) so the send step's `if` can reference
+    # them via the env context instead of secrets.* directly (which GitHub
+    # rejects at validation and would disable the schedule).
+    env:
+      LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+      LINE_CHANNEL_ID: ${{ secrets.LINE_CHANNEL_ID }}
+      LINE_CHANNEL_SECRET: ${{ secrets.LINE_CHANNEL_SECRET }}
+      LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Build weekly strategy summary
+        run: |
+          node scripts/weekly-strategy-summary.js
+
+      - name: Commit weekly summary
+        run: |
+          if git diff --quiet -- data/shared/strategy-weekly-latest.json data/shared/strategy-weekly-history.json; then
+            echo "Weekly summary unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/shared/strategy-weekly-latest.json data/shared/strategy-weekly-history.json
+          git commit -m "Update weekly strategy summary"
+          git push
+
+      - name: Commit daily history (if missing from repo)
+        run: |
+          git add data/preopen-simulation-history.json
+          if git diff --cached --quiet; then echo "Daily history already tracked."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Track daily simulation history"
+          git push
+        # The summary script already pushes to LINE inside main() whenever a
+        # valid recipient + auth path are present (via the job-level env above),
+        # so the script runs only once and no separate send step is needed.
