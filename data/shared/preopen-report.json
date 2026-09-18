@@ -1,6 +1,6 @@
 {
   "version": "preopen-research-v1",
-  "generatedAt": "2026-09-18T14:22:33.202Z",
+  "generatedAt": "2026-09-18T15:40:39.221Z",
   "timezone": "Asia/Taipei",
   "intendedRunTime": "07:00",
   "dataDate": "2026-09-18",
@@ -9,7 +9,7 @@
   ],
   "modelStatus": "preopen-research-engine-full",
   "nextUpgrade": "",
-  "engineDetail": "以 60 檔候選的 118 日 OHLCV 歷史（asOf 2026-09-18）直接用嚴格特徵引擎排名。",
+  "engineDetail": "以 60 檔候選的 118 日 OHLCV 歷史（asOf 2026-09-18）直接用嚴格特徵引擎排名；融券可放空確認資料日 2026-09-18",
   "config": {
     "longLimit": 5,
     "shortLimit": 10,
@@ -18,7 +18,8 @@
     "minAvgTurnover20": 10000000
   },
   "warnings": [
-    "此報告是研究候選清單，不是保證獲利，也不是自動下單。"
+    "此報告是研究候選清單，不是保證獲利，也不是自動下單。",
+    "放空候選1 檔尚未確認融券可放空：2601（依證交所 MI_MARGN）"
   ],
   "longCandidates": [
     {
@@ -143,7 +144,11 @@
         "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。",
+      "shortTradable": true,
+      "shortEligibilityDate": "2026-09-18",
+      "shortNextDayLimit": 118332,
+      "shortNote": null
     },
     {
       "rank": 2,
@@ -164,7 +169,11 @@
         "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。",
+      "shortTradable": true,
+      "shortEligibilityDate": "2026-09-18",
+      "shortNextDayLimit": 126515,
+      "shortNote": null
     },
     {
       "rank": 3,
@@ -185,7 +194,11 @@
         "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。",
+      "shortTradable": true,
+      "shortEligibilityDate": "2026-09-18",
+      "shortNextDayLimit": 455310,
+      "shortNote": null
     },
     {
       "rank": 4,
@@ -206,7 +219,11 @@
         "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。",
+      "shortTradable": true,
+      "shortEligibilityDate": "2026-09-18",
+      "shortNextDayLimit": 209109,
+      "shortNote": null
     },
     {
       "rank": 5,
@@ -227,7 +244,11 @@
         "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。",
+      "shortTradable": true,
+      "shortEligibilityDate": "2026-09-18",
+      "shortNextDayLimit": 657073,
+      "shortNote": null
     },
     {
       "rank": 6,
@@ -248,7 +269,11 @@
         "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。",
+      "shortTradable": false,
+      "shortEligibilityDate": "2026-09-18",
+      "shortNextDayLimit": 0,
+      "shortNote": "OX"
     },
     {
       "rank": 7,
@@ -269,7 +294,11 @@
         "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。",
+      "shortTradable": true,
+      "shortEligibilityDate": "2026-09-18",
+      "shortNextDayLimit": 80683,
+      "shortNote": null
     },
     {
       "rank": 8,
@@ -290,7 +319,11 @@
         "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。",
+      "shortTradable": true,
+      "shortEligibilityDate": "2026-09-18",
+      "shortNextDayLimit": 810353,
+      "shortNote": null
     },
     {
       "rank": 9,
@@ -311,7 +344,11 @@
         "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。",
+      "shortTradable": true,
+      "shortEligibilityDate": "2026-09-18",
+      "shortNextDayLimit": 238722,
+      "shortNote": null
     },
     {
       "rank": 10,
@@ -332,7 +369,15 @@
         "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。",
+      "shortTradable": true,
+      "shortEligibilityDate": "2026-09-18",
+      "shortNextDayLimit": 69739,
+      "shortNote": null
     }
+  ],
+  "shortEligibilityDate": "2026-09-18",
+  "unconfirmedShortCodes": [
+    "2601"
   ]
 }

@@ -128,6 +128,28 @@ function strictCandidateRow(c) {
   };
 }
 
+// Label whether each short candidate is confirmed shortable at the official
+// (TWSE MI_MARGN) level before calling it tradable. A specific broker's live
+// inventory is still a separate, per-broker confirmation.
+function annotateShortAvailability(rows, ohlcv) {
+  const availability = ohlcv?.shortAvailability?.byCode || {};
+  const date = ohlcv?.shortAvailability?.date || null;
+  const out = [];
+  const unconfirmed = [];
+  for (const c of rows) {
+    const info = availability[String(c.code)];
+    const confirmed = Boolean(date && info && info.allowed);
+    const row = strictCandidateRow(c);
+    row.shortTradable = confirmed;
+    row.shortEligibilityDate = date;
+    row.shortNextDayLimit = info ? info.nextDayLimit : null;
+    row.shortNote = info && info.note ? info.note : null;
+    if (!confirmed) unconfirmed.push(String(c.code));
+    out.push(row);
+  }
+  return { rows: out, unconfirmed, date };
+}
+
 // Prefer the strict 61-bar pre-open engine when candidate OHLCV history and
 // the index are aligned through the report data date; otherwise fall back to
 // the legacy snapshot ranking.
@@ -148,14 +170,22 @@ export function buildStrictPreopenReport({ bullish, bearish, ohlcv, now = new Da
   let nextUpgrade = "";
   let engineDetail = "";
   let sourceFiles = ["data/shared/ohlcv-history.json"];
+  let shortEligibilityDate = null;
+  let unconfirmedShortCodes = [];
 
   if (strictUsable) {
     try {
       const ranked = rankPreopenCandidates(engineStocksFromHistory(ohlcv), ohlcv.index, dataDate, config);
       if (ranked.long.length || ranked.short.length) {
         longCandidates = ranked.long.map(strictCandidateRow);
-        shortCandidates = ranked.short.map(strictCandidateRow);
-        engineDetail = `以 ${stockKeys.length} 檔候選的 ${(ohlcv.stocks[stockKeys[0]] || []).length} 日 OHLCV 歷史（asOf ${ohlcv.meta?.asOfDate || dataDate}）直接用嚴格特徵引擎排名。`;
+        const annotated = annotateShortAvailability(ranked.short, ohlcv);
+        shortCandidates = annotated.rows;
+        shortEligibilityDate = annotated.date;
+        if (annotated.unconfirmed.length) {
+          unconfirmedShortCodes = annotated.unconfirmed;
+          warnings.push(`放空候選${annotated.unconfirmed.length} 檔尚未確認融券可放空：${annotated.unconfirmed.slice(0, 8).join("、")}${annotated.unconfirmed.length > 8 ? "、…" : ""}（依證交所 MI_MARGN）`);
+        }
+        engineDetail = `以 ${stockKeys.length} 檔候選的 ${(ohlcv.stocks[stockKeys[0]] || []).length} 日 OHLCV 歷史（asOf ${ohlcv.meta?.asOfDate || dataDate}）直接用嚴格特徵引擎排名${annotated.date ? `；融券可放空確認資料日 ${annotated.date}` : "；無融券可放空確認資料"}`;
       }
     } catch {
       // fall through to legacy
@@ -189,9 +219,19 @@ export function buildStrictPreopenReport({ bullish, bearish, ohlcv, now = new Da
       minAvgVolume20: config.minAvgVolume20,
       minAvgTurnover20: config.minAvgTurnover20
     },
+    engineDetail,
+    config: {
+      longLimit: config.maxLongCandidates,
+      shortLimit: config.maxShortCandidates,
+      maxPrice: config.maxPrice,
+      minAvgVolume20: config.minAvgVolume20,
+      minAvgTurnover20: config.minAvgTurnover20
+    },
     warnings,
     longCandidates,
-    shortCandidates
+    shortCandidates,
+    shortEligibilityDate,
+    unconfirmedShortCodes
   };
 }
 

@@ -1,8 +1,9 @@
 {
   "meta": {
     "version": "ohlcv-history-v1",
-    "updatedAt": "2026-09-18T14:21:56.532Z",
-    "asOfDate": "2026-09-18"
+    "updatedAt": "2026-09-18T15:39:24.310Z",
+    "asOfDate": "2026-09-18",
+    "shortEligibilityDate": "2026-09-18"
   },
   "index": [
     {
@@ -31513,6 +31514,174 @@
         "volume": 1902327
       },
       {
+        "date": "2026-06-01",
+        "open": 36.15,
+        "high": 37.8,
+        "low": 35.9,
+        "close": 35.95,
+        "volume": 1070910
+      },
+      {
+        "date": "2026-06-02",
+        "open": 35.9,
+        "high": 37,
+        "low": 35,
+        "close": 36.75,
+        "volume": 1226942
+      },
+      {
+        "date": "2026-06-03",
+        "open": 37.2,
+        "high": 40.3,
+        "low": 36.7,
+        "close": 39.2,
+        "volume": 5429053
+      },
+      {
+        "date": "2026-06-04",
+        "open": 37.95,
+        "high": 40.8,
+        "low": 37.5,
+        "close": 40.15,
+        "volume": 2904740
+      },
+      {
+        "date": "2026-06-05",
+        "open": 42.1,
+        "high": 42.75,
+        "low": 39.7,
+        "close": 39.75,
+        "volume": 6032216
+      },
+      {
+        "date": "2026-06-08",
+        "open": 37.6,
+        "high": 42.5,
+        "low": 37.55,
+        "close": 40.5,
+        "volume": 4596786
+      },
+      {
+        "date": "2026-06-09",
+        "open": 41,
+        "high": 41.75,
+        "low": 39.7,
+        "close": 39.8,
+        "volume": 2122150
+      },
+      {
+        "date": "2026-06-10",
+        "open": 39.7,
+        "high": 40.4,
+        "low": 37.15,
+        "close": 37.35,
+        "volume": 1431964
+      },
+      {
+        "date": "2026-06-11",
+        "open": 37.35,
+        "high": 38.15,
+        "low": 36.4,
+        "close": 37,
+        "volume": 632027
+      },
+      {
+        "date": "2026-06-12",
+        "open": 37.8,
+        "high": 38.15,
+        "low": 37.3,
+        "close": 37.55,
+        "volume": 470538
+      },
+      {
+        "date": "2026-06-15",
+        "open": 38.45,
+        "high": 41.3,
+        "low": 38.2,
+        "close": 41.3,
+        "volume": 3930021
+      },
+      {
+        "date": "2026-06-16",
+        "open": 41.3,
+        "high": 41.3,
+        "low": 39.4,
+        "close": 39.95,
+        "volume": 2677103
+      },
+      {
+        "date": "2026-06-17",
+        "open": 39.6,
+        "high": 40.75,
+        "low": 39.2,
+        "close": 39.4,
+        "volume": 988179
+      },
+      {
+        "date": "2026-06-18",
+        "open": 39.65,
+        "high": 40.4,
+        "low": 38.6,
+        "close": 38.75,
+        "volume": 836129
+      },
+      {
+        "date": "2026-06-22",
+        "open": 39.6,
+        "high": 41.2,
+        "low": 39.1,
+        "close": 40.25,
+        "volume": 2254033
+      },
+      {
+        "date": "2026-06-23",
+        "open": 40.55,
+        "high": 40.7,
+        "low": 39.15,
+        "close": 39.35,
+        "volume": 1016547
+      },
+      {
+        "date": "2026-06-24",
+        "open": 38.8,
+        "high": 39.15,
+        "low": 38.15,
+        "close": 38.4,
+        "volume": 664424
+      },
+      {
+        "date": "2026-06-25",
+        "open": 38.45,
+        "high": 38.6,
+        "low": 37.6,
+        "close": 37.75,
+        "volume": 1107770
+      },
+      {
+        "date": "2026-06-26",
+        "open": 37.65,
+        "high": 38.75,
+        "low": 36.7,
+        "close": 36.95,
+        "volume": 618572
+      },
+      {
+        "date": "2026-06-29",
+        "open": 36.95,
+        "high": 37.8,
+        "low": 36.15,
+        "close": 36.25,
+        "volume": 403199
+      },
+      {
+        "date": "2026-06-30",
+        "open": 37.2,
+        "high": 38,
+        "low": 36.5,
+        "close": 37.9,
+        "volume": 353955
+      },
+      {
         "date": "2026-07-01",
         "open": 38.55,
         "high": 39,
@@ -45375,6 +45544,166 @@
         "volume": 562156
       },
       {
+        "date": "2026-05-04",
+        "open": 9.28,
+        "high": 9.28,
+        "low": 9.01,
+        "close": 9.04,
+        "volume": 1762655
+      },
+      {
+        "date": "2026-05-05",
+        "open": 9.05,
+        "high": 9.08,
+        "low": 8.95,
+        "close": 9.08,
+        "volume": 453990
+      },
+      {
+        "date": "2026-05-06",
+        "open": 9.15,
+        "high": 9.15,
+        "low": 9.02,
+        "close": 9.08,
+        "volume": 528499
+      },
+      {
+        "date": "2026-05-07",
+        "open": 9.08,
+        "high": 9.19,
+        "low": 9.07,
+        "close": 9.15,
+        "volume": 527373
+      },
+      {
+        "date": "2026-05-08",
+        "open": 9.15,
+        "high": 9.28,
+        "low": 9.1,
+        "close": 9.27,
+        "volume": 808408
+      },
+      {
+        "date": "2026-05-11",
+        "open": 9.84,
+        "high": 9.98,
+        "low": 9.78,
+        "close": 9.88,
+        "volume": 2530125
+      },
+      {
+        "date": "2026-05-12",
+        "open": 10,
+        "high": 10,
+        "low": 9.73,
+        "close": 9.73,
+        "volume": 1053569
+      },
+      {
+        "date": "2026-05-13",
+        "open": 9.7,
+        "high": 9.7,
+        "low": 9.55,
+        "close": 9.58,
+        "volume": 575787
+      },
+      {
+        "date": "2026-05-14",
+        "open": 9.58,
+        "high": 9.58,
+        "low": 9.45,
+        "close": 9.52,
+        "volume": 768325
+      },
+      {
+        "date": "2026-05-15",
+        "open": 9.57,
+        "high": 9.86,
+        "low": 9.57,
+        "close": 9.71,
+        "volume": 1032901
+      },
+      {
+        "date": "2026-05-18",
+        "open": 9.74,
+        "high": 9.74,
+        "low": 9.6,
+        "close": 9.64,
+        "volume": 506148
+      },
+      {
+        "date": "2026-05-19",
+        "open": 9.69,
+        "high": 9.78,
+        "low": 9.62,
+        "close": 9.7,
+        "volume": 333982
+      },
+      {
+        "date": "2026-05-20",
+        "open": 9.75,
+        "high": 9.75,
+        "low": 9.65,
+        "close": 9.71,
+        "volume": 212955
+      },
+      {
+        "date": "2026-05-21",
+        "open": 9.72,
+        "high": 9.83,
+        "low": 9.72,
+        "close": 9.82,
+        "volume": 471274
+      },
+      {
+        "date": "2026-05-22",
+        "open": 9.79,
+        "high": 9.84,
+        "low": 9.66,
+        "close": 9.71,
+        "volume": 609702
+      },
+      {
+        "date": "2026-05-25",
+        "open": 9.7,
+        "high": 9.7,
+        "low": 9.53,
+        "close": 9.63,
+        "volume": 522305
+      },
+      {
+        "date": "2026-05-26",
+        "open": 9.63,
+        "high": 9.63,
+        "low": 9.54,
+        "close": 9.63,
+        "volume": 410758
+      },
+      {
+        "date": "2026-05-27",
+        "open": 9.6,
+        "high": 9.6,
+        "low": 9.51,
+        "close": 9.54,
+        "volume": 377494
+      },
+      {
+        "date": "2026-05-28",
+        "open": 9.54,
+        "high": 9.64,
+        "low": 9.52,
+        "close": 9.54,
+        "volume": 443735
+      },
+      {
+        "date": "2026-05-29",
+        "open": 9.55,
+        "high": 9.76,
+        "low": 9.55,
+        "close": 9.71,
+        "volume": 606083
+      },
+      {
         "date": "2026-06-01",
         "open": 9.78,
         "high": 9.97,
@@ -45885,6 +46214,118 @@
         "low": 11,
         "close": 11.05,
         "volume": 478867
+      },
+      {
+        "date": "2026-09-01",
+        "open": 11.05,
+        "high": 11.15,
+        "low": 11.05,
+        "close": 11.1,
+        "volume": 500889
+      },
+      {
+        "date": "2026-09-02",
+        "open": 11.1,
+        "high": 11.15,
+        "low": 11.05,
+        "close": 11.1,
+        "volume": 285903
+      },
+      {
+        "date": "2026-09-03",
+        "open": 11.1,
+        "high": 11.15,
+        "low": 11,
+        "close": 11.05,
+        "volume": 492294
+      },
+      {
+        "date": "2026-09-04",
+        "open": 11.15,
+        "high": 11.15,
+        "low": 10.9,
+        "close": 11.1,
+        "volume": 539581
+      },
+      {
+        "date": "2026-09-07",
+        "open": 11.1,
+        "high": 11.1,
+        "low": 10.8,
+        "close": 10.8,
+        "volume": 945752
+      },
+      {
+        "date": "2026-09-08",
+        "open": 10.85,
+        "high": 10.9,
+        "low": 10.75,
+        "close": 10.8,
+        "volume": 455589
+      },
+      {
+        "date": "2026-09-09",
+        "open": 10.8,
+        "high": 10.8,
+        "low": 10.55,
+        "close": 10.6,
+        "volume": 1278408
+      },
+      {
+        "date": "2026-09-10",
+        "open": 10.35,
+        "high": 10.35,
+        "low": 10.1,
+        "close": 10.15,
+        "volume": 3035070
+      },
+      {
+        "date": "2026-09-11",
+        "open": 10,
+        "high": 10.1,
+        "low": 9.91,
+        "close": 9.93,
+        "volume": 2192891
+      },
+      {
+        "date": "2026-09-14",
+        "open": 9.87,
+        "high": 9.87,
+        "low": 9.75,
+        "close": 9.85,
+        "volume": 778890
+      },
+      {
+        "date": "2026-09-15",
+        "open": 9.86,
+        "high": 9.87,
+        "low": 9.73,
+        "close": 9.75,
+        "volume": 706017
+      },
+      {
+        "date": "2026-09-16",
+        "open": 9.75,
+        "high": 9.8,
+        "low": 9.74,
+        "close": 9.78,
+        "volume": 441822
+      },
+      {
+        "date": "2026-09-17",
+        "open": 9.8,
+        "high": 9.9,
+        "low": 9.8,
+        "close": 9.87,
+        "volume": 393847
+      },
+      {
+        "date": "2026-09-18",
+        "open": 9.9,
+        "high": 9.93,
+        "low": 9.81,
+        "close": 9.81,
+        "volume": 885961
       }
     ],
     "6153|上市": [
@@ -46377,6 +46818,182 @@
         "volume": 5892629
       },
       {
+        "date": "2026-07-01",
+        "open": 22,
+        "high": 22,
+        "low": 20.25,
+        "close": 20.3,
+        "volume": 8845345
+      },
+      {
+        "date": "2026-07-02",
+        "open": 20.3,
+        "high": 21,
+        "low": 19.9,
+        "close": 20.75,
+        "volume": 4700839
+      },
+      {
+        "date": "2026-07-03",
+        "open": 20.8,
+        "high": 20.9,
+        "low": 20.15,
+        "close": 20.4,
+        "volume": 4869640
+      },
+      {
+        "date": "2026-07-06",
+        "open": 20.65,
+        "high": 21.4,
+        "low": 20.05,
+        "close": 20.55,
+        "volume": 5423663
+      },
+      {
+        "date": "2026-07-07",
+        "open": 20.5,
+        "high": 20.95,
+        "low": 19.8,
+        "close": 19.85,
+        "volume": 6721556
+      },
+      {
+        "date": "2026-07-08",
+        "open": 20.05,
+        "high": 20.3,
+        "low": 19.25,
+        "close": 20.05,
+        "volume": 6940710
+      },
+      {
+        "date": "2026-07-09",
+        "open": 20.05,
+        "high": 20.3,
+        "low": 19.7,
+        "close": 19.7,
+        "volume": 3178411
+      },
+      {
+        "date": "2026-07-13",
+        "open": 19.85,
+        "high": 20.45,
+        "low": 18.95,
+        "close": 19.05,
+        "volume": 6236616
+      },
+      {
+        "date": "2026-07-14",
+        "open": 18.95,
+        "high": 19.1,
+        "low": 17.7,
+        "close": 18.45,
+        "volume": 7418220
+      },
+      {
+        "date": "2026-07-15",
+        "open": 18.5,
+        "high": 19,
+        "low": 18.5,
+        "close": 18.7,
+        "volume": 3059786
+      },
+      {
+        "date": "2026-07-16",
+        "open": 18.75,
+        "high": 18.75,
+        "low": 18.1,
+        "close": 18.2,
+        "volume": 2762949
+      },
+      {
+        "date": "2026-07-17",
+        "open": 17.8,
+        "high": 17.8,
+        "low": 16.85,
+        "close": 16.95,
+        "volume": 6011354
+      },
+      {
+        "date": "2026-07-20",
+        "open": 17.05,
+        "high": 17.2,
+        "low": 15.6,
+        "close": 16.4,
+        "volume": 5956945
+      },
+      {
+        "date": "2026-07-21",
+        "open": 16.55,
+        "high": 17.2,
+        "low": 16.5,
+        "close": 17,
+        "volume": 3197440
+      },
+      {
+        "date": "2026-07-22",
+        "open": 17.3,
+        "high": 17.45,
+        "low": 17,
+        "close": 17,
+        "volume": 3036176
+      },
+      {
+        "date": "2026-07-23",
+        "open": 17.1,
+        "high": 17.3,
+        "low": 16.65,
+        "close": 16.85,
+        "volume": 2375847
+      },
+      {
+        "date": "2026-07-24",
+        "open": 17,
+        "high": 17,
+        "low": 16.4,
+        "close": 16.6,
+        "volume": 2601666
+      },
+      {
+        "date": "2026-07-27",
+        "open": 16.6,
+        "high": 16.6,
+        "low": 15.8,
+        "close": 16.1,
+        "volume": 3842154
+      },
+      {
+        "date": "2026-07-28",
+        "open": 15.75,
+        "high": 15.75,
+        "low": 15,
+        "close": 15.05,
+        "volume": 4212428
+      },
+      {
+        "date": "2026-07-29",
+        "open": 15.15,
+        "high": 15.3,
+        "low": 13.7,
+        "close": 14.2,
+        "volume": 8763755
+      },
+      {
+        "date": "2026-07-30",
+        "open": 14.15,
+        "high": 14.3,
+        "low": 13.5,
+        "close": 13.5,
+        "volume": 5675959
+      },
+      {
+        "date": "2026-07-31",
+        "open": 14.3,
+        "high": 14.45,
+        "low": 13.75,
+        "close": 14.05,
+        "volume": 4112083
+      },
+      {
         "date": "2026-08-03",
         "open": 14.1,
         "high": 15.25,
@@ -46658,6 +47275,166 @@
       }
     ],
     "1308|上市": [
+      {
+        "date": "2026-04-01",
+        "open": 17.65,
+        "high": 18.5,
+        "low": 17.15,
+        "close": 17.9,
+        "volume": 22854998
+      },
+      {
+        "date": "2026-04-02",
+        "open": 17.4,
+        "high": 19.5,
+        "low": 16.85,
+        "close": 18.6,
+        "volume": 39804655
+      },
+      {
+        "date": "2026-04-07",
+        "open": 18.4,
+        "high": 18.8,
+        "low": 17.5,
+        "close": 18.6,
+        "volume": 16779761
+      },
+      {
+        "date": "2026-04-08",
+        "open": 17.05,
+        "high": 17.35,
+        "low": 16.75,
+        "close": 16.75,
+        "volume": 19123734
+      },
+      {
+        "date": "2026-04-09",
+        "open": 16.55,
+        "high": 17.1,
+        "low": 16.4,
+        "close": 16.85,
+        "volume": 14158184
+      },
+      {
+        "date": "2026-04-10",
+        "open": 16.8,
+        "high": 16.8,
+        "low": 16.2,
+        "close": 16.55,
+        "volume": 10120122
+      },
+      {
+        "date": "2026-04-13",
+        "open": 17.3,
+        "high": 17.55,
+        "low": 16.7,
+        "close": 17.25,
+        "volume": 13397933
+      },
+      {
+        "date": "2026-04-14",
+        "open": 16.85,
+        "high": 17.1,
+        "low": 16.65,
+        "close": 16.7,
+        "volume": 7266466
+      },
+      {
+        "date": "2026-04-15",
+        "open": 16.65,
+        "high": 16.65,
+        "low": 15.8,
+        "close": 15.95,
+        "volume": 9079166
+      },
+      {
+        "date": "2026-04-16",
+        "open": 16.05,
+        "high": 16.25,
+        "low": 15.9,
+        "close": 15.95,
+        "volume": 3957228
+      },
+      {
+        "date": "2026-04-17",
+        "open": 16.1,
+        "high": 16.4,
+        "low": 15.15,
+        "close": 15.25,
+        "volume": 7981247
+      },
+      {
+        "date": "2026-04-20",
+        "open": 15.4,
+        "high": 15.8,
+        "low": 15.4,
+        "close": 15.45,
+        "volume": 4464275
+      },
+      {
+        "date": "2026-04-21",
+        "open": 15.45,
+        "high": 15.45,
+        "low": 15.1,
+        "close": 15.35,
+        "volume": 4086359
+      },
+      {
+        "date": "2026-04-22",
+        "open": 15.65,
+        "high": 15.75,
+        "low": 15.2,
+        "close": 15.3,
+        "volume": 2920836
+      },
+      {
+        "date": "2026-04-23",
+        "open": 15.4,
+        "high": 16.5,
+        "low": 14.9,
+        "close": 15.65,
+        "volume": 13918329
+      },
+      {
+        "date": "2026-04-24",
+        "open": 15.75,
+        "high": 16.05,
+        "low": 15.3,
+        "close": 15.4,
+        "volume": 5160982
+      },
+      {
+        "date": "2026-04-27",
+        "open": 15.3,
+        "high": 15.3,
+        "low": 14.65,
+        "close": 14.75,
+        "volume": 5305611
+      },
+      {
+        "date": "2026-04-28",
+        "open": 14.9,
+        "high": 15.25,
+        "low": 14.75,
+        "close": 14.85,
+        "volume": 3816043
+      },
+      {
+        "date": "2026-04-29",
+        "open": 15.1,
+        "high": 15.15,
+        "low": 14.5,
+        "close": 14.55,
+        "volume": 2843110
+      },
+      {
+        "date": "2026-04-30",
+        "open": 14.9,
+        "high": 15.1,
+        "low": 14.6,
+        "close": 15.05,
+        "volume": 6074945
+      },
       {
         "date": "2026-05-04",
         "open": 14.65,
@@ -48877,6 +49654,182 @@
         "low": 47.5,
         "close": 47.7,
         "volume": 828949
+      },
+      {
+        "date": "2026-07-01",
+        "open": 48.15,
+        "high": 48.7,
+        "low": 47.75,
+        "close": 47.8,
+        "volume": 1164654
+      },
+      {
+        "date": "2026-07-02",
+        "open": 48.25,
+        "high": 51.4,
+        "low": 47.5,
+        "close": 50.9,
+        "volume": 9250012
+      },
+      {
+        "date": "2026-07-03",
+        "open": 50.5,
+        "high": 53.5,
+        "low": 50.5,
+        "close": 52.2,
+        "volume": 8190757
+      },
+      {
+        "date": "2026-07-06",
+        "open": 52.4,
+        "high": 53.9,
+        "low": 52.2,
+        "close": 53.1,
+        "volume": 4806185
+      },
+      {
+        "date": "2026-07-07",
+        "open": 54.5,
+        "high": 54.7,
+        "low": 50.8,
+        "close": 51.2,
+        "volume": 3588860
+      },
+      {
+        "date": "2026-07-08",
+        "open": 50.5,
+        "high": 51.3,
+        "low": 49.4,
+        "close": 50,
+        "volume": 2144237
+      },
+      {
+        "date": "2026-07-09",
+        "open": 50.5,
+        "high": 55,
+        "low": 50.3,
+        "close": 55,
+        "volume": 13866421
+      },
+      {
+        "date": "2026-07-13",
+        "open": 55.4,
+        "high": 57.2,
+        "low": 54,
+        "close": 56.1,
+        "volume": 13299989
+      },
+      {
+        "date": "2026-07-14",
+        "open": 55.4,
+        "high": 56.7,
+        "low": 52.2,
+        "close": 53.2,
+        "volume": 5643130
+      },
+      {
+        "date": "2026-07-15",
+        "open": 53.3,
+        "high": 55,
+        "low": 52,
+        "close": 53.2,
+        "volume": 4023471
+      },
+      {
+        "date": "2026-07-16",
+        "open": 52.9,
+        "high": 53.5,
+        "low": 51.9,
+        "close": 52.8,
+        "volume": 2051785
+      },
+      {
+        "date": "2026-07-17",
+        "open": 52,
+        "high": 52.4,
+        "low": 49.1,
+        "close": 49.45,
+        "volume": 2940729
+      },
+      {
+        "date": "2026-07-20",
+        "open": 49.55,
+        "high": 50.6,
+        "low": 47.65,
+        "close": 49.3,
+        "volume": 2495958
+      },
+      {
+        "date": "2026-07-21",
+        "open": 49.45,
+        "high": 50.7,
+        "low": 49.25,
+        "close": 50.5,
+        "volume": 1121399
+      },
+      {
+        "date": "2026-07-22",
+        "open": 51.6,
+        "high": 53.6,
+        "low": 51.4,
+        "close": 52.3,
+        "volume": 2753088
+      },
+      {
+        "date": "2026-07-23",
+        "open": 52,
+        "high": 53.2,
+        "low": 51.3,
+        "close": 51.6,
+        "volume": 1492517
+      },
+      {
+        "date": "2026-07-24",
+        "open": 51.1,
+        "high": 52,
+        "low": 50.7,
+        "close": 50.9,
+        "volume": 1188993
+      },
+      {
+        "date": "2026-07-27",
+        "open": 51.1,
+        "high": 51.1,
+        "low": 49.1,
+        "close": 49.75,
+        "volume": 1378531
+      },
+      {
+        "date": "2026-07-28",
+        "open": 49.25,
+        "high": 49.25,
+        "low": 47.2,
+        "close": 47.65,
+        "volume": 2565479
+      },
+      {
+        "date": "2026-07-29",
+        "open": 48,
+        "high": 48.4,
+        "low": 44.8,
+        "close": 45.8,
+        "volume": 4010088
+      },
+      {
+        "date": "2026-07-30",
+        "open": 45.5,
+        "high": 46.5,
+        "low": 44.9,
+        "close": 45,
+        "volume": 1674355
+      },
+      {
+        "date": "2026-07-31",
+        "open": 46.5,
+        "high": 47.4,
+        "low": 46.3,
+        "close": 46.65,
+        "volume": 1249004
       },
       {
         "date": "2026-08-03",
@@ -52821,6 +53774,118 @@
         "low": 44.5,
         "close": 44.55,
         "volume": 3737996
+      },
+      {
+        "date": "2026-09-01",
+        "open": 44.5,
+        "high": 44.8,
+        "low": 44.35,
+        "close": 44.65,
+        "volume": 6053189
+      },
+      {
+        "date": "2026-09-02",
+        "open": 44.8,
+        "high": 44.8,
+        "low": 44.55,
+        "close": 44.6,
+        "volume": 2021713
+      },
+      {
+        "date": "2026-09-03",
+        "open": 44.65,
+        "high": 45.25,
+        "low": 44.6,
+        "close": 44.65,
+        "volume": 3504176
+      },
+      {
+        "date": "2026-09-04",
+        "open": 45,
+        "high": 45.05,
+        "low": 44.65,
+        "close": 44.8,
+        "volume": 1890696
+      },
+      {
+        "date": "2026-09-07",
+        "open": 45.1,
+        "high": 45.1,
+        "low": 44.45,
+        "close": 44.6,
+        "volume": 2518924
+      },
+      {
+        "date": "2026-09-08",
+        "open": 44.6,
+        "high": 44.8,
+        "low": 44.45,
+        "close": 44.55,
+        "volume": 1496267
+      },
+      {
+        "date": "2026-09-09",
+        "open": 44.5,
+        "high": 44.85,
+        "low": 44.15,
+        "close": 44.2,
+        "volume": 3627958
+      },
+      {
+        "date": "2026-09-10",
+        "open": 44.1,
+        "high": 44.15,
+        "low": 43.75,
+        "close": 43.75,
+        "volume": 5272241
+      },
+      {
+        "date": "2026-09-11",
+        "open": 43.55,
+        "high": 43.55,
+        "low": 42.75,
+        "close": 43.25,
+        "volume": 5066091
+      },
+      {
+        "date": "2026-09-14",
+        "open": 42.85,
+        "high": 42.85,
+        "low": 42.3,
+        "close": 42.4,
+        "volume": 3543050
+      },
+      {
+        "date": "2026-09-15",
+        "open": 42.3,
+        "high": 42.45,
+        "low": 41.8,
+        "close": 42,
+        "volume": 3554623
+      },
+      {
+        "date": "2026-09-16",
+        "open": 42.05,
+        "high": 42.15,
+        "low": 41.7,
+        "close": 41.85,
+        "volume": 2620903
+      },
+      {
+        "date": "2026-09-17",
+        "open": 41.95,
+        "high": 42.25,
+        "low": 41.9,
+        "close": 42.15,
+        "volume": 2303922
+      },
+      {
+        "date": "2026-09-18",
+        "open": 42.25,
+        "high": 42.5,
+        "low": 42.15,
+        "close": 42.4,
+        "volume": 2823597
       }
     ],
     "9938|上市": [
@@ -53655,6 +54720,118 @@
         "low": 41.85,
         "close": 41.85,
         "volume": 692105
+      },
+      {
+        "date": "2026-09-01",
+        "open": 41.8,
+        "high": 41.95,
+        "low": 41.5,
+        "close": 41.6,
+        "volume": 983508
+      },
+      {
+        "date": "2026-09-02",
+        "open": 41.6,
+        "high": 41.65,
+        "low": 41.2,
+        "close": 41.6,
+        "volume": 759816
+      },
+      {
+        "date": "2026-09-03",
+        "open": 41.45,
+        "high": 41.75,
+        "low": 41.2,
+        "close": 41.25,
+        "volume": 725298
+      },
+      {
+        "date": "2026-09-04",
+        "open": 41.4,
+        "high": 41.4,
+        "low": 41,
+        "close": 41.15,
+        "volume": 753669
+      },
+      {
+        "date": "2026-09-07",
+        "open": 41.3,
+        "high": 41.35,
+        "low": 40.85,
+        "close": 41.1,
+        "volume": 999181
+      },
+      {
+        "date": "2026-09-08",
+        "open": 41.1,
+        "high": 41.2,
+        "low": 40.35,
+        "close": 40.35,
+        "volume": 1332660
+      },
+      {
+        "date": "2026-09-09",
+        "open": 40.3,
+        "high": 40.3,
+        "low": 39.7,
+        "close": 39.9,
+        "volume": 1765373
+      },
+      {
+        "date": "2026-09-10",
+        "open": 39.8,
+        "high": 39.8,
+        "low": 39.1,
+        "close": 39.1,
+        "volume": 1520204
+      },
+      {
+        "date": "2026-09-11",
+        "open": 38.9,
+        "high": 39,
+        "low": 38.05,
+        "close": 38.15,
+        "volume": 2501545
+      },
+      {
+        "date": "2026-09-14",
+        "open": 38.05,
+        "high": 38.1,
+        "low": 37.7,
+        "close": 37.95,
+        "volume": 1421848
+      },
+      {
+        "date": "2026-09-15",
+        "open": 37.8,
+        "high": 38.15,
+        "low": 37.8,
+        "close": 37.85,
+        "volume": 875487
+      },
+      {
+        "date": "2026-09-16",
+        "open": 37.9,
+        "high": 38.2,
+        "low": 37.7,
+        "close": 37.9,
+        "volume": 866776
+      },
+      {
+        "date": "2026-09-17",
+        "open": 38.1,
+        "high": 38.2,
+        "low": 37.9,
+        "close": 38,
+        "volume": 815942
+      },
+      {
+        "date": "2026-09-18",
+        "open": 38.05,
+        "high": 38.2,
+        "low": 37.7,
+        "close": 37.7,
+        "volume": 1438252
       }
     ],
     "2845|上市": [
@@ -56215,6 +57392,174 @@
         "volume": 2752611
       },
       {
+        "date": "2026-08-03",
+        "open": 29.2,
+        "high": 31.4,
+        "low": 29.1,
+        "close": 31.15,
+        "volume": 3557170
+      },
+      {
+        "date": "2026-08-04",
+        "open": 34.25,
+        "high": 34.25,
+        "low": 34.25,
+        "close": 34.25,
+        "volume": 5652537
+      },
+      {
+        "date": "2026-08-05",
+        "open": 33.95,
+        "high": 35.5,
+        "low": 33.25,
+        "close": 33.4,
+        "volume": 22414576
+      },
+      {
+        "date": "2026-08-06",
+        "open": 34.5,
+        "high": 35.4,
+        "low": 34,
+        "close": 34.4,
+        "volume": 9789218
+      },
+      {
+        "date": "2026-08-07",
+        "open": 34.5,
+        "high": 35.8,
+        "low": 34.5,
+        "close": 34.95,
+        "volume": 8807920
+      },
+      {
+        "date": "2026-08-10",
+        "open": 35,
+        "high": 36.15,
+        "low": 34.7,
+        "close": 35.75,
+        "volume": 9423837
+      },
+      {
+        "date": "2026-08-11",
+        "open": 35.95,
+        "high": 37,
+        "low": 35.8,
+        "close": 36.45,
+        "volume": 8146839
+      },
+      {
+        "date": "2026-08-12",
+        "open": 36.3,
+        "high": 39.2,
+        "low": 36.3,
+        "close": 37.95,
+        "volume": 19567525
+      },
+      {
+        "date": "2026-08-13",
+        "open": 37.95,
+        "high": 37.95,
+        "low": 36.6,
+        "close": 36.8,
+        "volume": 10071318
+      },
+      {
+        "date": "2026-08-14",
+        "open": 36.8,
+        "high": 37.35,
+        "low": 36.6,
+        "close": 37,
+        "volume": 4753650
+      },
+      {
+        "date": "2026-08-17",
+        "open": 36.95,
+        "high": 37,
+        "low": 36.05,
+        "close": 36.35,
+        "volume": 4006303
+      },
+      {
+        "date": "2026-08-18",
+        "open": 36.35,
+        "high": 36.45,
+        "low": 35.25,
+        "close": 35.45,
+        "volume": 3197293
+      },
+      {
+        "date": "2026-08-19",
+        "open": 34.95,
+        "high": 35.55,
+        "low": 34.5,
+        "close": 35.3,
+        "volume": 2810934
+      },
+      {
+        "date": "2026-08-20",
+        "open": 35.7,
+        "high": 35.9,
+        "low": 35.35,
+        "close": 35.5,
+        "volume": 1778592
+      },
+      {
+        "date": "2026-08-21",
+        "open": 35.8,
+        "high": 36.05,
+        "low": 35.55,
+        "close": 35.85,
+        "volume": 2057475
+      },
+      {
+        "date": "2026-08-24",
+        "open": 36.2,
+        "high": 37.2,
+        "low": 36.15,
+        "close": 36.7,
+        "volume": 6270141
+      },
+      {
+        "date": "2026-08-25",
+        "open": 36.8,
+        "high": 36.95,
+        "low": 36.3,
+        "close": 36.6,
+        "volume": 2434005
+      },
+      {
+        "date": "2026-08-26",
+        "open": 36.7,
+        "high": 38,
+        "low": 36.45,
+        "close": 37.6,
+        "volume": 6421359
+      },
+      {
+        "date": "2026-08-27",
+        "open": 38.2,
+        "high": 39.1,
+        "low": 37.95,
+        "close": 38.2,
+        "volume": 11299122
+      },
+      {
+        "date": "2026-08-28",
+        "open": 38.5,
+        "high": 38.7,
+        "low": 37.75,
+        "close": 37.85,
+        "volume": 4490041
+      },
+      {
+        "date": "2026-08-31",
+        "open": 37.55,
+        "high": 37.95,
+        "low": 36.95,
+        "close": 37.7,
+        "volume": 3262509
+      },
+      {
         "date": "2026-09-01",
         "open": 37.8,
         "high": 38.4,
@@ -56390,235 +57735,6544 @@
     "6994|上市": "富威電力",
     "1722|上市": "台肥"
   },
+  "shortAvailability": {
+    "date": "2026-09-18",
+    "byCode": {
+      "1101": {
+        "allowed": true,
+        "nextDayLimit": 1880795,
+        "note": null
+      },
+      "1102": {
+        "allowed": true,
+        "nextDayLimit": 886640,
+        "note": null
+      },
+      "1103": {
+        "allowed": true,
+        "nextDayLimit": 208218,
+        "note": null
+      },
+      "1104": {
+        "allowed": true,
+        "nextDayLimit": 171670,
+        "note": null
+      },
+      "1108": {
+        "allowed": true,
+        "nextDayLimit": 101184,
+        "note": null
+      },
+      "1109": {
+        "allowed": true,
+        "nextDayLimit": 85289,
+        "note": null
+      },
+      "1110": {
+        "allowed": true,
+        "nextDayLimit": 143000,
+        "note": null
+      },
+      "1201": {
+        "allowed": true,
+        "nextDayLimit": 126515,
+        "note": null
+      },
+      "1203": {
+        "allowed": true,
+        "nextDayLimit": 60000,
+        "note": null
+      },
+      "1210": {
+        "allowed": true,
+        "nextDayLimit": 223691,
+        "note": null
+      },
+      "1213": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "1215": {
+        "allowed": true,
+        "nextDayLimit": 73697,
+        "note": null
+      },
+      "1216": {
+        "allowed": true,
+        "nextDayLimit": 1420503,
+        "note": null
+      },
+      "1217": {
+        "allowed": true,
+        "nextDayLimit": 123628,
+        "note": null
+      },
+      "1218": {
+        "allowed": true,
+        "nextDayLimit": 124999,
+        "note": null
+      },
+      "1219": {
+        "allowed": true,
+        "nextDayLimit": 85309,
+        "note": null
+      },
+      "1220": {
+        "allowed": true,
+        "nextDayLimit": 44269,
+        "note": null
+      },
+      "1225": {
+        "allowed": true,
+        "nextDayLimit": 60567,
+        "note": null
+      },
+      "1227": {
+        "allowed": true,
+        "nextDayLimit": 228772,
+        "note": null
+      },
+      "1229": {
+        "allowed": true,
+        "nextDayLimit": 457969,
+        "note": null
+      },
+      "1231": {
+        "allowed": true,
+        "nextDayLimit": 82074,
+        "note": null
+      },
+      "1232": {
+        "allowed": true,
+        "nextDayLimit": 39993,
+        "note": null
+      },
+      "1233": {
+        "allowed": true,
+        "nextDayLimit": 22647,
+        "note": null
+      },
+      "1234": {
+        "allowed": true,
+        "nextDayLimit": 100467,
+        "note": null
+      },
+      "1235": {
+        "allowed": false,
+        "nextDayLimit": 47144,
+        "note": "X"
+      },
+      "1236": {
+        "allowed": true,
+        "nextDayLimit": 21668,
+        "note": null
+      },
+      "1256": {
+        "allowed": true,
+        "nextDayLimit": 8945,
+        "note": null
+      },
+      "1301": {
+        "allowed": true,
+        "nextDayLimit": 1591435,
+        "note": null
+      },
+      "1303": {
+        "allowed": true,
+        "nextDayLimit": 1982705,
+        "note": null
+      },
+      "1304": {
+        "allowed": true,
+        "nextDayLimit": 297190,
+        "note": null
+      },
+      "1305": {
+        "allowed": true,
+        "nextDayLimit": 145262,
+        "note": null
+      },
+      "1307": {
+        "allowed": true,
+        "nextDayLimit": 99454,
+        "note": null
+      },
+      "1308": {
+        "allowed": true,
+        "nextDayLimit": 148435,
+        "note": null
+      },
+      "1309": {
+        "allowed": true,
+        "nextDayLimit": 99396,
+        "note": null
+      },
+      "1310": {
+        "allowed": true,
+        "nextDayLimit": 131967,
+        "note": null
+      },
+      "1312": {
+        "allowed": true,
+        "nextDayLimit": 376655,
+        "note": null
+      },
+      "1313": {
+        "allowed": true,
+        "nextDayLimit": 337711,
+        "note": null
+      },
+      "1314": {
+        "allowed": true,
+        "nextDayLimit": 946212,
+        "note": null
+      },
+      "1315": {
+        "allowed": true,
+        "nextDayLimit": 24774,
+        "note": null
+      },
+      "1316": {
+        "allowed": true,
+        "nextDayLimit": 93986,
+        "note": null
+      },
+      "1319": {
+        "allowed": true,
+        "nextDayLimit": 147869,
+        "note": null
+      },
+      "1321": {
+        "allowed": true,
+        "nextDayLimit": 56807,
+        "note": null
+      },
+      "1323": {
+        "allowed": true,
+        "nextDayLimit": 22818,
+        "note": null
+      },
+      "1324": {
+        "allowed": true,
+        "nextDayLimit": 18780,
+        "note": null
+      },
+      "1325": {
+        "allowed": true,
+        "nextDayLimit": 21320,
+        "note": null
+      },
+      "1326": {
+        "allowed": true,
+        "nextDayLimit": 1465296,
+        "note": null
+      },
+      "1337": {
+        "allowed": true,
+        "nextDayLimit": 67238,
+        "note": null
+      },
+      "1338": {
+        "allowed": true,
+        "nextDayLimit": 20960,
+        "note": null
+      },
+      "1339": {
+        "allowed": true,
+        "nextDayLimit": 18534,
+        "note": null
+      },
+      "1340": {
+        "allowed": true,
+        "nextDayLimit": 38230,
+        "note": null
+      },
+      "1342": {
+        "allowed": true,
+        "nextDayLimit": 19625,
+        "note": null
+      },
+      "1402": {
+        "allowed": true,
+        "nextDayLimit": 1338218,
+        "note": null
+      },
+      "1409": {
+        "allowed": true,
+        "nextDayLimit": 404602,
+        "note": null
+      },
+      "1410": {
+        "allowed": true,
+        "nextDayLimit": 15500,
+        "note": null
+      },
+      "1413": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "1414": {
+        "allowed": true,
+        "nextDayLimit": 49500,
+        "note": null
+      },
+      "1416": {
+        "allowed": true,
+        "nextDayLimit": 46335,
+        "note": null
+      },
+      "1417": {
+        "allowed": true,
+        "nextDayLimit": 47485,
+        "note": null
+      },
+      "1418": {
+        "allowed": true,
+        "nextDayLimit": 11708,
+        "note": null
+      },
+      "1419": {
+        "allowed": true,
+        "nextDayLimit": 75010,
+        "note": null
+      },
+      "1423": {
+        "allowed": true,
+        "nextDayLimit": 24912,
+        "note": null
+      },
+      "1432": {
+        "allowed": true,
+        "nextDayLimit": 22500,
+        "note": null
+      },
+      "1434": {
+        "allowed": true,
+        "nextDayLimit": 421166,
+        "note": null
+      },
+      "1435": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "1436": {
+        "allowed": true,
+        "nextDayLimit": 48537,
+        "note": null
+      },
+      "1437": {
+        "allowed": true,
+        "nextDayLimit": 50467,
+        "note": null
+      },
+      "1438": {
+        "allowed": true,
+        "nextDayLimit": 22801,
+        "note": null
+      },
+      "1439": {
+        "allowed": true,
+        "nextDayLimit": 23000,
+        "note": null
+      },
+      "1440": {
+        "allowed": true,
+        "nextDayLimit": 414203,
+        "note": null
+      },
+      "1441": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX!"
+      },
+      "1442": {
+        "allowed": false,
+        "nextDayLimit": 91552,
+        "note": "X"
+      },
+      "1443": {
+        "allowed": true,
+        "nextDayLimit": 33835,
+        "note": null
+      },
+      "1444": {
+        "allowed": true,
+        "nextDayLimit": 248898,
+        "note": null
+      },
+      "1445": {
+        "allowed": true,
+        "nextDayLimit": 32666,
+        "note": null
+      },
+      "1446": {
+        "allowed": true,
+        "nextDayLimit": 34427,
+        "note": null
+      },
+      "1447": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "1449": {
+        "allowed": true,
+        "nextDayLimit": 31778,
+        "note": null
+      },
+      "1451": {
+        "allowed": true,
+        "nextDayLimit": 49500,
+        "note": null
+      },
+      "1452": {
+        "allowed": true,
+        "nextDayLimit": 33160,
+        "note": null
+      },
+      "1453": {
+        "allowed": true,
+        "nextDayLimit": 28310,
+        "note": null
+      },
+      "1454": {
+        "allowed": true,
+        "nextDayLimit": 32458,
+        "note": null
+      },
+      "1455": {
+        "allowed": true,
+        "nextDayLimit": 132922,
+        "note": null
+      },
+      "1456": {
+        "allowed": true,
+        "nextDayLimit": 23430,
+        "note": null
+      },
+      "1457": {
+        "allowed": true,
+        "nextDayLimit": 79182,
+        "note": null
+      },
+      "1459": {
+        "allowed": true,
+        "nextDayLimit": 67242,
+        "note": null
+      },
+      "1460": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "1463": {
+        "allowed": true,
+        "nextDayLimit": 43317,
+        "note": null
+      },
+      "1464": {
+        "allowed": true,
+        "nextDayLimit": 106393,
+        "note": null
+      },
+      "1465": {
+        "allowed": true,
+        "nextDayLimit": 25901,
+        "note": null
+      },
+      "1466": {
+        "allowed": true,
+        "nextDayLimit": 27789,
+        "note": null
+      },
+      "1467": {
+        "allowed": true,
+        "nextDayLimit": 42052,
+        "note": null
+      },
+      "1468": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "1470": {
+        "allowed": true,
+        "nextDayLimit": 21441,
+        "note": null
+      },
+      "1471": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "1472": {
+        "allowed": true,
+        "nextDayLimit": 8747,
+        "note": null
+      },
+      "1473": {
+        "allowed": true,
+        "nextDayLimit": 36538,
+        "note": null
+      },
+      "1474": {
+        "allowed": true,
+        "nextDayLimit": 32474,
+        "note": null
+      },
+      "1475": {
+        "allowed": true,
+        "nextDayLimit": 16504,
+        "note": null
+      },
+      "1476": {
+        "allowed": true,
+        "nextDayLimit": 68591,
+        "note": null
+      },
+      "1477": {
+        "allowed": true,
+        "nextDayLimit": 61673,
+        "note": null
+      },
+      "1503": {
+        "allowed": true,
+        "nextDayLimit": 130243,
+        "note": null
+      },
+      "1504": {
+        "allowed": true,
+        "nextDayLimit": 594110,
+        "note": null
+      },
+      "1506": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "1512": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "1513": {
+        "allowed": true,
+        "nextDayLimit": 125778,
+        "note": null
+      },
+      "1514": {
+        "allowed": true,
+        "nextDayLimit": 69642,
+        "note": null
+      },
+      "1515": {
+        "allowed": true,
+        "nextDayLimit": 45368,
+        "note": null
+      },
+      "1516": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "1517": {
+        "allowed": true,
+        "nextDayLimit": 55000,
+        "note": null
+      },
+      "1519": {
+        "allowed": true,
+        "nextDayLimit": 86867,
+        "note": null
+      },
+      "1521": {
+        "allowed": true,
+        "nextDayLimit": 19057,
+        "note": null
+      },
+      "1522": {
+        "allowed": true,
+        "nextDayLimit": 78224,
+        "note": null
+      },
+      "1524": {
+        "allowed": true,
+        "nextDayLimit": 41327,
+        "note": null
+      },
+      "1525": {
+        "allowed": true,
+        "nextDayLimit": 18350,
+        "note": null
+      },
+      "1526": {
+        "allowed": true,
+        "nextDayLimit": 15000,
+        "note": null
+      },
+      "1527": {
+        "allowed": true,
+        "nextDayLimit": 34642,
+        "note": null
+      },
+      "1528": {
+        "allowed": true,
+        "nextDayLimit": 47832,
+        "note": null
+      },
+      "1529": {
+        "allowed": true,
+        "nextDayLimit": 48773,
+        "note": null
+      },
+      "1530": {
+        "allowed": true,
+        "nextDayLimit": 23648,
+        "note": null
+      },
+      "1531": {
+        "allowed": true,
+        "nextDayLimit": 45527,
+        "note": null
+      },
+      "1532": {
+        "allowed": true,
+        "nextDayLimit": 105651,
+        "note": null
+      },
+      "1533": {
+        "allowed": true,
+        "nextDayLimit": 24636,
+        "note": null
+      },
+      "1535": {
+        "allowed": true,
+        "nextDayLimit": 30935,
+        "note": null
+      },
+      "1536": {
+        "allowed": true,
+        "nextDayLimit": 69739,
+        "note": null
+      },
+      "1537": {
+        "allowed": true,
+        "nextDayLimit": 20515,
+        "note": null
+      },
+      "1538": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "1539": {
+        "allowed": true,
+        "nextDayLimit": 16342,
+        "note": null
+      },
+      "1540": {
+        "allowed": true,
+        "nextDayLimit": 21368,
+        "note": null
+      },
+      "1541": {
+        "allowed": true,
+        "nextDayLimit": 19700,
+        "note": null
+      },
+      "1558": {
+        "allowed": true,
+        "nextDayLimit": 16133,
+        "note": null
+      },
+      "1560": {
+        "allowed": true,
+        "nextDayLimit": 37939,
+        "note": null
+      },
+      "1563": {
+        "allowed": true,
+        "nextDayLimit": 42301,
+        "note": null
+      },
+      "1568": {
+        "allowed": true,
+        "nextDayLimit": 25771,
+        "note": null
+      },
+      "1582": {
+        "allowed": true,
+        "nextDayLimit": 36067,
+        "note": null
+      },
+      "1583": {
+        "allowed": true,
+        "nextDayLimit": 27350,
+        "note": null
+      },
+      "1587": {
+        "allowed": true,
+        "nextDayLimit": 20013,
+        "note": null
+      },
+      "1589": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX!"
+      },
+      "1590": {
+        "allowed": true,
+        "nextDayLimit": 49999,
+        "note": null
+      },
+      "1597": {
+        "allowed": true,
+        "nextDayLimit": 22315,
+        "note": null
+      },
+      "1598": {
+        "allowed": true,
+        "nextDayLimit": 44785,
+        "note": null
+      },
+      "1603": {
+        "allowed": true,
+        "nextDayLimit": 47922,
+        "note": null
+      },
+      "1604": {
+        "allowed": true,
+        "nextDayLimit": 96050,
+        "note": null
+      },
+      "1605": {
+        "allowed": true,
+        "nextDayLimit": 1107833,
+        "note": null
+      },
+      "1608": {
+        "allowed": true,
+        "nextDayLimit": 158193,
+        "note": null
+      },
+      "1609": {
+        "allowed": true,
+        "nextDayLimit": 196315,
+        "note": null
+      },
+      "1611": {
+        "allowed": true,
+        "nextDayLimit": 80683,
+        "note": null
+      },
+      "1612": {
+        "allowed": true,
+        "nextDayLimit": 79020,
+        "note": null
+      },
+      "1614": {
+        "allowed": true,
+        "nextDayLimit": 67278,
+        "note": null
+      },
+      "1615": {
+        "allowed": true,
+        "nextDayLimit": 49657,
+        "note": null
+      },
+      "1616": {
+        "allowed": true,
+        "nextDayLimit": 48537,
+        "note": null
+      },
+      "1617": {
+        "allowed": true,
+        "nextDayLimit": 42378,
+        "note": null
+      },
+      "1618": {
+        "allowed": true,
+        "nextDayLimit": 48172,
+        "note": null
+      },
+      "1623": {
+        "allowed": true,
+        "nextDayLimit": 16500,
+        "note": null
+      },
+      "1626": {
+        "allowed": true,
+        "nextDayLimit": 37455,
+        "note": null
+      },
+      "1702": {
+        "allowed": true,
+        "nextDayLimit": 73533,
+        "note": null
+      },
+      "1707": {
+        "allowed": true,
+        "nextDayLimit": 37034,
+        "note": null
+      },
+      "1708": {
+        "allowed": true,
+        "nextDayLimit": 62250,
+        "note": null
+      },
+      "1709": {
+        "allowed": true,
+        "nextDayLimit": 119254,
+        "note": null
+      },
+      "1710": {
+        "allowed": true,
+        "nextDayLimit": 221425,
+        "note": null
+      },
+      "1711": {
+        "allowed": true,
+        "nextDayLimit": 136938,
+        "note": null
+      },
+      "1712": {
+        "allowed": true,
+        "nextDayLimit": 105123,
+        "note": null
+      },
+      "1713": {
+        "allowed": true,
+        "nextDayLimit": 37737,
+        "note": null
+      },
+      "1714": {
+        "allowed": true,
+        "nextDayLimit": 247956,
+        "note": null
+      },
+      "1717": {
+        "allowed": true,
+        "nextDayLimit": 296061,
+        "note": null
+      },
+      "1718": {
+        "allowed": true,
+        "nextDayLimit": 421476,
+        "note": null
+      },
+      "1720": {
+        "allowed": true,
+        "nextDayLimit": 49141,
+        "note": null
+      },
+      "1721": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "1722": {
+        "allowed": true,
+        "nextDayLimit": 245000,
+        "note": null
+      },
+      "1723": {
+        "allowed": true,
+        "nextDayLimit": 59226,
+        "note": null
+      },
+      "1725": {
+        "allowed": true,
+        "nextDayLimit": 45457,
+        "note": null
+      },
+      "1726": {
+        "allowed": true,
+        "nextDayLimit": 40500,
+        "note": null
+      },
+      "1727": {
+        "allowed": true,
+        "nextDayLimit": 32004,
+        "note": null
+      },
+      "1730": {
+        "allowed": true,
+        "nextDayLimit": 15808,
+        "note": null
+      },
+      "1731": {
+        "allowed": true,
+        "nextDayLimit": 33228,
+        "note": null
+      },
+      "1732": {
+        "allowed": true,
+        "nextDayLimit": 10610,
+        "note": null
+      },
+      "1733": {
+        "allowed": true,
+        "nextDayLimit": 24987,
+        "note": null
+      },
+      "1734": {
+        "allowed": true,
+        "nextDayLimit": 47549,
+        "note": null
+      },
+      "1735": {
+        "allowed": true,
+        "nextDayLimit": 24847,
+        "note": null
+      },
+      "1736": {
+        "allowed": true,
+        "nextDayLimit": 75848,
+        "note": null
+      },
+      "1737": {
+        "allowed": true,
+        "nextDayLimit": 50000,
+        "note": null
+      },
+      "1752": {
+        "allowed": true,
+        "nextDayLimit": 25247,
+        "note": null
+      },
+      "1760": {
+        "allowed": true,
+        "nextDayLimit": 21434,
+        "note": null
+      },
+      "1762": {
+        "allowed": true,
+        "nextDayLimit": 19229,
+        "note": null
+      },
+      "1773": {
+        "allowed": true,
+        "nextDayLimit": 75000,
+        "note": null
+      },
+      "1776": {
+        "allowed": true,
+        "nextDayLimit": 15026,
+        "note": null
+      },
+      "1783": {
+        "allowed": true,
+        "nextDayLimit": 20249,
+        "note": null
+      },
+      "1786": {
+        "allowed": true,
+        "nextDayLimit": 18706,
+        "note": null
+      },
+      "1789": {
+        "allowed": true,
+        "nextDayLimit": 197684,
+        "note": null
+      },
+      "1795": {
+        "allowed": true,
+        "nextDayLimit": 66684,
+        "note": null
+      },
+      "1802": {
+        "allowed": true,
+        "nextDayLimit": 727015,
+        "note": null
+      },
+      "1805": {
+        "allowed": true,
+        "nextDayLimit": 33742,
+        "note": null
+      },
+      "1806": {
+        "allowed": true,
+        "nextDayLimit": 97600,
+        "note": null
+      },
+      "1808": {
+        "allowed": false,
+        "nextDayLimit": 223257,
+        "note": "X"
+      },
+      "1809": {
+        "allowed": true,
+        "nextDayLimit": 41760,
+        "note": null
+      },
+      "1810": {
+        "allowed": true,
+        "nextDayLimit": 75575,
+        "note": null
+      },
+      "1817": {
+        "allowed": true,
+        "nextDayLimit": 18150,
+        "note": null
+      },
+      "1903": {
+        "allowed": true,
+        "nextDayLimit": 65009,
+        "note": null
+      },
+      "1904": {
+        "allowed": true,
+        "nextDayLimit": 277068,
+        "note": null
+      },
+      "1905": {
+        "allowed": true,
+        "nextDayLimit": 275708,
+        "note": null
+      },
+      "1906": {
+        "allowed": true,
+        "nextDayLimit": 37750,
+        "note": null
+      },
+      "1907": {
+        "allowed": true,
+        "nextDayLimit": 415092,
+        "note": null
+      },
+      "1909": {
+        "allowed": true,
+        "nextDayLimit": 331921,
+        "note": null
+      },
+      "2002": {
+        "allowed": true,
+        "nextDayLimit": 3933715,
+        "note": null
+      },
+      "2006": {
+        "allowed": true,
+        "nextDayLimit": 182553,
+        "note": null
+      },
+      "2007": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2008": {
+        "allowed": true,
+        "nextDayLimit": 47713,
+        "note": null
+      },
+      "2009": {
+        "allowed": true,
+        "nextDayLimit": 89905,
+        "note": null
+      },
+      "2010": {
+        "allowed": true,
+        "nextDayLimit": 161913,
+        "note": null
+      },
+      "2012": {
+        "allowed": true,
+        "nextDayLimit": 75540,
+        "note": null
+      },
+      "2013": {
+        "allowed": true,
+        "nextDayLimit": 50000,
+        "note": null
+      },
+      "2014": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2015": {
+        "allowed": true,
+        "nextDayLimit": 145399,
+        "note": null
+      },
+      "2017": {
+        "allowed": true,
+        "nextDayLimit": 111718,
+        "note": null
+      },
+      "2020": {
+        "allowed": true,
+        "nextDayLimit": 66757,
+        "note": null
+      },
+      "2022": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2023": {
+        "allowed": true,
+        "nextDayLimit": 455310,
+        "note": null
+      },
+      "2024": {
+        "allowed": true,
+        "nextDayLimit": 24375,
+        "note": null
+      },
+      "2025": {
+        "allowed": true,
+        "nextDayLimit": 43165,
+        "note": null
+      },
+      "2027": {
+        "allowed": true,
+        "nextDayLimit": 646065,
+        "note": null
+      },
+      "2028": {
+        "allowed": true,
+        "nextDayLimit": 81428,
+        "note": null
+      },
+      "2029": {
+        "allowed": true,
+        "nextDayLimit": 80295,
+        "note": null
+      },
+      "2030": {
+        "allowed": true,
+        "nextDayLimit": 70131,
+        "note": null
+      },
+      "2031": {
+        "allowed": true,
+        "nextDayLimit": 80286,
+        "note": null
+      },
+      "2032": {
+        "allowed": true,
+        "nextDayLimit": 32630,
+        "note": null
+      },
+      "2033": {
+        "allowed": true,
+        "nextDayLimit": 20173,
+        "note": null
+      },
+      "2034": {
+        "allowed": true,
+        "nextDayLimit": 132248,
+        "note": null
+      },
+      "2038": {
+        "allowed": true,
+        "nextDayLimit": 48533,
+        "note": null
+      },
+      "2049": {
+        "allowed": true,
+        "nextDayLimit": 88448,
+        "note": null
+      },
+      "2059": {
+        "allowed": true,
+        "nextDayLimit": 23824,
+        "note": null
+      },
+      "2062": {
+        "allowed": true,
+        "nextDayLimit": 49998,
+        "note": null
+      },
+      "2069": {
+        "allowed": true,
+        "nextDayLimit": 41596,
+        "note": null
+      },
+      "2101": {
+        "allowed": true,
+        "nextDayLimit": 183483,
+        "note": null
+      },
+      "2102": {
+        "allowed": true,
+        "nextDayLimit": 118332,
+        "note": null
+      },
+      "2103": {
+        "allowed": true,
+        "nextDayLimit": 206427,
+        "note": null
+      },
+      "2104": {
+        "allowed": true,
+        "nextDayLimit": 246183,
+        "note": null
+      },
+      "2105": {
+        "allowed": true,
+        "nextDayLimit": 810353,
+        "note": null
+      },
+      "2106": {
+        "allowed": true,
+        "nextDayLimit": 238722,
+        "note": null
+      },
+      "2107": {
+        "allowed": true,
+        "nextDayLimit": 75898,
+        "note": null
+      },
+      "2108": {
+        "allowed": true,
+        "nextDayLimit": 123104,
+        "note": null
+      },
+      "2109": {
+        "allowed": false,
+        "nextDayLimit": 69837,
+        "note": "X"
+      },
+      "2114": {
+        "allowed": true,
+        "nextDayLimit": 19497,
+        "note": null
+      },
+      "2115": {
+        "allowed": true,
+        "nextDayLimit": 26093,
+        "note": null
+      },
+      "2201": {
+        "allowed": true,
+        "nextDayLimit": 267500,
+        "note": null
+      },
+      "2204": {
+        "allowed": true,
+        "nextDayLimit": 138405,
+        "note": null
+      },
+      "2206": {
+        "allowed": true,
+        "nextDayLimit": 193418,
+        "note": null
+      },
+      "2207": {
+        "allowed": true,
+        "nextDayLimit": 139275,
+        "note": null
+      },
+      "2208": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2211": {
+        "allowed": true,
+        "nextDayLimit": 104272,
+        "note": null
+      },
+      "2228": {
+        "allowed": true,
+        "nextDayLimit": 19944,
+        "note": null
+      },
+      "2231": {
+        "allowed": true,
+        "nextDayLimit": 33982,
+        "note": null
+      },
+      "2233": {
+        "allowed": true,
+        "nextDayLimit": 15072,
+        "note": null
+      },
+      "2236": {
+        "allowed": true,
+        "nextDayLimit": 15782,
+        "note": null
+      },
+      "2239": {
+        "allowed": true,
+        "nextDayLimit": 29428,
+        "note": null
+      },
+      "2241": {
+        "allowed": true,
+        "nextDayLimit": 26150,
+        "note": null
+      },
+      "2243": {
+        "allowed": true,
+        "nextDayLimit": 17343,
+        "note": null
+      },
+      "2247": {
+        "allowed": true,
+        "nextDayLimit": 20177,
+        "note": null
+      },
+      "2248": {
+        "allowed": true,
+        "nextDayLimit": 11900,
+        "note": null
+      },
+      "2250": {
+        "allowed": true,
+        "nextDayLimit": 9097,
+        "note": null
+      },
+      "2254": {
+        "allowed": true,
+        "nextDayLimit": 15976,
+        "note": null
+      },
+      "2301": {
+        "allowed": true,
+        "nextDayLimit": 579026,
+        "note": null
+      },
+      "2302": {
+        "allowed": true,
+        "nextDayLimit": 41575,
+        "note": null
+      },
+      "2303": {
+        "allowed": true,
+        "nextDayLimit": 3142523,
+        "note": null
+      },
+      "2305": {
+        "allowed": true,
+        "nextDayLimit": 51415,
+        "note": null
+      },
+      "2308": {
+        "allowed": true,
+        "nextDayLimit": 649385,
+        "note": null
+      },
+      "2312": {
+        "allowed": true,
+        "nextDayLimit": 376545,
+        "note": null
+      },
+      "2313": {
+        "allowed": true,
+        "nextDayLimit": 308455,
+        "note": null
+      },
+      "2314": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2316": {
+        "allowed": true,
+        "nextDayLimit": 45685,
+        "note": null
+      },
+      "2317": {
+        "allowed": true,
+        "nextDayLimit": 3518936,
+        "note": null
+      },
+      "2321": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2323": {
+        "allowed": true,
+        "nextDayLimit": 272337,
+        "note": null
+      },
+      "2324": {
+        "allowed": true,
+        "nextDayLimit": 1101786,
+        "note": null
+      },
+      "2327": {
+        "allowed": true,
+        "nextDayLimit": 514682,
+        "note": null
+      },
+      "2328": {
+        "allowed": true,
+        "nextDayLimit": 129586,
+        "note": null
+      },
+      "2329": {
+        "allowed": true,
+        "nextDayLimit": 164737,
+        "note": null
+      },
+      "2330": {
+        "allowed": true,
+        "nextDayLimit": 6483092,
+        "note": null
+      },
+      "2331": {
+        "allowed": true,
+        "nextDayLimit": 139350,
+        "note": null
+      },
+      "2332": {
+        "allowed": true,
+        "nextDayLimit": 150540,
+        "note": null
+      },
+      "2337": {
+        "allowed": true,
+        "nextDayLimit": 496543,
+        "note": null
+      },
+      "2338": {
+        "allowed": true,
+        "nextDayLimit": 75869,
+        "note": null
+      },
+      "2340": {
+        "allowed": true,
+        "nextDayLimit": 94655,
+        "note": null
+      },
+      "2342": {
+        "allowed": true,
+        "nextDayLimit": 39333,
+        "note": null
+      },
+      "2344": {
+        "allowed": true,
+        "nextDayLimit": 1125000,
+        "note": null
+      },
+      "2345": {
+        "allowed": true,
+        "nextDayLimit": 140279,
+        "note": null
+      },
+      "2347": {
+        "allowed": true,
+        "nextDayLimit": 416986,
+        "note": null
+      },
+      "2348": {
+        "allowed": true,
+        "nextDayLimit": 39871,
+        "note": null
+      },
+      "2349": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2351": {
+        "allowed": true,
+        "nextDayLimit": 48433,
+        "note": null
+      },
+      "2352": {
+        "allowed": true,
+        "nextDayLimit": 395126,
+        "note": null
+      },
+      "2353": {
+        "allowed": true,
+        "nextDayLimit": 761963,
+        "note": null
+      },
+      "2354": {
+        "allowed": true,
+        "nextDayLimit": 353621,
+        "note": null
+      },
+      "2355": {
+        "allowed": true,
+        "nextDayLimit": 99373,
+        "note": null
+      },
+      "2356": {
+        "allowed": true,
+        "nextDayLimit": 896868,
+        "note": null
+      },
+      "2357": {
+        "allowed": true,
+        "nextDayLimit": 185690,
+        "note": null
+      },
+      "2359": {
+        "allowed": true,
+        "nextDayLimit": 42867,
+        "note": null
+      },
+      "2360": {
+        "allowed": true,
+        "nextDayLimit": 106311,
+        "note": null
+      },
+      "2362": {
+        "allowed": true,
+        "nextDayLimit": 155565,
+        "note": null
+      },
+      "2363": {
+        "allowed": true,
+        "nextDayLimit": 128747,
+        "note": null
+      },
+      "2364": {
+        "allowed": true,
+        "nextDayLimit": 13097,
+        "note": null
+      },
+      "2365": {
+        "allowed": true,
+        "nextDayLimit": 55382,
+        "note": null
+      },
+      "2367": {
+        "allowed": true,
+        "nextDayLimit": 176563,
+        "note": null
+      },
+      "2368": {
+        "allowed": true,
+        "nextDayLimit": 132648,
+        "note": null
+      },
+      "2369": {
+        "allowed": true,
+        "nextDayLimit": 95025,
+        "note": null
+      },
+      "2371": {
+        "allowed": true,
+        "nextDayLimit": 537708,
+        "note": null
+      },
+      "2373": {
+        "allowed": true,
+        "nextDayLimit": 59050,
+        "note": null
+      },
+      "2374": {
+        "allowed": true,
+        "nextDayLimit": 84498,
+        "note": null
+      },
+      "2375": {
+        "allowed": true,
+        "nextDayLimit": 27168,
+        "note": null
+      },
+      "2376": {
+        "allowed": true,
+        "nextDayLimit": 167472,
+        "note": null
+      },
+      "2377": {
+        "allowed": true,
+        "nextDayLimit": 211214,
+        "note": null
+      },
+      "2379": {
+        "allowed": true,
+        "nextDayLimit": 128878,
+        "note": null
+      },
+      "2380": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2382": {
+        "allowed": true,
+        "nextDayLimit": 1026906,
+        "note": null
+      },
+      "2383": {
+        "allowed": true,
+        "nextDayLimit": 89580,
+        "note": null
+      },
+      "2385": {
+        "allowed": true,
+        "nextDayLimit": 191430,
+        "note": null
+      },
+      "2387": {
+        "allowed": true,
+        "nextDayLimit": 48812,
+        "note": null
+      },
+      "2388": {
+        "allowed": true,
+        "nextDayLimit": 139109,
+        "note": null
+      },
+      "2390": {
+        "allowed": true,
+        "nextDayLimit": 48154,
+        "note": null
+      },
+      "2392": {
+        "allowed": true,
+        "nextDayLimit": 128081,
+        "note": null
+      },
+      "2393": {
+        "allowed": true,
+        "nextDayLimit": 110848,
+        "note": null
+      },
+      "2395": {
+        "allowed": true,
+        "nextDayLimit": 217293,
+        "note": null
+      },
+      "2397": {
+        "allowed": true,
+        "nextDayLimit": 28672,
+        "note": null
+      },
+      "2399": {
+        "allowed": true,
+        "nextDayLimit": 44525,
+        "note": null
+      },
+      "2401": {
+        "allowed": true,
+        "nextDayLimit": 147998,
+        "note": null
+      },
+      "2402": {
+        "allowed": true,
+        "nextDayLimit": 76884,
+        "note": null
+      },
+      "2404": {
+        "allowed": true,
+        "nextDayLimit": 47646,
+        "note": null
+      },
+      "2405": {
+        "allowed": true,
+        "nextDayLimit": 85856,
+        "note": null
+      },
+      "2406": {
+        "allowed": true,
+        "nextDayLimit": 87726,
+        "note": null
+      },
+      "2408": {
+        "allowed": true,
+        "nextDayLimit": 774656,
+        "note": null
+      },
+      "2409": {
+        "allowed": true,
+        "nextDayLimit": 1886774,
+        "note": null
+      },
+      "2412": {
+        "allowed": true,
+        "nextDayLimit": 1939361,
+        "note": null
+      },
+      "2413": {
+        "allowed": true,
+        "nextDayLimit": 31839,
+        "note": null
+      },
+      "2414": {
+        "allowed": true,
+        "nextDayLimit": 40433,
+        "note": null
+      },
+      "2415": {
+        "allowed": true,
+        "nextDayLimit": 22500,
+        "note": null
+      },
+      "2417": {
+        "allowed": true,
+        "nextDayLimit": 39304,
+        "note": null
+      },
+      "2419": {
+        "allowed": true,
+        "nextDayLimit": 80329,
+        "note": null
+      },
+      "2420": {
+        "allowed": true,
+        "nextDayLimit": 38162,
+        "note": null
+      },
+      "2421": {
+        "allowed": true,
+        "nextDayLimit": 71735,
+        "note": null
+      },
+      "2423": {
+        "allowed": true,
+        "nextDayLimit": 36261,
+        "note": null
+      },
+      "2424": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2425": {
+        "allowed": true,
+        "nextDayLimit": 24124,
+        "note": null
+      },
+      "2426": {
+        "allowed": true,
+        "nextDayLimit": 75155,
+        "note": null
+      },
+      "2427": {
+        "allowed": true,
+        "nextDayLimit": 49499,
+        "note": null
+      },
+      "2428": {
+        "allowed": true,
+        "nextDayLimit": 32028,
+        "note": null
+      },
+      "2429": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2430": {
+        "allowed": true,
+        "nextDayLimit": 29200,
+        "note": null
+      },
+      "2431": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2432": {
+        "allowed": true,
+        "nextDayLimit": 15465,
+        "note": null
+      },
+      "2433": {
+        "allowed": true,
+        "nextDayLimit": 36124,
+        "note": null
+      },
+      "2434": {
+        "allowed": true,
+        "nextDayLimit": 2377,
+        "note": null
+      },
+      "2436": {
+        "allowed": true,
+        "nextDayLimit": 55044,
+        "note": null
+      },
+      "2438": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2439": {
+        "allowed": true,
+        "nextDayLimit": 62160,
+        "note": null
+      },
+      "2440": {
+        "allowed": true,
+        "nextDayLimit": 25916,
+        "note": null
+      },
+      "2441": {
+        "allowed": true,
+        "nextDayLimit": 142211,
+        "note": null
+      },
+      "2442": {
+        "allowed": true,
+        "nextDayLimit": 79113,
+        "note": null
+      },
+      "2444": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2449": {
+        "allowed": true,
+        "nextDayLimit": 320970,
+        "note": null
+      },
+      "2450": {
+        "allowed": true,
+        "nextDayLimit": 64563,
+        "note": null
+      },
+      "2451": {
+        "allowed": true,
+        "nextDayLimit": 107836,
+        "note": null
+      },
+      "2453": {
+        "allowed": true,
+        "nextDayLimit": 25000,
+        "note": null
+      },
+      "2454": {
+        "allowed": true,
+        "nextDayLimit": 400969,
+        "note": null
+      },
+      "2455": {
+        "allowed": true,
+        "nextDayLimit": 46978,
+        "note": null
+      },
+      "2457": {
+        "allowed": true,
+        "nextDayLimit": 106193,
+        "note": null
+      },
+      "2458": {
+        "allowed": true,
+        "nextDayLimit": 75970,
+        "note": null
+      },
+      "2459": {
+        "allowed": true,
+        "nextDayLimit": 26398,
+        "note": null
+      },
+      "2460": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2461": {
+        "allowed": true,
+        "nextDayLimit": 47971,
+        "note": null
+      },
+      "2462": {
+        "allowed": true,
+        "nextDayLimit": 30486,
+        "note": null
+      },
+      "2464": {
+        "allowed": true,
+        "nextDayLimit": 54170,
+        "note": null
+      },
+      "2465": {
+        "allowed": true,
+        "nextDayLimit": 17236,
+        "note": null
+      },
+      "2466": {
+        "allowed": true,
+        "nextDayLimit": 40952,
+        "note": null
+      },
+      "2467": {
+        "allowed": true,
+        "nextDayLimit": 40432,
+        "note": null
+      },
+      "2468": {
+        "allowed": true,
+        "nextDayLimit": 17490,
+        "note": null
+      },
+      "2471": {
+        "allowed": true,
+        "nextDayLimit": 11813,
+        "note": null
+      },
+      "2472": {
+        "allowed": true,
+        "nextDayLimit": 41183,
+        "note": null
+      },
+      "2474": {
+        "allowed": true,
+        "nextDayLimit": 134705,
+        "note": null
+      },
+      "2476": {
+        "allowed": true,
+        "nextDayLimit": 55033,
+        "note": "@"
+      },
+      "2477": {
+        "allowed": true,
+        "nextDayLimit": 39643,
+        "note": null
+      },
+      "2478": {
+        "allowed": true,
+        "nextDayLimit": 36182,
+        "note": null
+      },
+      "2480": {
+        "allowed": true,
+        "nextDayLimit": 26590,
+        "note": null
+      },
+      "2481": {
+        "allowed": true,
+        "nextDayLimit": 95528,
+        "note": null
+      },
+      "2482": {
+        "allowed": true,
+        "nextDayLimit": 19470,
+        "note": null
+      },
+      "2483": {
+        "allowed": true,
+        "nextDayLimit": 26972,
+        "note": null
+      },
+      "2484": {
+        "allowed": true,
+        "nextDayLimit": 39855,
+        "note": null
+      },
+      "2485": {
+        "allowed": true,
+        "nextDayLimit": 79422,
+        "note": null
+      },
+      "2486": {
+        "allowed": true,
+        "nextDayLimit": 60185,
+        "note": null
+      },
+      "2488": {
+        "allowed": true,
+        "nextDayLimit": 19999,
+        "note": null
+      },
+      "2489": {
+        "allowed": true,
+        "nextDayLimit": 152500,
+        "note": null
+      },
+      "2491": {
+        "allowed": true,
+        "nextDayLimit": 20502,
+        "note": null
+      },
+      "2492": {
+        "allowed": true,
+        "nextDayLimit": 121301,
+        "note": null
+      },
+      "2493": {
+        "allowed": true,
+        "nextDayLimit": 31699,
+        "note": null
+      },
+      "2495": {
+        "allowed": true,
+        "nextDayLimit": 68387,
+        "note": null
+      },
+      "2496": {
+        "allowed": true,
+        "nextDayLimit": 4775,
+        "note": null
+      },
+      "2497": {
+        "allowed": true,
+        "nextDayLimit": 29521,
+        "note": null
+      },
+      "2498": {
+        "allowed": true,
+        "nextDayLimit": 209109,
+        "note": null
+      },
+      "2501": {
+        "allowed": true,
+        "nextDayLimit": 289890,
+        "note": null
+      },
+      "2504": {
+        "allowed": true,
+        "nextDayLimit": 295000,
+        "note": null
+      },
+      "2505": {
+        "allowed": true,
+        "nextDayLimit": 95000,
+        "note": null
+      },
+      "2506": {
+        "allowed": true,
+        "nextDayLimit": 75125,
+        "note": null
+      },
+      "2509": {
+        "allowed": true,
+        "nextDayLimit": 56137,
+        "note": null
+      },
+      "2511": {
+        "allowed": true,
+        "nextDayLimit": 405831,
+        "note": null
+      },
+      "2514": {
+        "allowed": true,
+        "nextDayLimit": 98682,
+        "note": null
+      },
+      "2515": {
+        "allowed": true,
+        "nextDayLimit": 422115,
+        "note": null
+      },
+      "2516": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2520": {
+        "allowed": true,
+        "nextDayLimit": 152371,
+        "note": null
+      },
+      "2524": {
+        "allowed": true,
+        "nextDayLimit": 91495,
+        "note": null
+      },
+      "2527": {
+        "allowed": true,
+        "nextDayLimit": 67576,
+        "note": null
+      },
+      "2528": {
+        "allowed": true,
+        "nextDayLimit": 108999,
+        "note": null
+      },
+      "2530": {
+        "allowed": true,
+        "nextDayLimit": 210313,
+        "note": null
+      },
+      "2534": {
+        "allowed": true,
+        "nextDayLimit": 118556,
+        "note": null
+      },
+      "2535": {
+        "allowed": true,
+        "nextDayLimit": 67698,
+        "note": null
+      },
+      "2536": {
+        "allowed": true,
+        "nextDayLimit": 83202,
+        "note": null
+      },
+      "2537": {
+        "allowed": true,
+        "nextDayLimit": 75139,
+        "note": null
+      },
+      "2538": {
+        "allowed": true,
+        "nextDayLimit": 111256,
+        "note": null
+      },
+      "2539": {
+        "allowed": true,
+        "nextDayLimit": 298275,
+        "note": null
+      },
+      "2540": {
+        "allowed": true,
+        "nextDayLimit": 236218,
+        "note": null
+      },
+      "2542": {
+        "allowed": false,
+        "nextDayLimit": 538270,
+        "note": "X"
+      },
+      "2543": {
+        "allowed": true,
+        "nextDayLimit": 132135,
+        "note": null
+      },
+      "2545": {
+        "allowed": true,
+        "nextDayLimit": 94933,
+        "note": null
+      },
+      "2546": {
+        "allowed": true,
+        "nextDayLimit": 36546,
+        "note": null
+      },
+      "2547": {
+        "allowed": true,
+        "nextDayLimit": 258773,
+        "note": null
+      },
+      "2548": {
+        "allowed": true,
+        "nextDayLimit": 83926,
+        "note": null
+      },
+      "2597": {
+        "allowed": true,
+        "nextDayLimit": 77679,
+        "note": null
+      },
+      "2601": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2603": {
+        "allowed": true,
+        "nextDayLimit": 541260,
+        "note": null
+      },
+      "2605": {
+        "allowed": true,
+        "nextDayLimit": 146338,
+        "note": null
+      },
+      "2606": {
+        "allowed": true,
+        "nextDayLimit": 211263,
+        "note": null
+      },
+      "2607": {
+        "allowed": true,
+        "nextDayLimit": 133392,
+        "note": null
+      },
+      "2608": {
+        "allowed": true,
+        "nextDayLimit": 116750,
+        "note": null
+      },
+      "2609": {
+        "allowed": true,
+        "nextDayLimit": 873026,
+        "note": null
+      },
+      "2610": {
+        "allowed": true,
+        "nextDayLimit": 1536247,
+        "note": null
+      },
+      "2611": {
+        "allowed": true,
+        "nextDayLimit": 47250,
+        "note": null
+      },
+      "2612": {
+        "allowed": true,
+        "nextDayLimit": 49371,
+        "note": null
+      },
+      "2613": {
+        "allowed": true,
+        "nextDayLimit": 37105,
+        "note": null
+      },
+      "2614": {
+        "allowed": true,
+        "nextDayLimit": 81816,
+        "note": null
+      },
+      "2615": {
+        "allowed": true,
+        "nextDayLimit": 701536,
+        "note": null
+      },
+      "2616": {
+        "allowed": true,
+        "nextDayLimit": 34320,
+        "note": null
+      },
+      "2617": {
+        "allowed": true,
+        "nextDayLimit": 104323,
+        "note": null
+      },
+      "2618": {
+        "allowed": true,
+        "nextDayLimit": 1350111,
+        "note": null
+      },
+      "2630": {
+        "allowed": true,
+        "nextDayLimit": 52359,
+        "note": null
+      },
+      "2633": {
+        "allowed": true,
+        "nextDayLimit": 657073,
+        "note": null
+      },
+      "2634": {
+        "allowed": true,
+        "nextDayLimit": 235466,
+        "note": null
+      },
+      "2636": {
+        "allowed": true,
+        "nextDayLimit": 35458,
+        "note": null
+      },
+      "2637": {
+        "allowed": true,
+        "nextDayLimit": 186602,
+        "note": null
+      },
+      "2642": {
+        "allowed": true,
+        "nextDayLimit": 23866,
+        "note": null
+      },
+      "2645": {
+        "allowed": true,
+        "nextDayLimit": 93642,
+        "note": null
+      },
+      "2646": {
+        "allowed": true,
+        "nextDayLimit": 752183,
+        "note": null
+      },
+      "2701": {
+        "allowed": true,
+        "nextDayLimit": 112491,
+        "note": null
+      },
+      "2702": {
+        "allowed": true,
+        "nextDayLimit": 39153,
+        "note": null
+      },
+      "2704": {
+        "allowed": true,
+        "nextDayLimit": 91730,
+        "note": null
+      },
+      "2705": {
+        "allowed": true,
+        "nextDayLimit": 46634,
+        "note": null
+      },
+      "2706": {
+        "allowed": true,
+        "nextDayLimit": 124999,
+        "note": null
+      },
+      "2707": {
+        "allowed": true,
+        "nextDayLimit": 31850,
+        "note": null
+      },
+      "2712": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "2722": {
+        "allowed": true,
+        "nextDayLimit": 35792,
+        "note": null
+      },
+      "2723": {
+        "allowed": true,
+        "nextDayLimit": 45000,
+        "note": null
+      },
+      "2727": {
+        "allowed": true,
+        "nextDayLimit": 20735,
+        "note": null
+      },
+      "2731": {
+        "allowed": true,
+        "nextDayLimit": 23319,
+        "note": null
+      },
+      "2739": {
+        "allowed": true,
+        "nextDayLimit": 22881,
+        "note": null
+      },
+      "2748": {
+        "allowed": true,
+        "nextDayLimit": 26444,
+        "note": null
+      },
+      "2753": {
+        "allowed": true,
+        "nextDayLimit": 16661,
+        "note": null
+      },
+      "2762": {
+        "allowed": true,
+        "nextDayLimit": 28125,
+        "note": null
+      },
+      "2801": {
+        "allowed": true,
+        "nextDayLimit": 3015049,
+        "note": null
+      },
+      "2812": {
+        "allowed": true,
+        "nextDayLimit": 1606268,
+        "note": null
+      },
+      "2816": {
+        "allowed": true,
+        "nextDayLimit": 55902,
+        "note": null
+      },
+      "2820": {
+        "allowed": true,
+        "nextDayLimit": 335740,
+        "note": null
+      },
+      "2832": {
+        "allowed": true,
+        "nextDayLimit": 63385,
+        "note": null
+      },
+      "2834": {
+        "allowed": true,
+        "nextDayLimit": 2599581,
+        "note": null
+      },
+      "2836": {
+        "allowed": true,
+        "nextDayLimit": 464579,
+        "note": null
+      },
+      "2838": {
+        "allowed": true,
+        "nextDayLimit": 1151957,
+        "note": null
+      },
+      "2845": {
+        "allowed": true,
+        "nextDayLimit": 1216321,
+        "note": null
+      },
+      "2849": {
+        "allowed": true,
+        "nextDayLimit": 223623,
+        "note": null
+      },
+      "2850": {
+        "allowed": true,
+        "nextDayLimit": 78990,
+        "note": null
+      },
+      "2851": {
+        "allowed": true,
+        "nextDayLimit": 200097,
+        "note": null
+      },
+      "2852": {
+        "allowed": true,
+        "nextDayLimit": 75290,
+        "note": null
+      },
+      "2855": {
+        "allowed": true,
+        "nextDayLimit": 400353,
+        "note": null
+      },
+      "2880": {
+        "allowed": true,
+        "nextDayLimit": 3514033,
+        "note": null
+      },
+      "2881": {
+        "allowed": true,
+        "nextDayLimit": 3501841,
+        "note": null
+      },
+      "2882": {
+        "allowed": true,
+        "nextDayLimit": 3667302,
+        "note": null
+      },
+      "2883": {
+        "allowed": true,
+        "nextDayLimit": 4243653,
+        "note": null
+      },
+      "2884": {
+        "allowed": true,
+        "nextDayLimit": 4430877,
+        "note": null
+      },
+      "2885": {
+        "allowed": true,
+        "nextDayLimit": 3332787,
+        "note": null
+      },
+      "2886": {
+        "allowed": true,
+        "nextDayLimit": 3708344,
+        "note": null
+      },
+      "2887": {
+        "allowed": true,
+        "nextDayLimit": 6278765,
+        "note": null
+      },
+      "2889": {
+        "allowed": true,
+        "nextDayLimit": 908390,
+        "note": null
+      },
+      "2890": {
+        "allowed": true,
+        "nextDayLimit": 3695542,
+        "note": null
+      },
+      "2891": {
+        "allowed": true,
+        "nextDayLimit": 4918983,
+        "note": null
+      },
+      "2892": {
+        "allowed": true,
+        "nextDayLimit": 3594867,
+        "note": null
+      },
+      "2897": {
+        "allowed": true,
+        "nextDayLimit": 701339,
+        "note": null
+      },
+      "2901": {
+        "allowed": true,
+        "nextDayLimit": 18260,
+        "note": null
+      },
+      "2903": {
+        "allowed": true,
+        "nextDayLimit": 354235,
+        "note": null
+      },
+      "2904": {
+        "allowed": true,
+        "nextDayLimit": 19458,
+        "note": null
+      },
+      "2905": {
+        "allowed": true,
+        "nextDayLimit": 277592,
+        "note": null
+      },
+      "2906": {
+        "allowed": true,
+        "nextDayLimit": 52279,
+        "note": null
+      },
+      "2908": {
+        "allowed": true,
+        "nextDayLimit": 127471,
+        "note": null
+      },
+      "2910": {
+        "allowed": true,
+        "nextDayLimit": 43850,
+        "note": null
+      },
+      "2911": {
+        "allowed": true,
+        "nextDayLimit": 24931,
+        "note": null
+      },
+      "2912": {
+        "allowed": true,
+        "nextDayLimit": 259905,
+        "note": null
+      },
+      "2913": {
+        "allowed": true,
+        "nextDayLimit": 176687,
+        "note": null
+      },
+      "2915": {
+        "allowed": true,
+        "nextDayLimit": 276079,
+        "note": null
+      },
+      "2929": {
+        "allowed": true,
+        "nextDayLimit": 27373,
+        "note": null
+      },
+      "2939": {
+        "allowed": true,
+        "nextDayLimit": 11387,
+        "note": null
+      },
+      "3002": {
+        "allowed": true,
+        "nextDayLimit": 25500,
+        "note": null
+      },
+      "3003": {
+        "allowed": true,
+        "nextDayLimit": 38913,
+        "note": null
+      },
+      "3004": {
+        "allowed": true,
+        "nextDayLimit": 16100,
+        "note": null
+      },
+      "3005": {
+        "allowed": true,
+        "nextDayLimit": 156184,
+        "note": null
+      },
+      "3006": {
+        "allowed": true,
+        "nextDayLimit": 74531,
+        "note": null
+      },
+      "3008": {
+        "allowed": true,
+        "nextDayLimit": 32699,
+        "note": null
+      },
+      "3010": {
+        "allowed": true,
+        "nextDayLimit": 64859,
+        "note": null
+      },
+      "3011": {
+        "allowed": true,
+        "nextDayLimit": 29284,
+        "note": null
+      },
+      "3013": {
+        "allowed": true,
+        "nextDayLimit": 51284,
+        "note": null
+      },
+      "3014": {
+        "allowed": true,
+        "nextDayLimit": 41488,
+        "note": null
+      },
+      "3015": {
+        "allowed": true,
+        "nextDayLimit": 46815,
+        "note": null
+      },
+      "3016": {
+        "allowed": true,
+        "nextDayLimit": 72745,
+        "note": null
+      },
+      "3017": {
+        "allowed": true,
+        "nextDayLimit": 98600,
+        "note": null
+      },
+      "3018": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "3019": {
+        "allowed": true,
+        "nextDayLimit": 69810,
+        "note": null
+      },
+      "3021": {
+        "allowed": true,
+        "nextDayLimit": 23670,
+        "note": null
+      },
+      "3022": {
+        "allowed": true,
+        "nextDayLimit": 44149,
+        "note": null
+      },
+      "3023": {
+        "allowed": true,
+        "nextDayLimit": 60017,
+        "note": null
+      },
+      "3024": {
+        "allowed": true,
+        "nextDayLimit": 69289,
+        "note": null
+      },
+      "3025": {
+        "allowed": true,
+        "nextDayLimit": 14184,
+        "note": null
+      },
+      "3026": {
+        "allowed": true,
+        "nextDayLimit": 41472,
+        "note": null
+      },
+      "3027": {
+        "allowed": true,
+        "nextDayLimit": 28540,
+        "note": null
+      },
+      "3028": {
+        "allowed": true,
+        "nextDayLimit": 59310,
+        "note": null
+      },
+      "3029": {
+        "allowed": true,
+        "nextDayLimit": 38751,
+        "note": null
+      },
+      "3030": {
+        "allowed": true,
+        "nextDayLimit": 59054,
+        "note": null
+      },
+      "3031": {
+        "allowed": true,
+        "nextDayLimit": 43300,
+        "note": null
+      },
+      "3032": {
+        "allowed": true,
+        "nextDayLimit": 25821,
+        "note": null
+      },
+      "3033": {
+        "allowed": true,
+        "nextDayLimit": 131035,
+        "note": null
+      },
+      "3034": {
+        "allowed": true,
+        "nextDayLimit": 152127,
+        "note": null
+      },
+      "3035": {
+        "allowed": true,
+        "nextDayLimit": 65137,
+        "note": null
+      },
+      "3036": {
+        "allowed": true,
+        "nextDayLimit": 317829,
+        "note": null
+      },
+      "3037": {
+        "allowed": true,
+        "nextDayLimit": 410889,
+        "note": null
+      },
+      "3038": {
+        "allowed": true,
+        "nextDayLimit": 39351,
+        "note": null
+      },
+      "3040": {
+        "allowed": true,
+        "nextDayLimit": 16556,
+        "note": null
+      },
+      "3041": {
+        "allowed": true,
+        "nextDayLimit": 29268,
+        "note": null
+      },
+      "3042": {
+        "allowed": true,
+        "nextDayLimit": 79498,
+        "note": null
+      },
+      "3043": {
+        "allowed": true,
+        "nextDayLimit": 9743,
+        "note": null
+      },
+      "3044": {
+        "allowed": true,
+        "nextDayLimit": 131401,
+        "note": null
+      },
+      "3045": {
+        "allowed": true,
+        "nextDayLimit": 930867,
+        "note": null
+      },
+      "3046": {
+        "allowed": true,
+        "nextDayLimit": 19612,
+        "note": null
+      },
+      "3047": {
+        "allowed": true,
+        "nextDayLimit": 56191,
+        "note": null
+      },
+      "3048": {
+        "allowed": true,
+        "nextDayLimit": 61207,
+        "note": null
+      },
+      "3049": {
+        "allowed": true,
+        "nextDayLimit": 200502,
+        "note": null
+      },
+      "3050": {
+        "allowed": true,
+        "nextDayLimit": 38746,
+        "note": null
+      },
+      "3051": {
+        "allowed": true,
+        "nextDayLimit": 34159,
+        "note": null
+      },
+      "3052": {
+        "allowed": true,
+        "nextDayLimit": 58311,
+        "note": null
+      },
+      "3054": {
+        "allowed": true,
+        "nextDayLimit": 20162,
+        "note": null
+      },
+      "3055": {
+        "allowed": true,
+        "nextDayLimit": 25610,
+        "note": null
+      },
+      "3056": {
+        "allowed": true,
+        "nextDayLimit": 120138,
+        "note": null
+      },
+      "3057": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "3058": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "3059": {
+        "allowed": true,
+        "nextDayLimit": 76917,
+        "note": null
+      },
+      "3060": {
+        "allowed": true,
+        "nextDayLimit": 34390,
+        "note": null
+      },
+      "3062": {
+        "allowed": true,
+        "nextDayLimit": 82520,
+        "note": null
+      },
+      "3090": {
+        "allowed": true,
+        "nextDayLimit": 71891,
+        "note": null
+      },
+      "3092": {
+        "allowed": true,
+        "nextDayLimit": 26662,
+        "note": null
+      },
+      "3094": {
+        "allowed": true,
+        "nextDayLimit": 20779,
+        "note": null
+      },
+      "3130": {
+        "allowed": true,
+        "nextDayLimit": 8297,
+        "note": null
+      },
+      "3135": {
+        "allowed": true,
+        "nextDayLimit": 24353,
+        "note": null
+      },
+      "3138": {
+        "allowed": true,
+        "nextDayLimit": 14098,
+        "note": null
+      },
+      "3149": {
+        "allowed": true,
+        "nextDayLimit": 68533,
+        "note": null
+      },
+      "3150": {
+        "allowed": true,
+        "nextDayLimit": 11094,
+        "note": null
+      },
+      "3164": {
+        "allowed": true,
+        "nextDayLimit": 21502,
+        "note": null
+      },
+      "3167": {
+        "allowed": true,
+        "nextDayLimit": 22614,
+        "note": null
+      },
+      "3168": {
+        "allowed": true,
+        "nextDayLimit": 18774,
+        "note": null
+      },
+      "3189": {
+        "allowed": true,
+        "nextDayLimit": 131727,
+        "note": null
+      },
+      "3209": {
+        "allowed": true,
+        "nextDayLimit": 58847,
+        "note": null
+      },
+      "3229": {
+        "allowed": true,
+        "nextDayLimit": 5228,
+        "note": null
+      },
+      "3231": {
+        "allowed": true,
+        "nextDayLimit": 857513,
+        "note": null
+      },
+      "3257": {
+        "allowed": true,
+        "nextDayLimit": 19955,
+        "note": null
+      },
+      "3266": {
+        "allowed": true,
+        "nextDayLimit": 88078,
+        "note": null
+      },
+      "3296": {
+        "allowed": true,
+        "nextDayLimit": 24181,
+        "note": null
+      },
+      "3305": {
+        "allowed": true,
+        "nextDayLimit": 35932,
+        "note": null
+      },
+      "3308": {
+        "allowed": true,
+        "nextDayLimit": 15000,
+        "note": null
+      },
+      "3311": {
+        "allowed": true,
+        "nextDayLimit": 25000,
+        "note": null
+      },
+      "3312": {
+        "allowed": true,
+        "nextDayLimit": 45656,
+        "note": null
+      },
+      "3321": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "3338": {
+        "allowed": true,
+        "nextDayLimit": 21977,
+        "note": null
+      },
+      "3346": {
+        "allowed": true,
+        "nextDayLimit": 30307,
+        "note": null
+      },
+      "3356": {
+        "allowed": true,
+        "nextDayLimit": 17137,
+        "note": null
+      },
+      "3376": {
+        "allowed": true,
+        "nextDayLimit": 48945,
+        "note": null
+      },
+      "3380": {
+        "allowed": true,
+        "nextDayLimit": 135429,
+        "note": null
+      },
+      "3406": {
+        "allowed": true,
+        "nextDayLimit": 28185,
+        "note": null
+      },
+      "3413": {
+        "allowed": true,
+        "nextDayLimit": 27818,
+        "note": null
+      },
+      "3416": {
+        "allowed": true,
+        "nextDayLimit": 20204,
+        "note": null
+      },
+      "3419": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "3432": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "3437": {
+        "allowed": true,
+        "nextDayLimit": 36137,
+        "note": null
+      },
+      "3443": {
+        "allowed": true,
+        "nextDayLimit": 33502,
+        "note": null
+      },
+      "3447": {
+        "allowed": true,
+        "nextDayLimit": 19362,
+        "note": null
+      },
+      "3450": {
+        "allowed": true,
+        "nextDayLimit": 36420,
+        "note": null
+      },
+      "3481": {
+        "allowed": true,
+        "nextDayLimit": 1997299,
+        "note": null
+      },
+      "3494": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "3501": {
+        "allowed": true,
+        "nextDayLimit": 29564,
+        "note": null
+      },
+      "3504": {
+        "allowed": true,
+        "nextDayLimit": 28514,
+        "note": null
+      },
+      "3515": {
+        "allowed": true,
+        "nextDayLimit": 30880,
+        "note": null
+      },
+      "3518": {
+        "allowed": true,
+        "nextDayLimit": 23391,
+        "note": null
+      },
+      "3528": {
+        "allowed": true,
+        "nextDayLimit": 16659,
+        "note": null
+      },
+      "3530": {
+        "allowed": true,
+        "nextDayLimit": 19368,
+        "note": null
+      },
+      "3532": {
+        "allowed": true,
+        "nextDayLimit": 96962,
+        "note": null
+      },
+      "3533": {
+        "allowed": true,
+        "nextDayLimit": 28133,
+        "note": null
+      },
+      "3535": {
+        "allowed": true,
+        "nextDayLimit": 19763,
+        "note": null
+      },
+      "3543": {
+        "allowed": true,
+        "nextDayLimit": 27565,
+        "note": null
+      },
+      "3545": {
+        "allowed": true,
+        "nextDayLimit": 55602,
+        "note": null
+      },
+      "3550": {
+        "allowed": true,
+        "nextDayLimit": 26887,
+        "note": null
+      },
+      "3557": {
+        "allowed": true,
+        "nextDayLimit": 17999,
+        "note": null
+      },
+      "3563": {
+        "allowed": true,
+        "nextDayLimit": 12300,
+        "note": null
+      },
+      "3576": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "3583": {
+        "allowed": true,
+        "nextDayLimit": 20964,
+        "note": null
+      },
+      "3588": {
+        "allowed": true,
+        "nextDayLimit": 15497,
+        "note": null
+      },
+      "3591": {
+        "allowed": true,
+        "nextDayLimit": 32596,
+        "note": null
+      },
+      "3592": {
+        "allowed": true,
+        "nextDayLimit": 18963,
+        "note": null
+      },
+      "3593": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "3596": {
+        "allowed": true,
+        "nextDayLimit": 55088,
+        "note": null
+      },
+      "3605": {
+        "allowed": true,
+        "nextDayLimit": 44118,
+        "note": null
+      },
+      "3607": {
+        "allowed": true,
+        "nextDayLimit": 30415,
+        "note": null
+      },
+      "3617": {
+        "allowed": true,
+        "nextDayLimit": 23690,
+        "note": null
+      },
+      "3622": {
+        "allowed": true,
+        "nextDayLimit": 37831,
+        "note": null
+      },
+      "3645": {
+        "allowed": true,
+        "nextDayLimit": 34188,
+        "note": null
+      },
+      "3652": {
+        "allowed": true,
+        "nextDayLimit": 18774,
+        "note": null
+      },
+      "3653": {
+        "allowed": true,
+        "nextDayLimit": 36683,
+        "note": null
+      },
+      "3661": {
+        "allowed": true,
+        "nextDayLimit": 20885,
+        "note": null
+      },
+      "3665": {
+        "allowed": true,
+        "nextDayLimit": 49894,
+        "note": null
+      },
+      "3669": {
+        "allowed": true,
+        "nextDayLimit": 23229,
+        "note": null
+      },
+      "3673": {
+        "allowed": true,
+        "nextDayLimit": 101665,
+        "note": null
+      },
+      "3679": {
+        "allowed": true,
+        "nextDayLimit": 15755,
+        "note": null
+      },
+      "3686": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "3694": {
+        "allowed": true,
+        "nextDayLimit": 38722,
+        "note": null
+      },
+      "3701": {
+        "allowed": true,
+        "nextDayLimit": 53917,
+        "note": null
+      },
+      "3702": {
+        "allowed": true,
+        "nextDayLimit": 437843,
+        "note": null
+      },
+      "3703": {
+        "allowed": true,
+        "nextDayLimit": 205803,
+        "note": null
+      },
+      "3704": {
+        "allowed": true,
+        "nextDayLimit": 103861,
+        "note": null
+      },
+      "3705": {
+        "allowed": true,
+        "nextDayLimit": 66605,
+        "note": null
+      },
+      "3706": {
+        "allowed": true,
+        "nextDayLimit": 331803,
+        "note": null
+      },
+      "3708": {
+        "allowed": true,
+        "nextDayLimit": 23097,
+        "note": null
+      },
+      "3711": {
+        "allowed": true,
+        "nextDayLimit": 1121412,
+        "note": null
+      },
+      "3712": {
+        "allowed": true,
+        "nextDayLimit": 61560,
+        "note": null
+      },
+      "3714": {
+        "allowed": true,
+        "nextDayLimit": 166985,
+        "note": null
+      },
+      "3715": {
+        "allowed": true,
+        "nextDayLimit": 70893,
+        "note": null
+      },
+      "3716": {
+        "allowed": true,
+        "nextDayLimit": 37441,
+        "note": null
+      },
+      "3717": {
+        "allowed": true,
+        "nextDayLimit": 52910,
+        "note": null
+      },
+      "4104": {
+        "allowed": true,
+        "nextDayLimit": 47091,
+        "note": null
+      },
+      "4106": {
+        "allowed": true,
+        "nextDayLimit": 25227,
+        "note": null
+      },
+      "4108": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "4119": {
+        "allowed": true,
+        "nextDayLimit": 29877,
+        "note": null
+      },
+      "4133": {
+        "allowed": true,
+        "nextDayLimit": 15138,
+        "note": null
+      },
+      "4137": {
+        "allowed": true,
+        "nextDayLimit": 20623,
+        "note": null
+      },
+      "4142": {
+        "allowed": true,
+        "nextDayLimit": 107376,
+        "note": null
+      },
+      "4148": {
+        "allowed": true,
+        "nextDayLimit": 16808,
+        "note": null
+      },
+      "4155": {
+        "allowed": true,
+        "nextDayLimit": 34917,
+        "note": null
+      },
+      "4164": {
+        "allowed": true,
+        "nextDayLimit": 47647,
+        "note": null
+      },
+      "4190": {
+        "allowed": true,
+        "nextDayLimit": 15316,
+        "note": null
+      },
+      "4306": {
+        "allowed": true,
+        "nextDayLimit": 169189,
+        "note": null
+      },
+      "4414": {
+        "allowed": true,
+        "nextDayLimit": 53409,
+        "note": null
+      },
+      "4426": {
+        "allowed": true,
+        "nextDayLimit": 43169,
+        "note": null
+      },
+      "4438": {
+        "allowed": true,
+        "nextDayLimit": 28356,
+        "note": null
+      },
+      "4439": {
+        "allowed": true,
+        "nextDayLimit": 9553,
+        "note": null
+      },
+      "4440": {
+        "allowed": true,
+        "nextDayLimit": 16899,
+        "note": null
+      },
+      "4441": {
+        "allowed": true,
+        "nextDayLimit": 17043,
+        "note": null
+      },
+      "4526": {
+        "allowed": true,
+        "nextDayLimit": 63706,
+        "note": null
+      },
+      "4532": {
+        "allowed": true,
+        "nextDayLimit": 123723,
+        "note": null
+      },
+      "4536": {
+        "allowed": true,
+        "nextDayLimit": 22705,
+        "note": null
+      },
+      "4540": {
+        "allowed": true,
+        "nextDayLimit": 28796,
+        "note": null
+      },
+      "4545": {
+        "allowed": true,
+        "nextDayLimit": 19250,
+        "note": null
+      },
+      "4551": {
+        "allowed": true,
+        "nextDayLimit": 28805,
+        "note": null
+      },
+      "4552": {
+        "allowed": true,
+        "nextDayLimit": 29000,
+        "note": null
+      },
+      "4555": {
+        "allowed": true,
+        "nextDayLimit": 17496,
+        "note": null
+      },
+      "4557": {
+        "allowed": true,
+        "nextDayLimit": 11992,
+        "note": null
+      },
+      "4560": {
+        "allowed": true,
+        "nextDayLimit": 17024,
+        "note": null
+      },
+      "4562": {
+        "allowed": true,
+        "nextDayLimit": 21886,
+        "note": null
+      },
+      "4564": {
+        "allowed": true,
+        "nextDayLimit": 58197,
+        "note": null
+      },
+      "4566": {
+        "allowed": true,
+        "nextDayLimit": 27597,
+        "note": null
+      },
+      "4569": {
+        "allowed": true,
+        "nextDayLimit": 7650,
+        "note": null
+      },
+      "4571": {
+        "allowed": true,
+        "nextDayLimit": 13254,
+        "note": null
+      },
+      "4572": {
+        "allowed": true,
+        "nextDayLimit": 10004,
+        "note": null
+      },
+      "4576": {
+        "allowed": true,
+        "nextDayLimit": 29950,
+        "note": null
+      },
+      "4581": {
+        "allowed": true,
+        "nextDayLimit": 8474,
+        "note": null
+      },
+      "4583": {
+        "allowed": true,
+        "nextDayLimit": 20042,
+        "note": null
+      },
+      "4585": {
+        "allowed": true,
+        "nextDayLimit": 26444,
+        "note": null
+      },
+      "4588": {
+        "allowed": true,
+        "nextDayLimit": 10746,
+        "note": null
+      },
+      "4590": {
+        "allowed": true,
+        "nextDayLimit": 13709,
+        "note": null
+      },
+      "4720": {
+        "allowed": true,
+        "nextDayLimit": 28629,
+        "note": null
+      },
+      "4722": {
+        "allowed": true,
+        "nextDayLimit": 26055,
+        "note": null
+      },
+      "4736": {
+        "allowed": true,
+        "nextDayLimit": 23843,
+        "note": null
+      },
+      "4737": {
+        "allowed": true,
+        "nextDayLimit": 19350,
+        "note": null
+      },
+      "4739": {
+        "allowed": true,
+        "nextDayLimit": 30388,
+        "note": null
+      },
+      "4746": {
+        "allowed": true,
+        "nextDayLimit": 30063,
+        "note": null
+      },
+      "4755": {
+        "allowed": true,
+        "nextDayLimit": 25176,
+        "note": null
+      },
+      "4763": {
+        "allowed": true,
+        "nextDayLimit": 247286,
+        "note": null
+      },
+      "4764": {
+        "allowed": true,
+        "nextDayLimit": 22885,
+        "note": null
+      },
+      "4766": {
+        "allowed": true,
+        "nextDayLimit": 30142,
+        "note": null
+      },
+      "4770": {
+        "allowed": true,
+        "nextDayLimit": 19994,
+        "note": null
+      },
+      "4771": {
+        "allowed": true,
+        "nextDayLimit": 14696,
+        "note": null
+      },
+      "4807": {
+        "allowed": true,
+        "nextDayLimit": 12249,
+        "note": null
+      },
+      "4904": {
+        "allowed": true,
+        "nextDayLimit": 878566,
+        "note": null
+      },
+      "4906": {
+        "allowed": true,
+        "nextDayLimit": 112926,
+        "note": null
+      },
+      "4912": {
+        "allowed": true,
+        "nextDayLimit": 16738,
+        "note": null
+      },
+      "4915": {
+        "allowed": true,
+        "nextDayLimit": 117970,
+        "note": null
+      },
+      "4916": {
+        "allowed": true,
+        "nextDayLimit": 31020,
+        "note": null
+      },
+      "4919": {
+        "allowed": true,
+        "nextDayLimit": 113099,
+        "note": null
+      },
+      "4927": {
+        "allowed": true,
+        "nextDayLimit": 66234,
+        "note": null
+      },
+      "4930": {
+        "allowed": true,
+        "nextDayLimit": 20000,
+        "note": null
+      },
+      "4934": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "4935": {
+        "allowed": true,
+        "nextDayLimit": 32216,
+        "note": null
+      },
+      "4938": {
+        "allowed": true,
+        "nextDayLimit": 668927,
+        "note": null
+      },
+      "4942": {
+        "allowed": true,
+        "nextDayLimit": 35591,
+        "note": null
+      },
+      "4943": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "4949": {
+        "allowed": true,
+        "nextDayLimit": 16976,
+        "note": null
+      },
+      "4952": {
+        "allowed": true,
+        "nextDayLimit": 27203,
+        "note": null
+      },
+      "4956": {
+        "allowed": true,
+        "nextDayLimit": 25102,
+        "note": null
+      },
+      "4958": {
+        "allowed": true,
+        "nextDayLimit": 279383,
+        "note": null
+      },
+      "4960": {
+        "allowed": true,
+        "nextDayLimit": 142926,
+        "note": null
+      },
+      "4961": {
+        "allowed": true,
+        "nextDayLimit": 30313,
+        "note": null
+      },
+      "4967": {
+        "allowed": true,
+        "nextDayLimit": 24641,
+        "note": null
+      },
+      "4968": {
+        "allowed": true,
+        "nextDayLimit": 23052,
+        "note": null
+      },
+      "4976": {
+        "allowed": true,
+        "nextDayLimit": 35304,
+        "note": null
+      },
+      "4977": {
+        "allowed": true,
+        "nextDayLimit": 20672,
+        "note": null
+      },
+      "4989": {
+        "allowed": true,
+        "nextDayLimit": 43194,
+        "note": null
+      },
+      "4994": {
+        "allowed": true,
+        "nextDayLimit": 16595,
+        "note": null
+      },
+      "4999": {
+        "allowed": true,
+        "nextDayLimit": 18604,
+        "note": null
+      },
+      "5007": {
+        "allowed": true,
+        "nextDayLimit": 73735,
+        "note": null
+      },
+      "5203": {
+        "allowed": true,
+        "nextDayLimit": 19335,
+        "note": null
+      },
+      "5215": {
+        "allowed": true,
+        "nextDayLimit": 16084,
+        "note": null
+      },
+      "5222": {
+        "allowed": true,
+        "nextDayLimit": 25028,
+        "note": null
+      },
+      "5225": {
+        "allowed": true,
+        "nextDayLimit": 19784,
+        "note": null
+      },
+      "5234": {
+        "allowed": true,
+        "nextDayLimit": 25678,
+        "note": null
+      },
+      "5236": {
+        "allowed": true,
+        "nextDayLimit": 15001,
+        "note": null
+      },
+      "5243": {
+        "allowed": true,
+        "nextDayLimit": 42132,
+        "note": null
+      },
+      "5244": {
+        "allowed": true,
+        "nextDayLimit": 17060,
+        "note": null
+      },
+      "5258": {
+        "allowed": false,
+        "nextDayLimit": 27591,
+        "note": "X"
+      },
+      "5269": {
+        "allowed": true,
+        "nextDayLimit": 18539,
+        "note": null
+      },
+      "5283": {
+        "allowed": true,
+        "nextDayLimit": 21900,
+        "note": null
+      },
+      "5284": {
+        "allowed": true,
+        "nextDayLimit": 13223,
+        "note": null
+      },
+      "5285": {
+        "allowed": true,
+        "nextDayLimit": 25510,
+        "note": null
+      },
+      "5288": {
+        "allowed": true,
+        "nextDayLimit": 17424,
+        "note": null
+      },
+      "5292": {
+        "allowed": true,
+        "nextDayLimit": 11579,
+        "note": null
+      },
+      "5306": {
+        "allowed": true,
+        "nextDayLimit": 31500,
+        "note": null
+      },
+      "5388": {
+        "allowed": true,
+        "nextDayLimit": 76085,
+        "note": null
+      },
+      "5434": {
+        "allowed": true,
+        "nextDayLimit": 48501,
+        "note": null
+      },
+      "5469": {
+        "allowed": true,
+        "nextDayLimit": 121541,
+        "note": null
+      },
+      "5471": {
+        "allowed": true,
+        "nextDayLimit": 41969,
+        "note": null
+      },
+      "5484": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "5515": {
+        "allowed": true,
+        "nextDayLimit": 50400,
+        "note": null
+      },
+      "5519": {
+        "allowed": true,
+        "nextDayLimit": 57539,
+        "note": null
+      },
+      "5521": {
+        "allowed": true,
+        "nextDayLimit": 123070,
+        "note": null
+      },
+      "5522": {
+        "allowed": true,
+        "nextDayLimit": 195399,
+        "note": null
+      },
+      "5525": {
+        "allowed": true,
+        "nextDayLimit": 79526,
+        "note": null
+      },
+      "5531": {
+        "allowed": true,
+        "nextDayLimit": 244397,
+        "note": null
+      },
+      "5533": {
+        "allowed": true,
+        "nextDayLimit": 71311,
+        "note": null
+      },
+      "5534": {
+        "allowed": true,
+        "nextDayLimit": 78831,
+        "note": null
+      },
+      "5538": {
+        "allowed": true,
+        "nextDayLimit": 50300,
+        "note": null
+      },
+      "5546": {
+        "allowed": true,
+        "nextDayLimit": 20588,
+        "note": null
+      },
+      "5607": {
+        "allowed": true,
+        "nextDayLimit": 92638,
+        "note": null
+      },
+      "5608": {
+        "allowed": true,
+        "nextDayLimit": 97319,
+        "note": null
+      },
+      "5706": {
+        "allowed": true,
+        "nextDayLimit": 20941,
+        "note": null
+      },
+      "5871": {
+        "allowed": true,
+        "nextDayLimit": 436412,
+        "note": null
+      },
+      "5876": {
+        "allowed": true,
+        "nextDayLimit": 1227554,
+        "note": null
+      },
+      "5880": {
+        "allowed": true,
+        "nextDayLimit": 4018240,
+        "note": null
+      },
+      "5906": {
+        "allowed": true,
+        "nextDayLimit": 8935,
+        "note": null
+      },
+      "5907": {
+        "allowed": true,
+        "nextDayLimit": 48882,
+        "note": null
+      },
+      "6005": {
+        "allowed": true,
+        "nextDayLimit": 613824,
+        "note": null
+      },
+      "6024": {
+        "allowed": true,
+        "nextDayLimit": 66670,
+        "note": null
+      },
+      "6108": {
+        "allowed": true,
+        "nextDayLimit": 38623,
+        "note": null
+      },
+      "6112": {
+        "allowed": true,
+        "nextDayLimit": 30589,
+        "note": null
+      },
+      "6115": {
+        "allowed": true,
+        "nextDayLimit": 46915,
+        "note": null
+      },
+      "6116": {
+        "allowed": true,
+        "nextDayLimit": 714663,
+        "note": null
+      },
+      "6117": {
+        "allowed": true,
+        "nextDayLimit": 23146,
+        "note": null
+      },
+      "6120": {
+        "allowed": true,
+        "nextDayLimit": 149749,
+        "note": null
+      },
+      "6128": {
+        "allowed": true,
+        "nextDayLimit": 31897,
+        "note": null
+      },
+      "6133": {
+        "allowed": true,
+        "nextDayLimit": 29251,
+        "note": null
+      },
+      "6136": {
+        "allowed": true,
+        "nextDayLimit": 28884,
+        "note": null
+      },
+      "6139": {
+        "allowed": true,
+        "nextDayLimit": 58893,
+        "note": null
+      },
+      "6141": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "6142": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "6152": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "6153": {
+        "allowed": true,
+        "nextDayLimit": 136837,
+        "note": null
+      },
+      "6155": {
+        "allowed": true,
+        "nextDayLimit": 22005,
+        "note": null
+      },
+      "6164": {
+        "allowed": true,
+        "nextDayLimit": 20000,
+        "note": null
+      },
+      "6165": {
+        "allowed": true,
+        "nextDayLimit": 19438,
+        "note": null
+      },
+      "6166": {
+        "allowed": true,
+        "nextDayLimit": 50849,
+        "note": null
+      },
+      "6168": {
+        "allowed": true,
+        "nextDayLimit": 51440,
+        "note": null
+      },
+      "6176": {
+        "allowed": true,
+        "nextDayLimit": 87192,
+        "note": null
+      },
+      "6177": {
+        "allowed": true,
+        "nextDayLimit": 117972,
+        "note": null
+      },
+      "6183": {
+        "allowed": true,
+        "nextDayLimit": 37500,
+        "note": null
+      },
+      "6184": {
+        "allowed": true,
+        "nextDayLimit": 40531,
+        "note": null
+      },
+      "6189": {
+        "allowed": true,
+        "nextDayLimit": 65988,
+        "note": null
+      },
+      "6191": {
+        "allowed": true,
+        "nextDayLimit": 124825,
+        "note": null
+      },
+      "6192": {
+        "allowed": true,
+        "nextDayLimit": 24038,
+        "note": null
+      },
+      "6196": {
+        "allowed": true,
+        "nextDayLimit": 55082,
+        "note": null
+      },
+      "6197": {
+        "allowed": true,
+        "nextDayLimit": 31506,
+        "note": null
+      },
+      "6201": {
+        "allowed": true,
+        "nextDayLimit": 22300,
+        "note": null
+      },
+      "6202": {
+        "allowed": true,
+        "nextDayLimit": 56542,
+        "note": null
+      },
+      "6205": {
+        "allowed": true,
+        "nextDayLimit": 20558,
+        "note": null
+      },
+      "6206": {
+        "allowed": true,
+        "nextDayLimit": 35765,
+        "note": null
+      },
+      "6209": {
+        "allowed": true,
+        "nextDayLimit": 45545,
+        "note": null
+      },
+      "6213": {
+        "allowed": true,
+        "nextDayLimit": 90904,
+        "note": null
+      },
+      "6214": {
+        "allowed": true,
+        "nextDayLimit": 68060,
+        "note": null
+      },
+      "6215": {
+        "allowed": true,
+        "nextDayLimit": 20697,
+        "note": null
+      },
+      "6216": {
+        "allowed": true,
+        "nextDayLimit": 24354,
+        "note": null
+      },
+      "6224": {
+        "allowed": true,
+        "nextDayLimit": 21411,
+        "note": null
+      },
+      "6225": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "6226": {
+        "allowed": true,
+        "nextDayLimit": 28883,
+        "note": null
+      },
+      "6230": {
+        "allowed": true,
+        "nextDayLimit": 21585,
+        "note": null
+      },
+      "6235": {
+        "allowed": true,
+        "nextDayLimit": 49976,
+        "note": null
+      },
+      "6239": {
+        "allowed": true,
+        "nextDayLimit": 189786,
+        "note": null
+      },
+      "6243": {
+        "allowed": true,
+        "nextDayLimit": 11317,
+        "note": null
+      },
+      "6257": {
+        "allowed": true,
+        "nextDayLimit": 120978,
+        "note": null
+      },
+      "6269": {
+        "allowed": true,
+        "nextDayLimit": 80957,
+        "note": null
+      },
+      "6271": {
+        "allowed": true,
+        "nextDayLimit": 52264,
+        "note": null
+      },
+      "6272": {
+        "allowed": true,
+        "nextDayLimit": 20440,
+        "note": null
+      },
+      "6277": {
+        "allowed": true,
+        "nextDayLimit": 29867,
+        "note": null
+      },
+      "6278": {
+        "allowed": true,
+        "nextDayLimit": 73099,
+        "note": null
+      },
+      "6281": {
+        "allowed": true,
+        "nextDayLimit": 24793,
+        "note": null
+      },
+      "6282": {
+        "allowed": true,
+        "nextDayLimit": 214025,
+        "note": null
+      },
+      "6283": {
+        "allowed": true,
+        "nextDayLimit": 20282,
+        "note": null
+      },
+      "6285": {
+        "allowed": true,
+        "nextDayLimit": 120860,
+        "note": null
+      },
+      "6405": {
+        "allowed": true,
+        "nextDayLimit": 16450,
+        "note": null
+      },
+      "6409": {
+        "allowed": true,
+        "nextDayLimit": 22063,
+        "note": null
+      },
+      "6412": {
+        "allowed": true,
+        "nextDayLimit": 100192,
+        "note": null
+      },
+      "6414": {
+        "allowed": true,
+        "nextDayLimit": 39286,
+        "note": null
+      },
+      "6415": {
+        "allowed": true,
+        "nextDayLimit": 97521,
+        "note": null
+      },
+      "6416": {
+        "allowed": true,
+        "nextDayLimit": 18337,
+        "note": null
+      },
+      "6426": {
+        "allowed": true,
+        "nextDayLimit": 9627,
+        "note": null
+      },
+      "6431": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "6438": {
+        "allowed": true,
+        "nextDayLimit": 20551,
+        "note": null
+      },
+      "6442": {
+        "allowed": true,
+        "nextDayLimit": 20454,
+        "note": null
+      },
+      "6443": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "6446": {
+        "allowed": true,
+        "nextDayLimit": 105610,
+        "note": null
+      },
+      "6449": {
+        "allowed": true,
+        "nextDayLimit": 22969,
+        "note": null
+      },
+      "6451": {
+        "allowed": true,
+        "nextDayLimit": 29434,
+        "note": null
+      },
+      "6456": {
+        "allowed": true,
+        "nextDayLimit": 84484,
+        "note": null
+      },
+      "6464": {
+        "allowed": true,
+        "nextDayLimit": 33483,
+        "note": null
+      },
+      "6472": {
+        "allowed": true,
+        "nextDayLimit": 32004,
+        "note": null
+      },
+      "6477": {
+        "allowed": true,
+        "nextDayLimit": 31013,
+        "note": null
+      },
+      "6491": {
+        "allowed": true,
+        "nextDayLimit": 19500,
+        "note": null
+      },
+      "6504": {
+        "allowed": true,
+        "nextDayLimit": 18150,
+        "note": null
+      },
+      "6505": {
+        "allowed": true,
+        "nextDayLimit": 2381489,
+        "note": null
+      },
+      "6515": {
+        "allowed": true,
+        "nextDayLimit": 9116,
+        "note": null
+      },
+      "6525": {
+        "allowed": true,
+        "nextDayLimit": 32261,
+        "note": null
+      },
+      "6526": {
+        "allowed": true,
+        "nextDayLimit": 41876,
+        "note": null
+      },
+      "6531": {
+        "allowed": true,
+        "nextDayLimit": 40795,
+        "note": null
+      },
+      "6533": {
+        "allowed": true,
+        "nextDayLimit": 12662,
+        "note": null
+      },
+      "6534": {
+        "allowed": true,
+        "nextDayLimit": 25700,
+        "note": null
+      },
+      "6541": {
+        "allowed": true,
+        "nextDayLimit": 66304,
+        "note": null
+      },
+      "6550": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX!"
+      },
+      "6552": {
+        "allowed": true,
+        "nextDayLimit": 20750,
+        "note": null
+      },
+      "6558": {
+        "allowed": true,
+        "nextDayLimit": 21622,
+        "note": null
+      },
+      "6573": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "6579": {
+        "allowed": true,
+        "nextDayLimit": 42362,
+        "note": null
+      },
+      "6581": {
+        "allowed": true,
+        "nextDayLimit": 27817,
+        "note": null
+      },
+      "6582": {
+        "allowed": true,
+        "nextDayLimit": 26543,
+        "note": null
+      },
+      "6585": {
+        "allowed": true,
+        "nextDayLimit": 18121,
+        "note": null
+      },
+      "6589": {
+        "allowed": true,
+        "nextDayLimit": 61767,
+        "note": null
+      },
+      "6591": {
+        "allowed": true,
+        "nextDayLimit": 10280,
+        "note": null
+      },
+      "6592": {
+        "allowed": true,
+        "nextDayLimit": 160461,
+        "note": null
+      },
+      "6598": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "6605": {
+        "allowed": true,
+        "nextDayLimit": 41454,
+        "note": null
+      },
+      "6606": {
+        "allowed": true,
+        "nextDayLimit": 27575,
+        "note": null
+      },
+      "6614": {
+        "allowed": true,
+        "nextDayLimit": 20165,
+        "note": null
+      },
+      "6625": {
+        "allowed": true,
+        "nextDayLimit": 14493,
+        "note": null
+      },
+      "6641": {
+        "allowed": true,
+        "nextDayLimit": 9125,
+        "note": null
+      },
+      "6645": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "6655": {
+        "allowed": true,
+        "nextDayLimit": 20142,
+        "note": null
+      },
+      "6657": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "6658": {
+        "allowed": true,
+        "nextDayLimit": 9092,
+        "note": null
+      },
+      "6666": {
+        "allowed": true,
+        "nextDayLimit": 11847,
+        "note": null
+      },
+      "6668": {
+        "allowed": true,
+        "nextDayLimit": 19957,
+        "note": null
+      },
+      "6669": {
+        "allowed": true,
+        "nextDayLimit": 46863,
+        "note": null
+      },
+      "6670": {
+        "allowed": true,
+        "nextDayLimit": 34846,
+        "note": null
+      },
+      "6671": {
+        "allowed": true,
+        "nextDayLimit": 15187,
+        "note": null
+      },
+      "6672": {
+        "allowed": true,
+        "nextDayLimit": 20575,
+        "note": null
+      },
+      "6674": {
+        "allowed": true,
+        "nextDayLimit": 17137,
+        "note": null
+      },
+      "6689": {
+        "allowed": true,
+        "nextDayLimit": 17000,
+        "note": null
+      },
+      "6691": {
+        "allowed": true,
+        "nextDayLimit": 30371,
+        "note": null
+      },
+      "6695": {
+        "allowed": true,
+        "nextDayLimit": 21749,
+        "note": null
+      },
+      "6698": {
+        "allowed": true,
+        "nextDayLimit": 16597,
+        "note": null
+      },
+      "6706": {
+        "allowed": true,
+        "nextDayLimit": 19637,
+        "note": null
+      },
+      "6715": {
+        "allowed": true,
+        "nextDayLimit": 18568,
+        "note": null
+      },
+      "6719": {
+        "allowed": true,
+        "nextDayLimit": 21130,
+        "note": null
+      },
+      "6722": {
+        "allowed": true,
+        "nextDayLimit": 22100,
+        "note": null
+      },
+      "6742": {
+        "allowed": true,
+        "nextDayLimit": 17816,
+        "note": null
+      },
+      "6743": {
+        "allowed": true,
+        "nextDayLimit": 37500,
+        "note": null
+      },
+      "6753": {
+        "allowed": true,
+        "nextDayLimit": 29325,
+        "note": null
+      },
+      "6754": {
+        "allowed": true,
+        "nextDayLimit": 16500,
+        "note": null
+      },
+      "6756": {
+        "allowed": true,
+        "nextDayLimit": 17497,
+        "note": null
+      },
+      "6757": {
+        "allowed": true,
+        "nextDayLimit": 114882,
+        "note": null
+      },
+      "6768": {
+        "allowed": true,
+        "nextDayLimit": 50023,
+        "note": null
+      },
+      "6770": {
+        "allowed": true,
+        "nextDayLimit": 1178839,
+        "note": null
+      },
+      "6771": {
+        "allowed": true,
+        "nextDayLimit": 7794,
+        "note": null
+      },
+      "6776": {
+        "allowed": true,
+        "nextDayLimit": 22895,
+        "note": null
+      },
+      "6781": {
+        "allowed": true,
+        "nextDayLimit": 21354,
+        "note": null
+      },
+      "6782": {
+        "allowed": true,
+        "nextDayLimit": 15750,
+        "note": null
+      },
+      "6789": {
+        "allowed": true,
+        "nextDayLimit": 79574,
+        "note": null
+      },
+      "6790": {
+        "allowed": true,
+        "nextDayLimit": 66782,
+        "note": null
+      },
+      "6792": {
+        "allowed": true,
+        "nextDayLimit": 11968,
+        "note": null
+      },
+      "6794": {
+        "allowed": true,
+        "nextDayLimit": 12109,
+        "note": null
+      },
+      "6796": {
+        "allowed": true,
+        "nextDayLimit": 10058,
+        "note": null
+      },
+      "6799": {
+        "allowed": true,
+        "nextDayLimit": 10913,
+        "note": null
+      },
+      "6805": {
+        "allowed": true,
+        "nextDayLimit": 17138,
+        "note": null
+      },
+      "6807": {
+        "allowed": true,
+        "nextDayLimit": 13500,
+        "note": null
+      },
+      "6830": {
+        "allowed": true,
+        "nextDayLimit": 13681,
+        "note": null
+      },
+      "6831": {
+        "allowed": true,
+        "nextDayLimit": 16875,
+        "note": null
+      },
+      "6834": {
+        "allowed": true,
+        "nextDayLimit": 22117,
+        "note": null
+      },
+      "6835": {
+        "allowed": true,
+        "nextDayLimit": 16543,
+        "note": null
+      },
+      "6838": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "6854": {
+        "allowed": true,
+        "nextDayLimit": 29419,
+        "note": null
+      },
+      "6861": {
+        "allowed": true,
+        "nextDayLimit": 10399,
+        "note": null
+      },
+      "6862": {
+        "allowed": true,
+        "nextDayLimit": 12500,
+        "note": null
+      },
+      "6863": {
+        "allowed": true,
+        "nextDayLimit": 18722,
+        "note": null
+      },
+      "6869": {
+        "allowed": true,
+        "nextDayLimit": 34457,
+        "note": null
+      },
+      "6873": {
+        "allowed": true,
+        "nextDayLimit": 34591,
+        "note": null
+      },
+      "6885": {
+        "allowed": true,
+        "nextDayLimit": 33265,
+        "note": null
+      },
+      "6887": {
+        "allowed": true,
+        "nextDayLimit": 18551,
+        "note": null
+      },
+      "6890": {
+        "allowed": true,
+        "nextDayLimit": 62574,
+        "note": null
+      },
+      "6901": {
+        "allowed": true,
+        "nextDayLimit": 213487,
+        "note": null
+      },
+      "6902": {
+        "allowed": true,
+        "nextDayLimit": 8882,
+        "note": null
+      },
+      "6906": {
+        "allowed": true,
+        "nextDayLimit": 8384,
+        "note": null
+      },
+      "6909": {
+        "allowed": true,
+        "nextDayLimit": 16871,
+        "note": null
+      },
+      "6914": {
+        "allowed": true,
+        "nextDayLimit": 16556,
+        "note": null
+      },
+      "6916": {
+        "allowed": true,
+        "nextDayLimit": 16875,
+        "note": null
+      },
+      "6918": {
+        "allowed": true,
+        "nextDayLimit": 8642,
+        "note": null
+      },
+      "6919": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "6923": {
+        "allowed": true,
+        "nextDayLimit": 22609,
+        "note": null
+      },
+      "6928": {
+        "allowed": true,
+        "nextDayLimit": 21500,
+        "note": null
+      },
+      "6931": {
+        "allowed": true,
+        "nextDayLimit": 16538,
+        "note": null
+      },
+      "6933": {
+        "allowed": true,
+        "nextDayLimit": 10621,
+        "note": null
+      },
+      "6934": {
+        "allowed": true,
+        "nextDayLimit": 9032,
+        "note": null
+      },
+      "6936": {
+        "allowed": true,
+        "nextDayLimit": 18201,
+        "note": null
+      },
+      "6937": {
+        "allowed": true,
+        "nextDayLimit": 16913,
+        "note": null
+      },
+      "6944": {
+        "allowed": true,
+        "nextDayLimit": 24923,
+        "note": null
+      },
+      "6949": {
+        "allowed": true,
+        "nextDayLimit": 327900,
+        "note": null
+      },
+      "6951": {
+        "allowed": true,
+        "nextDayLimit": 13000,
+        "note": null
+      },
+      "6952": {
+        "allowed": true,
+        "nextDayLimit": 17086,
+        "note": null
+      },
+      "6957": {
+        "allowed": true,
+        "nextDayLimit": 13934,
+        "note": null
+      },
+      "6958": {
+        "allowed": true,
+        "nextDayLimit": 100322,
+        "note": null
+      },
+      "6962": {
+        "allowed": true,
+        "nextDayLimit": 123099,
+        "note": null
+      },
+      "6965": {
+        "allowed": true,
+        "nextDayLimit": 39084,
+        "note": null
+      },
+      "6994": {
+        "allowed": true,
+        "nextDayLimit": 18540,
+        "note": null
+      },
+      "7631": {
+        "allowed": false,
+        "nextDayLimit": 5035,
+        "note": "X"
+      },
+      "7705": {
+        "allowed": true,
+        "nextDayLimit": 16516,
+        "note": null
+      },
+      "7711": {
+        "allowed": true,
+        "nextDayLimit": 17925,
+        "note": null
+      },
+      "7721": {
+        "allowed": true,
+        "nextDayLimit": 12592,
+        "note": null
+      },
+      "7722": {
+        "allowed": true,
+        "nextDayLimit": 17850,
+        "note": null
+      },
+      "7730": {
+        "allowed": true,
+        "nextDayLimit": 9199,
+        "note": null
+      },
+      "7732": {
+        "allowed": true,
+        "nextDayLimit": 16170,
+        "note": null
+      },
+      "7736": {
+        "allowed": true,
+        "nextDayLimit": 19000,
+        "note": null
+      },
+      "7740": {
+        "allowed": true,
+        "nextDayLimit": 15000,
+        "note": null
+      },
+      "7749": {
+        "allowed": true,
+        "nextDayLimit": 11621,
+        "note": null
+      },
+      "7750": {
+        "allowed": true,
+        "nextDayLimit": 17960,
+        "note": null
+      },
+      "7765": {
+        "allowed": true,
+        "nextDayLimit": 10170,
+        "note": null
+      },
+      "7769": {
+        "allowed": true,
+        "nextDayLimit": 44982,
+        "note": null
+      },
+      "7780": {
+        "allowed": true,
+        "nextDayLimit": 202506,
+        "note": null
+      },
+      "7786": {
+        "allowed": true,
+        "nextDayLimit": 43988,
+        "note": null
+      },
+      "7788": {
+        "allowed": true,
+        "nextDayLimit": 19936,
+        "note": null
+      },
+      "7791": {
+        "allowed": true,
+        "nextDayLimit": 20000,
+        "note": null
+      },
+      "7795": {
+        "allowed": true,
+        "nextDayLimit": 19707,
+        "note": null
+      },
+      "7799": {
+        "allowed": true,
+        "nextDayLimit": 39934,
+        "note": null
+      },
+      "7823": {
+        "allowed": true,
+        "nextDayLimit": 8372,
+        "note": null
+      },
+      "8011": {
+        "allowed": true,
+        "nextDayLimit": 41480,
+        "note": null
+      },
+      "8016": {
+        "allowed": true,
+        "nextDayLimit": 30034,
+        "note": null
+      },
+      "8021": {
+        "allowed": true,
+        "nextDayLimit": 36817,
+        "note": null
+      },
+      "8028": {
+        "allowed": true,
+        "nextDayLimit": 46186,
+        "note": null
+      },
+      "8033": {
+        "allowed": true,
+        "nextDayLimit": 39239,
+        "note": null
+      },
+      "8039": {
+        "allowed": true,
+        "nextDayLimit": 65966,
+        "note": null
+      },
+      "8045": {
+        "allowed": true,
+        "nextDayLimit": 23760,
+        "note": null
+      },
+      "8046": {
+        "allowed": true,
+        "nextDayLimit": 161541,
+        "note": null
+      },
+      "8070": {
+        "allowed": true,
+        "nextDayLimit": 181412,
+        "note": null
+      },
+      "8072": {
+        "allowed": true,
+        "nextDayLimit": 20000,
+        "note": null
+      },
+      "8081": {
+        "allowed": true,
+        "nextDayLimit": 21543,
+        "note": null
+      },
+      "8101": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "8103": {
+        "allowed": true,
+        "nextDayLimit": 19609,
+        "note": null
+      },
+      "8104": {
+        "allowed": true,
+        "nextDayLimit": 26014,
+        "note": null
+      },
+      "8105": {
+        "allowed": true,
+        "nextDayLimit": 72140,
+        "note": null
+      },
+      "8110": {
+        "allowed": true,
+        "nextDayLimit": 129434,
+        "note": null
+      },
+      "8112": {
+        "allowed": true,
+        "nextDayLimit": 141470,
+        "note": null
+      },
+      "8114": {
+        "allowed": true,
+        "nextDayLimit": 19195,
+        "note": null
+      },
+      "8131": {
+        "allowed": true,
+        "nextDayLimit": 110555,
+        "note": null
+      },
+      "8150": {
+        "allowed": true,
+        "nextDayLimit": 176130,
+        "note": null
+      },
+      "8162": {
+        "allowed": true,
+        "nextDayLimit": 17175,
+        "note": null
+      },
+      "8163": {
+        "allowed": true,
+        "nextDayLimit": 70000,
+        "note": null
+      },
+      "8201": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "8210": {
+        "allowed": true,
+        "nextDayLimit": 31329,
+        "note": null
+      },
+      "8213": {
+        "allowed": true,
+        "nextDayLimit": 67810,
+        "note": null
+      },
+      "8215": {
+        "allowed": true,
+        "nextDayLimit": 80168,
+        "note": null
+      },
+      "8222": {
+        "allowed": true,
+        "nextDayLimit": 17143,
+        "note": null
+      },
+      "8249": {
+        "allowed": true,
+        "nextDayLimit": 28587,
+        "note": null
+      },
+      "8261": {
+        "allowed": true,
+        "nextDayLimit": 29719,
+        "note": null
+      },
+      "8271": {
+        "allowed": true,
+        "nextDayLimit": 30893,
+        "note": null
+      },
+      "8341": {
+        "allowed": true,
+        "nextDayLimit": 32500,
+        "note": null
+      },
+      "8367": {
+        "allowed": true,
+        "nextDayLimit": 23043,
+        "note": null
+      },
+      "8374": {
+        "allowed": true,
+        "nextDayLimit": 22312,
+        "note": null
+      },
+      "8404": {
+        "allowed": true,
+        "nextDayLimit": 104983,
+        "note": null
+      },
+      "8411": {
+        "allowed": true,
+        "nextDayLimit": 54601,
+        "note": null
+      },
+      "8422": {
+        "allowed": true,
+        "nextDayLimit": 339850,
+        "note": null
+      },
+      "8429": {
+        "allowed": true,
+        "nextDayLimit": 46436,
+        "note": null
+      },
+      "8438": {
+        "allowed": true,
+        "nextDayLimit": 17485,
+        "note": null
+      },
+      "8442": {
+        "allowed": true,
+        "nextDayLimit": 17542,
+        "note": null
+      },
+      "8443": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "8454": {
+        "allowed": true,
+        "nextDayLimit": 66243,
+        "note": null
+      },
+      "8462": {
+        "allowed": true,
+        "nextDayLimit": 20096,
+        "note": null
+      },
+      "8463": {
+        "allowed": true,
+        "nextDayLimit": 37500,
+        "note": null
+      },
+      "8464": {
+        "allowed": true,
+        "nextDayLimit": 73255,
+        "note": null
+      },
+      "8466": {
+        "allowed": true,
+        "nextDayLimit": 19861,
+        "note": null
+      },
+      "8467": {
+        "allowed": true,
+        "nextDayLimit": 12093,
+        "note": null
+      },
+      "8473": {
+        "allowed": true,
+        "nextDayLimit": 43640,
+        "note": null
+      },
+      "8476": {
+        "allowed": true,
+        "nextDayLimit": 41556,
+        "note": null
+      },
+      "8478": {
+        "allowed": true,
+        "nextDayLimit": 23493,
+        "note": null
+      },
+      "8481": {
+        "allowed": true,
+        "nextDayLimit": 16650,
+        "note": null
+      },
+      "8482": {
+        "allowed": true,
+        "nextDayLimit": 26861,
+        "note": null
+      },
+      "8487": {
+        "allowed": true,
+        "nextDayLimit": 6633,
+        "note": null
+      },
+      "8488": {
+        "allowed": true,
+        "nextDayLimit": 18375,
+        "note": null
+      },
+      "8499": {
+        "allowed": true,
+        "nextDayLimit": 10291,
+        "note": null
+      },
+      "8926": {
+        "allowed": true,
+        "nextDayLimit": 207570,
+        "note": null
+      },
+      "8940": {
+        "allowed": true,
+        "nextDayLimit": 16872,
+        "note": null
+      },
+      "8996": {
+        "allowed": true,
+        "nextDayLimit": 23406,
+        "note": null
+      },
+      "9103": {
+        "allowed": true,
+        "nextDayLimit": 51382,
+        "note": null
+      },
+      "9105": {
+        "allowed": true,
+        "nextDayLimit": 398008,
+        "note": null
+      },
+      "9136": {
+        "allowed": true,
+        "nextDayLimit": 33076,
+        "note": null
+      },
+      "9802": {
+        "allowed": true,
+        "nextDayLimit": 50247,
+        "note": null
+      },
+      "9902": {
+        "allowed": true,
+        "nextDayLimit": 24512,
+        "note": null
+      },
+      "9904": {
+        "allowed": true,
+        "nextDayLimit": 736696,
+        "note": null
+      },
+      "9905": {
+        "allowed": true,
+        "nextDayLimit": 76250,
+        "note": null
+      },
+      "9906": {
+        "allowed": true,
+        "nextDayLimit": 22594,
+        "note": null
+      },
+      "9907": {
+        "allowed": true,
+        "nextDayLimit": 394786,
+        "note": null
+      },
+      "9908": {
+        "allowed": true,
+        "nextDayLimit": 129089,
+        "note": null
+      },
+      "9910": {
+        "allowed": true,
+        "nextDayLimit": 246870,
+        "note": null
+      },
+      "9911": {
+        "allowed": true,
+        "nextDayLimit": 55583,
+        "note": null
+      },
+      "9912": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "9914": {
+        "allowed": true,
+        "nextDayLimit": 74745,
+        "note": null
+      },
+      "9917": {
+        "allowed": true,
+        "nextDayLimit": 112799,
+        "note": null
+      },
+      "9918": {
+        "allowed": true,
+        "nextDayLimit": 45134,
+        "note": null
+      },
+      "9919": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "9921": {
+        "allowed": true,
+        "nextDayLimit": 98016,
+        "note": null
+      },
+      "9924": {
+        "allowed": true,
+        "nextDayLimit": 37690,
+        "note": null
+      },
+      "9925": {
+        "allowed": true,
+        "nextDayLimit": 96872,
+        "note": null
+      },
+      "9926": {
+        "allowed": true,
+        "nextDayLimit": 44876,
+        "note": null
+      },
+      "9927": {
+        "allowed": true,
+        "nextDayLimit": 30000,
+        "note": null
+      },
+      "9928": {
+        "allowed": true,
+        "nextDayLimit": 15481,
+        "note": null
+      },
+      "9929": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "9930": {
+        "allowed": true,
+        "nextDayLimit": 62135,
+        "note": null
+      },
+      "9931": {
+        "allowed": true,
+        "nextDayLimit": 30092,
+        "note": null
+      },
+      "9933": {
+        "allowed": true,
+        "nextDayLimit": 224834,
+        "note": null
+      },
+      "9934": {
+        "allowed": true,
+        "nextDayLimit": 102754,
+        "note": null
+      },
+      "9935": {
+        "allowed": true,
+        "nextDayLimit": 44459,
+        "note": null
+      },
+      "9937": {
+        "allowed": true,
+        "nextDayLimit": 77260,
+        "note": null
+      },
+      "9938": {
+        "allowed": true,
+        "nextDayLimit": 74490,
+        "note": null
+      },
+      "9939": {
+        "allowed": true,
+        "nextDayLimit": 73946,
+        "note": null
+      },
+      "9940": {
+        "allowed": true,
+        "nextDayLimit": 184211,
+        "note": null
+      },
+      "9941": {
+        "allowed": true,
+        "nextDayLimit": 143909,
+        "note": null
+      },
+      "9942": {
+        "allowed": true,
+        "nextDayLimit": 20790,
+        "note": null
+      },
+      "9943": {
+        "allowed": true,
+        "nextDayLimit": 31292,
+        "note": null
+      },
+      "9944": {
+        "allowed": true,
+        "nextDayLimit": 26477,
+        "note": null
+      },
+      "9945": {
+        "allowed": true,
+        "nextDayLimit": 711056,
+        "note": null
+      },
+      "9946": {
+        "allowed": true,
+        "nextDayLimit": 81638,
+        "note": null
+      },
+      "9955": {
+        "allowed": true,
+        "nextDayLimit": 26106,
+        "note": null
+      },
+      "9958": {
+        "allowed": true,
+        "nextDayLimit": 66724,
+        "note": null
+      },
+      "910322": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "910861": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "911868": {
+        "allowed": false,
+        "nextDayLimit": 0,
+        "note": "OX"
+      },
+      "912000": {
+        "allowed": true,
+        "nextDayLimit": 39823,
+        "note": null
+      },
+      "00400A": {
+        "allowed": true,
+        "nextDayLimit": 478785,
+        "note": null
+      },
+      "00401A": {
+        "allowed": true,
+        "nextDayLimit": 65473,
+        "note": null
+      },
+      "00402A": {
+        "allowed": true,
+        "nextDayLimit": 173406,
+        "note": null
+      },
+      "00403A": {
+        "allowed": true,
+        "nextDayLimit": 3720254,
+        "note": null
+      },
+      "00404A": {
+        "allowed": true,
+        "nextDayLimit": 111948,
+        "note": null
+      },
+      "00405A": {
+        "allowed": true,
+        "nextDayLimit": 767936,
+        "note": null
+      },
+      "00406A": {
+        "allowed": true,
+        "nextDayLimit": 1213140,
+        "note": null
+      },
+      "00407A": {
+        "allowed": true,
+        "nextDayLimit": 638434,
+        "note": null
+      },
+      "00408A": {
+        "allowed": true,
+        "nextDayLimit": 36658,
+        "note": null
+      },
+      "00409A": {
+        "allowed": true,
+        "nextDayLimit": 443112,
+        "note": null
+      },
+      "00410A": {
+        "allowed": true,
+        "nextDayLimit": 39215,
+        "note": null
+      },
+      "0050": {
+        "allowed": true,
+        "nextDayLimit": 5510250,
+        "note": null
+      },
+      "0051": {
+        "allowed": true,
+        "nextDayLimit": 6250,
+        "note": null
+      },
+      "0052": {
+        "allowed": true,
+        "nextDayLimit": 637625,
+        "note": null
+      },
+      "0053": {
+        "allowed": true,
+        "nextDayLimit": 2622,
+        "note": null
+      },
+      "0055": {
+        "allowed": true,
+        "nextDayLimit": 21788,
+        "note": null
+      },
+      "0056": {
+        "allowed": true,
+        "nextDayLimit": 3514008,
+        "note": null
+      },
+      "0057": {
+        "allowed": true,
+        "nextDayLimit": 381,
+        "note": null
+      },
+      "0061": {
+        "allowed": true,
+        "nextDayLimit": 24029,
+        "note": null
+      },
+      "006203": {
+        "allowed": true,
+        "nextDayLimit": 2554,
+        "note": null
+      },
+      "006204": {
+        "allowed": true,
+        "nextDayLimit": 375,
+        "note": null
+      },
+      "006205": {
+        "allowed": true,
+        "nextDayLimit": 23359,
+        "note": null
+      },
+      "006206": {
+        "allowed": true,
+        "nextDayLimit": 6694,
+        "note": null
+      },
+      "006207": {
+        "allowed": true,
+        "nextDayLimit": 5223,
+        "note": null
+      },
+      "006208": {
+        "allowed": true,
+        "nextDayLimit": 465135,
+        "note": null
+      },
+      "00631L": {
+        "allowed": true,
+        "nextDayLimit": 1783212,
+        "note": null
+      },
+      "00632R": {
+        "allowed": true,
+        "nextDayLimit": 657801,
+        "note": null
+      },
+      "00633L": {
+        "allowed": true,
+        "nextDayLimit": 30364,
+        "note": null
+      },
+      "00634R": {
+        "allowed": true,
+        "nextDayLimit": 10689,
+        "note": null
+      },
+      "00635U": {
+        "allowed": true,
+        "nextDayLimit": 77753,
+        "note": null
+      },
+      "00636": {
+        "allowed": true,
+        "nextDayLimit": 23456,
+        "note": null
+      },
+      "00637L": {
+        "allowed": true,
+        "nextDayLimit": 190526,
+        "note": null
+      },
+      "00638R": {
+        "allowed": true,
+        "nextDayLimit": 5737,
+        "note": null
+      },
+      "00639": {
+        "allowed": true,
+        "nextDayLimit": 23975,
+        "note": null
+      },
+      "00640L": {
+        "allowed": true,
+        "nextDayLimit": 1854,
+        "note": null
+      },
+      "00641R": {
+        "allowed": true,
+        "nextDayLimit": 22564,
+        "note": null
+      },
+      "00642U": {
+        "allowed": false,
+        "nextDayLimit": 13705,
+        "note": "X"
+      },
+      "00643": {
+        "allowed": true,
+        "nextDayLimit": 18125,
+        "note": null
+      },
+      "00645": {
+        "allowed": true,
+        "nextDayLimit": 11499,
+        "note": null
+      },
+      "00646": {
+        "allowed": true,
+        "nextDayLimit": 159871,
+        "note": null
+      },
+      "00647L": {
+        "allowed": true,
+        "nextDayLimit": 1604,
+        "note": null
+      },
+      "00648R": {
+        "allowed": true,
+        "nextDayLimit": 35672,
+        "note": null
+      },
+      "00650L": {
+        "allowed": true,
+        "nextDayLimit": 24084,
+        "note": null
+      },
+      "00651R": {
+        "allowed": true,
+        "nextDayLimit": 8048,
+        "note": null
+      },
+      "00652": {
+        "allowed": true,
+        "nextDayLimit": 15258,
+        "note": null
+      },
+      "00653L": {
+        "allowed": true,
+        "nextDayLimit": 3100,
+        "note": null
+      },
+      "00654R": {
+        "allowed": true,
+        "nextDayLimit": 4866,
+        "note": null
+      },
+      "00655L": {
+        "allowed": true,
+        "nextDayLimit": 14489,
+        "note": null
+      },
+      "00656R": {
+        "allowed": true,
+        "nextDayLimit": 5089,
+        "note": null
+      },
+      "00657": {
+        "allowed": true,
+        "nextDayLimit": 1644,
+        "note": null
+      },
+      "00660": {
+        "allowed": true,
+        "nextDayLimit": 1632,
+        "note": null
+      },
+      "00661": {
+        "allowed": true,
+        "nextDayLimit": 5981,
+        "note": null
+      },
+      "00662": {
+        "allowed": true,
+        "nextDayLimit": 230507,
+        "note": null
+      },
+      "00663L": {
+        "allowed": true,
+        "nextDayLimit": 34415,
+        "note": null
+      },
+      "00664R": {
+        "allowed": true,
+        "nextDayLimit": 221143,
+        "note": null
+      },
+      "00665L": {
+        "allowed": true,
+        "nextDayLimit": 102741,
+        "note": null
+      },
+      "00666R": {
+        "allowed": true,
+        "nextDayLimit": 3031,
+        "note": null
+      },
+      "00668": {
+        "allowed": true,
+        "nextDayLimit": 1870,
+        "note": null
+      },
+      "00669R": {
+        "allowed": true,
+        "nextDayLimit": 49529,
+        "note": null
+      },
+      "00670L": {
+        "allowed": true,
+        "nextDayLimit": 19286,
+        "note": null
+      },
+      "00671R": {
+        "allowed": true,
+        "nextDayLimit": 126971,
+        "note": "O"
+      },
+      "00673R": {
+        "allowed": true,
+        "nextDayLimit": 312387,
+        "note": null
+      },
+      "00674R": {
+        "allowed": true,
+        "nextDayLimit": 3605,
+        "note": null
+      },
+      "00675L": {
+        "allowed": true,
+        "nextDayLimit": 26196,
+        "note": null
+      },
+      "00676R": {
+        "allowed": true,
+        "nextDayLimit": 50208,
+        "note": null
+      },
+      "00678": {
+        "allowed": true,
+        "nextDayLimit": 2237,
+        "note": null
+      },
+      "00680L": {
+        "allowed": true,
+        "nextDayLimit": 357894,
+        "note": null
+      },
+      "00681R": {
+        "allowed": true,
+        "nextDayLimit": 1898,
+        "note": null
+      },
+      "00682U": {
+        "allowed": true,
+        "nextDayLimit": 1911,
+        "note": null
+      },
+      "00683L": {
+        "allowed": true,
+        "nextDayLimit": 2858,
+        "note": null
+      },
+      "00684R": {
+        "allowed": true,
+        "nextDayLimit": 2422,
+        "note": null
+      },
+      "00685L": {
+        "allowed": true,
+        "nextDayLimit": 1437459,
+        "note": null
+      },
+      "00686R": {
+        "allowed": true,
+        "nextDayLimit": 66569,
+        "note": null
+      },
+      "00688L": {
+        "allowed": true,
+        "nextDayLimit": 152278,
+        "note": null
+      },
+      "00689R": {
+        "allowed": false,
+        "nextDayLimit": 1722,
+        "note": "X"
+      },
+      "00690": {
+        "allowed": true,
+        "nextDayLimit": 20957,
+        "note": null
+      },
+      "00692": {
+        "allowed": true,
+        "nextDayLimit": 153320,
+        "note": null
+      },
+      "00693U": {
+        "allowed": true,
+        "nextDayLimit": 16541,
+        "note": null
+      },
+      "00700": {
+        "allowed": true,
+        "nextDayLimit": 7870,
+        "note": null
+      },
+      "00701": {
+        "allowed": true,
+        "nextDayLimit": 42222,
+        "note": null
+      },
+      "00702": {
+        "allowed": true,
+        "nextDayLimit": 1672,
+        "note": null
+      },
+      "00703": {
+        "allowed": true,
+        "nextDayLimit": 2387,
+        "note": null
+      },
+      "00706L": {
+        "allowed": true,
+        "nextDayLimit": 30817,
+        "note": null
+      },
+      "00707R": {
+        "allowed": false,
+        "nextDayLimit": 1463,
+        "note": "X"
+      },
+      "00708L": {
+        "allowed": true,
+        "nextDayLimit": 39268,
+        "note": null
+      },
+      "00709": {
+        "allowed": true,
+        "nextDayLimit": 3615,
+        "note": null
+      },
+      "00710B": {
+        "allowed": true,
+        "nextDayLimit": 45065,
+        "note": null
+      },
+      "00711B": {
+        "allowed": true,
+        "nextDayLimit": 217940,
+        "note": null
+      },
+      "00712": {
+        "allowed": true,
+        "nextDayLimit": 1505752,
+        "note": null
+      },
+      "00713": {
+        "allowed": true,
+        "nextDayLimit": 422003,
+        "note": null
+      },
+      "00714": {
+        "allowed": true,
+        "nextDayLimit": 4891,
+        "note": null
+      },
+      "00715L": {
+        "allowed": false,
+        "nextDayLimit": 14047,
+        "note": "X"
+      },
+      "00717": {
+        "allowed": true,
+        "nextDayLimit": 29651,
+        "note": null
+      },
+      "00728": {
+        "allowed": true,
+        "nextDayLimit": 9855,
+        "note": null
+      },
+      "00730": {
+        "allowed": true,
+        "nextDayLimit": 17261,
+        "note": null
+      },
+      "00731": {
+        "allowed": true,
+        "nextDayLimit": 5025,
+        "note": null
+      },
+      "00733": {
+        "allowed": true,
+        "nextDayLimit": 15741,
+        "note": null
+      },
+      "00735": {
+        "allowed": true,
+        "nextDayLimit": 28947,
+        "note": null
+      },
+      "00736": {
+        "allowed": true,
+        "nextDayLimit": 1681,
+        "note": null
+      },
+      "00737": {
+        "allowed": true,
+        "nextDayLimit": 5634,
+        "note": null
+      },
+      "00738U": {
+        "allowed": true,
+        "nextDayLimit": 61949,
+        "note": null
+      },
+      "00739": {
+        "allowed": true,
+        "nextDayLimit": 6247,
+        "note": null
+      },
+      "00752": {
+        "allowed": true,
+        "nextDayLimit": 64429,
+        "note": null
+      },
+      "00753L": {
+        "allowed": true,
+        "nextDayLimit": 174789,
+        "note": null
+      },
+      "00757": {
+        "allowed": true,
+        "nextDayLimit": 66873,
+        "note": null
+      },
+      "00762": {
+        "allowed": true,
+        "nextDayLimit": 11687,
+        "note": null
+      },
+      "00763U": {
+        "allowed": true,
+        "nextDayLimit": 10266,
+        "note": null
+      },
+      "00770": {
+        "allowed": true,
+        "nextDayLimit": 23239,
+        "note": null
+      },
+      "00771": {
+        "allowed": true,
+        "nextDayLimit": 3556,
+        "note": null
+      },
+      "00775B": {
+        "allowed": false,
+        "nextDayLimit": 58025,
+        "note": "X"
+      },
+      "00783": {
+        "allowed": true,
+        "nextDayLimit": 1757,
+        "note": null
+      },
+      "00830": {
+        "allowed": true,
+        "nextDayLimit": 218491,
+        "note": null
+      },
+      "00850": {
+        "allowed": true,
+        "nextDayLimit": 103611,
+        "note": null
+      },
+      "00851": {
+        "allowed": true,
+        "nextDayLimit": 1381,
+        "note": null
+      },
+      "00852L": {
+        "allowed": true,
+        "nextDayLimit": 1716,
+        "note": null
+      },
+      "00861": {
+        "allowed": true,
+        "nextDayLimit": 17353,
+        "note": null
+      },
+      "00865B": {
+        "allowed": true,
+        "nextDayLimit": 81436,
+        "note": null
+      },
+      "00875": {
+        "allowed": true,
+        "nextDayLimit": 3997,
+        "note": null
+      },
+      "00876": {
+        "allowed": true,
+        "nextDayLimit": 23631,
+        "note": null
+      },
+      "00878": {
+        "allowed": true,
+        "nextDayLimit": 4696822,
+        "note": null
+      },
+      "00881": {
+        "allowed": true,
+        "nextDayLimit": 745475,
+        "note": null
+      },
+      "00882": {
+        "allowed": true,
+        "nextDayLimit": 493587,
+        "note": null
+      },
+      "00885": {
+        "allowed": true,
+        "nextDayLimit": 147809,
+        "note": null
+      },
+      "00891": {
+        "allowed": true,
+        "nextDayLimit": 468897,
+        "note": null
+      },
+      "00892": {
+        "allowed": true,
+        "nextDayLimit": 80073,
+        "note": null
+      },
+      "00893": {
+        "allowed": true,
+        "nextDayLimit": 89096,
+        "note": null
+      },
+      "00894": {
+        "allowed": true,
+        "nextDayLimit": 37002,
+        "note": null
+      },
+      "00895": {
+        "allowed": true,
+        "nextDayLimit": 35729,
+        "note": null
+      },
+      "00896": {
+        "allowed": true,
+        "nextDayLimit": 127720,
+        "note": null
+      },
+      "00897": {
+        "allowed": true,
+        "nextDayLimit": 33878,
+        "note": null
+      },
+      "00898": {
+        "allowed": true,
+        "nextDayLimit": 27369,
+        "note": null
+      },
+      "00899": {
+        "allowed": true,
+        "nextDayLimit": 4033,
+        "note": null
+      },
+      "00900": {
+        "allowed": true,
+        "nextDayLimit": 379006,
+        "note": null
+      },
+      "00901": {
+        "allowed": true,
+        "nextDayLimit": 15587,
+        "note": null
+      },
+      "00902": {
+        "allowed": true,
+        "nextDayLimit": 55749,
+        "note": null
+      },
+      "00903": {
+        "allowed": true,
+        "nextDayLimit": 11680,
+        "note": null
+      },
+      "00904": {
+        "allowed": true,
+        "nextDayLimit": 39153,
+        "note": null
+      },
+      "00905": {
+        "allowed": true,
+        "nextDayLimit": 89956,
+        "note": null
+      },
+      "00907": {
+        "allowed": true,
+        "nextDayLimit": 37533,
+        "note": null
+      },
+      "00908": {
+        "allowed": true,
+        "nextDayLimit": 8604,
+        "note": null
+      },
+      "00909": {
+        "allowed": true,
+        "nextDayLimit": 25426,
+        "note": null
+      },
+      "00910": {
+        "allowed": true,
+        "nextDayLimit": 27984,
+        "note": null
+      },
+      "00911": {
+        "allowed": true,
+        "nextDayLimit": 8225,
+        "note": null
+      },
+      "00912": {
+        "allowed": true,
+        "nextDayLimit": 14563,
+        "note": null
+      },
+      "00913": {
+        "allowed": true,
+        "nextDayLimit": 14441,
+        "note": null
+      },
+      "00915": {
+        "allowed": true,
+        "nextDayLimit": 126370,
+        "note": null
+      },
+      "00916": {
+        "allowed": true,
+        "nextDayLimit": 25479,
+        "note": null
+      },
+      "00917": {
+        "allowed": true,
+        "nextDayLimit": 15994,
+        "note": null
+      },
+      "00918": {
+        "allowed": true,
+        "nextDayLimit": 1148441,
+        "note": null
+      },
+      "00919": {
+        "allowed": true,
+        "nextDayLimit": 4757283,
+        "note": null
+      },
+      "00920": {
+        "allowed": true,
+        "nextDayLimit": 5070,
+        "note": null
+      },
+      "00921": {
+        "allowed": true,
+        "nextDayLimit": 14442,
+        "note": null
+      },
+      "00922": {
+        "allowed": true,
+        "nextDayLimit": 534421,
+        "note": null
+      },
+      "00923": {
+        "allowed": true,
+        "nextDayLimit": 237855,
+        "note": null
+      },
+      "00924": {
+        "allowed": true,
+        "nextDayLimit": 108525,
+        "note": null
+      },
+      "00926": {
+        "allowed": true,
+        "nextDayLimit": 25870,
+        "note": null
+      },
+      "00927": {
+        "allowed": true,
+        "nextDayLimit": 337224,
+        "note": null
+      },
+      "00929": {
+        "allowed": true,
+        "nextDayLimit": 1328784,
+        "note": null
+      },
+      "00930": {
+        "allowed": false,
+        "nextDayLimit": 35194,
+        "note": "X"
+      },
+      "00932": {
+        "allowed": true,
+        "nextDayLimit": 26945,
+        "note": null
+      },
+      "00934": {
+        "allowed": true,
+        "nextDayLimit": 106756,
+        "note": null
+      },
+      "00935": {
+        "allowed": true,
+        "nextDayLimit": 217501,
+        "note": null
+      },
+      "00936": {
+        "allowed": true,
+        "nextDayLimit": 48199,
+        "note": null
+      },
+      "00938": {
+        "allowed": false,
+        "nextDayLimit": 26004,
+        "note": "X"
+      },
+      "00939": {
+        "allowed": true,
+        "nextDayLimit": 290244,
+        "note": null
+      },
+      "00940": {
+        "allowed": true,
+        "nextDayLimit": 1283841,
+        "note": null
+      },
+      "00941": {
+        "allowed": true,
+        "nextDayLimit": 113447,
+        "note": null
+      },
+      "00943": {
+        "allowed": true,
+        "nextDayLimit": 10097,
+        "note": null
+      },
+      "00944": {
+        "allowed": true,
+        "nextDayLimit": 13270,
+        "note": null
+      },
+      "00945B": {
+        "allowed": true,
+        "nextDayLimit": 207829,
+        "note": null
+      },
+      "00946": {
+        "allowed": true,
+        "nextDayLimit": 110061,
+        "note": null
+      },
+      "00947": {
+        "allowed": true,
+        "nextDayLimit": 69091,
+        "note": null
+      },
+      "00949": {
+        "allowed": true,
+        "nextDayLimit": 41607,
+        "note": null
+      },
+      "00951": {
+        "allowed": true,
+        "nextDayLimit": 61010,
+        "note": null
+      },
+      "00952": {
+        "allowed": true,
+        "nextDayLimit": 61943,
+        "note": null
+      },
+      "00953B": {
+        "allowed": true,
+        "nextDayLimit": 1166168,
+        "note": null
+      },
+      "00954": {
+        "allowed": true,
+        "nextDayLimit": 31561,
+        "note": null
+      },
+      "00956": {
+        "allowed": true,
+        "nextDayLimit": 8157,
+        "note": null
+      },
+      "00960": {
+        "allowed": true,
+        "nextDayLimit": 14498,
+        "note": null
+      },
+      "00961": {
+        "allowed": true,
+        "nextDayLimit": 267127,
+        "note": null
+      },
+      "00962": {
+        "allowed": true,
+        "nextDayLimit": 26980,
+        "note": null
+      },
+      "00963": {
+        "allowed": true,
+        "nextDayLimit": 29733,
+        "note": null
+      },
+      "00964": {
+        "allowed": true,
+        "nextDayLimit": 17781,
+        "note": null
+      },
+      "00965": {
+        "allowed": true,
+        "nextDayLimit": 108248,
+        "note": null
+      },
+      "00971": {
+        "allowed": true,
+        "nextDayLimit": 13794,
+        "note": null
+      },
+      "00972": {
+        "allowed": true,
+        "nextDayLimit": 3793,
+        "note": null
+      },
+      "009800": {
+        "allowed": true,
+        "nextDayLimit": 77222,
+        "note": null
+      },
+      "009801": {
+        "allowed": true,
+        "nextDayLimit": 23779,
+        "note": null
+      },
+      "009802": {
+        "allowed": true,
+        "nextDayLimit": 142123,
+        "note": null
+      },
+      "009803": {
+        "allowed": true,
+        "nextDayLimit": 72332,
+        "note": null
+      },
+      "009804": {
+        "allowed": true,
+        "nextDayLimit": 36723,
+        "note": null
+      },
+      "009805": {
+        "allowed": true,
+        "nextDayLimit": 152704,
+        "note": null
+      },
+      "009808": {
+        "allowed": true,
+        "nextDayLimit": 9752,
+        "note": null
+      },
+      "009809": {
+        "allowed": true,
+        "nextDayLimit": 8215,
+        "note": null
+      },
+      "00980A": {
+        "allowed": true,
+        "nextDayLimit": 197432,
+        "note": null
+      },
+      "009810": {
+        "allowed": true,
+        "nextDayLimit": 4788,
+        "note": null
+      },
+      "009811": {
+        "allowed": true,
+        "nextDayLimit": 58862,
+        "note": null
+      },
+      "009812": {
+        "allowed": true,
+        "nextDayLimit": 22845,
+        "note": null
+      },
+      "009813": {
+        "allowed": true,
+        "nextDayLimit": 80581,
+        "note": null
+      },
+      "009816": {
+        "allowed": true,
+        "nextDayLimit": 3002836,
+        "note": null
+      },
+      "009817": {
+        "allowed": true,
+        "nextDayLimit": 54984,
+        "note": null
+      },
+      "009818": {
+        "allowed": true,
+        "nextDayLimit": 11538,
+        "note": null
+      },
+      "009819": {
+        "allowed": true,
+        "nextDayLimit": 151936,
+        "note": null
+      },
+      "00981A": {
+        "allowed": true,
+        "nextDayLimit": 2405677,
+        "note": null
+      },
+      "00981T": {
+        "allowed": true,
+        "nextDayLimit": 62815,
+        "note": null
+      },
+      "009820": {
+        "allowed": true,
+        "nextDayLimit": 275175,
+        "note": null
+      },
+      "009821": {
+        "allowed": true,
+        "nextDayLimit": 129960,
+        "note": null
+      },
+      "009824": {
+        "allowed": true,
+        "nextDayLimit": 129586,
+        "note": null
+      },
+      "009826": {
+        "allowed": true,
+        "nextDayLimit": 211201,
+        "note": null
+      },
+      "009827": {
+        "allowed": true,
+        "nextDayLimit": 53737,
+        "note": null
+      },
+      "009828": {
+        "allowed": true,
+        "nextDayLimit": 226261,
+        "note": null
+      },
+      "009829": {
+        "allowed": true,
+        "nextDayLimit": 84217,
+        "note": null
+      },
+      "00982A": {
+        "allowed": true,
+        "nextDayLimit": 553234,
+        "note": null
+      },
+      "00982D": {
+        "allowed": true,
+        "nextDayLimit": 19182,
+        "note": null
+      },
+      "00982T": {
+        "allowed": true,
+        "nextDayLimit": 4149,
+        "note": null
+      },
+      "00983A": {
+        "allowed": true,
+        "nextDayLimit": 19546,
+        "note": null
+      },
+      "00983D": {
+        "allowed": true,
+        "nextDayLimit": 26049,
+        "note": null
+      },
+      "00984A": {
+        "allowed": true,
+        "nextDayLimit": 157614,
+        "note": null
+      },
+      "00984D": {
+        "allowed": true,
+        "nextDayLimit": 286514,
+        "note": null
+      },
+      "00985A": {
+        "allowed": true,
+        "nextDayLimit": 113572,
+        "note": null
+      },
+      "00985B": {
+        "allowed": true,
+        "nextDayLimit": 212250,
+        "note": null
+      },
+      "00986A": {
+        "allowed": true,
+        "nextDayLimit": 9956,
+        "note": null
+      },
+      "00987A": {
+        "allowed": true,
+        "nextDayLimit": 38160,
+        "note": null
+      },
+      "00988A": {
+        "allowed": true,
+        "nextDayLimit": 793359,
+        "note": null
+      },
+      "00989A": {
+        "allowed": true,
+        "nextDayLimit": 16529,
+        "note": null
+      },
+      "00990A": {
+        "allowed": true,
+        "nextDayLimit": 594130,
+        "note": null
+      },
+      "00991A": {
+        "allowed": true,
+        "nextDayLimit": 1114979,
+        "note": null
+      },
+      "00991B": {
+        "allowed": true,
+        "nextDayLimit": 65082,
+        "note": null
+      },
+      "00992A": {
+        "allowed": true,
+        "nextDayLimit": 566738,
+        "note": null
+      },
+      "00993A": {
+        "allowed": true,
+        "nextDayLimit": 187147,
+        "note": null
+      },
+      "00994A": {
+        "allowed": true,
+        "nextDayLimit": 66672,
+        "note": null
+      },
+      "00995A": {
+        "allowed": true,
+        "nextDayLimit": 68258,
+        "note": null
+      },
+      "00996A": {
+        "allowed": true,
+        "nextDayLimit": 71099,
+        "note": null
+      },
+      "00997A": {
+        "allowed": true,
+        "nextDayLimit": 282219,
+        "note": null
+      },
+      "00999A": {
+        "allowed": true,
+        "nextDayLimit": 259129,
+        "note": null
+      }
+    }
+  },
   "sources": {
     "index": {},
     "listed": {
-      "1314|上市": {
-        "2026-04": {
-          "fetched": 19
-        },
-        "2026-07": {
-          "fetched": 22
-        }
-      },
-      "2816|上市": {
-        "2026-04": {
-          "fetched": 20
-        }
-      },
       "3311|上市": {
         "2026-06": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=3311: HTTP 307"
-        }
-      },
-      "2105|上市": {
-        "2026-09": {
-          "fetched": 14
-        },
-        "2026-06": {
           "fetched": 21
-        }
-      },
-      "2106|上市": {
-        "2026-09": {
-          "fetched": 14
-        },
-        "2026-08": {
-          "fetched": 21
-        },
-        "2026-06": {
-          "fetched": 21
-        },
-        "2026-04": {
-          "fetched": 20
         }
       },
       "9934|上市": {
-        "2026-08": {
-          "fetched": 21
-        },
-        "2026-09": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=9934: HTTP 307"
-        },
-        "2026-06": {
-          "fetched": 21
-        },
-        "2026-04": {
+        "2026-05": {
           "fetched": 20
         },
-        "2026-05": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260501&stockNo=9934: HTTP 307"
+        "2026-09": {
+          "fetched": 14
         }
       },
       "9938|上市": {
         "2026-09": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=9938: HTTP 307"
-        },
-        "2026-08": {
-          "fetched": 21
-        },
-        "2026-06": {
-          "fetched": 21
-        },
-        "2026-05": {
-          "fetched": 20
-        },
-        "2026-07": {
-          "fetched": 22
-        },
+          "fetched": 14
+        }
+      },
+      "1308|上市": {
         "2026-04": {
           "fetched": 20
         }
       },
       "6153|上市": {
-        "2026-05": {
-          "fetched": 20
-        },
-        "2026-07": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=6153: HTTP 307"
-        }
-      },
-      "2845|上市": {
-        "2026-09": {
-          "fetched": 14
-        },
-        "2026-08": {
-          "fetched": 21
-        },
         "2026-07": {
           "fetched": 22
-        },
-        "2026-06": {
-          "fetched": 21
-        },
-        "2026-05": {
-          "fetched": 20
-        },
-        "2026-04": {
-          "fetched": 20
-        }
-      },
-      "1308|上市": {
-        "2026-09": {
-          "fetched": 14
-        },
-        "2026-06": {
-          "fetched": 21
-        },
-        "2026-05": {
-          "fetched": 20
-        },
-        "2026-04": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260401&stockNo=1308: HTTP 307"
-        }
-      },
-      "1304|上市": {
-        "2026-09": {
-          "fetched": 14
-        },
-        "2026-07": {
-          "fetched": 22
-        },
-        "2026-08": {
-          "fetched": 21
-        },
-        "2026-05": {
-          "fetched": 20
-        },
-        "2026-04": {
-          "fetched": 20
-        },
-        "2026-06": {
-          "fetched": 21
         }
       },
       "1608|上市": {
-        "2026-09": {
-          "fetched": 14
-        },
-        "2026-07": {
-          "fetched": 22
-        },
-        "2026-06": {
-          "fetched": 21
-        },
-        "2026-05": {
-          "fetched": 20
-        },
-        "2026-04": {
-          "fetched": 20
-        },
         "2026-08": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=1608: HTTP 307"
-        }
-      },
-      "6272|上市": {
-        "2026-04": {
-          "fetched": 20
+          "fetched": 21
         }
       },
       "1536|上市": {
-        "2026-08": {
-          "fetched": 21
-        },
-        "2026-06": {
-          "fetched": 21
-        },
-        "2026-05": {
-          "fetched": 20
-        },
         "2026-07": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=1536: HTTP 307"
-        }
-      },
-      "2913|上市": {
-        "2026-08": {
-          "fetched": 21
-        },
-        "2026-04": {
-          "fetched": 20
-        }
-      },
-      "6994|上市": {
-        "2026-08": {
-          "fetched": 21
-        },
-        "2026-05": {
-          "fetched": 20
-        },
-        "2026-04": {
-          "fetched": 20
+          "fetched": 22
         }
       },
       "1722|上市": {
-        "2026-08": {
-          "fetched": 21
-        },
-        "2026-06": {
-          "fetched": 21
-        },
-        "2026-05": {
-          "fetched": 20
-        },
-        "2026-04": {
-          "fetched": 20
-        },
         "2026-09": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=1722: HTTP 307"
+          "fetched": 14
         }
       }
     },
     "otc": {}
   },
-  "skipped": [
-    "3311|上市 2026-06: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=3311: HTTP 307",
-    "9934|上市 2026-09: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=9934: HTTP 307",
-    "9934|上市 2026-05: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260501&stockNo=9934: HTTP 307",
-    "9938|上市 2026-09: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=9938: HTTP 307",
-    "6153|上市 2026-07: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=6153: HTTP 307",
-    "1308|上市 2026-04: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260401&stockNo=1308: HTTP 307",
-    "1608|上市 2026-08: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=1608: HTTP 307",
-    "1536|上市 2026-07: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=1536: HTTP 307",
-    "1722|上市 2026-09: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=1722: HTTP 307"
-  ]
+  "skipped": []
 }

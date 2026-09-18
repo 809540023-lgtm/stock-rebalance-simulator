@@ -12,6 +12,7 @@
 // file are not re-fetched, and fetching uses bounded concurrency, so a daily
 // run only refetches the most recent month plus any newly added candidates.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { parseTwseShortEligibility } from "./analyze-intraday-market.js";
 
 export const OHLCV_VERSION = "ohlcv-history-v1";
 export const DEFAULT_OHLCV_CONFIG = {
@@ -301,6 +302,29 @@ export async function refreshOhlcvHistory({ bullish, bearish, existingIndex, exi
   return { universe, index: mergeBars([], index), stocks, names, sources, skipped };
 }
 
+// Fetch the latest TWSE margin-short (MI_MARGN) report and store per-code short
+// availability so the report can confirm a short candidate is actually shortable
+// (borrowable) before labeling it tradable. This is the official short-eligibility
+// proxy; a specific broker's live inventory must still be confirmed at order time.
+async function fetchShortAvailability(asOfDate) {
+  const compact = (value) => value.replaceAll("-", "");
+  const byCode = {};
+  let date = asOfDate;
+  for (let attempt = 0; attempt < 5; attempt += 1) {
+    try {
+      const url = `${TWSE_BASE}/rwd/zh/marginTrading/MI_MARGN?response=json&date=${compact(date)}&selectType=ALL`;
+      const payload = await fetchJson(url);
+      const map = parseTwseShortEligibility(payload);
+      for (const [code, info] of map) byCode[code] = { allowed: info.allowed, nextDayLimit: info.nextDayLimit, note: info.note };
+      if (Object.keys(byCode).length) return { date, byCode };
+    } catch {
+      // not yet published for this date; step back one calendar day
+    }
+    date = addDays(date, -1);
+  }
+  return { date: null, byCode: {} };
+}
+
 export async function saveOhlcvHistory() {
   const [bullish, bearish, existing] = await Promise.all([
     readJson(new URL("bullish-latest.json", SHARED_DIR)),
@@ -325,11 +349,14 @@ export async function saveOhlcvHistory() {
   const allDates = Object.values(stocks).flat().map((bar) => bar.date).sort();
   const asOfDate = allDates.at(-1) || index.at(-1)?.date || new Date().toISOString().slice(0, 10);
 
+  const shortAvailability = await fetchShortAvailability(asOfDate);
+
   const history = {
-    meta: { version: OHLCV_VERSION, updatedAt: new Date().toISOString(), asOfDate },
+    meta: { version: OHLCV_VERSION, updatedAt: new Date().toISOString(), asOfDate, shortEligibilityDate: shortAvailability.date },
     index,
     stocks,
     names: { ...prevNames, ...names },
+    shortAvailability,
     sources,
     skipped: skipped.slice(0, 50)
   };
@@ -341,6 +368,7 @@ export async function saveOhlcvHistory() {
     indexBars: index.length,
     universe: universe.length,
     stockKeys: Object.keys(stocks),
+    shortEligibilityDate: shortAvailability.date,
     skipped
   };
 }

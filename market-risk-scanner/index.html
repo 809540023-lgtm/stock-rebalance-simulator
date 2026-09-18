@@ -269,9 +269,12 @@
       const score = Number(row.score) || 0;
       const chips = (row.reasons || []).map((reason) => "<span class=\"reason-chip " + tone + "\">" + escapeHtml(reason) + "</span>").join("");
       const pred = row.predictedChangePct != null ? " · 預估 " + percent(row.predictedChangePct) : "";
+      const shortBadge = row.side === "short"
+        ? (row.shortTradable === true ? "<span class=\"reason-chip green\">🟢確認融券可放空</span>" : "<span class=\"reason-chip red\">🔴未確認融券庫存</span>" + (row.shortNextDayLimit != null ? " <span class=\"mini\">下次限額 " + number(row.shortNextDayLimit, 0) + "</span>" : ""))
+        : "";
       const action = row.action ? "<div style=\"margin:6px 14px 0;font-size:12px;color:" + (tone === "green" ? "#065f46" : "#9f1239") + ";font-weight:700\">行動：" + escapeHtml(row.action) + "</div>" : "";
       const caution = row.caution ? "<div style=\"margin:6px 14px 10px;font-size:11px;color:#b45309;line-height:1.45\">⚠ " + escapeHtml(row.caution) + "</div>" : "";
-      return "<div class=\"card\"><div class=\"card-head\"><div><div class=\"card-title\">#" + (row.rank != null ? row.rank : index + 1) + " " + escapeHtml(row.code) + " " + escapeHtml(row.name) + "</div><div class=\"card-sub\">" + escapeHtml(row.market) + " · 參考價 " + number(row.close) + " 元" + pred + "</div></div><div class=\"card-score " + tone + "\">" + number(score, 0) + "</div></div><div class=\"score-track\"><div class=\"score-fill " + tone + "\" style=\"width:" + Math.max(2, Math.min(100, score)) + "%\"></div></div>" + action + "<div class=\"reasons\">" + chips + "</div>" + caution + "</div>";
+      return "<div class=\"card\"><div class=\"card-head\"><div><div class=\"card-title\">#" + (row.rank != null ? row.rank : index + 1) + " " + escapeHtml(row.code) + " " + escapeHtml(row.name) + "</div><div class=\"card-sub\">" + escapeHtml(row.market) + " · 參考價 " + number(row.close) + " 元" + pred + "</div></div><div class=\"card-score " + tone + "\">" + number(score, 0) + "</div></div><div class=\"score-track\"><div class=\"score-fill " + tone + "\" style=\"width:" + Math.max(2, Math.min(100, score)) + "%\"></div></div>" + shortBadge + "<div class=\"reasons\">" + chips + "</div>" + action + caution + "</div>";
     }
     function renderTrades() {
       const bullish = (marketData?.candidates?.bullish || []).slice(0, 10);

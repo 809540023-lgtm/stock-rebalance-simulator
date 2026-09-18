@@ -97,4 +97,6 @@ test("pre-open report tab renders the latest research report", async ({ page }) 
   await expect(page.locator("#poLongCards .card")).not.toHaveCount(0);
   await expect(page.locator("#poShortCards .card")).not.toHaveCount(0);
   await expect(page.locator("#poStatus")).not.toHaveText("—");
+  // short cards carry a margin-short tradability badge (🟢 or 🔴).
+  await expect(page.locator("#poShortCards .card").first().locator(".reason-chip")).not.toHaveCount(0);
 });

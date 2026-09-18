@@ -117,3 +117,51 @@ test("buildStrictPreopenReport falls back when the index is not aligned", () => 
   const report = buildStrictPreopenReport({ bullish: alignedBullish, bearish: alignedBearish, ohlcv, config });
   assert.equal(report.modelStatus, "legacy-snapshot-plus-preopen-report");
 });
+
+function makeBearBars(dataDate, n = 65, start = 35) {
+  const bars = [];
+  for (let i = 0; i < n; i += 1) {
+    const close = Number((start - i * 0.25).toFixed(2));
+    bars.push({
+      date: isoAddDays(dataDate, -(n - 1 - i)),
+      open: Number((close + 0.1).toFixed(2)),
+      high: Number((Math.max(close, close + 0.1) + 0.2).toFixed(2)),
+      low: Number(Math.max(0.01, (close - 0.2)).toFixed(2)),
+      close,
+      volume: 700000
+    });
+  }
+  return bars;
+}
+
+test("short candidates are gated by official margin-short availability", () => {
+  const bearishAligned = { dataDate: "2026-08-17", stale: false, candidates: [{ code: "3333", name: "丙", market: "上市", endPrice: 18, score: 80, tradingEligible: true, reasons: ["走弱"] }] };
+  const ohlcv = {
+    meta: { asOfDate: "2026-08-17" },
+    index: makeIndex("2026-08-17"),
+    stocks: { "3333|上市": makeBearBars("2026-08-17") },
+    names: { "3333|上市": "丙" },
+    shortAvailability: { date: "2026-08-17", byCode: { "3333": { allowed: false, nextDayLimit: 0, note: null } } }
+  };
+  const report = buildStrictPreopenReport({ bullish: alignedBullish, bearish: bearishAligned, ohlcv, config });
+  assert.equal(report.modelStatus, "preopen-research-engine-full");
+  assert.ok(report.shortCandidates.length >= 1);
+  assert.equal(report.shortCandidates[0].shortTradable, false);
+  assert.deepEqual(report.unconfirmedShortCodes, ["3333"]);
+  assert.ok(report.warnings.some((w) => w.includes("尚未確認融券可放空")));
+});
+
+test("short candidates are labeled tradable when margin-short availability is allowed", () => {
+  const bearishAligned = { dataDate: "2026-08-17", stale: false, candidates: [{ code: "3333", name: "丙", market: "上市", endPrice: 18, score: 80, tradingEligible: true, reasons: ["走弱"] }] };
+  const ohlcv = {
+    meta: { asOfDate: "2026-08-17" },
+    index: makeIndex("2026-08-17"),
+    stocks: { "3333|上市": makeBearBars("2026-08-17") },
+    names: { "3333|上市": "丙" },
+    shortAvailability: { date: "2026-08-17", byCode: { "3333": { allowed: true, nextDayLimit: 1200000, note: null } } }
+  };
+  const report = buildStrictPreopenReport({ bullish: alignedBullish, bearish: bearishAligned, ohlcv, config });
+  assert.equal(report.shortCandidates[0].shortTradable, true);
+  assert.equal(report.shortCandidates[0].shortNextDayLimit, 1200000);
+  assert.deepEqual(report.unconfirmedShortCodes, []);
+});

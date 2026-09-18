@@ -1,5 +1,15 @@
 # AI Changelog
 
+## 2026-09-19 Copilot (short availability confirmation in the pre-open report)
+
+- `persist-ohlcv-history.js` now fetches the official TWSE `MI_MARGN` margin-short report (stepping back up to 5 days until published) and stores `shortAvailability: { date, byCode: { code: { allowed, nextDayLimit, note } } }` plus `meta.shortEligibilityDate` in `data/shared/ohlcv-history.json`.
+- `build-preopen-report.js` `buildStrictPreopenReport` now annotates every short candidate with `shortTradable`, `shortEligibilityDate`, `shortNextDayLimit`, and `shortNote`, setting `tradable` only when the next-session short limit > 0 with no `X` suspension note. Unconfirmed codes are collected in `unconfirmedShortCodes` and reported as a warning; report-level `shortEligibilityDate` reflects the confirmation date.
+- Scanner UI (`poCard`) shows a 🟢「確認融券可放空」/ 🔴「未確認融券庫存」 badge plus next-session limit on short candidate cards in the 開盤前報告 tab.
+- Verified live: 9/10 shorts confirmed tradable; 2601 益航 flagged `shortTradable=false` (limit 0, note `OX`) and listed as unconfirmed with a warning.
+- Tests: 2 new `buildStrictPreopenReport` short-gating cases; updated Playwright pre-open tab case to assert a short badge exists. Full suite: 84 unit + 7 Playwright pass.
+- Caveat: official MI_MARGN short availability is not a specific broker's live inventory; per-broker borrow/借券 confirmation is still required at order time.
+- Files changed: `market-risk-scanner/scripts/persist-ohlcv-history.js`, `market-risk-scanner/scripts/build-preopen-report.js`, `market-risk-scanner/index.html`, `tests/preopen-report.test.js`, `tests/market-risk-scanner.spec.js`, `TASK_QUEUE.md`, `PROJECT_STATE.md`, `AI_CHANGELOG.md`, regenerated `data/shared/ohlcv-history.json` and `data/shared/preopen-report.json`.
+
 ## 2026-09-18 Copilot (persist OHLCV history for the strict pre-open engine)
 
 - Added `market-risk-scanner/scripts/persist-ohlcv-history.js`: accumulates 61+ trading days of daily OHLCV per candidate stock into `data/shared/ohlcv-history.json` (plus TAIEX index bars). Listed (上市) via official TWSE `STOCK_DAY` monthly endpoint; OTC (上櫃) via TPEx OpenAPI `tpex_mainboard_daily_close_quotes` (whole-market per day, includes Open/High/Low). Persistence is incremental (`monthsNotPresent` skips months already stored) and uses bounded concurrency (`mapLimit`). Candidate universe caps at top 30 bullish + 30 bearish.
