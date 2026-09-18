@@ -100,12 +100,12 @@
       "netPct": -2.113339295428699
     },
     {
-      "simulatedAt": "2026-09-18T05:00:37.942Z",
+      "simulatedAt": "2026-09-18T05:32:31.646Z",
       "localDate": "2026-09-18",
-      "localTime": "13:00:36",
+      "localTime": "13:32:30",
       "reportDataDate": "2026-09-17",
       "marketDate": "2026-09-18",
-      "quoteTime": "13:00:00",
+      "quoteTime": "13:30:00",
       "strategy": {
         "takeProfitPct": 6,
         "stopLossPct": 4,
@@ -123,14 +123,14 @@
       "marginLongPct": 40,
       "marginShortPct": 90,
       "totalBuyAmount": 424200,
-      "totalSellAmount": 432700,
-      "totalCommission": 1223.4,
-      "totalTax": 637.36,
-      "grossPnl": -7100,
-      "grossPct": -2.340877994098356,
-      "fees": 1860.74,
-      "netPnl": -8960.74,
-      "netPct": -2.954366479286533
+      "totalSellAmount": 433150,
+      "totalCommission": 1224.17,
+      "totalTax": 638.2,
+      "grossPnl": -6450,
+      "grossPct": -2.126572262244282,
+      "fees": 1862.35,
+      "netPnl": -8312.35,
+      "netPct": -2.740591154118798
     }
   ]
 }
