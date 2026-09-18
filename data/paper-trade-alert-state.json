@@ -15,6 +15,38 @@
       "key": "3346-20260812:target-5",
       "type": "target",
       "title": "獲利 5% 目標已觸及"
+    },
+    {
+      "code": "1446",
+      "name": "宏和",
+      "buyPrice": 13.95,
+      "quantity": 1000,
+      "latest": 13.75,
+      "high": 13.85,
+      "observed": 13.75,
+      "targetPrice": 14.65,
+      "returnPct": -1.4336917562723928,
+      "quoteDate": "2026-09-18",
+      "detectedAt": "2026-09-18T05:30:22.315Z",
+      "key": "1446-20260812:evaluation-2026-08-17",
+      "type": "evaluation",
+      "title": "三個交易日接近收盤投報率"
+    },
+    {
+      "code": "3346",
+      "name": "麗清",
+      "buyPrice": 21.2,
+      "quantity": 1000,
+      "latest": 22.3,
+      "high": 22.3,
+      "observed": 22.3,
+      "targetPrice": 22.3,
+      "returnPct": 5.188679245283034,
+      "quoteDate": "2026-09-18",
+      "detectedAt": "2026-09-18T05:30:22.315Z",
+      "key": "3346-20260812:evaluation-2026-08-17",
+      "type": "evaluation",
+      "title": "三個交易日接近收盤投報率"
     }
   ]
 }
