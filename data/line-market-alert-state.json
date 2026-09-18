@@ -31,6 +31,22 @@
       "limitPrice": 126.5,
       "triggerPrice": 126.5,
       "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-09-18",
+      "code": "8996",
+      "name": "高力",
+      "latest": 1430,
+      "high": 1430,
+      "low": 1330,
+      "previousClose": 1300,
+      "changePct": 10,
+      "detectedAt": "2026-09-18T02:50:10.988Z",
+      "key": "2026-09-18:8996:limit-up",
+      "type": "limit-up",
+      "limitPrice": 1430,
+      "triggerPrice": 1430,
+      "trigger": "最新成交價等於漲停價"
     }
   ]
 }
