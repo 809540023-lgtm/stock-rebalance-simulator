@@ -88,3 +88,13 @@ test("candidate simulation tab renders the latest snapshot", async ({ page }) =>
   await expect(page.locator("#simLongBody").locator("xpath=ancestor::table").first().getByRole("columnheader", { name: "手續費" })).toBeVisible();
   await expect(page.locator("#simLongBody")).toContainText(/\$\d+/);
 });
+
+test("pre-open report tab renders the latest research report", async ({ page }) => {
+  await page.goto("/market-risk-scanner/index.html");
+  await page.getByRole("button", { name: "開盤前報告" }).click();
+  await expect(page.locator("#panel-preopen")).toHaveClass(/active/);
+  await expect(page.locator("#poDate")).not.toHaveText("—");
+  await expect(page.locator("#poLongCards .card")).not.toHaveCount(0);
+  await expect(page.locator("#poShortCards .card")).not.toHaveCount(0);
+  await expect(page.locator("#poStatus")).not.toHaveText("—");
+});

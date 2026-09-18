@@ -60,7 +60,7 @@
 - [x] Keep the published report capped at 5 long candidates and 10 short candidates, and filter out legacy rows that are ineligible, DR listings, or direction-conflicting with the OLS prediction.
 - [ ] Persist 61+ trading days of OHLCV history per stock so `preopen-research.js` can fully replace the legacy snapshot ranking in the published report.
 - [ ] Add broker-side short inventory / borrow availability confirmation before labeling any short candidate as tradable.
-- [ ] Add a UI panel for `preopen-report.json` so non-technical users can view the 07:00 long/short report directly on the scanner page.
+- [x] Add a UI panel for `preopen-report.json` so non-technical users can view the 07:00 long/short report directly on the scanner page.
 
 ## Priority 6: Daily Pre-open Candidate Intraday Simulator
 

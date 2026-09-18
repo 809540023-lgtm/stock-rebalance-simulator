@@ -1,6 +1,6 @@
 # Project State
 
-Last updated: 2026-09-15
+Last updated: 2026-09-18
 
 ## Purpose
 
@@ -70,9 +70,12 @@ The project is a Taiwan stock research and paper-trading system. It contains ass
 - A mobile-friendly page `market-risk-scanner/today-orders.html` lets users enter daily orders on a phone; it shares the same localStorage records.
 - Note: the TAIEX index for the current month is only available after month-end, so the index series may lag the stock quotes.
 
+- **Visual Interface (Priority 3)**
+
 ## Visual Interface (Priority 3)
 
 - `market-risk-scanner/index.html` has four tabs: 多頭候選, 空頭候選, 實際持倉, 歷史績效.
+- The "開盤前報告" tab renders `data/shared/preopen-report.json` for non-technical users: data date, generated time, engine status, candidate counts (long/short), filter conditions (price ceiling, min 20-day volume/turnover), warnings, and the long (watch-buy) / short (watch-short) research candidate cards with score, predicted change, reasons, action, and caution. Fetch is wired into `load()`, and the tab re-renders on click.
 - The holdings tab reads `data/paper-trade-positions.json` and `data/paper-trade-latest.json`, showing buy/current price and estimated P/L, separate from unfilled candidates.
 - The history tab reads `data/shared/evaluation-summary.json` and shows model summaries and benchmark comparison.
 - The status line shows the snapshot generation timestamp and stale-data warnings; candidate cards show per-rule reasons.

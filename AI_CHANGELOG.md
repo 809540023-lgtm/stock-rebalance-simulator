@@ -1,5 +1,13 @@
 # AI Changelog
 
+## 2026-09-18 Copilot (pre-open report UI panel)
+
+- Added a "開盤前報告" tab to `market-risk-scanner/index.html` (`panel-preopen`) so non-technical users can view the 07:00 research report directly on the scanner page. It renders `data/shared/preopen-report.json`: data date, generation time, engine status, long/short candidate counts, filter conditions (price ceiling, min 20-day volume/turnover), warnings, and long (`watch-buy`) / short (`watch-short`) candidate cards with rank, score, predicted change, reasons, action, and caution. Fetch wired into `load()`; the tab re-renders on click.
+- Added `renderPreopen()` + `poCard()` helpers; added `preopenData` state.
+- Added `tests/market-risk-scanner.spec.js` case "pre-open report tab renders the latest research report".
+- Tests run: `node --test tests/*.test.js` (70 pass) and `npx playwright test tests/market-risk-scanner.spec.js --project=desktop` (7 pass, incl. the new pre-open tab case).
+- Files changed: `market-risk-scanner/index.html`, `tests/market-risk-scanner.spec.js`, `PROJECT_STATE.md`, `TASK_QUEUE.md`, `AI_CHANGELOG.md`.
+
 ## 2026-09-18 Copilot (weekly strategy summary)
 
 - Added `scripts/weekly-strategy-summary.js`: aggregates every day in `data/preopen-simulation-history.json` into cumulative net P/L, total return %, win rate, expected value (avg daily), max drawdown (TWD and %), and exit breakdown; renders a Chinese LINE-friendly summary. Writes `data/shared/strategy-weekly-latest.json` (overwrite) + `strategy-weekly-history.json` (append), and pushes the summary to LINE via job-level env credentials.
