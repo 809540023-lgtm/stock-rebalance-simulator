@@ -1,15 +1,15 @@
 {
   "version": "preopen-research-v1",
-  "generatedAt": "2026-09-17T00:53:33.286Z",
+  "generatedAt": "2026-09-18T14:22:33.202Z",
   "timezone": "Asia/Taipei",
   "intendedRunTime": "07:00",
-  "dataDate": "2026-09-17",
+  "dataDate": "2026-09-18",
   "sourceFiles": [
-    "data/shared/bullish-latest.json",
-    "data/shared/bearish-latest.json"
+    "data/shared/ohlcv-history.json"
   ],
-  "modelStatus": "legacy-snapshot-plus-preopen-report",
-  "nextUpgrade": "保存 61 日以上 OHLC 歷史後，改用 preopen-research.js 的完整特徵引擎直接排名。",
+  "modelStatus": "preopen-research-engine-full",
+  "nextUpgrade": "",
+  "engineDetail": "以 60 檔候選的 118 日 OHLCV 歷史（asOf 2026-09-18）直接用嚴格特徵引擎排名。",
   "config": {
     "longLimit": 5,
     "shortLimit": 10,
@@ -24,19 +24,20 @@
     {
       "rank": 1,
       "side": "long",
-      "code": "6909",
-      "name": "創控",
+      "code": "9945",
+      "name": "潤泰新",
       "market": "上市",
-      "close": 41.7,
+      "close": 28.95,
       "score": 100,
-      "predictedChangePct": 0.79,
+      "predictedChangePct": null,
       "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "相對大盤強勢"
+        "短線站回強勢排列",
+        "10 日斜率轉正",
+        "脫離 20 日低點",
+        "下跌後轉穩",
+        "5 日相對大盤轉強",
+        "近 10 日上漲量較強",
+        "未嚴重偏離季線"
       ],
       "action": "watch-buy",
       "caution": "需等開盤後成交價與停損停利條件確認。"
@@ -44,19 +45,19 @@
     {
       "rank": 2,
       "side": "long",
-      "code": "3591",
-      "name": "艾笛森",
+      "code": "6133",
+      "name": "金橋",
       "market": "上市",
-      "close": 23.65,
-      "score": 100,
-      "predictedChangePct": 2.24,
+      "close": 27.45,
+      "score": 86,
+      "predictedChangePct": null,
       "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善"
+        "短線站回強勢排列",
+        "10 日斜率轉正",
+        "脫離 20 日低點",
+        "5 日相對大盤轉強",
+        "近 10 日上漲量較強",
+        "未嚴重偏離季線"
       ],
       "action": "watch-buy",
       "caution": "需等開盤後成交價與停損停利條件確認。"
@@ -64,19 +65,19 @@
     {
       "rank": 3,
       "side": "long",
-      "code": "2838",
-      "name": "聯邦銀",
+      "code": "2489",
+      "name": "瑞軒",
       "market": "上市",
-      "close": 21.55,
-      "score": 100,
-      "predictedChangePct": 0.32,
+      "close": 44.15,
+      "score": 86,
+      "predictedChangePct": null,
       "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善"
+        "短線站回強勢排列",
+        "10 日斜率轉正",
+        "脫離 20 日低點",
+        "5 日相對大盤轉強",
+        "近 10 日上漲量較強",
+        "未嚴重偏離季線"
       ],
       "action": "watch-buy",
       "caution": "需等開盤後成交價與停損停利條件確認。"
@@ -84,19 +85,19 @@
     {
       "rank": 4,
       "side": "long",
-      "code": "2880",
-      "name": "華南金",
+      "code": "1528",
+      "name": "恩德",
       "market": "上市",
-      "close": 47.35,
-      "score": 100,
-      "predictedChangePct": 0.34,
+      "close": 24.6,
+      "score": 86,
+      "predictedChangePct": null,
       "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善"
+        "短線站回強勢排列",
+        "10 日斜率轉正",
+        "脫離 20 日低點",
+        "5 日相對大盤轉強",
+        "近 10 日上漲量較強",
+        "未嚴重偏離季線"
       ],
       "action": "watch-buy",
       "caution": "需等開盤後成交價與停損停利條件確認。"
@@ -104,19 +105,19 @@
     {
       "rank": 5,
       "side": "long",
-      "code": "2851",
-      "name": "中再保",
+      "code": "2530",
+      "name": "華建",
       "market": "上市",
-      "close": 46.35,
-      "score": 100,
-      "predictedChangePct": 0.5,
+      "close": 20.8,
+      "score": 86,
+      "predictedChangePct": null,
       "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "上漲量能改善",
-        "相對大盤強勢"
+        "短線站回強勢排列",
+        "10 日斜率轉正",
+        "脫離 20 日低點",
+        "5 日相對大盤轉強",
+        "近 10 日上漲量較強",
+        "未嚴重偏離季線"
       ],
       "action": "watch-buy",
       "caution": "需等開盤後成交價與停損停利條件確認。"
@@ -126,202 +127,212 @@
     {
       "rank": 1,
       "side": "short",
-      "code": "6994",
-      "name": "富威電力",
+      "code": "2102",
+      "name": "泰豐",
       "market": "上市",
-      "close": 27,
+      "close": 17.25,
       "score": 100,
-      "predictedChangePct": -6.37,
+      "predictedChangePct": null,
       "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足"
+        "短線空頭排列",
+        "10 日斜率向下",
+        "逼近或跌破 20 日低點",
+        "5/20 日同步轉弱",
+        "相對大盤落後",
+        "下跌量較強",
+        "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
     },
     {
       "rank": 2,
       "side": "short",
-      "code": "6405",
-      "name": "悅城",
+      "code": "1201",
+      "name": "味全",
       "market": "上市",
-      "close": 37.6,
+      "close": 11.55,
       "score": 100,
-      "predictedChangePct": -1.28,
+      "predictedChangePct": null,
       "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足"
+        "短線空頭排列",
+        "10 日斜率向下",
+        "逼近或跌破 20 日低點",
+        "5/20 日同步轉弱",
+        "相對大盤落後",
+        "下跌量較強",
+        "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
     },
     {
       "rank": 3,
       "side": "short",
-      "code": "8105",
-      "name": "凌巨",
+      "code": "2023",
+      "name": "燁輝",
       "market": "上市",
-      "close": 14.4,
+      "close": 13.6,
       "score": 100,
-      "predictedChangePct": -1.18,
+      "predictedChangePct": null,
       "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 14.26 觸發"
+        "短線空頭排列",
+        "10 日斜率向下",
+        "逼近或跌破 20 日低點",
+        "5/20 日同步轉弱",
+        "相對大盤落後",
+        "下跌量較強",
+        "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
     },
     {
       "rank": 4,
       "side": "short",
-      "code": "2367",
-      "name": "燿華",
+      "code": "2498",
+      "name": "宏達電",
       "market": "上市",
-      "close": 39.8,
+      "close": 39.55,
       "score": 100,
-      "predictedChangePct": -1.63,
+      "predictedChangePct": null,
       "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 39.40 觸發"
+        "短線空頭排列",
+        "10 日斜率向下",
+        "逼近或跌破 20 日低點",
+        "5/20 日同步轉弱",
+        "相對大盤落後",
+        "下跌量較強",
+        "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
     },
     {
       "rank": 5,
       "side": "short",
-      "code": "2241",
-      "name": "艾姆勒",
+      "code": "2633",
+      "name": "台灣高鐵",
       "market": "上市",
-      "close": 33.65,
+      "close": 25.75,
       "score": 100,
-      "predictedChangePct": -0.89,
+      "predictedChangePct": null,
       "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足"
+        "短線空頭排列",
+        "10 日斜率向下",
+        "逼近或跌破 20 日低點",
+        "5/20 日同步轉弱",
+        "相對大盤落後",
+        "下跌量較強",
+        "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
     },
     {
       "rank": 6,
       "side": "short",
-      "code": "2457",
-      "name": "飛宏",
+      "code": "2601",
+      "name": "益航",
       "market": "上市",
-      "close": 21.65,
+      "close": 5.92,
       "score": 100,
-      "predictedChangePct": -2.03,
+      "predictedChangePct": null,
       "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足"
+        "短線空頭排列",
+        "10 日斜率向下",
+        "逼近或跌破 20 日低點",
+        "5/20 日同步轉弱",
+        "相對大盤落後",
+        "下跌量較強",
+        "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
     },
     {
       "rank": 7,
       "side": "short",
-      "code": "8473",
-      "name": "山林水",
+      "code": "1611",
+      "name": "中電",
       "market": "上市",
-      "close": 37.75,
+      "close": 11.1,
       "score": 100,
-      "predictedChangePct": -6.75,
+      "predictedChangePct": null,
       "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 37.37 觸發"
+        "短線空頭排列",
+        "10 日斜率向下",
+        "逼近或跌破 20 日低點",
+        "5/20 日同步轉弱",
+        "相對大盤落後",
+        "下跌量較強",
+        "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
     },
     {
       "rank": 8,
       "side": "short",
-      "code": "4960",
-      "name": "誠美材",
+      "code": "2105",
+      "name": "正新",
       "market": "上市",
-      "close": 20,
+      "close": 30,
       "score": 100,
-      "predictedChangePct": -1.9,
+      "predictedChangePct": null,
       "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足"
+        "短線空頭排列",
+        "10 日斜率向下",
+        "逼近或跌破 20 日低點",
+        "5/20 日同步轉弱",
+        "相對大盤落後",
+        "下跌量較強",
+        "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
     },
     {
       "rank": 9,
       "side": "short",
-      "code": "3041",
-      "name": "揚智",
+      "code": "2106",
+      "name": "建大",
       "market": "上市",
-      "close": 22.3,
+      "close": 16.4,
       "score": 100,
-      "predictedChangePct": -1.08,
+      "predictedChangePct": null,
       "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足"
+        "短線空頭排列",
+        "10 日斜率向下",
+        "逼近或跌破 20 日低點",
+        "5/20 日同步轉弱",
+        "相對大盤落後",
+        "下跌量較強",
+        "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
     },
     {
       "rank": 10,
       "side": "short",
-      "code": "1905",
-      "name": "華紙",
+      "code": "1536",
+      "name": "和大",
       "market": "上市",
-      "close": 13.1,
+      "close": 46.35,
       "score": 100,
-      "predictedChangePct": -0.76,
+      "predictedChangePct": null,
       "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足"
+        "短線空頭排列",
+        "10 日斜率向下",
+        "逼近或跌破 20 日低點",
+        "5/20 日同步轉弱",
+        "相對大盤落後",
+        "下跌量較強",
+        "跌破季線"
       ],
       "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
     }
   ]
 }

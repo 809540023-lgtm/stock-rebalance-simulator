@@ -1,5 +1,16 @@
 # AI Changelog
 
+## 2026-09-18 Copilot (persist OHLCV history for the strict pre-open engine)
+
+- Added `market-risk-scanner/scripts/persist-ohlcv-history.js`: accumulates 61+ trading days of daily OHLCV per candidate stock into `data/shared/ohlcv-history.json` (plus TAIEX index bars). Listed (上市) via official TWSE `STOCK_DAY` monthly endpoint; OTC (上櫃) via TPEx OpenAPI `tpex_mainboard_daily_close_quotes` (whole-market per day, includes Open/High/Low). Persistence is incremental (`monthsNotPresent` skips months already stored) and uses bounded concurrency (`mapLimit`). Candidate universe caps at top 30 bullish + 30 bearish.
+- Wired `node scripts/persist-ohlcv-history.js` into `.github/workflows/preopen-research-report.yml` before building the report (committed via the existing `data/shared` path).
+- Reworked `market-risk-scanner/scripts/build-preopen-report.js`: added `buildStrictPreopenReport()` that feeds `ohlcv-history.json` bars + index into `rankPreopenCandidates()` to rank via the full 61-bar engine when aligned through the report data date (`modelStatus: "preopen-research-engine-full"`), and falls back to the legacy snapshot ranking otherwise (`modelStatus: "legacy-snapshot-plus-preopen-report"`). `savePreopenReport()` now uses this path. Report now carries an `engineDetail` note and updated `sourceFiles`.
+- Added tests: `tests/preopen-ohlcv.test.js` (9 cases: ROC date conversion, TWSE/TPEx/TAIEX parsing, bar merge, month listing, `monthsNotPresent`, candidate universe) and 3 new `buildStrictPreopenReport` cases (strict path, legacy fallback, misaligned-index fallback).
+- Regenerated live `data/shared/ohlcv-history.json` (30+ candidate series, 116-118 bars each) and `preopen-report.json` via the strict engine.
+- Caveat: most intra-month trading days still fall back to legacy ranking because the current-month TAIEX history isn't published until month-end (documented index-lag); persistence ensures the engine activates once the index aligns.
+- Tests run: `node --test tests/preopen-ohlcv.test.js tests/preopen-report.test.js tests/preopen-research.test.js` (29 pass). Full suite pending final run.
+- Files changed: `market-risk-scanner/scripts/persist-ohlcv-history.js` (new), `market-risk-scanner/scripts/build-preopen-report.js`, `.github/workflows/preopen-research-report.yml`, `tests/preopen-ohlcv.test.js` (new), `tests/preopen-report.test.js`, `PROJECT_STATE.md`, `TASK_QUEUE.md`, `AI_CHANGELOG.md`, plus regenerated `data/shared/ohlcv-history.json` and `preopen-report.json`.
+
 ## 2026-09-18 Copilot (pre-open report UI panel)
 
 - Added a "開盤前報告" tab to `market-risk-scanner/index.html` (`panel-preopen`) so non-technical users can view the 07:00 research report directly on the scanner page. It renders `data/shared/preopen-report.json`: data date, generation time, engine status, long/short candidate counts, filter conditions (price ceiling, min 20-day volume/turnover), warnings, and long (`watch-buy`) / short (`watch-short`) candidate cards with rank, score, predicted change, reasons, action, and caution. Fetch wired into `load()`; the tab re-renders on click.

@@ -41,6 +41,7 @@ jobs:
           cd market-risk-scanner
           node scripts/update-risk-data.js "$start_date" "$end_date"
           node scripts/save-shared-candidates.js
+          node scripts/persist-ohlcv-history.js
           node scripts/build-preopen-report.js
 
       - name: Commit pre-open report

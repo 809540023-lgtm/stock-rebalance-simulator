@@ -1251,6 +1251,327 @@
       "warnings": [
         "此報告是研究候選清單，不是保證獲利，也不是自動下單。"
       ]
+    },
+    {
+      "date": "2026-09-18",
+      "generatedAt": "2026-09-18T14:09:25.820Z",
+      "longCount": 5,
+      "shortCount": 10,
+      "longCandidates": [
+        {
+          "rank": 1,
+          "side": "long",
+          "code": "9945",
+          "name": "",
+          "market": "上市",
+          "close": 28.95,
+          "score": 100,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線站回強勢排列",
+            "10 日斜率轉正",
+            "脫離 20 日低點",
+            "下跌後轉穩",
+            "5 日相對大盤轉強",
+            "近 10 日上漲量較強",
+            "未嚴重偏離季線"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        },
+        {
+          "rank": 2,
+          "side": "long",
+          "code": "6133",
+          "name": "",
+          "market": "上市",
+          "close": 27.45,
+          "score": 86,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線站回強勢排列",
+            "10 日斜率轉正",
+            "脫離 20 日低點",
+            "5 日相對大盤轉強",
+            "近 10 日上漲量較強",
+            "未嚴重偏離季線"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        },
+        {
+          "rank": 3,
+          "side": "long",
+          "code": "2489",
+          "name": "",
+          "market": "上市",
+          "close": 44.15,
+          "score": 86,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線站回強勢排列",
+            "10 日斜率轉正",
+            "脫離 20 日低點",
+            "5 日相對大盤轉強",
+            "近 10 日上漲量較強",
+            "未嚴重偏離季線"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        },
+        {
+          "rank": 4,
+          "side": "long",
+          "code": "1528",
+          "name": "",
+          "market": "上市",
+          "close": 24.6,
+          "score": 86,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線站回強勢排列",
+            "10 日斜率轉正",
+            "脫離 20 日低點",
+            "5 日相對大盤轉強",
+            "近 10 日上漲量較強",
+            "未嚴重偏離季線"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        },
+        {
+          "rank": 5,
+          "side": "long",
+          "code": "2530",
+          "name": "",
+          "market": "上市",
+          "close": 20.8,
+          "score": 86,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線站回強勢排列",
+            "10 日斜率轉正",
+            "脫離 20 日低點",
+            "5 日相對大盤轉強",
+            "近 10 日上漲量較強",
+            "未嚴重偏離季線"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        }
+      ],
+      "shortCandidates": [
+        {
+          "rank": 1,
+          "side": "short",
+          "code": "2102",
+          "name": "",
+          "market": "上市",
+          "close": 17.25,
+          "score": 100,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線空頭排列",
+            "10 日斜率向下",
+            "逼近或跌破 20 日低點",
+            "5/20 日同步轉弱",
+            "相對大盤落後",
+            "下跌量較強",
+            "跌破季線"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+        },
+        {
+          "rank": 2,
+          "side": "short",
+          "code": "1201",
+          "name": "",
+          "market": "上市",
+          "close": 11.55,
+          "score": 100,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線空頭排列",
+            "10 日斜率向下",
+            "逼近或跌破 20 日低點",
+            "5/20 日同步轉弱",
+            "相對大盤落後",
+            "下跌量較強",
+            "跌破季線"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+        },
+        {
+          "rank": 3,
+          "side": "short",
+          "code": "2023",
+          "name": "",
+          "market": "上市",
+          "close": 13.6,
+          "score": 100,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線空頭排列",
+            "10 日斜率向下",
+            "逼近或跌破 20 日低點",
+            "5/20 日同步轉弱",
+            "相對大盤落後",
+            "下跌量較強",
+            "跌破季線"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+        },
+        {
+          "rank": 4,
+          "side": "short",
+          "code": "2498",
+          "name": "",
+          "market": "上市",
+          "close": 39.55,
+          "score": 100,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線空頭排列",
+            "10 日斜率向下",
+            "逼近或跌破 20 日低點",
+            "5/20 日同步轉弱",
+            "相對大盤落後",
+            "下跌量較強",
+            "跌破季線"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+        },
+        {
+          "rank": 5,
+          "side": "short",
+          "code": "2633",
+          "name": "",
+          "market": "上市",
+          "close": 25.75,
+          "score": 100,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線空頭排列",
+            "10 日斜率向下",
+            "逼近或跌破 20 日低點",
+            "5/20 日同步轉弱",
+            "相對大盤落後",
+            "下跌量較強",
+            "跌破季線"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+        },
+        {
+          "rank": 6,
+          "side": "short",
+          "code": "2601",
+          "name": "",
+          "market": "上市",
+          "close": 5.92,
+          "score": 100,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線空頭排列",
+            "10 日斜率向下",
+            "逼近或跌破 20 日低點",
+            "5/20 日同步轉弱",
+            "相對大盤落後",
+            "下跌量較強",
+            "跌破季線"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+        },
+        {
+          "rank": 7,
+          "side": "short",
+          "code": "1611",
+          "name": "",
+          "market": "上市",
+          "close": 11.1,
+          "score": 100,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線空頭排列",
+            "10 日斜率向下",
+            "逼近或跌破 20 日低點",
+            "5/20 日同步轉弱",
+            "相對大盤落後",
+            "下跌量較強",
+            "跌破季線"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+        },
+        {
+          "rank": 8,
+          "side": "short",
+          "code": "9105",
+          "name": "",
+          "market": "上市",
+          "close": 8.37,
+          "score": 100,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線空頭排列",
+            "10 日斜率向下",
+            "逼近或跌破 20 日低點",
+            "5/20 日同步轉弱",
+            "相對大盤落後",
+            "下跌量較強",
+            "跌破季線"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+        },
+        {
+          "rank": 9,
+          "side": "short",
+          "code": "1305",
+          "name": "",
+          "market": "上市",
+          "close": 11.95,
+          "score": 86,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線空頭排列",
+            "10 日斜率向下",
+            "5/20 日同步轉弱",
+            "相對大盤落後",
+            "下跌量較強",
+            "跌破季線"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+        },
+        {
+          "rank": 10,
+          "side": "short",
+          "code": "3712",
+          "name": "",
+          "market": "上市",
+          "close": 20.6,
+          "score": 78,
+          "predictedChangePct": null,
+          "reasons": [
+            "短線空頭排列",
+            "10 日斜率向下",
+            "逼近或跌破 20 日低點",
+            "5/20 日同步轉弱",
+            "相對大盤落後"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制（本報告沿用既有快照資格門檻，未含即時庫存）。"
+        }
+      ],
+      "warnings": [
+        "此報告是研究候選清單，不是保證獲利，也不是自動下單。"
+      ]
     }
   ]
 }
