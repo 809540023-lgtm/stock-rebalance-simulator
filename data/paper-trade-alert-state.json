@@ -1,3 +1,20 @@
 {
-  "events": []
+  "events": [
+    {
+      "code": "3346",
+      "name": "麗清",
+      "buyPrice": 21.2,
+      "quantity": 1000,
+      "latest": null,
+      "high": 22.3,
+      "observed": 22.3,
+      "targetPrice": 22.3,
+      "returnPct": 5.188679245283034,
+      "quoteDate": "2026-09-18",
+      "detectedAt": "2026-09-18T01:18:11.245Z",
+      "key": "3346-20260812:target-5",
+      "type": "target",
+      "title": "獲利 5% 目標已觸及"
+    }
+  ]
 }
