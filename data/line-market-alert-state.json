@@ -15,6 +15,22 @@
       "limitPrice": 41.35,
       "triggerPrice": 41.35,
       "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-09-18",
+      "code": "4919",
+      "name": "新唐",
+      "latest": null,
+      "high": 126.5,
+      "low": 117,
+      "previousClose": 115,
+      "changePct": null,
+      "detectedAt": "2026-09-18T01:55:28.004Z",
+      "key": "2026-09-18:4919:limit-up",
+      "type": "limit-up",
+      "limitPrice": 126.5,
+      "triggerPrice": 126.5,
+      "trigger": "盤中最高價觸及漲停價"
     }
   ]
 }
