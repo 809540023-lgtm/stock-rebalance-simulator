@@ -43,6 +43,18 @@ The project is a Taiwan stock research and paper-trading system. It contains ass
 - A bearish continuation candidate requires recent weakness, a lower low, price below short moving averages, failed rebound, sufficient volume, normal trading eligibility, and a conditional breakdown trigger.
 - Do not chase a stock that already fell near limit-down; rebound risk is high.
 
+## Global Quant Strategy Reference (2026-09-19)
+
+`docs/global-quant-strategies.md` is a curated, source-cited reference of the strongest global quantitative trading strategies, with notes on retail feasibility and Taiwan (TWD) / short-selling constraints. Top findings relevant to this project:
+- **Cross-sectional momentum** (Jegadeesh-Titman): long leg is feasible in Taiwan via momentum screens/ETFs; the short leg is hard (margin-short eligibility, hard-to-borrow).
+- **Time-series momentum / trend following (CTA)**: the most retail-accessible long-run strategy; crisis alpha; typically via managed-futures funds/ETPs rather than DIY.
+- **Factor investing / smart beta** (value, quality, profitability, low-vol): the most retail-friendly; long-only, no shorting needed.
+- **Volatility risk premium** (selling options): steady premium but fat-left-tail crash risk; long side retail-feasible.
+- **Pairs trading / stat-arb, PEAD, merger arbitrage**: secondary; short-leg and fee-sensitive in Taiwan.
+- **HFT/market-making and Renaissance-style ML/stat-arb**: institution-only; not viable for retail.
+
+These are research references only — not guaranteed-profit signals. When integrating with the local pre-open engine, the Taiwan-specific short-sale gates (MI_MARGN / broker inventory) still apply.
+
 ## Bullish and Bearish Models (Priority 1)
 
 - `market-risk-scanner/scripts/models.js` implements two independent deterministic scores, separate from the decline-risk score.

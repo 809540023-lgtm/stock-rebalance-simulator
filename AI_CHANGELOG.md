@@ -1,5 +1,12 @@
 # AI Changelog
 
+## 2026-09-19 Copilot (global quant strategy reference)
+
+- Added `docs/global-quant-strategies.md`, a cited, curated reference of the strongest global quantitative trading strategies (momentum, trend/CTA, factor/smart beta, volatility risk premium, pairs/stat-arb, PEAD, merger arb, HFT/ML) with evidence levels (backtested vs live), capacity/decay, and retail/Taiwan short-selling feasibility notes.
+- Added a "## Global Quant Strategy Reference" section to `PROJECT_STATE.md` with the top findings and how they map to this Taiwan pre-open engine (short-sale gates still apply).
+- Context: the working copy was backed up to AG external drive and removed from the Mac; this canonical copy is on GitHub `origin/main`. Full backup: `/Volumes/ag/backup-all-2026-09-19_095609/`.
+- Files changed: `docs/global-quant-strategies.md` (new), `PROJECT_STATE.md`, `AI_CHANGELOG.md`.
+
 ## 2026-09-19 Copilot (short availability confirmation in the pre-open report)
 
 - `persist-ohlcv-history.js` now fetches the official TWSE `MI_MARGN` margin-short report (stepping back up to 5 days until published) and stores `shortAvailability: { date, byCode: { code: { allowed, nextDayLimit, note } } }` plus `meta.shortEligibilityDate` in `data/shared/ohlcv-history.json`.
