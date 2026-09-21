@@ -2198,6 +2198,319 @@
       "warnings": [
         "此報告是研究候選清單，不是保證獲利，也不是自動下單。"
       ]
+    },
+    {
+      "date": "2026-09-21",
+      "generatedAt": "2026-09-21T01:02:22.143Z",
+      "longCount": 5,
+      "shortCount": 10,
+      "longCandidates": [
+        {
+          "rank": 1,
+          "side": "long",
+          "code": "3591",
+          "name": "艾笛森",
+          "market": "上市",
+          "close": 23.65,
+          "score": 100,
+          "predictedChangePct": 2.24,
+          "reasons": [
+            "近期未創新低",
+            "低點墊高",
+            "短均線轉多",
+            "短均線上揚",
+            "站上短均線",
+            "上漲量能改善"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        },
+        {
+          "rank": 2,
+          "side": "long",
+          "code": "3652",
+          "name": "精聯",
+          "market": "上市",
+          "close": 33.75,
+          "score": 100,
+          "predictedChangePct": 0.56,
+          "reasons": [
+            "近期未創新低",
+            "低點墊高",
+            "短均線轉多",
+            "短均線上揚",
+            "站上短均線",
+            "上漲量能改善"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        },
+        {
+          "rank": 3,
+          "side": "long",
+          "code": "8476",
+          "name": "台境*",
+          "market": "上市",
+          "close": 19.75,
+          "score": 100,
+          "predictedChangePct": 0.81,
+          "reasons": [
+            "近期未創新低",
+            "低點墊高",
+            "短均線轉多",
+            "站上短均線",
+            "上漲量能改善",
+            "相對大盤強勢"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        },
+        {
+          "rank": 4,
+          "side": "long",
+          "code": "3518",
+          "name": "柏騰",
+          "market": "上市",
+          "close": 30.9,
+          "score": 100,
+          "predictedChangePct": 0,
+          "reasons": [
+            "近期未創新低",
+            "低點墊高",
+            "短均線轉多",
+            "短均線上揚",
+            "站上短均線",
+            "上漲量能改善"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        },
+        {
+          "rank": 5,
+          "side": "long",
+          "code": "1312",
+          "name": "國喬",
+          "market": "上市",
+          "close": 14.7,
+          "score": 100,
+          "predictedChangePct": 1.43,
+          "reasons": [
+            "近期未創新低",
+            "低點墊高",
+            "短均線轉多",
+            "短均線上揚",
+            "站上短均線",
+            "上漲量能改善"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        }
+      ],
+      "shortCandidates": [
+        {
+          "rank": 1,
+          "side": "short",
+          "code": "6153",
+          "name": "嘉聯益",
+          "market": "上市",
+          "close": 17,
+          "score": 100,
+          "predictedChangePct": -0.12,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 16.83 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 2,
+          "side": "short",
+          "code": "6550",
+          "name": "北極星藥業-KY",
+          "market": "上市",
+          "close": 9.92,
+          "score": 100,
+          "predictedChangePct": -1.01,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "反彈失敗",
+            "下跌量能放大",
+            "流動性充足"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 3,
+          "side": "short",
+          "code": "2498",
+          "name": "宏達電",
+          "market": "上市",
+          "close": 39.55,
+          "score": 100,
+          "predictedChangePct": -0.38,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "反彈失敗",
+            "下跌量能放大",
+            "流動性充足"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 4,
+          "side": "short",
+          "code": "6235",
+          "name": "華孚",
+          "market": "上市",
+          "close": 37.7,
+          "score": 100,
+          "predictedChangePct": -0.77,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 37.32 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 5,
+          "side": "short",
+          "code": "1305",
+          "name": "華夏",
+          "market": "上市",
+          "close": 11.95,
+          "score": 100,
+          "predictedChangePct": -0.25,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "反彈失敗",
+            "流動性充足",
+            "跌破 11.83 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 6,
+          "side": "short",
+          "code": "9934",
+          "name": "成霖",
+          "market": "上市",
+          "close": 9.81,
+          "score": 100,
+          "predictedChangePct": -3.77,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 9.71 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 7,
+          "side": "short",
+          "code": "2022",
+          "name": "聚亨",
+          "market": "上市",
+          "close": 7.19,
+          "score": 100,
+          "predictedChangePct": -1.53,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 7.12 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 8,
+          "side": "short",
+          "code": "1608",
+          "name": "華榮",
+          "market": "上市",
+          "close": 35.8,
+          "score": 100,
+          "predictedChangePct": -0.34,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 35.44 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 9,
+          "side": "short",
+          "code": "2105",
+          "name": "正新",
+          "market": "上市",
+          "close": 30,
+          "score": 100,
+          "predictedChangePct": -0.73,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 29.70 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 10,
+          "side": "short",
+          "code": "2106",
+          "name": "建大",
+          "market": "上市",
+          "close": 16.4,
+          "score": 100,
+          "predictedChangePct": -0.24,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 16.24 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        }
+      ],
+      "warnings": [
+        "此報告是研究候選清單，不是保證獲利，也不是自動下單。"
+      ]
     }
   ]
 }

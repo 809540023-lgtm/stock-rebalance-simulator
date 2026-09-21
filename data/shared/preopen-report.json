@@ -1,9 +1,9 @@
 {
   "version": "preopen-research-v1",
-  "generatedAt": "2026-09-20T00:59:12.523Z",
+  "generatedAt": "2026-09-21T01:02:22.143Z",
   "timezone": "Asia/Taipei",
   "intendedRunTime": "07:00",
-  "dataDate": "2026-09-20",
+  "dataDate": "2026-09-21",
   "sourceFiles": [
     "data/shared/bullish-latest.json",
     "data/shared/bearish-latest.json"
@@ -65,26 +65,6 @@
     {
       "rank": 3,
       "side": "long",
-      "code": "3518",
-      "name": "柏騰",
-      "market": "上市",
-      "close": 30.9,
-      "score": 100,
-      "predictedChangePct": 0,
-      "reasons": [
-        "近期未創新低",
-        "低點墊高",
-        "短均線轉多",
-        "短均線上揚",
-        "站上短均線",
-        "上漲量能改善"
-      ],
-      "action": "watch-buy",
-      "caution": "需等開盤後成交價與停損停利條件確認。"
-    },
-    {
-      "rank": 4,
-      "side": "long",
       "code": "8476",
       "name": "台境*",
       "market": "上市",
@@ -98,6 +78,26 @@
         "站上短均線",
         "上漲量能改善",
         "相對大盤強勢"
+      ],
+      "action": "watch-buy",
+      "caution": "需等開盤後成交價與停損停利條件確認。"
+    },
+    {
+      "rank": 4,
+      "side": "long",
+      "code": "3518",
+      "name": "柏騰",
+      "market": "上市",
+      "close": 30.9,
+      "score": 100,
+      "predictedChangePct": 0,
+      "reasons": [
+        "近期未創新低",
+        "低點墊高",
+        "短均線轉多",
+        "短均線上揚",
+        "站上短均線",
+        "上漲量能改善"
       ],
       "action": "watch-buy",
       "caution": "需等開盤後成交價與停損停利條件確認。"
