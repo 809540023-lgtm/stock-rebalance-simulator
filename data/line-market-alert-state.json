@@ -63,6 +63,38 @@
       "limitPrice": 188,
       "triggerPrice": 188,
       "trigger": "最新成交價等於漲停價"
+    },
+    {
+      "date": "2026-09-21",
+      "code": "3532",
+      "name": "台勝科",
+      "latest": 432.5,
+      "high": 452,
+      "low": 432.5,
+      "previousClose": 447.5,
+      "changePct": -3.35195530726257,
+      "detectedAt": "2026-09-21T05:23:08.365Z",
+      "key": "2026-09-21:3532:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 432.5,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-09-21",
+      "code": "3167",
+      "name": "大量",
+      "latest": 807,
+      "high": 836,
+      "low": 805,
+      "previousClose": 834,
+      "changePct": -3.237410071942446,
+      "detectedAt": "2026-09-21T05:23:08.365Z",
+      "key": "2026-09-21:3167:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 807,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
