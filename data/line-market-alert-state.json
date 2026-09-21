@@ -47,6 +47,22 @@
       "limitPrice": 1430,
       "triggerPrice": 1430,
       "trigger": "最新成交價等於漲停價"
+    },
+    {
+      "date": "2026-09-21",
+      "code": "3055",
+      "name": "蔚華科",
+      "latest": 188,
+      "high": 188,
+      "low": 167,
+      "previousClose": 171,
+      "changePct": 9.941520467836257,
+      "detectedAt": "2026-09-21T01:26:31.402Z",
+      "key": "2026-09-21:3055:limit-up",
+      "type": "limit-up",
+      "limitPrice": 188,
+      "triggerPrice": 188,
+      "trigger": "最新成交價等於漲停價"
     }
   ]
 }
