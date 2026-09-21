@@ -81,6 +81,53 @@
           "netPnl": -8312.35
         }
       ]
+    },
+    {
+      "generatedAt": "2026-09-21T01:31:24.202Z",
+      "days": 5,
+      "start": "2026-09-15",
+      "end": "2026-09-21",
+      "metrics": {
+        "cumulativeNetPnl": -11490.65,
+        "totalNetPct": -3.905143350416661,
+        "avgDailyNetPnl": -2298.13,
+        "winDays": 2,
+        "lossDays": 3,
+        "winRate": 40,
+        "maxDrawdown": 15194.21,
+        "maxDrawdownPct": 5.163813025924062,
+        "grossPnl": -2650,
+        "fees": 8840.65,
+        "avgInvestedCapital": 294244
+      },
+      "exitCount": {
+        "takeProfit": 3,
+        "stopLoss": 6,
+        "forceClose": 48,
+        "holding": 13
+      },
+      "perDay": [
+        {
+          "date": "2026-09-15",
+          "netPnl": 2685.68
+        },
+        {
+          "date": "2026-09-16",
+          "netPnl": 1017.88
+        },
+        {
+          "date": "2026-09-17",
+          "netPnl": -6409.86
+        },
+        {
+          "date": "2026-09-18",
+          "netPnl": -8312.35
+        },
+        {
+          "date": "2026-09-21",
+          "netPnl": -472
+        }
+      ]
     }
   ]
 }
