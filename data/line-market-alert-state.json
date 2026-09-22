@@ -95,6 +95,22 @@
       "thresholdPct": -3,
       "triggerPrice": 807,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-09-22",
+      "code": "3055",
+      "name": "蔚華科",
+      "latest": null,
+      "high": 206.5,
+      "low": 189.5,
+      "previousClose": 188,
+      "changePct": null,
+      "detectedAt": "2026-09-22T01:20:24.446Z",
+      "key": "2026-09-22:3055:limit-up",
+      "type": "limit-up",
+      "limitPrice": 206.5,
+      "triggerPrice": 206.5,
+      "trigger": "盤中最高價觸及漲停價"
     }
   ]
 }
