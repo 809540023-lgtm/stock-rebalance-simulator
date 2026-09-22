@@ -111,6 +111,38 @@
       "limitPrice": 206.5,
       "triggerPrice": 206.5,
       "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-09-22",
+      "code": "4919",
+      "name": "新唐",
+      "latest": null,
+      "high": 138,
+      "low": 126.5,
+      "previousClose": 125.5,
+      "changePct": null,
+      "detectedAt": "2026-09-22T02:31:17.990Z",
+      "key": "2026-09-22:4919:limit-up",
+      "type": "limit-up",
+      "limitPrice": 138,
+      "triggerPrice": 138,
+      "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-09-22",
+      "code": "8996",
+      "name": "高力",
+      "latest": 1655,
+      "high": 1655,
+      "low": 1490,
+      "previousClose": 1505,
+      "changePct": 9.966777408637874,
+      "detectedAt": "2026-09-22T02:31:17.990Z",
+      "key": "2026-09-22:8996:limit-up",
+      "type": "limit-up",
+      "limitPrice": 1655,
+      "triggerPrice": 1655,
+      "trigger": "最新成交價等於漲停價"
     }
   ]
 }
