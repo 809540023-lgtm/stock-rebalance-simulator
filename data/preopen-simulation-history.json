@@ -197,6 +197,39 @@
       "fees": 1440.28,
       "netPnl": -2120.28,
       "netPct": -1.0644658034911882
+    },
+    {
+      "simulatedAt": "2026-09-23T01:13:36.569Z",
+      "localDate": "2026-09-23",
+      "localTime": "09:13:35",
+      "reportDataDate": "2026-09-22",
+      "marketDate": "2026-09-23",
+      "quoteTime": "09:13:21",
+      "strategy": {
+        "takeProfitPct": 6,
+        "stopLossPct": 4,
+        "forceCloseLocalTime": "13:00",
+        "note": "當日模擬；停利/停損用當日高低點判定，13:00 後強制平倉，不留隔夜。"
+      },
+      "exitCount": {
+        "takeProfit": 0,
+        "stopLoss": 0,
+        "forceClose": 0,
+        "holding": 13
+      },
+      "investedCapital": 193850,
+      "notionalBasis": 306500,
+      "marginLongPct": 40,
+      "marginShortPct": 90,
+      "totalBuyAmount": 306500,
+      "totalSellAmount": 305900,
+      "totalCommission": 935.8,
+      "totalTax": 459.31,
+      "grossPnl": 0,
+      "grossPct": -9.896648886006038e-16,
+      "fees": 1395.1,
+      "netPnl": -1395.1,
+      "netPct": -0.7196795202476151
     }
   ]
 }
