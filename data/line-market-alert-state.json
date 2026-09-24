@@ -159,6 +159,22 @@
       "limitPrice": 46.35,
       "triggerPrice": 46.35,
       "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-09-24",
+      "code": "2342",
+      "name": "茂矽",
+      "latest": null,
+      "high": 50.9,
+      "low": 46.55,
+      "previousClose": 46.35,
+      "changePct": null,
+      "detectedAt": "2026-09-24T01:21:52.536Z",
+      "key": "2026-09-24:2342:limit-up",
+      "type": "limit-up",
+      "limitPrice": 50.9,
+      "triggerPrice": 50.9,
+      "trigger": "盤中最高價觸及漲停價"
     }
   ]
 }
