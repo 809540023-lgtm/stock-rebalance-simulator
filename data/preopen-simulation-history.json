@@ -232,9 +232,9 @@
       "netPct": -0.8526025277276271
     },
     {
-      "simulatedAt": "2026-09-24T05:34:04.255Z",
-      "localDate": "2026-09-24",
-      "localTime": "13:34:02",
+      "simulatedAt": "2026-09-25T01:14:33.924Z",
+      "localDate": "2026-09-25",
+      "localTime": "09:14:32",
       "reportDataDate": "2026-09-24",
       "marketDate": "2026-09-24",
       "quoteTime": "13:30:00",
@@ -247,8 +247,8 @@
       "exitCount": {
         "takeProfit": 0,
         "stopLoss": 0,
-        "forceClose": 13,
-        "holding": 0
+        "forceClose": 0,
+        "holding": 13
       },
       "investedCapital": 233842,
       "notionalBasis": 378380,
