@@ -1,9 +1,9 @@
 {
   "version": "preopen-research-v1",
-  "generatedAt": "2026-09-27T01:07:01.546Z",
+  "generatedAt": "2026-09-28T01:05:02.823Z",
   "timezone": "Asia/Taipei",
   "intendedRunTime": "07:00",
-  "dataDate": "2026-09-27",
+  "dataDate": "2026-09-28",
   "sourceFiles": [
     "data/shared/bullish-latest.json",
     "data/shared/bearish-latest.json"
@@ -105,12 +105,12 @@
     {
       "rank": 5,
       "side": "long",
-      "code": "6962",
-      "name": "奕力-KY",
+      "code": "1617",
+      "name": "榮星",
       "market": "上市",
-      "close": 31.45,
+      "close": 19.95,
       "score": 100,
-      "predictedChangePct": 1.14,
+      "predictedChangePct": 2.66,
       "reasons": [
         "近期未創新低",
         "低點墊高",
@@ -147,6 +147,26 @@
     {
       "rank": 2,
       "side": "short",
+      "code": "2630",
+      "name": "亞航",
+      "market": "上市",
+      "close": 46.3,
+      "score": 100,
+      "predictedChangePct": -0.11,
+      "reasons": [
+        "跌破短均線",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 45.84 觸發"
+      ],
+      "action": "watch-short",
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+    },
+    {
+      "rank": 3,
+      "side": "short",
       "code": "1460",
       "name": "宏遠",
       "market": "上市",
@@ -165,7 +185,7 @@
       "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
     },
     {
-      "rank": 3,
+      "rank": 4,
       "side": "short",
       "code": "2601",
       "name": "益航",
@@ -185,7 +205,7 @@
       "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
     },
     {
-      "rank": 4,
+      "rank": 5,
       "side": "short",
       "code": "5531",
       "name": "鄉林",
@@ -200,26 +220,6 @@
         "反彈失敗",
         "流動性充足",
         "跌破 6.91 觸發"
-      ],
-      "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
-    },
-    {
-      "rank": 5,
-      "side": "short",
-      "code": "2630",
-      "name": "亞航",
-      "market": "上市",
-      "close": 46.3,
-      "score": 100,
-      "predictedChangePct": -0.11,
-      "reasons": [
-        "跌破短均線",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 45.84 觸發"
       ],
       "action": "watch-short",
       "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
