@@ -111,6 +111,22 @@
       "limitPrice": 45.55,
       "triggerPrice": 45.55,
       "trigger": "最新成交價等於漲停價"
+    },
+    {
+      "date": "2026-09-29",
+      "code": "3167",
+      "name": "大量",
+      "latest": 898,
+      "high": 946,
+      "low": 898,
+      "previousClose": 949,
+      "changePct": -5.374077976817703,
+      "detectedAt": "2026-09-29T03:13:10.609Z",
+      "key": "2026-09-29:3167:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 898,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
