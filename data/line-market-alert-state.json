@@ -95,6 +95,22 @@
       "limitPrice": 53,
       "triggerPrice": 53,
       "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-09-29",
+      "code": "6405",
+      "name": "悅城",
+      "latest": 45.55,
+      "high": 45.55,
+      "low": 40.95,
+      "previousClose": 41.45,
+      "changePct": 9.891435464414943,
+      "detectedAt": "2026-09-29T02:18:42.787Z",
+      "key": "2026-09-29:6405:limit-up",
+      "type": "limit-up",
+      "limitPrice": 45.55,
+      "triggerPrice": 45.55,
+      "trigger": "最新成交價等於漲停價"
     }
   ]
 }
