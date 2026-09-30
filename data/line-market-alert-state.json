@@ -1,54 +1,6 @@
 {
   "events": [
     {
-      "date": "2026-09-22",
-      "code": "3055",
-      "name": "蔚華科",
-      "latest": null,
-      "high": 206.5,
-      "low": 189.5,
-      "previousClose": 188,
-      "changePct": null,
-      "detectedAt": "2026-09-22T01:20:24.446Z",
-      "key": "2026-09-22:3055:limit-up",
-      "type": "limit-up",
-      "limitPrice": 206.5,
-      "triggerPrice": 206.5,
-      "trigger": "盤中最高價觸及漲停價"
-    },
-    {
-      "date": "2026-09-22",
-      "code": "4919",
-      "name": "新唐",
-      "latest": null,
-      "high": 138,
-      "low": 126.5,
-      "previousClose": 125.5,
-      "changePct": null,
-      "detectedAt": "2026-09-22T02:31:17.990Z",
-      "key": "2026-09-22:4919:limit-up",
-      "type": "limit-up",
-      "limitPrice": 138,
-      "triggerPrice": 138,
-      "trigger": "盤中最高價觸及漲停價"
-    },
-    {
-      "date": "2026-09-22",
-      "code": "8996",
-      "name": "高力",
-      "latest": 1655,
-      "high": 1655,
-      "low": 1490,
-      "previousClose": 1505,
-      "changePct": 9.966777408637874,
-      "detectedAt": "2026-09-22T02:31:17.990Z",
-      "key": "2026-09-22:8996:limit-up",
-      "type": "limit-up",
-      "limitPrice": 1655,
-      "triggerPrice": 1655,
-      "trigger": "最新成交價等於漲停價"
-    },
-    {
       "date": "2026-09-23",
       "code": "2342",
       "name": "茂矽",
@@ -143,6 +95,38 @@
       "thresholdPct": -3,
       "triggerPrice": 111.5,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-09-30",
+      "code": "3149",
+      "name": "正達",
+      "latest": null,
+      "high": 74,
+      "low": 69,
+      "previousClose": 67.3,
+      "changePct": null,
+      "detectedAt": "2026-09-30T01:29:26.059Z",
+      "key": "2026-09-30:3149:limit-up",
+      "type": "limit-up",
+      "limitPrice": 74,
+      "triggerPrice": 74,
+      "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-09-30",
+      "code": "6405",
+      "name": "悅城",
+      "latest": null,
+      "high": 50.1,
+      "low": 50.1,
+      "previousClose": 45.55,
+      "changePct": null,
+      "detectedAt": "2026-09-30T01:29:26.059Z",
+      "key": "2026-09-30:6405:limit-up",
+      "type": "limit-up",
+      "limitPrice": 50.1,
+      "triggerPrice": 50.1,
+      "trigger": "盤中最高價觸及漲停價"
     }
   ]
 }
