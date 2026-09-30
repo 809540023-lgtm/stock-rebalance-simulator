@@ -127,6 +127,22 @@
       "limitPrice": 50.1,
       "triggerPrice": 50.1,
       "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-09-30",
+      "code": "2483",
+      "name": "百容",
+      "latest": null,
+      "high": 35.75,
+      "low": 32.6,
+      "previousClose": 32.5,
+      "changePct": null,
+      "detectedAt": "2026-09-30T01:59:57.276Z",
+      "key": "2026-09-30:2483:limit-up",
+      "type": "limit-up",
+      "limitPrice": 35.75,
+      "triggerPrice": 35.75,
+      "trigger": "盤中最高價觸及漲停價"
     }
   ]
 }
