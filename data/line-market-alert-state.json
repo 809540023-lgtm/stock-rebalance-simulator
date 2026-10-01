@@ -159,6 +159,22 @@
       "limitPrice": 45.1,
       "triggerPrice": 45.1,
       "trigger": "盤中最低價觸及跌停價"
+    },
+    {
+      "date": "2026-10-01",
+      "code": "6834",
+      "name": "天二科技",
+      "latest": null,
+      "high": 119.5,
+      "low": 110,
+      "previousClose": 109,
+      "changePct": null,
+      "detectedAt": "2026-10-01T03:52:42.542Z",
+      "key": "2026-10-01:6834:limit-up",
+      "type": "limit-up",
+      "limitPrice": 119.5,
+      "triggerPrice": 119.5,
+      "trigger": "盤中最高價觸及漲停價"
     }
   ]
 }
