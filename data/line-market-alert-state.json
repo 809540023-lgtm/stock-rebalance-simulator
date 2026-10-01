@@ -175,6 +175,22 @@
       "limitPrice": 119.5,
       "triggerPrice": 119.5,
       "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-10-01",
+      "code": "3167",
+      "name": "大量",
+      "latest": null,
+      "high": 975,
+      "low": 908,
+      "previousClose": 887,
+      "changePct": null,
+      "detectedAt": "2026-10-01T04:01:23.139Z",
+      "key": "2026-10-01:3167:limit-up",
+      "type": "limit-up",
+      "limitPrice": 975,
+      "triggerPrice": 975,
+      "trigger": "盤中最高價觸及漲停價"
     }
   ]
 }
