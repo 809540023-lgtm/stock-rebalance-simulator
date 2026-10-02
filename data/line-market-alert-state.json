@@ -223,6 +223,22 @@
       "limitPrice": 131,
       "triggerPrice": 131,
       "trigger": "最新成交價等於漲停價"
+    },
+    {
+      "date": "2026-10-02",
+      "code": "8021",
+      "name": "尖點",
+      "latest": 553,
+      "high": 553,
+      "low": 501,
+      "previousClose": 503,
+      "changePct": 9.940357852882704,
+      "detectedAt": "2026-10-02T02:49:42.048Z",
+      "key": "2026-10-02:8021:limit-up",
+      "type": "limit-up",
+      "limitPrice": 553,
+      "triggerPrice": 553,
+      "trigger": "最新成交價等於漲停價"
     }
   ]
 }
