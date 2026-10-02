@@ -255,6 +255,22 @@
       "thresholdPct": -3,
       "triggerPrice": 1510,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-02",
+      "code": "4919",
+      "name": "新唐",
+      "latest": null,
+      "high": 167,
+      "low": 145.5,
+      "previousClose": 152,
+      "changePct": null,
+      "detectedAt": "2026-10-02T05:22:01.085Z",
+      "key": "2026-10-02:4919:limit-up",
+      "type": "limit-up",
+      "limitPrice": 167,
+      "triggerPrice": 167,
+      "trigger": "盤中最高價觸及漲停價"
     }
   ]
 }
