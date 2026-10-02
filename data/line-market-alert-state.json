@@ -1,22 +1,6 @@
 {
   "events": [
     {
-      "date": "2026-09-24",
-      "code": "2342",
-      "name": "茂矽",
-      "latest": null,
-      "high": 50.9,
-      "low": 46.55,
-      "previousClose": 46.35,
-      "changePct": null,
-      "detectedAt": "2026-09-24T01:21:52.536Z",
-      "key": "2026-09-24:2342:limit-up",
-      "type": "limit-up",
-      "limitPrice": 50.9,
-      "triggerPrice": 50.9,
-      "trigger": "盤中最高價觸及漲停價"
-    },
-    {
       "date": "2026-09-29",
       "code": "2342",
       "name": "茂矽",
@@ -207,6 +191,38 @@
       "thresholdPct": -3,
       "triggerPrice": 1545,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-02",
+      "code": "6405",
+      "name": "悅城",
+      "latest": 42.6,
+      "high": 43.05,
+      "low": 41.25,
+      "previousClose": 45.1,
+      "changePct": -5.5432372505543235,
+      "detectedAt": "2026-10-02T01:57:43.302Z",
+      "key": "2026-10-02:6405:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 42.6,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-02",
+      "code": "6834",
+      "name": "天二科技",
+      "latest": 131,
+      "high": 131,
+      "low": 118,
+      "previousClose": 119.5,
+      "changePct": 9.623430962343097,
+      "detectedAt": "2026-10-02T01:57:43.302Z",
+      "key": "2026-10-02:6834:limit-up",
+      "type": "limit-up",
+      "limitPrice": 131,
+      "triggerPrice": 131,
+      "trigger": "最新成交價等於漲停價"
     }
   ]
 }
