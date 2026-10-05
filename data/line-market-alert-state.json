@@ -271,6 +271,38 @@
       "limitPrice": 167,
       "triggerPrice": 167,
       "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-10-05",
+      "code": "4919",
+      "name": "新唐",
+      "latest": 158,
+      "high": 162.5,
+      "low": 156,
+      "previousClose": 163,
+      "changePct": -3.067484662576687,
+      "detectedAt": "2026-10-05T02:05:12.497Z",
+      "key": "2026-10-05:4919:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 158,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-05",
+      "code": "2483",
+      "name": "百容",
+      "latest": null,
+      "high": 40.7,
+      "low": 37.4,
+      "previousClose": 37,
+      "changePct": null,
+      "detectedAt": "2026-10-05T02:05:12.498Z",
+      "key": "2026-10-05:2483:limit-up",
+      "type": "limit-up",
+      "limitPrice": 40.7,
+      "triggerPrice": 40.7,
+      "trigger": "盤中最高價觸及漲停價"
     }
   ]
 }
