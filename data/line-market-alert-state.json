@@ -303,6 +303,38 @@
       "limitPrice": 40.7,
       "triggerPrice": 40.7,
       "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-10-05",
+      "code": "6834",
+      "name": "天二科技",
+      "latest": 126,
+      "high": 134,
+      "low": 122,
+      "previousClose": 131,
+      "changePct": -3.816793893129771,
+      "detectedAt": "2026-10-05T05:09:18.505Z",
+      "key": "2026-10-05:6834:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 126,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-05",
+      "code": "2342",
+      "name": "茂矽",
+      "latest": 49.35,
+      "high": 52.2,
+      "low": 49.15,
+      "previousClose": 51.3,
+      "changePct": -3.801169590643267,
+      "detectedAt": "2026-10-05T05:09:18.505Z",
+      "key": "2026-10-05:2342:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 49.35,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
