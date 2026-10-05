@@ -1,9 +1,9 @@
 {
   "version": "preopen-research-v1",
-  "generatedAt": "2026-10-04T01:43:43.316Z",
+  "generatedAt": "2026-10-05T01:22:40.676Z",
   "timezone": "Asia/Taipei",
   "intendedRunTime": "07:00",
-  "dataDate": "2026-10-04",
+  "dataDate": "2026-10-05",
   "sourceFiles": [
     "data/shared/bullish-latest.json",
     "data/shared/bearish-latest.json"
@@ -147,26 +147,6 @@
     {
       "rank": 2,
       "side": "short",
-      "code": "2542",
-      "name": "興富發",
-      "market": "上市",
-      "close": 38.75,
-      "score": 100,
-      "predictedChangePct": -8.67,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 38.36 觸發"
-      ],
-      "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
-    },
-    {
-      "rank": 3,
-      "side": "short",
       "code": "2601",
       "name": "益航",
       "market": "上市",
@@ -185,7 +165,47 @@
       "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
     },
     {
+      "rank": 3,
+      "side": "short",
+      "code": "2542",
+      "name": "興富發",
+      "market": "上市",
+      "close": 38.75,
+      "score": 100,
+      "predictedChangePct": -8.67,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 38.36 觸發"
+      ],
+      "action": "watch-short",
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+    },
+    {
       "rank": 4,
+      "side": "short",
+      "code": "2838",
+      "name": "聯邦銀",
+      "market": "上市",
+      "close": 20.4,
+      "score": 100,
+      "predictedChangePct": -0.93,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 20.20 觸發"
+      ],
+      "action": "watch-short",
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+    },
+    {
+      "rank": 5,
       "side": "short",
       "code": "2501",
       "name": "國建",
@@ -205,7 +225,7 @@
       "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
     },
     {
-      "rank": 5,
+      "rank": 6,
       "side": "short",
       "code": "1905",
       "name": "華紙",
@@ -220,26 +240,6 @@
         "反彈失敗",
         "下跌量能放大",
         "流動性充足"
-      ],
-      "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
-    },
-    {
-      "rank": 6,
-      "side": "short",
-      "code": "2838",
-      "name": "聯邦銀",
-      "market": "上市",
-      "close": 20.4,
-      "score": 100,
-      "predictedChangePct": -0.93,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 20.20 觸發"
       ],
       "action": "watch-short",
       "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
