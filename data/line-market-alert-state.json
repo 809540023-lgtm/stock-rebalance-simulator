@@ -335,6 +335,22 @@
       "thresholdPct": -3,
       "triggerPrice": 49.35,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-06",
+      "code": "4919",
+      "name": "新唐",
+      "latest": 150.5,
+      "high": 157,
+      "low": 149.5,
+      "previousClose": 155.5,
+      "changePct": -3.215434083601286,
+      "detectedAt": "2026-10-06T02:20:54.407Z",
+      "key": "2026-10-06:4919:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 150.5,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
