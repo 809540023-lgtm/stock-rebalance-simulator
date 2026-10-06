@@ -367,6 +367,22 @@
       "thresholdPct": -3,
       "triggerPrice": 76.5,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-06",
+      "code": "2483",
+      "name": "百容",
+      "latest": 38.5,
+      "high": 41.5,
+      "low": 38,
+      "previousClose": 40.7,
+      "changePct": -5.405405405405412,
+      "detectedAt": "2026-10-06T04:25:27.558Z",
+      "key": "2026-10-06:2483:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 38.5,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
