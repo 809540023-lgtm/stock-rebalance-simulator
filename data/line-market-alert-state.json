@@ -383,6 +383,22 @@
       "thresholdPct": -3,
       "triggerPrice": 38.5,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-06",
+      "code": "6405",
+      "name": "悅城",
+      "latest": 40.45,
+      "high": 42.15,
+      "low": 40.45,
+      "previousClose": 41.9,
+      "changePct": -3.460620525059656,
+      "detectedAt": "2026-10-06T05:12:22.514Z",
+      "key": "2026-10-06:6405:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 40.45,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
