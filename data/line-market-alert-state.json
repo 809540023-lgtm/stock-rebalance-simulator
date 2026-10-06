@@ -351,6 +351,22 @@
       "thresholdPct": -3,
       "triggerPrice": 150.5,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-06",
+      "code": "3149",
+      "name": "正達",
+      "latest": 76.5,
+      "high": 79.5,
+      "low": 75.8,
+      "previousClose": 79.5,
+      "changePct": -3.7735849056603774,
+      "detectedAt": "2026-10-06T02:59:50.926Z",
+      "key": "2026-10-06:3149:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 76.5,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
