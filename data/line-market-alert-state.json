@@ -351,6 +351,22 @@
       "limitPrice": 135,
       "triggerPrice": 135,
       "trigger": "最新成交價等於漲停價"
+    },
+    {
+      "date": "2026-10-07",
+      "code": "3532",
+      "name": "台勝科",
+      "latest": null,
+      "high": 513,
+      "low": 467,
+      "previousClose": 467,
+      "changePct": null,
+      "detectedAt": "2026-10-07T03:59:41.619Z",
+      "key": "2026-10-07:3532:limit-up",
+      "type": "limit-up",
+      "limitPrice": 513,
+      "triggerPrice": 513,
+      "trigger": "盤中最高價觸及漲停價"
     }
   ]
 }
