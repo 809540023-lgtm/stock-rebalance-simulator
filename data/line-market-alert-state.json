@@ -1,70 +1,6 @@
 {
   "events": [
     {
-      "date": "2026-09-29",
-      "code": "2342",
-      "name": "茂矽",
-      "latest": null,
-      "high": 53,
-      "low": 46.85,
-      "previousClose": 48.2,
-      "changePct": null,
-      "detectedAt": "2026-09-29T01:26:35.089Z",
-      "key": "2026-09-29:2342:limit-up",
-      "type": "limit-up",
-      "limitPrice": 53,
-      "triggerPrice": 53,
-      "trigger": "盤中最高價觸及漲停價"
-    },
-    {
-      "date": "2026-09-29",
-      "code": "6405",
-      "name": "悅城",
-      "latest": 45.55,
-      "high": 45.55,
-      "low": 40.95,
-      "previousClose": 41.45,
-      "changePct": 9.891435464414943,
-      "detectedAt": "2026-09-29T02:18:42.787Z",
-      "key": "2026-09-29:6405:limit-up",
-      "type": "limit-up",
-      "limitPrice": 45.55,
-      "triggerPrice": 45.55,
-      "trigger": "最新成交價等於漲停價"
-    },
-    {
-      "date": "2026-09-29",
-      "code": "3167",
-      "name": "大量",
-      "latest": 898,
-      "high": 946,
-      "low": 898,
-      "previousClose": 949,
-      "changePct": -5.374077976817703,
-      "detectedAt": "2026-09-29T03:13:10.609Z",
-      "key": "2026-09-29:3167:decline-3",
-      "type": "decline",
-      "thresholdPct": -3,
-      "triggerPrice": 898,
-      "trigger": "當日跌幅首次達到 3% 警示門檻"
-    },
-    {
-      "date": "2026-09-29",
-      "code": "6834",
-      "name": "天二科技",
-      "latest": 111.5,
-      "high": 116,
-      "low": 111.5,
-      "previousClose": 116,
-      "changePct": -3.8793103448275863,
-      "detectedAt": "2026-09-29T04:53:40.641Z",
-      "key": "2026-09-29:6834:decline-3",
-      "type": "decline",
-      "thresholdPct": -3,
-      "triggerPrice": 111.5,
-      "trigger": "當日跌幅首次達到 3% 警示門檻"
-    },
-    {
       "date": "2026-09-30",
       "code": "3149",
       "name": "正達",
@@ -399,6 +335,22 @@
       "thresholdPct": -3,
       "triggerPrice": 40.45,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-07",
+      "code": "6834",
+      "name": "天二科技",
+      "latest": 135,
+      "high": 135,
+      "low": 123.5,
+      "previousClose": 123,
+      "changePct": 9.75609756097561,
+      "detectedAt": "2026-10-07T01:31:06.878Z",
+      "key": "2026-10-07:6834:limit-up",
+      "type": "limit-up",
+      "limitPrice": 135,
+      "triggerPrice": 135,
+      "trigger": "最新成交價等於漲停價"
     }
   ]
 }
