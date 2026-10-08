@@ -1,54 +1,6 @@
 {
   "events": [
     {
-      "date": "2026-09-30",
-      "code": "3149",
-      "name": "正達",
-      "latest": null,
-      "high": 74,
-      "low": 69,
-      "previousClose": 67.3,
-      "changePct": null,
-      "detectedAt": "2026-09-30T01:29:26.059Z",
-      "key": "2026-09-30:3149:limit-up",
-      "type": "limit-up",
-      "limitPrice": 74,
-      "triggerPrice": 74,
-      "trigger": "盤中最高價觸及漲停價"
-    },
-    {
-      "date": "2026-09-30",
-      "code": "6405",
-      "name": "悅城",
-      "latest": null,
-      "high": 50.1,
-      "low": 50.1,
-      "previousClose": 45.55,
-      "changePct": null,
-      "detectedAt": "2026-09-30T01:29:26.059Z",
-      "key": "2026-09-30:6405:limit-up",
-      "type": "limit-up",
-      "limitPrice": 50.1,
-      "triggerPrice": 50.1,
-      "trigger": "盤中最高價觸及漲停價"
-    },
-    {
-      "date": "2026-09-30",
-      "code": "2483",
-      "name": "百容",
-      "latest": null,
-      "high": 35.75,
-      "low": 32.6,
-      "previousClose": 32.5,
-      "changePct": null,
-      "detectedAt": "2026-09-30T01:59:57.276Z",
-      "key": "2026-09-30:2483:limit-up",
-      "type": "limit-up",
-      "limitPrice": 35.75,
-      "triggerPrice": 35.75,
-      "trigger": "盤中最高價觸及漲停價"
-    },
-    {
       "date": "2026-10-01",
       "code": "4919",
       "name": "新唐",
@@ -367,6 +319,22 @@
       "limitPrice": 513,
       "triggerPrice": 513,
       "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-10-08",
+      "code": "3167",
+      "name": "大量",
+      "latest": 990,
+      "high": 1025,
+      "low": 990,
+      "previousClose": 1025,
+      "changePct": -3.414634146341464,
+      "detectedAt": "2026-10-08T01:30:38.051Z",
+      "key": "2026-10-08:3167:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 990,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
