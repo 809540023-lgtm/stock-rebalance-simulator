@@ -255,6 +255,22 @@
       "limitPrice": 145,
       "triggerPrice": 145,
       "trigger": "盤中最高價觸及漲停價"
+    },
+    {
+      "date": "2026-10-12",
+      "code": "3532",
+      "name": "台勝科",
+      "latest": 487,
+      "high": 503,
+      "low": 482,
+      "previousClose": 509,
+      "changePct": -4.322200392927308,
+      "detectedAt": "2026-10-12T05:27:42.628Z",
+      "key": "2026-10-12:3532:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 487,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
