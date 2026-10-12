@@ -1,29 +1,29 @@
 {
   "version": "weekly-strategy-summary-v1",
-  "generatedAt": "2026-10-05T01:39:21.618Z",
+  "generatedAt": "2026-10-12T01:46:28.525Z",
   "window": {
-    "days": 12,
+    "days": 17,
     "start": "2026-09-15",
-    "end": "2026-10-02"
+    "end": "2026-10-12"
   },
   "metrics": {
-    "cumulativeNetPnl": -849.7899999999972,
-    "totalNetPct": -0.3431083948753844,
-    "avgDailyNetPnl": -70.8158333333331,
-    "winDays": 6,
-    "lossDays": 6,
-    "winRate": 50,
+    "cumulativeNetPnl": -10884.429999999997,
+    "totalNetPct": -4.223211178007704,
+    "avgDailyNetPnl": -640.2605882352939,
+    "winDays": 7,
+    "lossDays": 10,
+    "winRate": 41.17647058823529,
     "maxDrawdown": 20655.45,
-    "maxDrawdownPct": 8.339776056353667,
-    "grossPnl": 18630,
-    "fees": 19479.8,
-    "avgInvestedCapital": 247673.91666666666
+    "maxDrawdownPct": 8.014413922160301,
+    "grossPnl": 17390,
+    "fees": 28274.440000000002,
+    "avgInvestedCapital": 257728.76470588235
   },
   "exitCount": {
-    "takeProfit": 12,
-    "stopLoss": 10,
-    "forceClose": 130,
-    "holding": 0
+    "takeProfit": 14,
+    "stopLoss": 15,
+    "forceClose": 186,
+    "holding": 12
   },
   "perDay": [
     {
@@ -73,6 +73,26 @@
     {
       "date": "2026-10-02",
       "netPnl": 7176.77
+    },
+    {
+      "date": "2026-10-05",
+      "netPnl": 451.76
+    },
+    {
+      "date": "2026-10-06",
+      "netPnl": -864.58
+    },
+    {
+      "date": "2026-10-07",
+      "netPnl": -3249.99
+    },
+    {
+      "date": "2026-10-08",
+      "netPnl": -4980.65
+    },
+    {
+      "date": "2026-10-12",
+      "netPnl": -1391.18
     }
   ]
 }
