@@ -255,6 +255,54 @@
       "thresholdPct": -3,
       "triggerPrice": 1010,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-13",
+      "code": "8021",
+      "name": "尖點",
+      "latest": 509,
+      "high": 545,
+      "low": 504,
+      "previousClose": 553,
+      "changePct": -7.956600361663653,
+      "detectedAt": "2026-10-13T02:08:22.538Z",
+      "key": "2026-10-13:8021:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 509,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-13",
+      "code": "3532",
+      "name": "台勝科",
+      "latest": null,
+      "high": 475.5,
+      "low": 437,
+      "previousClose": 485.5,
+      "changePct": null,
+      "detectedAt": "2026-10-13T02:08:22.538Z",
+      "key": "2026-10-13:3532:limit-down",
+      "type": "limit-down",
+      "limitPrice": 437,
+      "triggerPrice": 437,
+      "trigger": "盤中最低價觸及跌停價"
+    },
+    {
+      "date": "2026-10-13",
+      "code": "3167",
+      "name": "大量",
+      "latest": null,
+      "high": 1060,
+      "low": 977,
+      "previousClose": 1085,
+      "changePct": null,
+      "detectedAt": "2026-10-13T02:08:22.538Z",
+      "key": "2026-10-13:3167:limit-down",
+      "type": "limit-down",
+      "limitPrice": 977,
+      "triggerPrice": 977,
+      "trigger": "盤中最低價觸及跌停價"
     }
   ]
 }
