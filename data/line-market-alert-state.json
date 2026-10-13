@@ -303,6 +303,38 @@
       "limitPrice": 977,
       "triggerPrice": 977,
       "trigger": "盤中最低價觸及跌停價"
+    },
+    {
+      "date": "2026-10-13",
+      "code": "8996",
+      "name": "高力",
+      "latest": 1625,
+      "high": 1750,
+      "low": 1610,
+      "previousClose": 1720,
+      "changePct": -5.523255813953488,
+      "detectedAt": "2026-10-13T02:43:48.924Z",
+      "key": "2026-10-13:8996:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 1625,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-13",
+      "code": "2429",
+      "name": "銘旺科",
+      "latest": 31.8,
+      "high": 33.75,
+      "low": 31.8,
+      "previousClose": 33,
+      "changePct": -3.636363636363634,
+      "detectedAt": "2026-10-13T02:43:48.924Z",
+      "key": "2026-10-13:2429:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 31.8,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
