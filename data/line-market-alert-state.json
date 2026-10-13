@@ -335,6 +335,38 @@
       "thresholdPct": -3,
       "triggerPrice": 31.8,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-13",
+      "code": "4919",
+      "name": "新唐",
+      "latest": 143.5,
+      "high": 151,
+      "low": 139.5,
+      "previousClose": 154,
+      "changePct": -6.8181818181818175,
+      "detectedAt": "2026-10-13T04:52:17.639Z",
+      "key": "2026-10-13:4919:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 143.5,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-13",
+      "code": "2483",
+      "name": "百容",
+      "latest": 36.5,
+      "high": 38.6,
+      "low": 36.4,
+      "previousClose": 38.1,
+      "changePct": -4.199475065616801,
+      "detectedAt": "2026-10-13T04:52:17.639Z",
+      "key": "2026-10-13:2483:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 36.5,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
