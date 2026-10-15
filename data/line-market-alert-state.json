@@ -431,6 +431,38 @@
       "thresholdPct": -3,
       "triggerPrice": 403,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-15",
+      "code": "3149",
+      "name": "正達",
+      "latest": 72.3,
+      "high": 76,
+      "low": 71.5,
+      "previousClose": 77.7,
+      "changePct": -6.949806949806956,
+      "detectedAt": "2026-10-15T04:56:37.914Z",
+      "key": "2026-10-15:3149:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 72.3,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-15",
+      "code": "2342",
+      "name": "茂矽",
+      "latest": 42.35,
+      "high": 43.25,
+      "low": 41.85,
+      "previousClose": 44.75,
+      "changePct": -5.363128491620109,
+      "detectedAt": "2026-10-15T04:56:37.914Z",
+      "key": "2026-10-15:2342:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 42.35,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
