@@ -351,6 +351,22 @@
       "thresholdPct": -3,
       "triggerPrice": 511,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-15",
+      "code": "6834",
+      "name": "天二科技",
+      "latest": 146.5,
+      "high": 158.5,
+      "low": 146.5,
+      "previousClose": 162.5,
+      "changePct": -9.846153846153847,
+      "detectedAt": "2026-10-15T01:54:18.652Z",
+      "key": "2026-10-15:6834:limit-down",
+      "type": "limit-down",
+      "limitPrice": 146.5,
+      "triggerPrice": 146.5,
+      "trigger": "最新成交價等於跌停價"
     }
   ]
 }
