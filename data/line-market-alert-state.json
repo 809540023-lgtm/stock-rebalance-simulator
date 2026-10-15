@@ -383,6 +383,38 @@
       "limitPrice": 1520,
       "triggerPrice": 1520,
       "trigger": "盤中最低價觸及跌停價"
+    },
+    {
+      "date": "2026-10-15",
+      "code": "8033",
+      "name": "雷虎",
+      "latest": 159,
+      "high": 165.5,
+      "low": 157.5,
+      "previousClose": 166.5,
+      "changePct": -4.504504504504505,
+      "detectedAt": "2026-10-15T03:51:11.937Z",
+      "key": "2026-10-15:8033:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 159,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-15",
+      "code": "1310",
+      "name": "台苯",
+      "latest": 9.95,
+      "high": 10.6,
+      "low": 9.88,
+      "previousClose": 10.7,
+      "changePct": -7.009345794392524,
+      "detectedAt": "2026-10-15T03:51:11.937Z",
+      "key": "2026-10-15:1310:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 9.95,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
