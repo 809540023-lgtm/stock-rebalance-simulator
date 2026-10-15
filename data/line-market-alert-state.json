@@ -367,6 +367,22 @@
       "limitPrice": 146.5,
       "triggerPrice": 146.5,
       "trigger": "最新成交價等於跌停價"
+    },
+    {
+      "date": "2026-10-15",
+      "code": "8996",
+      "name": "高力",
+      "latest": null,
+      "high": 1605,
+      "low": 1520,
+      "previousClose": 1685,
+      "changePct": null,
+      "detectedAt": "2026-10-15T02:09:13.669Z",
+      "key": "2026-10-15:8996:limit-down",
+      "type": "limit-down",
+      "limitPrice": 1520,
+      "triggerPrice": 1520,
+      "trigger": "盤中最低價觸及跌停價"
     }
   ]
 }
