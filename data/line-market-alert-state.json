@@ -639,6 +639,22 @@
       "thresholdPct": -3,
       "triggerPrice": 34.1,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-19",
+      "code": "3167",
+      "name": "大量",
+      "latest": 992,
+      "high": 1035,
+      "low": 977,
+      "previousClose": 1055,
+      "changePct": -5.971563981042654,
+      "detectedAt": "2026-10-19T04:55:52.689Z",
+      "key": "2026-10-19:3167:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 992,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
