@@ -543,6 +543,22 @@
       "thresholdPct": -3,
       "triggerPrice": 134.5,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-19",
+      "code": "3532",
+      "name": "台勝科",
+      "latest": 386,
+      "high": 399.5,
+      "low": 382.5,
+      "previousClose": 417.5,
+      "changePct": -7.544910179640718,
+      "detectedAt": "2026-10-19T02:04:03.799Z",
+      "key": "2026-10-19:3532:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 386,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
