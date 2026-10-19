@@ -607,6 +607,22 @@
       "thresholdPct": -3,
       "triggerPrice": 40.8,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-19",
+      "code": "2429",
+      "name": "銘旺科",
+      "latest": 34.25,
+      "high": 35.35,
+      "low": 34.05,
+      "previousClose": 36,
+      "changePct": -4.861111111111112,
+      "detectedAt": "2026-10-19T03:48:36.655Z",
+      "key": "2026-10-19:2429:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 34.25,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
