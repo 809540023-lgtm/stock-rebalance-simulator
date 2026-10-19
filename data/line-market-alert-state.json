@@ -495,6 +495,54 @@
       "thresholdPct": -3,
       "triggerPrice": 142.5,
       "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-19",
+      "code": "8033",
+      "name": "雷虎",
+      "latest": 159,
+      "high": 160,
+      "low": 158.5,
+      "previousClose": 164,
+      "changePct": -3.048780487804878,
+      "detectedAt": "2026-10-19T01:24:25.473Z",
+      "key": "2026-10-19:8033:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 159,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-19",
+      "code": "3055",
+      "name": "蔚華科",
+      "latest": 135.5,
+      "high": 137,
+      "low": 131,
+      "previousClose": 141,
+      "changePct": -3.900709219858156,
+      "detectedAt": "2026-10-19T01:24:25.473Z",
+      "key": "2026-10-19:3055:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 135.5,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
+    },
+    {
+      "date": "2026-10-19",
+      "code": "6834",
+      "name": "天二科技",
+      "latest": 134.5,
+      "high": 138,
+      "low": 132,
+      "previousClose": 142.5,
+      "changePct": -5.614035087719298,
+      "detectedAt": "2026-10-19T01:24:25.473Z",
+      "key": "2026-10-19:6834:decline-3",
+      "type": "decline",
+      "thresholdPct": -3,
+      "triggerPrice": 134.5,
+      "trigger": "當日跌幅首次達到 3% 警示門檻"
     }
   ]
 }
