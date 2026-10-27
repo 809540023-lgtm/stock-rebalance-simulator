@@ -1,9 +1,9 @@
 {
   "version": "preopen-research-v1",
-  "generatedAt": "2026-10-26T00:53:14.665Z",
+  "generatedAt": "2026-10-27T00:53:51.709Z",
   "timezone": "Asia/Taipei",
   "intendedRunTime": "07:00",
-  "dataDate": "2026-10-26",
+  "dataDate": "2026-10-27",
   "sourceFiles": [
     "data/shared/bullish-latest.json",
     "data/shared/bearish-latest.json"
@@ -147,12 +147,12 @@
     {
       "rank": 2,
       "side": "short",
-      "code": "8473",
-      "name": "山林水",
+      "code": "2425",
+      "name": "承啟",
       "market": "上市",
-      "close": 37.6,
+      "close": 33.15,
       "score": 100,
-      "predictedChangePct": -0.98,
+      "predictedChangePct": -0.24,
       "reasons": [
         "跌破短均線",
         "低點下移",
@@ -167,12 +167,12 @@
     {
       "rank": 3,
       "side": "short",
-      "code": "2425",
-      "name": "承啟",
+      "code": "8473",
+      "name": "山林水",
       "market": "上市",
-      "close": 33.15,
+      "close": 37.6,
       "score": 100,
-      "predictedChangePct": -0.24,
+      "predictedChangePct": -0.98,
       "reasons": [
         "跌破短均線",
         "低點下移",
@@ -227,12 +227,12 @@
     {
       "rank": 6,
       "side": "short",
-      "code": "2601",
-      "name": "益航",
+      "code": "3229",
+      "name": "晟鈦",
       "market": "上市",
-      "close": 5.93,
+      "close": 48.65,
       "score": 100,
-      "predictedChangePct": -0.17,
+      "predictedChangePct": -2.28,
       "reasons": [
         "跌破短均線",
         "低點下移",
@@ -247,12 +247,12 @@
     {
       "rank": 7,
       "side": "short",
-      "code": "3229",
-      "name": "晟鈦",
+      "code": "2601",
+      "name": "益航",
       "market": "上市",
-      "close": 48.65,
+      "close": 5.93,
       "score": 100,
-      "predictedChangePct": -2.28,
+      "predictedChangePct": -0.17,
       "reasons": [
         "跌破短均線",
         "低點下移",
@@ -307,12 +307,12 @@
     {
       "rank": 10,
       "side": "short",
-      "code": "6142",
-      "name": "友勁",
+      "code": "1218",
+      "name": "泰山",
       "market": "上市",
-      "close": 8.71,
+      "close": 14.25,
       "score": 100,
-      "predictedChangePct": -0.46,
+      "predictedChangePct": 0,
       "reasons": [
         "跌破短均線",
         "低點下移",
