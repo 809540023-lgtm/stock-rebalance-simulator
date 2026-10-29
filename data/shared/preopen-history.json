@@ -9257,6 +9257,319 @@
       "warnings": [
         "此報告是研究候選清單，不是保證獲利，也不是自動下單。"
       ]
+    },
+    {
+      "date": "2026-10-29",
+      "generatedAt": "2026-10-29T00:37:59.196Z",
+      "longCount": 5,
+      "shortCount": 10,
+      "longCandidates": [
+        {
+          "rank": 1,
+          "side": "long",
+          "code": "1809",
+          "name": "中釉",
+          "market": "上市",
+          "close": 48,
+          "score": 100,
+          "predictedChangePct": 1.12,
+          "reasons": [
+            "近期未創新低",
+            "低點墊高",
+            "短均線轉多",
+            "短均線上揚",
+            "站上短均線",
+            "上漲量能改善"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        },
+        {
+          "rank": 2,
+          "side": "long",
+          "code": "6108",
+          "name": "競國",
+          "market": "上市",
+          "close": 34,
+          "score": 100,
+          "predictedChangePct": 2.06,
+          "reasons": [
+            "近期未創新低",
+            "低點墊高",
+            "短均線轉多",
+            "短均線上揚",
+            "站上短均線",
+            "上漲量能改善"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        },
+        {
+          "rank": 3,
+          "side": "long",
+          "code": "5880",
+          "name": "合庫金",
+          "market": "上市",
+          "close": 28.45,
+          "score": 100,
+          "predictedChangePct": 1.02,
+          "reasons": [
+            "近期未創新低",
+            "低點墊高",
+            "短均線轉多",
+            "短均線上揚",
+            "站上短均線",
+            "上漲量能改善"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        },
+        {
+          "rank": 4,
+          "side": "long",
+          "code": "6112",
+          "name": "邁達特",
+          "market": "上市",
+          "close": 49.95,
+          "score": 100,
+          "predictedChangePct": 1.08,
+          "reasons": [
+            "近期未創新低",
+            "低點墊高",
+            "短均線轉多",
+            "短均線上揚",
+            "站上短均線",
+            "上漲量能改善"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        },
+        {
+          "rank": 5,
+          "side": "long",
+          "code": "2324",
+          "name": "仁寶",
+          "market": "上市",
+          "close": 37.95,
+          "score": 100,
+          "predictedChangePct": 0.24,
+          "reasons": [
+            "近期未創新低",
+            "低點墊高",
+            "短均線轉多",
+            "短均線上揚",
+            "站上短均線",
+            "上漲量能改善"
+          ],
+          "action": "watch-buy",
+          "caution": "需等開盤後成交價與停損停利條件確認。"
+        }
+      ],
+      "shortCandidates": [
+        {
+          "rank": 1,
+          "side": "short",
+          "code": "2425",
+          "name": "承啟",
+          "market": "上市",
+          "close": 33,
+          "score": 100,
+          "predictedChangePct": -1.61,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "反彈失敗",
+            "下跌量能放大",
+            "流動性充足"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 2,
+          "side": "short",
+          "code": "2540",
+          "name": "愛山林",
+          "market": "上市",
+          "close": 45.35,
+          "score": 100,
+          "predictedChangePct": -2.27,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 44.90 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 3,
+          "side": "short",
+          "code": "8105",
+          "name": "凌巨",
+          "market": "上市",
+          "close": 14.1,
+          "score": 100,
+          "predictedChangePct": -1.77,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 13.96 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 4,
+          "side": "short",
+          "code": "8473",
+          "name": "山林水",
+          "market": "上市",
+          "close": 37.5,
+          "score": 100,
+          "predictedChangePct": -0.75,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 37.13 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 5,
+          "side": "short",
+          "code": "9938",
+          "name": "百和",
+          "market": "上市",
+          "close": 37.15,
+          "score": 100,
+          "predictedChangePct": -1.08,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 36.78 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 6,
+          "side": "short",
+          "code": "2601",
+          "name": "益航",
+          "market": "上市",
+          "close": 5.87,
+          "score": 100,
+          "predictedChangePct": -0.17,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "反彈失敗",
+            "下跌量能放大",
+            "流動性充足"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 7,
+          "side": "short",
+          "code": "3229",
+          "name": "晟鈦",
+          "market": "上市",
+          "close": 48.15,
+          "score": 100,
+          "predictedChangePct": -2.26,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "反彈失敗",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 47.67 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 8,
+          "side": "short",
+          "code": "6477",
+          "name": "安集",
+          "market": "上市",
+          "close": 31.5,
+          "score": 100,
+          "predictedChangePct": -0.54,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "反彈失敗",
+            "下跌量能放大",
+            "流動性充足"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 9,
+          "side": "short",
+          "code": "1218",
+          "name": "泰山",
+          "market": "上市",
+          "close": 14,
+          "score": 100,
+          "predictedChangePct": -0.93,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "反彈失敗",
+            "下跌量能放大",
+            "流動性充足"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        },
+        {
+          "rank": 10,
+          "side": "short",
+          "code": "1312",
+          "name": "國喬",
+          "market": "上市",
+          "close": 14.65,
+          "score": 100,
+          "predictedChangePct": -7.1,
+          "reasons": [
+            "跌破短均線",
+            "低點下移",
+            "近期走弱",
+            "下跌量能放大",
+            "流動性充足",
+            "跌破 14.50 觸發"
+          ],
+          "action": "watch-short",
+          "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+        }
+      ],
+      "warnings": [
+        "此報告是研究候選清單，不是保證獲利，也不是自動下單。"
+      ]
     }
   ]
 }
