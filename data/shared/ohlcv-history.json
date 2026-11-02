@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": "ohlcv-history-v1",
-    "updatedAt": "2026-11-01T00:52:28.144Z",
+    "updatedAt": "2026-11-02T05:32:17.120Z",
     "asOfDate": "2026-10-30",
-    "shortEligibilityDate": "2026-10-29"
+    "shortEligibilityDate": "2026-10-30"
   },
   "index": [
     {
@@ -43114,6 +43114,158 @@
         "low": 17.2,
         "close": 17.45,
         "volume": 3763458
+      },
+      {
+        "date": "2026-10-01",
+        "open": 16.85,
+        "high": 16.85,
+        "low": 16.7,
+        "close": 16.75,
+        "volume": 2353366
+      },
+      {
+        "date": "2026-10-02",
+        "open": 16.7,
+        "high": 16.75,
+        "low": 16.6,
+        "close": 16.7,
+        "volume": 2798555
+      },
+      {
+        "date": "2026-10-05",
+        "open": 16.7,
+        "high": 16.7,
+        "low": 16.6,
+        "close": 16.6,
+        "volume": 2720467
+      },
+      {
+        "date": "2026-10-06",
+        "open": 16.6,
+        "high": 16.75,
+        "low": 16.6,
+        "close": 16.65,
+        "volume": 1776620
+      },
+      {
+        "date": "2026-10-07",
+        "open": 16.65,
+        "high": 16.85,
+        "low": 16.65,
+        "close": 16.85,
+        "volume": 565172
+      },
+      {
+        "date": "2026-10-08",
+        "open": 16.85,
+        "high": 16.95,
+        "low": 16.85,
+        "close": 16.85,
+        "volume": 928648
+      },
+      {
+        "date": "2026-10-12",
+        "open": 16.7,
+        "high": 16.7,
+        "low": 16.45,
+        "close": 16.65,
+        "volume": 3883422
+      },
+      {
+        "date": "2026-10-13",
+        "open": 16.55,
+        "high": 16.75,
+        "low": 16.55,
+        "close": 16.7,
+        "volume": 1758717
+      },
+      {
+        "date": "2026-10-14",
+        "open": 16.7,
+        "high": 16.75,
+        "low": 16.6,
+        "close": 16.7,
+        "volume": 2615670
+      },
+      {
+        "date": "2026-10-15",
+        "open": 16.7,
+        "high": 16.85,
+        "low": 16.7,
+        "close": 16.8,
+        "volume": 4062023
+      },
+      {
+        "date": "2026-10-16",
+        "open": 16.85,
+        "high": 17.1,
+        "low": 16.85,
+        "close": 16.95,
+        "volume": 5033799
+      },
+      {
+        "date": "2026-10-19",
+        "open": 16.95,
+        "high": 16.95,
+        "low": 16.65,
+        "close": 16.7,
+        "volume": 5644197
+      },
+      {
+        "date": "2026-10-20",
+        "open": 16.6,
+        "high": 16.75,
+        "low": 16.55,
+        "close": 16.55,
+        "volume": 3333583
+      },
+      {
+        "date": "2026-10-21",
+        "open": 16.65,
+        "high": 16.7,
+        "low": 16.55,
+        "close": 16.65,
+        "volume": 2470576
+      },
+      {
+        "date": "2026-10-22",
+        "open": 16.65,
+        "high": 16.65,
+        "low": 16.55,
+        "close": 16.6,
+        "volume": 1738486
+      },
+      {
+        "date": "2026-10-27",
+        "open": 16.65,
+        "high": 16.75,
+        "low": 16.5,
+        "close": 16.75,
+        "volume": 4238475
+      },
+      {
+        "date": "2026-10-28",
+        "open": 16.65,
+        "high": 16.75,
+        "low": 16.55,
+        "close": 16.7,
+        "volume": 1703982
+      },
+      {
+        "date": "2026-10-29",
+        "open": 16.65,
+        "high": 16.75,
+        "low": 16.6,
+        "close": 16.75,
+        "volume": 2077637
+      },
+      {
+        "date": "2026-10-30",
+        "open": 16.75,
+        "high": 16.75,
+        "low": 16.6,
+        "close": 16.75,
+        "volume": 2247331
       }
     ],
     "2103|上市": [
@@ -225472,6 +225624,174 @@
     ],
     "2618|上市": [
       {
+        "date": "2026-06-01",
+        "open": 36.45,
+        "high": 37.85,
+        "low": 36.3,
+        "close": 37.7,
+        "volume": 82974354
+      },
+      {
+        "date": "2026-06-02",
+        "open": 37.4,
+        "high": 37.8,
+        "low": 36.65,
+        "close": 37.25,
+        "volume": 84389805
+      },
+      {
+        "date": "2026-06-03",
+        "open": 37.8,
+        "high": 38.45,
+        "low": 37.3,
+        "close": 37.7,
+        "volume": 81050445
+      },
+      {
+        "date": "2026-06-04",
+        "open": 37.55,
+        "high": 38.4,
+        "low": 37.3,
+        "close": 37.9,
+        "volume": 59159507
+      },
+      {
+        "date": "2026-06-05",
+        "open": 37.95,
+        "high": 38.1,
+        "low": 37.35,
+        "close": 37.7,
+        "volume": 39384323
+      },
+      {
+        "date": "2026-06-08",
+        "open": 36.25,
+        "high": 36.6,
+        "low": 35.85,
+        "close": 36.4,
+        "volume": 52725893
+      },
+      {
+        "date": "2026-06-09",
+        "open": 36.35,
+        "high": 37.35,
+        "low": 36.35,
+        "close": 37,
+        "volume": 37212814
+      },
+      {
+        "date": "2026-06-10",
+        "open": 37,
+        "high": 37.75,
+        "low": 36.9,
+        "close": 37.25,
+        "volume": 42301554
+      },
+      {
+        "date": "2026-06-11",
+        "open": 37,
+        "high": 37.8,
+        "low": 36.75,
+        "close": 37.7,
+        "volume": 41921727
+      },
+      {
+        "date": "2026-06-12",
+        "open": 38.1,
+        "high": 39.4,
+        "low": 38.05,
+        "close": 38.7,
+        "volume": 75680658
+      },
+      {
+        "date": "2026-06-15",
+        "open": 40,
+        "high": 40.45,
+        "low": 39.4,
+        "close": 39.95,
+        "volume": 78426978
+      },
+      {
+        "date": "2026-06-16",
+        "open": 40.2,
+        "high": 40.5,
+        "low": 39.3,
+        "close": 39.75,
+        "volume": 43247293
+      },
+      {
+        "date": "2026-06-17",
+        "open": 40.35,
+        "high": 43.3,
+        "low": 40.05,
+        "close": 42.55,
+        "volume": 192198094
+      },
+      {
+        "date": "2026-06-18",
+        "open": 43.3,
+        "high": 43.7,
+        "low": 42.25,
+        "close": 42.55,
+        "volume": 65533169
+      },
+      {
+        "date": "2026-06-22",
+        "open": 41.9,
+        "high": 42,
+        "low": 40.7,
+        "close": 41.65,
+        "volume": 54152128
+      },
+      {
+        "date": "2026-06-23",
+        "open": 41.95,
+        "high": 43.1,
+        "low": 41.5,
+        "close": 42.95,
+        "volume": 87433547
+      },
+      {
+        "date": "2026-06-24",
+        "open": 42.95,
+        "high": 44.8,
+        "low": 42.55,
+        "close": 44,
+        "volume": 89685104
+      },
+      {
+        "date": "2026-06-25",
+        "open": 44.6,
+        "high": 45.65,
+        "low": 44.15,
+        "close": 44.5,
+        "volume": 69764175
+      },
+      {
+        "date": "2026-06-26",
+        "open": 44.45,
+        "high": 44.85,
+        "low": 43.55,
+        "close": 43.8,
+        "volume": 46293189
+      },
+      {
+        "date": "2026-06-29",
+        "open": 44.65,
+        "high": 45,
+        "low": 43.65,
+        "close": 43.9,
+        "volume": 44004546
+      },
+      {
+        "date": "2026-06-30",
+        "open": 44.1,
+        "high": 44.9,
+        "low": 43.8,
+        "close": 44.9,
+        "volume": 62801992
+      },
+      {
         "date": "2026-07-01",
         "open": 45,
         "high": 45,
@@ -225646,6 +225966,174 @@
         "low": 42.3,
         "close": 43.3,
         "volume": 70267465
+      },
+      {
+        "date": "2026-08-03",
+        "open": 43.3,
+        "high": 43.8,
+        "low": 42.9,
+        "close": 43.7,
+        "volume": 40295415
+      },
+      {
+        "date": "2026-08-04",
+        "open": 42.85,
+        "high": 44.15,
+        "low": 42,
+        "close": 43.8,
+        "volume": 49619542
+      },
+      {
+        "date": "2026-08-05",
+        "open": 44,
+        "high": 44.55,
+        "low": 43.55,
+        "close": 43.8,
+        "volume": 45129966
+      },
+      {
+        "date": "2026-08-06",
+        "open": 43.7,
+        "high": 43.95,
+        "low": 43.1,
+        "close": 43.25,
+        "volume": 20003759
+      },
+      {
+        "date": "2026-08-07",
+        "open": 43.2,
+        "high": 44.6,
+        "low": 42.8,
+        "close": 44.4,
+        "volume": 37423508
+      },
+      {
+        "date": "2026-08-10",
+        "open": 43,
+        "high": 43,
+        "low": 41.5,
+        "close": 42.65,
+        "volume": 40365369
+      },
+      {
+        "date": "2026-08-11",
+        "open": 42,
+        "high": 42.15,
+        "low": 41.2,
+        "close": 41.75,
+        "volume": 36659531
+      },
+      {
+        "date": "2026-08-12",
+        "open": 41.9,
+        "high": 42.6,
+        "low": 41.45,
+        "close": 42.15,
+        "volume": 22165760
+      },
+      {
+        "date": "2026-08-13",
+        "open": 41.9,
+        "high": 41.95,
+        "low": 40.8,
+        "close": 41,
+        "volume": 32505193
+      },
+      {
+        "date": "2026-08-14",
+        "open": 40.65,
+        "high": 40.65,
+        "low": 39.2,
+        "close": 39.9,
+        "volume": 55534006
+      },
+      {
+        "date": "2026-08-17",
+        "open": 40.05,
+        "high": 41.8,
+        "low": 39.9,
+        "close": 41.8,
+        "volume": 45855032
+      },
+      {
+        "date": "2026-08-18",
+        "open": 41.45,
+        "high": 42.3,
+        "low": 41.4,
+        "close": 41.9,
+        "volume": 29021608
+      },
+      {
+        "date": "2026-08-19",
+        "open": 41.75,
+        "high": 41.85,
+        "low": 41.05,
+        "close": 41.6,
+        "volume": 17734556
+      },
+      {
+        "date": "2026-08-20",
+        "open": 42.05,
+        "high": 42.5,
+        "low": 41.8,
+        "close": 42.25,
+        "volume": 24896565
+      },
+      {
+        "date": "2026-08-21",
+        "open": 42,
+        "high": 42.6,
+        "low": 41.6,
+        "close": 42.6,
+        "volume": 26556485
+      },
+      {
+        "date": "2026-08-24",
+        "open": 42.65,
+        "high": 43.6,
+        "low": 42.55,
+        "close": 42.65,
+        "volume": 20270027
+      },
+      {
+        "date": "2026-08-25",
+        "open": 42.65,
+        "high": 42.75,
+        "low": 42,
+        "close": 42.2,
+        "volume": 11423716
+      },
+      {
+        "date": "2026-08-26",
+        "open": 42.85,
+        "high": 43.4,
+        "low": 42.8,
+        "close": 43,
+        "volume": 28471617
+      },
+      {
+        "date": "2026-08-27",
+        "open": 43.5,
+        "high": 43.5,
+        "low": 42.5,
+        "close": 42.75,
+        "volume": 24917033
+      },
+      {
+        "date": "2026-08-28",
+        "open": 42.6,
+        "high": 42.6,
+        "low": 41.6,
+        "close": 41.8,
+        "volume": 20564641
+      },
+      {
+        "date": "2026-08-31",
+        "open": 41.75,
+        "high": 42.05,
+        "low": 41.45,
+        "close": 42,
+        "volume": 20960560
       },
       {
         "date": "2026-09-01",
@@ -226785,6 +227273,832 @@
         "close": 31.5,
         "volume": 38859579
       }
+    ],
+    "2617|上市": [
+      {
+        "date": "2026-06-01",
+        "open": 28.95,
+        "high": 29.7,
+        "low": 28.95,
+        "close": 29.65,
+        "volume": 1672299
+      },
+      {
+        "date": "2026-06-02",
+        "open": 29.7,
+        "high": 29.7,
+        "low": 29.15,
+        "close": 29.5,
+        "volume": 927269
+      },
+      {
+        "date": "2026-06-03",
+        "open": 29.65,
+        "high": 29.75,
+        "low": 29.25,
+        "close": 29.7,
+        "volume": 814479
+      },
+      {
+        "date": "2026-06-04",
+        "open": 29.7,
+        "high": 29.7,
+        "low": 29.45,
+        "close": 29.55,
+        "volume": 592272
+      },
+      {
+        "date": "2026-06-05",
+        "open": 29.5,
+        "high": 29.8,
+        "low": 29.4,
+        "close": 29.6,
+        "volume": 868568
+      },
+      {
+        "date": "2026-06-08",
+        "open": 28.65,
+        "high": 29.3,
+        "low": 28.55,
+        "close": 29.15,
+        "volume": 695978
+      },
+      {
+        "date": "2026-06-09",
+        "open": 29.5,
+        "high": 29.8,
+        "low": 29.5,
+        "close": 29.65,
+        "volume": 710481
+      },
+      {
+        "date": "2026-06-10",
+        "open": 29.65,
+        "high": 29.75,
+        "low": 29.5,
+        "close": 29.65,
+        "volume": 887144
+      },
+      {
+        "date": "2026-06-11",
+        "open": 29.5,
+        "high": 29.65,
+        "low": 29.3,
+        "close": 29.6,
+        "volume": 512201
+      },
+      {
+        "date": "2026-06-12",
+        "open": 29.6,
+        "high": 30.15,
+        "low": 29.6,
+        "close": 30,
+        "volume": 1131227
+      },
+      {
+        "date": "2026-06-15",
+        "open": 30.4,
+        "high": 30.55,
+        "low": 30.2,
+        "close": 30.25,
+        "volume": 956715
+      },
+      {
+        "date": "2026-06-16",
+        "open": 30.5,
+        "high": 30.55,
+        "low": 30.1,
+        "close": 30.2,
+        "volume": 641588
+      },
+      {
+        "date": "2026-06-17",
+        "open": 29.85,
+        "high": 30.4,
+        "low": 29.8,
+        "close": 30.15,
+        "volume": 842533
+      },
+      {
+        "date": "2026-06-18",
+        "open": 30.2,
+        "high": 30.4,
+        "low": 29.8,
+        "close": 29.85,
+        "volume": 985477
+      },
+      {
+        "date": "2026-06-22",
+        "open": 30,
+        "high": 30.15,
+        "low": 29.75,
+        "close": 30.05,
+        "volume": 902444
+      },
+      {
+        "date": "2026-06-23",
+        "open": 30.1,
+        "high": 30.15,
+        "low": 29.8,
+        "close": 29.95,
+        "volume": 626955
+      },
+      {
+        "date": "2026-06-24",
+        "open": 30.05,
+        "high": 30.1,
+        "low": 29.75,
+        "close": 29.85,
+        "volume": 506098
+      },
+      {
+        "date": "2026-06-25",
+        "open": 30.25,
+        "high": 30.25,
+        "low": 29.85,
+        "close": 29.95,
+        "volume": 587768
+      },
+      {
+        "date": "2026-06-26",
+        "open": 29.8,
+        "high": 29.85,
+        "low": 29.15,
+        "close": 29.15,
+        "volume": 1435808
+      },
+      {
+        "date": "2026-06-29",
+        "open": 29.15,
+        "high": 29.45,
+        "low": 29.15,
+        "close": 29.45,
+        "volume": 398236
+      },
+      {
+        "date": "2026-06-30",
+        "open": 29.5,
+        "high": 29.7,
+        "low": 29.35,
+        "close": 29.7,
+        "volume": 391174
+      },
+      {
+        "date": "2026-07-01",
+        "open": 29.6,
+        "high": 29.7,
+        "low": 29.35,
+        "close": 29.65,
+        "volume": 410567
+      },
+      {
+        "date": "2026-07-02",
+        "open": 29.75,
+        "high": 29.95,
+        "low": 29.45,
+        "close": 29.95,
+        "volume": 715112
+      },
+      {
+        "date": "2026-07-03",
+        "open": 29.8,
+        "high": 30.7,
+        "low": 29.8,
+        "close": 30.5,
+        "volume": 1279604
+      },
+      {
+        "date": "2026-07-06",
+        "open": 30.75,
+        "high": 31.05,
+        "low": 30.7,
+        "close": 30.8,
+        "volume": 951990
+      },
+      {
+        "date": "2026-07-07",
+        "open": 31,
+        "high": 31,
+        "low": 30.3,
+        "close": 30.5,
+        "volume": 788059
+      },
+      {
+        "date": "2026-07-08",
+        "open": 30.75,
+        "high": 30.75,
+        "low": 30.4,
+        "close": 30.45,
+        "volume": 805870
+      },
+      {
+        "date": "2026-07-09",
+        "open": 30.5,
+        "high": 30.6,
+        "low": 30.3,
+        "close": 30.5,
+        "volume": 568137
+      },
+      {
+        "date": "2026-07-13",
+        "open": 30.55,
+        "high": 30.7,
+        "low": 30.1,
+        "close": 30.1,
+        "volume": 1054150
+      },
+      {
+        "date": "2026-07-14",
+        "open": 30.2,
+        "high": 30.4,
+        "low": 29.65,
+        "close": 30,
+        "volume": 1639480
+      },
+      {
+        "date": "2026-07-15",
+        "open": 28.6,
+        "high": 29,
+        "low": 28.4,
+        "close": 28.95,
+        "volume": 902522
+      },
+      {
+        "date": "2026-07-16",
+        "open": 28.75,
+        "high": 29.15,
+        "low": 28.7,
+        "close": 29,
+        "volume": 455256
+      },
+      {
+        "date": "2026-07-17",
+        "open": 28.85,
+        "high": 28.95,
+        "low": 28.3,
+        "close": 28.45,
+        "volume": 903153
+      },
+      {
+        "date": "2026-07-20",
+        "open": 28.75,
+        "high": 28.85,
+        "low": 28.3,
+        "close": 28.65,
+        "volume": 963587
+      },
+      {
+        "date": "2026-07-21",
+        "open": 28.8,
+        "high": 29.25,
+        "low": 28.8,
+        "close": 29.15,
+        "volume": 732705
+      },
+      {
+        "date": "2026-07-22",
+        "open": 29,
+        "high": 29.5,
+        "low": 29,
+        "close": 29.25,
+        "volume": 708988
+      },
+      {
+        "date": "2026-07-23",
+        "open": 29.45,
+        "high": 29.45,
+        "low": 29,
+        "close": 29.05,
+        "volume": 501537
+      },
+      {
+        "date": "2026-07-24",
+        "open": 29.1,
+        "high": 29.25,
+        "low": 29.05,
+        "close": 29.2,
+        "volume": 659911
+      },
+      {
+        "date": "2026-07-27",
+        "open": 29.3,
+        "high": 29.3,
+        "low": 28.7,
+        "close": 28.8,
+        "volume": 569524
+      },
+      {
+        "date": "2026-07-28",
+        "open": 28.55,
+        "high": 28.7,
+        "low": 28.35,
+        "close": 28.5,
+        "volume": 703188
+      },
+      {
+        "date": "2026-07-29",
+        "open": 28.75,
+        "high": 28.8,
+        "low": 27.85,
+        "close": 28.45,
+        "volume": 995514
+      },
+      {
+        "date": "2026-07-30",
+        "open": 28.5,
+        "high": 28.5,
+        "low": 28,
+        "close": 28.1,
+        "volume": 351062
+      },
+      {
+        "date": "2026-07-31",
+        "open": 28.35,
+        "high": 28.9,
+        "low": 28.35,
+        "close": 28.45,
+        "volume": 512493
+      },
+      {
+        "date": "2026-08-03",
+        "open": 28.45,
+        "high": 28.75,
+        "low": 28.25,
+        "close": 28.55,
+        "volume": 566695
+      },
+      {
+        "date": "2026-08-04",
+        "open": 28.25,
+        "high": 28.45,
+        "low": 28.1,
+        "close": 28.4,
+        "volume": 623727
+      },
+      {
+        "date": "2026-08-05",
+        "open": 28.4,
+        "high": 29.1,
+        "low": 28.4,
+        "close": 28.9,
+        "volume": 727999
+      },
+      {
+        "date": "2026-08-06",
+        "open": 28.8,
+        "high": 29.15,
+        "low": 28.75,
+        "close": 29.1,
+        "volume": 521767
+      },
+      {
+        "date": "2026-08-07",
+        "open": 29.2,
+        "high": 29.2,
+        "low": 28.55,
+        "close": 28.9,
+        "volume": 903150
+      },
+      {
+        "date": "2026-08-10",
+        "open": 29,
+        "high": 29.3,
+        "low": 28.55,
+        "close": 29.3,
+        "volume": 823562
+      },
+      {
+        "date": "2026-08-11",
+        "open": 29.2,
+        "high": 29.4,
+        "low": 28.95,
+        "close": 29.2,
+        "volume": 1247076
+      },
+      {
+        "date": "2026-08-12",
+        "open": 29.4,
+        "high": 29.45,
+        "low": 28.95,
+        "close": 29,
+        "volume": 921179
+      },
+      {
+        "date": "2026-08-13",
+        "open": 29.3,
+        "high": 29.3,
+        "low": 28.7,
+        "close": 28.8,
+        "volume": 771439
+      },
+      {
+        "date": "2026-08-14",
+        "open": 28.65,
+        "high": 28.85,
+        "low": 28.55,
+        "close": 28.75,
+        "volume": 608023
+      },
+      {
+        "date": "2026-08-17",
+        "open": 28.7,
+        "high": 29.3,
+        "low": 28.7,
+        "close": 29.1,
+        "volume": 710303
+      },
+      {
+        "date": "2026-08-18",
+        "open": 29.4,
+        "high": 30.15,
+        "low": 29.4,
+        "close": 29.85,
+        "volume": 2282392
+      },
+      {
+        "date": "2026-08-19",
+        "open": 29.8,
+        "high": 31.2,
+        "low": 29.55,
+        "close": 30.9,
+        "volume": 4641864
+      },
+      {
+        "date": "2026-08-20",
+        "open": 30.95,
+        "high": 31.5,
+        "low": 30.5,
+        "close": 30.95,
+        "volume": 3801990
+      },
+      {
+        "date": "2026-08-21",
+        "open": 31,
+        "high": 31.95,
+        "low": 30.9,
+        "close": 31.8,
+        "volume": 4401407
+      },
+      {
+        "date": "2026-08-24",
+        "open": 32.2,
+        "high": 32.65,
+        "low": 31.5,
+        "close": 31.75,
+        "volume": 3000454
+      },
+      {
+        "date": "2026-08-25",
+        "open": 31.9,
+        "high": 33,
+        "low": 31.5,
+        "close": 31.85,
+        "volume": 4946711
+      },
+      {
+        "date": "2026-08-26",
+        "open": 31.9,
+        "high": 32.85,
+        "low": 30.65,
+        "close": 30.85,
+        "volume": 3221571
+      },
+      {
+        "date": "2026-08-27",
+        "open": 30.85,
+        "high": 31.35,
+        "low": 30.8,
+        "close": 31.3,
+        "volume": 1304850
+      },
+      {
+        "date": "2026-08-28",
+        "open": 31.45,
+        "high": 31.5,
+        "low": 30.3,
+        "close": 30.45,
+        "volume": 1629903
+      },
+      {
+        "date": "2026-08-31",
+        "open": 30.45,
+        "high": 31.3,
+        "low": 30.4,
+        "close": 30.95,
+        "volume": 1052954
+      },
+      {
+        "date": "2026-09-01",
+        "open": 30.9,
+        "high": 31.35,
+        "low": 30.8,
+        "close": 31.2,
+        "volume": 1242908
+      },
+      {
+        "date": "2026-09-02",
+        "open": 31.1,
+        "high": 31.4,
+        "low": 31.05,
+        "close": 31.25,
+        "volume": 752082
+      },
+      {
+        "date": "2026-09-03",
+        "open": 32.4,
+        "high": 32.9,
+        "low": 31.95,
+        "close": 32.3,
+        "volume": 5115281
+      },
+      {
+        "date": "2026-09-04",
+        "open": 32.8,
+        "high": 32.95,
+        "low": 32,
+        "close": 32.45,
+        "volume": 2542585
+      },
+      {
+        "date": "2026-09-07",
+        "open": 32.75,
+        "high": 33.15,
+        "low": 32.2,
+        "close": 32.9,
+        "volume": 3612170
+      },
+      {
+        "date": "2026-09-08",
+        "open": 32.9,
+        "high": 32.9,
+        "low": 32.2,
+        "close": 32.35,
+        "volume": 1240620
+      },
+      {
+        "date": "2026-09-09",
+        "open": 32.05,
+        "high": 33.6,
+        "low": 31.95,
+        "close": 33.4,
+        "volume": 3532033
+      },
+      {
+        "date": "2026-09-10",
+        "open": 33.45,
+        "high": 34.1,
+        "low": 33.05,
+        "close": 33.45,
+        "volume": 3341030
+      },
+      {
+        "date": "2026-09-11",
+        "open": 33.45,
+        "high": 34.75,
+        "low": 33.35,
+        "close": 33.65,
+        "volume": 5793879
+      },
+      {
+        "date": "2026-09-14",
+        "open": 33.7,
+        "high": 33.85,
+        "low": 32.6,
+        "close": 33.05,
+        "volume": 1926875
+      },
+      {
+        "date": "2026-09-15",
+        "open": 33.05,
+        "high": 33.05,
+        "low": 32.3,
+        "close": 32.4,
+        "volume": 1456809
+      },
+      {
+        "date": "2026-09-16",
+        "open": 32.4,
+        "high": 33.3,
+        "low": 32.3,
+        "close": 32.45,
+        "volume": 1546038
+      },
+      {
+        "date": "2026-09-17",
+        "open": 32.4,
+        "high": 33.4,
+        "low": 32.15,
+        "close": 33.1,
+        "volume": 2187351
+      },
+      {
+        "date": "2026-09-18",
+        "open": 33.1,
+        "high": 33.3,
+        "low": 32.6,
+        "close": 32.95,
+        "volume": 969283
+      },
+      {
+        "date": "2026-09-21",
+        "open": 32.75,
+        "high": 33.35,
+        "low": 32.6,
+        "close": 33.3,
+        "volume": 1511057
+      },
+      {
+        "date": "2026-09-22",
+        "open": 33.3,
+        "high": 33.35,
+        "low": 32.95,
+        "close": 33.1,
+        "volume": 584460
+      },
+      {
+        "date": "2026-09-23",
+        "open": 32.9,
+        "high": 33.1,
+        "low": 32.75,
+        "close": 32.85,
+        "volume": 557822
+      },
+      {
+        "date": "2026-09-24",
+        "open": 32.75,
+        "high": 33,
+        "low": 32.55,
+        "close": 32.8,
+        "volume": 575669
+      },
+      {
+        "date": "2026-09-29",
+        "open": 32.9,
+        "high": 32.9,
+        "low": 31.1,
+        "close": 31.25,
+        "volume": 2312297
+      },
+      {
+        "date": "2026-09-30",
+        "open": 31.1,
+        "high": 31.5,
+        "low": 31.1,
+        "close": 31.45,
+        "volume": 570281
+      },
+      {
+        "date": "2026-10-01",
+        "open": 31.45,
+        "high": 31.45,
+        "low": 30.9,
+        "close": 31.1,
+        "volume": 792762
+      },
+      {
+        "date": "2026-10-02",
+        "open": 31.1,
+        "high": 31.55,
+        "low": 30.85,
+        "close": 31.55,
+        "volume": 536475
+      },
+      {
+        "date": "2026-10-05",
+        "open": 31.6,
+        "high": 32.4,
+        "low": 31.5,
+        "close": 32.1,
+        "volume": 1352313
+      },
+      {
+        "date": "2026-10-06",
+        "open": 32.05,
+        "high": 32.75,
+        "low": 31.65,
+        "close": 32.3,
+        "volume": 1193544
+      },
+      {
+        "date": "2026-10-07",
+        "open": 32.25,
+        "high": 32.25,
+        "low": 31.75,
+        "close": 32.1,
+        "volume": 719216
+      },
+      {
+        "date": "2026-10-08",
+        "open": 31.8,
+        "high": 32.25,
+        "low": 31.7,
+        "close": 32.05,
+        "volume": 402746
+      },
+      {
+        "date": "2026-10-12",
+        "open": 32.3,
+        "high": 32.95,
+        "low": 32.3,
+        "close": 32.5,
+        "volume": 1397631
+      },
+      {
+        "date": "2026-10-13",
+        "open": 31.95,
+        "high": 32.8,
+        "low": 31.95,
+        "close": 32.55,
+        "volume": 1152308
+      },
+      {
+        "date": "2026-10-14",
+        "open": 32.85,
+        "high": 33.2,
+        "low": 32.5,
+        "close": 32.8,
+        "volume": 959190
+      },
+      {
+        "date": "2026-10-15",
+        "open": 32.55,
+        "high": 32.8,
+        "low": 32.2,
+        "close": 32.35,
+        "volume": 771079
+      },
+      {
+        "date": "2026-10-16",
+        "open": 32.35,
+        "high": 32.75,
+        "low": 32.15,
+        "close": 32.35,
+        "volume": 886986
+      },
+      {
+        "date": "2026-10-19",
+        "open": 32.05,
+        "high": 32.2,
+        "low": 31.25,
+        "close": 31.55,
+        "volume": 1000131
+      },
+      {
+        "date": "2026-10-20",
+        "open": 31.25,
+        "high": 31.7,
+        "low": 31.25,
+        "close": 31.35,
+        "volume": 712560
+      },
+      {
+        "date": "2026-10-21",
+        "open": 31.5,
+        "high": 31.6,
+        "low": 31.15,
+        "close": 31.35,
+        "volume": 599264
+      },
+      {
+        "date": "2026-10-22",
+        "open": 31.4,
+        "high": 31.85,
+        "low": 31.4,
+        "close": 31.5,
+        "volume": 574473
+      },
+      {
+        "date": "2026-10-27",
+        "open": 31.55,
+        "high": 31.6,
+        "low": 30.85,
+        "close": 31.4,
+        "volume": 1606468
+      },
+      {
+        "date": "2026-10-28",
+        "open": 31.4,
+        "high": 31.9,
+        "low": 31.4,
+        "close": 31.75,
+        "volume": 606309
+      },
+      {
+        "date": "2026-10-29",
+        "open": 31.7,
+        "high": 32.05,
+        "low": 31.6,
+        "close": 31.7,
+        "volume": 416207
+      },
+      {
+        "date": "2026-10-30",
+        "open": 31.7,
+        "high": 32.1,
+        "low": 31.1,
+        "close": 31.95,
+        "volume": 1118664
+      }
     ]
   },
   "names": {
@@ -227057,7 +228371,7 @@
     "2434|上市": "統懋"
   },
   "shortAvailability": {
-    "date": "2026-10-29",
+    "date": "2026-10-30",
     "byCode": {
       "1101": {
         "allowed": true,
@@ -228720,9 +230034,9 @@
         "note": null
       },
       "2414": {
-        "allowed": true,
+        "allowed": false,
         "nextDayLimit": 40433,
-        "note": null
+        "note": "X"
       },
       "2415": {
         "allowed": true,
@@ -230970,9 +232284,9 @@
         "note": null
       },
       "6165": {
-        "allowed": false,
+        "allowed": true,
         "nextDayLimit": 19438,
-        "note": "X"
+        "note": null
       },
       "6166": {
         "allowed": true,
@@ -232166,12 +233480,12 @@
       },
       "9105": {
         "allowed": true,
-        "nextDayLimit": 381703,
+        "nextDayLimit": 379131,
         "note": null
       },
       "9136": {
         "allowed": true,
-        "nextDayLimit": 32906,
+        "nextDayLimit": 32892,
         "note": null
       },
       "9802": {
@@ -232385,23 +233699,23 @@
         "note": null
       },
       "00400A": {
-        "allowed": true,
-        "nextDayLimit": 533410,
-        "note": null
+        "allowed": false,
+        "nextDayLimit": 541910,
+        "note": "X"
       },
       "00401A": {
         "allowed": true,
-        "nextDayLimit": 71848,
+        "nextDayLimit": 73223,
         "note": null
       },
       "00402A": {
         "allowed": true,
-        "nextDayLimit": 140656,
+        "nextDayLimit": 140781,
         "note": null
       },
       "00403A": {
         "allowed": true,
-        "nextDayLimit": 3214879,
+        "nextDayLimit": 3235379,
         "note": null
       },
       "00404A": {
@@ -232411,17 +233725,17 @@
       },
       "00405A": {
         "allowed": true,
-        "nextDayLimit": 642686,
+        "nextDayLimit": 645561,
         "note": null
       },
       "00406A": {
         "allowed": false,
-        "nextDayLimit": 3542015,
+        "nextDayLimit": 3795640,
         "note": "X"
       },
       "00407A": {
         "allowed": true,
-        "nextDayLimit": 557434,
+        "nextDayLimit": 570934,
         "note": null
       },
       "00408A": {
@@ -232431,7 +233745,7 @@
       },
       "00409A": {
         "allowed": true,
-        "nextDayLimit": 355987,
+        "nextDayLimit": 357237,
         "note": null
       },
       "00410A": {
@@ -232441,17 +233755,17 @@
       },
       "00412A": {
         "allowed": true,
-        "nextDayLimit": 217997,
+        "nextDayLimit": 218622,
         "note": null
       },
       "00415A": {
         "allowed": true,
-        "nextDayLimit": 341922,
+        "nextDayLimit": 349297,
         "note": null
       },
       "0050": {
         "allowed": true,
-        "nextDayLimit": 5831375,
+        "nextDayLimit": 5863750,
         "note": null
       },
       "0051": {
@@ -232461,7 +233775,7 @@
       },
       "0052": {
         "allowed": true,
-        "nextDayLimit": 665750,
+        "nextDayLimit": 668250,
         "note": null
       },
       "0053": {
@@ -232476,7 +233790,7 @@
       },
       "0056": {
         "allowed": true,
-        "nextDayLimit": 3713508,
+        "nextDayLimit": 3728258,
         "note": null
       },
       "0057": {
@@ -232516,17 +233830,17 @@
       },
       "006208": {
         "allowed": true,
-        "nextDayLimit": 472010,
+        "nextDayLimit": 473635,
         "note": null
       },
       "00631L": {
         "allowed": true,
-        "nextDayLimit": 2025337,
+        "nextDayLimit": 2108462,
         "note": null
       },
       "00632R": {
         "allowed": true,
-        "nextDayLimit": 582676,
+        "nextDayLimit": 576426,
         "note": null
       },
       "00633L": {
@@ -232576,7 +233890,7 @@
       },
       "00642U": {
         "allowed": true,
-        "nextDayLimit": 11705,
+        "nextDayLimit": 11205,
         "note": null
       },
       "00643": {
@@ -232606,7 +233920,7 @@
       },
       "00650L": {
         "allowed": true,
-        "nextDayLimit": 26584,
+        "nextDayLimit": 26459,
         "note": null
       },
       "00651R": {
@@ -232631,7 +233945,7 @@
       },
       "00655L": {
         "allowed": true,
-        "nextDayLimit": 15489,
+        "nextDayLimit": 15614,
         "note": null
       },
       "00656R": {
@@ -232656,12 +233970,12 @@
       },
       "00662": {
         "allowed": true,
-        "nextDayLimit": 243882,
+        "nextDayLimit": 245132,
         "note": null
       },
       "00663L": {
         "allowed": true,
-        "nextDayLimit": 36165,
+        "nextDayLimit": 37665,
         "note": null
       },
       "00664R": {
@@ -232671,7 +233985,7 @@
       },
       "00665L": {
         "allowed": true,
-        "nextDayLimit": 111866,
+        "nextDayLimit": 108491,
         "note": null
       },
       "00666R": {
@@ -232691,7 +234005,7 @@
       },
       "00670L": {
         "allowed": true,
-        "nextDayLimit": 19786,
+        "nextDayLimit": 20036,
         "note": null
       },
       "00671R": {
@@ -232711,12 +234025,12 @@
       },
       "00675L": {
         "allowed": true,
-        "nextDayLimit": 28946,
+        "nextDayLimit": 29321,
         "note": null
       },
       "00676R": {
         "allowed": true,
-        "nextDayLimit": 45458,
+        "nextDayLimit": 44458,
         "note": null
       },
       "00678": {
@@ -232726,7 +234040,7 @@
       },
       "00680L": {
         "allowed": true,
-        "nextDayLimit": 338894,
+        "nextDayLimit": 337019,
         "note": null
       },
       "00681R": {
@@ -232751,7 +234065,7 @@
       },
       "00685L": {
         "allowed": true,
-        "nextDayLimit": 1876209,
+        "nextDayLimit": 1998334,
         "note": null
       },
       "00686R": {
@@ -232761,7 +234075,7 @@
       },
       "00688L": {
         "allowed": true,
-        "nextDayLimit": 137653,
+        "nextDayLimit": 136653,
         "note": null
       },
       "00689R": {
@@ -232771,7 +234085,7 @@
       },
       "00690": {
         "allowed": true,
-        "nextDayLimit": 21457,
+        "nextDayLimit": 21707,
         "note": null
       },
       "00692": {
@@ -232781,7 +234095,7 @@
       },
       "00693U": {
         "allowed": true,
-        "nextDayLimit": 12541,
+        "nextDayLimit": 12166,
         "note": null
       },
       "00700": {
@@ -232806,7 +234120,7 @@
       },
       "00706L": {
         "allowed": true,
-        "nextDayLimit": 29817,
+        "nextDayLimit": 29567,
         "note": null
       },
       "00707R": {
@@ -232836,7 +234150,7 @@
       },
       "00712": {
         "allowed": true,
-        "nextDayLimit": 1640377,
+        "nextDayLimit": 1641627,
         "note": null
       },
       "00713": {
@@ -232846,12 +234160,12 @@
       },
       "00714": {
         "allowed": true,
-        "nextDayLimit": 4516,
+        "nextDayLimit": 4641,
         "note": null
       },
       "00715L": {
         "allowed": false,
-        "nextDayLimit": 11297,
+        "nextDayLimit": 11047,
         "note": "X"
       },
       "00717": {
@@ -232911,17 +234225,17 @@
       },
       "00753L": {
         "allowed": true,
-        "nextDayLimit": 213914,
+        "nextDayLimit": 211914,
         "note": null
       },
       "00757": {
-        "allowed": false,
+        "allowed": true,
         "nextDayLimit": 66498,
-        "note": "X"
+        "note": null
       },
       "00762": {
         "allowed": true,
-        "nextDayLimit": 11687,
+        "nextDayLimit": 11937,
         "note": null
       },
       "00763U": {
@@ -232951,7 +234265,7 @@
       },
       "00830": {
         "allowed": true,
-        "nextDayLimit": 235616,
+        "nextDayLimit": 237616,
         "note": null
       },
       "00850": {
@@ -232991,27 +234305,27 @@
       },
       "00878": {
         "allowed": true,
-        "nextDayLimit": 4759072,
+        "nextDayLimit": 4783197,
         "note": null
       },
       "00881": {
         "allowed": true,
-        "nextDayLimit": 758850,
+        "nextDayLimit": 761475,
         "note": null
       },
       "00882": {
         "allowed": true,
-        "nextDayLimit": 482962,
+        "nextDayLimit": 480712,
         "note": null
       },
       "00885": {
         "allowed": true,
-        "nextDayLimit": 146934,
+        "nextDayLimit": 146559,
         "note": null
       },
       "00891": {
         "allowed": true,
-        "nextDayLimit": 500647,
+        "nextDayLimit": 506897,
         "note": null
       },
       "00892": {
@@ -233026,7 +234340,7 @@
       },
       "00894": {
         "allowed": true,
-        "nextDayLimit": 38502,
+        "nextDayLimit": 38627,
         "note": null
       },
       "00895": {
@@ -233036,7 +234350,7 @@
       },
       "00896": {
         "allowed": true,
-        "nextDayLimit": 121845,
+        "nextDayLimit": 123845,
         "note": null
       },
       "00897": {
@@ -233061,7 +234375,7 @@
       },
       "00901": {
         "allowed": true,
-        "nextDayLimit": 15212,
+        "nextDayLimit": 15087,
         "note": null
       },
       "00902": {
@@ -233081,7 +234395,7 @@
       },
       "00905": {
         "allowed": true,
-        "nextDayLimit": 89831,
+        "nextDayLimit": 89956,
         "note": null
       },
       "00907": {
@@ -233096,12 +234410,12 @@
       },
       "00909": {
         "allowed": true,
-        "nextDayLimit": 29676,
+        "nextDayLimit": 29926,
         "note": null
       },
       "00910": {
         "allowed": true,
-        "nextDayLimit": 27609,
+        "nextDayLimit": 27484,
         "note": null
       },
       "00911": {
@@ -233136,12 +234450,12 @@
       },
       "00918": {
         "allowed": true,
-        "nextDayLimit": 1171191,
+        "nextDayLimit": 1178316,
         "note": null
       },
       "00919": {
         "allowed": true,
-        "nextDayLimit": 4848908,
+        "nextDayLimit": 4850408,
         "note": null
       },
       "00920": {
@@ -233156,17 +234470,17 @@
       },
       "00922": {
         "allowed": true,
-        "nextDayLimit": 566796,
+        "nextDayLimit": 570796,
         "note": null
       },
       "00923": {
         "allowed": true,
-        "nextDayLimit": 238855,
+        "nextDayLimit": 239730,
         "note": null
       },
       "00924": {
         "allowed": true,
-        "nextDayLimit": 109025,
+        "nextDayLimit": 109150,
         "note": null
       },
       "00926": {
@@ -233176,12 +234490,12 @@
       },
       "00927": {
         "allowed": true,
-        "nextDayLimit": 539724,
+        "nextDayLimit": 544474,
         "note": null
       },
       "00929": {
         "allowed": true,
-        "nextDayLimit": 1430784,
+        "nextDayLimit": 1450284,
         "note": null
       },
       "00930": {
@@ -233201,7 +234515,7 @@
       },
       "00935": {
         "allowed": true,
-        "nextDayLimit": 239251,
+        "nextDayLimit": 239751,
         "note": null
       },
       "00936": {
@@ -233251,7 +234565,7 @@
       },
       "00947": {
         "allowed": true,
-        "nextDayLimit": 92716,
+        "nextDayLimit": 92841,
         "note": null
       },
       "00949": {
@@ -233261,7 +234575,7 @@
       },
       "00951": {
         "allowed": true,
-        "nextDayLimit": 61260,
+        "nextDayLimit": 61385,
         "note": null
       },
       "00952": {
@@ -233271,12 +234585,12 @@
       },
       "00953B": {
         "allowed": false,
-        "nextDayLimit": 1178543,
+        "nextDayLimit": 1177543,
         "note": "X"
       },
       "00954": {
         "allowed": true,
-        "nextDayLimit": 34436,
+        "nextDayLimit": 35436,
         "note": null
       },
       "00956": {
@@ -233291,12 +234605,12 @@
       },
       "00961": {
         "allowed": true,
-        "nextDayLimit": 209627,
+        "nextDayLimit": 207877,
         "note": null
       },
       "00962": {
         "allowed": true,
-        "nextDayLimit": 56355,
+        "nextDayLimit": 58230,
         "note": null
       },
       "00963": {
@@ -233311,7 +234625,7 @@
       },
       "00965": {
         "allowed": true,
-        "nextDayLimit": 98373,
+        "nextDayLimit": 98123,
         "note": null
       },
       "00971": {
@@ -233331,7 +234645,7 @@
       },
       "009801": {
         "allowed": true,
-        "nextDayLimit": 23154,
+        "nextDayLimit": 23029,
         "note": null
       },
       "009802": {
@@ -233341,7 +234655,7 @@
       },
       "009803": {
         "allowed": true,
-        "nextDayLimit": 82582,
+        "nextDayLimit": 83082,
         "note": null
       },
       "009804": {
@@ -233351,7 +234665,7 @@
       },
       "009805": {
         "allowed": true,
-        "nextDayLimit": 155579,
+        "nextDayLimit": 154454,
         "note": null
       },
       "009808": {
@@ -233366,7 +234680,7 @@
       },
       "00980A": {
         "allowed": true,
-        "nextDayLimit": 194432,
+        "nextDayLimit": 195432,
         "note": null
       },
       "009810": {
@@ -233391,7 +234705,7 @@
       },
       "009816": {
         "allowed": true,
-        "nextDayLimit": 3413961,
+        "nextDayLimit": 3441336,
         "note": null
       },
       "009817": {
@@ -233411,7 +234725,7 @@
       },
       "00981A": {
         "allowed": true,
-        "nextDayLimit": 2454302,
+        "nextDayLimit": 2496302,
         "note": null
       },
       "00981T": {
@@ -233421,17 +234735,17 @@
       },
       "009820": {
         "allowed": true,
-        "nextDayLimit": 231300,
+        "nextDayLimit": 230800,
         "note": null
       },
       "009821": {
         "allowed": true,
-        "nextDayLimit": 151710,
+        "nextDayLimit": 151460,
         "note": null
       },
       "009824": {
         "allowed": true,
-        "nextDayLimit": 112836,
+        "nextDayLimit": 112461,
         "note": null
       },
       "009826": {
@@ -233441,22 +234755,22 @@
       },
       "009827": {
         "allowed": true,
-        "nextDayLimit": 54862,
+        "nextDayLimit": 55112,
         "note": null
       },
       "009828": {
         "allowed": true,
-        "nextDayLimit": 307761,
+        "nextDayLimit": 326261,
         "note": null
       },
       "009829": {
         "allowed": true,
-        "nextDayLimit": 144217,
+        "nextDayLimit": 144717,
         "note": null
       },
       "00982A": {
         "allowed": true,
-        "nextDayLimit": 544359,
+        "nextDayLimit": 550984,
         "note": null
       },
       "00982D": {
@@ -233471,17 +234785,17 @@
       },
       "009831": {
         "allowed": true,
-        "nextDayLimit": 34687,
+        "nextDayLimit": 35187,
         "note": null
       },
       "009832": {
         "allowed": true,
-        "nextDayLimit": 26916,
+        "nextDayLimit": 27291,
         "note": null
       },
       "00983A": {
         "allowed": true,
-        "nextDayLimit": 17921,
+        "nextDayLimit": 17671,
         "note": null
       },
       "00983D": {
@@ -233501,12 +234815,12 @@
       },
       "00985A": {
         "allowed": true,
-        "nextDayLimit": 358947,
+        "nextDayLimit": 359572,
         "note": null
       },
       "00985B": {
         "allowed": false,
-        "nextDayLimit": 204875,
+        "nextDayLimit": 203000,
         "note": "X"
       },
       "00986A": {
@@ -233531,12 +234845,12 @@
       },
       "00990A": {
         "allowed": true,
-        "nextDayLimit": 568880,
+        "nextDayLimit": 568380,
         "note": null
       },
       "00991A": {
         "allowed": true,
-        "nextDayLimit": 1038479,
+        "nextDayLimit": 1040104,
         "note": null
       },
       "00991B": {
@@ -233546,7 +234860,7 @@
       },
       "00992A": {
         "allowed": true,
-        "nextDayLimit": 691238,
+        "nextDayLimit": 698363,
         "note": null
       },
       "00993A": {
@@ -233556,7 +234870,7 @@
       },
       "00994A": {
         "allowed": true,
-        "nextDayLimit": 60297,
+        "nextDayLimit": 60172,
         "note": null
       },
       "00995A": {
@@ -233566,17 +234880,17 @@
       },
       "00996A": {
         "allowed": true,
-        "nextDayLimit": 107974,
+        "nextDayLimit": 109724,
         "note": null
       },
       "00997A": {
         "allowed": true,
-        "nextDayLimit": 260719,
+        "nextDayLimit": 260344,
         "note": null
       },
       "00999A": {
         "allowed": true,
-        "nextDayLimit": 249879,
+        "nextDayLimit": 250004,
         "note": null
       }
     }
@@ -233585,26 +234899,21 @@
     "index": {
       "2026-11": {
         "fetched": 0,
-        "at": "2026-11-01T00:44:56.311Z"
+        "at": "2026-11-02T05:30:44.648Z"
       }
     },
     "listed": {
-      "2491|上市": {
-        "2026-11": {
-          "fetched": 0
-        }
-      },
-      "2834|上市": {
-        "2026-11": {
-          "fetched": 0
-        }
-      },
       "5880|上市": {
         "2026-11": {
           "fetched": 0
         }
       },
       "2801|上市": {
+        "2026-11": {
+          "fetched": 0
+        }
+      },
+      "2491|上市": {
         "2026-11": {
           "fetched": 0
         }
@@ -233624,17 +234933,9 @@
           "fetched": 0
         }
       },
-      "2905|上市": {
-        "2026-11": {
-          "fetched": 0
-        }
-      },
       "2887|上市": {
         "2026-11": {
           "fetched": 0
-        },
-        "2026-10": {
-          "fetched": 19
         }
       },
       "2838|上市": {
@@ -233642,7 +234943,7 @@
           "fetched": 0
         }
       },
-      "2890|上市": {
+      "2905|上市": {
         "2026-11": {
           "fetched": 0
         }
@@ -233657,7 +234958,17 @@
           "fetched": 0
         }
       },
+      "2890|上市": {
+        "2026-11": {
+          "fetched": 0
+        }
+      },
       "2352|上市": {
+        "2026-11": {
+          "fetched": 0
+        }
+      },
+      "2834|上市": {
         "2026-11": {
           "fetched": 0
         }
@@ -233667,24 +234978,9 @@
           "fetched": 0
         }
       },
-      "5521|上市": {
+      "2444|上市": {
         "2026-11": {
           "fetched": 0
-        },
-        "2026-10": {
-          "fetched": 19
-        },
-        "2026-09": {
-          "fetched": 20
-        },
-        "2026-08": {
-          "fetched": 21
-        },
-        "2026-07": {
-          "fetched": 22
-        },
-        "2026-06": {
-          "fetched": 21
         }
       },
       "1808|上市": {
@@ -233692,44 +234988,9 @@
           "fetched": 0
         }
       },
-      "2444|上市": {
-        "2026-11": {
-          "fetched": 0
-        },
-        "2026-10": {
-          "fetched": 19
-        },
-        "2026-09": {
-          "fetched": 20
-        },
-        "2026-08": {
-          "fetched": 21
-        },
-        "2026-07": {
-          "fetched": 22
-        },
-        "2026-06": {
-          "fetched": 21
-        }
-      },
       "2537|上市": {
         "2026-11": {
           "fetched": 0
-        },
-        "2026-10": {
-          "fetched": 19
-        },
-        "2026-09": {
-          "fetched": 20
-        },
-        "2026-08": {
-          "fetched": 21
-        },
-        "2026-07": {
-          "fetched": 22
-        },
-        "2026-06": {
-          "fetched": 21
         }
       },
       "6152|上市": {
@@ -233741,56 +235002,57 @@
         "2026-11": {
           "fetched": 0
         },
-        "2026-10": {
-          "fetched": 19
-        },
-        "2026-09": {
-          "fetched": 20
-        },
-        "2026-07": {
-          "fetched": 22
-        },
         "2026-08": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=2618: HTTP 307"
+          "fetched": 21
         },
         "2026-06": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=2618: HTTP 307"
+          "fetched": 21
+        }
+      },
+      "5521|上市": {
+        "2026-11": {
+          "fetched": 0
         }
       },
       "2633|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2633: HTTP 307"
+          "fetched": 0
         }
       },
       "2504|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2504: HTTP 307"
-        }
-      },
-      "3703|上市": {
-        "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3703: HTTP 307"
+          "fetched": 0
         }
       },
       "9925|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=9925: HTTP 307"
+          "fetched": 0
         }
       },
       "2836|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2836: HTTP 307"
+          "fetched": 0
         }
       },
       "2820|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2820: HTTP 307"
+          "fetched": 0
         },
         "2026-10": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261001&stockNo=2820: HTTP 307"
+          "fetched": 19
+        }
+      },
+      "3703|上市": {
+        "2026-11": {
+          "fetched": 0
         }
       },
       "4960|上市": {
+        "2026-11": {
+          "fetched": 0
+        }
+      },
+      "2617|上市": {
         "2026-11": {
           "fetched": 0
         },
@@ -233800,74 +235062,59 @@
         "2026-09": {
           "fetched": 20
         },
-        "2026-08": {
-          "fetched": 21
-        },
         "2026-07": {
           "fetched": 22
         },
+        "2026-08": {
+          "fetched": 21
+        },
         "2026-06": {
           "fetched": 21
-        }
-      },
-      "2617|上市": {
-        "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2617: HTTP 307"
-        },
-        "2026-10": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261001&stockNo=2617: HTTP 307"
-        },
-        "2026-09": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=2617: HTTP 307"
-        },
-        "2026-08": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=2617: HTTP 307"
-        },
-        "2026-07": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=2617: HTTP 307"
-        },
-        "2026-06": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=2617: HTTP 307"
         }
       },
       "8213|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=8213: HTTP 307"
+          "fetched": 0
         }
       },
       "6994|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6994: HTTP 307"
-        }
-      },
-      "2539|上市": {
-        "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2539: HTTP 307"
+          "fetched": 0
         }
       },
       "2614|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2614: HTTP 307"
+          "fetched": 0
         }
       },
       "6243|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6243: HTTP 307"
+          "fetched": 0
         }
       },
       "3209|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3209: HTTP 307"
+          "fetched": 0
+        }
+      },
+      "2539|上市": {
+        "2026-11": {
+          "fetched": 0
         }
       },
       "8105|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=8105: HTTP 307"
+          "fetched": 0
         }
       },
       "3704|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3704: HTTP 307"
+          "fetched": 0
+        }
+      },
+      "6405|上市": {
+        "2026-11": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6405: HTTP 307"
         }
       },
       "3229|上市": {
@@ -233875,199 +235122,176 @@
           "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3229: HTTP 307"
         }
       },
-      "2483|上市": {
+      "2434|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2483: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2434: HTTP 307"
+        },
+        "2026-10": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261001&stockNo=2434: HTTP 307"
+        },
+        "2026-09": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=2434: HTTP 307"
+        },
+        "2026-08": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=2434: HTTP 307"
+        },
+        "2026-07": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=2434: HTTP 307"
+        },
+        "2026-06": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=2434: HTTP 307"
         }
       },
       "8473|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=8473: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=8473: HTTP 307"
+        }
+      },
+      "2483|上市": {
+        "2026-11": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2483: HTTP 307"
         }
       },
       "2101|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2101: fetch failed"
-        }
-      },
-      "6405|上市": {
-        "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6405: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2101: HTTP 307"
         }
       },
       "2601|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2601: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2601: HTTP 307"
         }
       },
       "2305|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2305: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2305: HTTP 307"
         },
         "2026-10": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261001&stockNo=2305: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261001&stockNo=2305: HTTP 307"
         },
         "2026-09": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=2305: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=2305: HTTP 307"
         },
         "2026-08": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=2305: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=2305: HTTP 307"
         },
         "2026-07": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=2305: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=2305: HTTP 307"
         },
         "2026-06": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=2305: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=2305: HTTP 307"
         }
       },
       "5471|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=5471: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=5471: HTTP 307"
         }
       },
       "6477|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6477: fetch failed"
-        }
-      },
-      "3311|上市": {
-        "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3311: fetch failed"
-        }
-      },
-      "1515|上市": {
-        "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=1515: fetch failed"
-        }
-      },
-      "4976|上市": {
-        "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=4976: fetch failed"
-        }
-      },
-      "2406|上市": {
-        "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2406: fetch failed"
-        }
-      },
-      "2434|上市": {
-        "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2434: fetch failed"
-        },
-        "2026-10": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261001&stockNo=2434: fetch failed"
-        },
-        "2026-09": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=2434: fetch failed"
-        },
-        "2026-08": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=2434: fetch failed"
-        },
-        "2026-07": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=2434: fetch failed"
-        },
-        "2026-06": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=2434: fetch failed"
-        }
-      },
-      "2332|上市": {
-        "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2332: fetch failed"
-        }
-      },
-      "1312|上市": {
-        "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=1312: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6477: HTTP 307"
         }
       },
       "3481|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3481: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3481: HTTP 307"
         }
       },
-      "5531|上市": {
+      "2332|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=5531: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2332: HTTP 307"
         }
       },
-      "6901|上市": {
+      "2406|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6901: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2406: HTTP 307"
         }
       },
       "2485|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2485: fetch failed"
+          "fetched": 0
         }
       },
-      "2241|上市": {
+      "3311|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2241: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3311: HTTP 307"
+        }
+      },
+      "4976|上市": {
+        "2026-11": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=4976: HTTP 307"
         }
       },
       "2495|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2495: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2495: HTTP 307"
+        }
+      },
+      "6282|上市": {
+        "2026-11": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6282: HTTP 307"
+        }
+      },
+      "1312|上市": {
+        "2026-11": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=1312: HTTP 307"
+        }
+      },
+      "2369|上市": {
+        "2026-11": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2369: HTTP 307"
+        }
+      },
+      "5531|上市": {
+        "2026-11": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=5531: HTTP 307"
+        }
+      },
+      "2241|上市": {
+        "2026-11": {
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2241: HTTP 307"
         }
       },
       "2610|上市": {
         "2026-11": {
-          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2610: fetch failed"
+          "error": "https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2610: HTTP 307"
         }
       }
     },
     "otc": {}
   },
   "skipped": [
-    "2618|上市 2026-08: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=2618: HTTP 307",
-    "2618|上市 2026-06: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=2618: HTTP 307",
-    "2633|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2633: HTTP 307",
-    "2504|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2504: HTTP 307",
-    "3703|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3703: HTTP 307",
-    "9925|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=9925: HTTP 307",
-    "2836|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2836: HTTP 307",
-    "2820|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2820: HTTP 307",
-    "2820|上市 2026-10: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261001&stockNo=2820: HTTP 307",
-    "2617|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2617: HTTP 307",
-    "2617|上市 2026-10: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261001&stockNo=2617: HTTP 307",
-    "2617|上市 2026-09: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=2617: HTTP 307",
-    "2617|上市 2026-08: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=2617: HTTP 307",
-    "2617|上市 2026-07: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=2617: HTTP 307",
-    "2617|上市 2026-06: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=2617: HTTP 307",
-    "8213|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=8213: HTTP 307",
-    "6994|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6994: HTTP 307",
-    "2539|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2539: HTTP 307",
-    "2614|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2614: HTTP 307",
-    "6243|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6243: HTTP 307",
-    "3209|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3209: HTTP 307",
-    "8105|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=8105: HTTP 307",
-    "3704|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3704: HTTP 307",
+    "6405|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6405: HTTP 307",
     "3229|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3229: HTTP 307",
-    "2483|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2483: fetch failed",
-    "8473|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=8473: fetch failed",
-    "2101|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2101: fetch failed",
-    "6405|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6405: fetch failed",
-    "2601|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2601: fetch failed",
-    "2305|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2305: fetch failed",
-    "2305|上市 2026-10: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261001&stockNo=2305: fetch failed",
-    "2305|上市 2026-09: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=2305: fetch failed",
-    "2305|上市 2026-08: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=2305: fetch failed",
-    "2305|上市 2026-07: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=2305: fetch failed",
-    "2305|上市 2026-06: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=2305: fetch failed",
-    "5471|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=5471: fetch failed",
-    "6477|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6477: fetch failed",
-    "3311|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3311: fetch failed",
-    "1515|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=1515: fetch failed",
-    "4976|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=4976: fetch failed",
-    "2406|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2406: fetch failed",
-    "2434|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2434: fetch failed",
-    "2434|上市 2026-10: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261001&stockNo=2434: fetch failed",
-    "2434|上市 2026-09: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=2434: fetch failed",
-    "2434|上市 2026-08: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=2434: fetch failed",
-    "2434|上市 2026-07: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=2434: fetch failed",
-    "2434|上市 2026-06: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=2434: fetch failed",
-    "2332|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2332: fetch failed",
-    "1312|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=1312: fetch failed",
-    "3481|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3481: fetch failed"
+    "2434|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2434: HTTP 307",
+    "2434|上市 2026-10: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261001&stockNo=2434: HTTP 307",
+    "2434|上市 2026-09: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=2434: HTTP 307",
+    "2434|上市 2026-08: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=2434: HTTP 307",
+    "2434|上市 2026-07: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=2434: HTTP 307",
+    "2434|上市 2026-06: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=2434: HTTP 307",
+    "8473|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=8473: HTTP 307",
+    "2483|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2483: HTTP 307",
+    "2101|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2101: HTTP 307",
+    "2601|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2601: HTTP 307",
+    "2305|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2305: HTTP 307",
+    "2305|上市 2026-10: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261001&stockNo=2305: HTTP 307",
+    "2305|上市 2026-09: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260901&stockNo=2305: HTTP 307",
+    "2305|上市 2026-08: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260801&stockNo=2305: HTTP 307",
+    "2305|上市 2026-07: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260701&stockNo=2305: HTTP 307",
+    "2305|上市 2026-06: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20260601&stockNo=2305: HTTP 307",
+    "5471|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=5471: HTTP 307",
+    "6477|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6477: HTTP 307",
+    "3481|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3481: HTTP 307",
+    "2332|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2332: HTTP 307",
+    "2406|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2406: HTTP 307",
+    "3311|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=3311: HTTP 307",
+    "4976|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=4976: HTTP 307",
+    "2495|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2495: HTTP 307",
+    "6282|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=6282: HTTP 307",
+    "1312|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=1312: HTTP 307",
+    "2369|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2369: HTTP 307",
+    "5531|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=5531: HTTP 307",
+    "2241|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2241: HTTP 307",
+    "2610|上市 2026-11: https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?response=json&date=20261101&stockNo=2610: HTTP 307"
   ]
 }
