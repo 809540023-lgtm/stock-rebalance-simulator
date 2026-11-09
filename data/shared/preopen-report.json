@@ -1,9 +1,9 @@
 {
   "version": "preopen-research-v1",
-  "generatedAt": "2026-11-08T05:35:04.781Z",
+  "generatedAt": "2026-11-09T05:59:42.209Z",
   "timezone": "Asia/Taipei",
   "intendedRunTime": "07:00",
-  "dataDate": "2026-11-08",
+  "dataDate": "2026-11-09",
   "sourceFiles": [
     "data/shared/bullish-latest.json",
     "data/shared/bearish-latest.json"
@@ -207,26 +207,6 @@
     {
       "rank": 5,
       "side": "short",
-      "code": "4976",
-      "name": "佳凌",
-      "market": "上市",
-      "close": 29.2,
-      "score": 100,
-      "predictedChangePct": -1.13,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足"
-      ],
-      "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
-    },
-    {
-      "rank": 6,
-      "side": "short",
       "code": "2601",
       "name": "益航",
       "market": "上市",
@@ -245,7 +225,47 @@
       "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
     },
     {
+      "rank": 6,
+      "side": "short",
+      "code": "4976",
+      "name": "佳凌",
+      "market": "上市",
+      "close": 29.2,
+      "score": 100,
+      "predictedChangePct": -1.13,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足"
+      ],
+      "action": "watch-short",
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+    },
+    {
       "rank": 7,
+      "side": "short",
+      "code": "6477",
+      "name": "安集",
+      "market": "上市",
+      "close": 27.4,
+      "score": 100,
+      "predictedChangePct": -0.88,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足"
+      ],
+      "action": "watch-short",
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+    },
+    {
+      "rank": 8,
       "side": "short",
       "code": "4540",
       "name": "全球傳動",
@@ -265,47 +285,7 @@
       "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
     },
     {
-      "rank": 8,
-      "side": "short",
-      "code": "2483",
-      "name": "百容",
-      "market": "上市",
-      "close": 29.25,
-      "score": 100,
-      "predictedChangePct": -4.27,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "下跌量能放大",
-        "流動性充足",
-        "跌破 28.96 觸發"
-      ],
-      "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
-    },
-    {
       "rank": 9,
-      "side": "short",
-      "code": "2101",
-      "name": "南港",
-      "market": "上市",
-      "close": 27.4,
-      "score": 100,
-      "predictedChangePct": -0.55,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足"
-      ],
-      "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
-    },
-    {
-      "rank": 10,
       "side": "short",
       "code": "2543",
       "name": "皇昌",
@@ -320,6 +300,26 @@
         "反彈失敗",
         "下跌量能放大",
         "流動性充足"
+      ],
+      "action": "watch-short",
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+    },
+    {
+      "rank": 10,
+      "side": "short",
+      "code": "2483",
+      "name": "百容",
+      "market": "上市",
+      "close": 29.25,
+      "score": 100,
+      "predictedChangePct": -4.27,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "下跌量能放大",
+        "流動性充足",
+        "跌破 28.96 觸發"
       ],
       "action": "watch-short",
       "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
