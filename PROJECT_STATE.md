@@ -18,6 +18,8 @@ This section supersedes the dated legacy strategy/automation descriptions below.
 
 ### Historical Audit
 
+Deployment checkpoint (11/11): code commit `0300d83` is pushed and GitHub Pages serves the V2 config, preview and UI module (HTTP 200). Use `https://809540023-lgtm.github.io/stock-rebalance-simulator/market-risk-scanner/`. The old Render URL returned HTTP 503 and the Render connector requires reauthentication; no claim of Render recovery. V2 data-writing workflows explicitly dispatch `deploy-pages.yml` after commits because `GITHUB_TOKEN` pushes alone do not trigger another workflow. The first future scheduled data refresh still needs verification.
+
 The existing `data/preopen-simulation-history.json` contains **31 daily simulation records**, not 61 trading-day performance observations. Raw sums through 11/11: gross TWD 20,190; recorded costs TWD 54,546.06; net TWD -34,356.05 (rounding difference of one cent between aggregate columns). These are legacy simulated values with timing/fill biases, not verified actual trading returns. Signal-close fills, post-entry use of daily extrema, late force-close prices and rewritable daily outputs must not be treated as executable performance. All old daily records, candidate archives and paper positions are preserved; V2 starts a separate series.
 
 ## Purpose

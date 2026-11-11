@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: strategy-v2-data-writer
@@ -58,14 +59,10 @@ jobs:
           done
           exit 1
 
-      - name: Commit daily history (if missing from repo)
-        run: |
-          git add data/preopen-simulation-history.json
-          if git diff --cached --quiet; then echo "Daily history already tracked."; exit 0; fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Track daily simulation history"
-          git push
+      - name: Publish updated static summary
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --repo "$GITHUB_REPOSITORY" --ref main
         # The summary script already pushes to LINE inside main() whenever a
         # valid recipient + auth path are present (via the job-level env above),
         # so the script runs only once and no separate send step is needed.

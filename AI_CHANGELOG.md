@@ -2,6 +2,8 @@
 
 ## 2026-11-11 Codex (11/12 versioned strategy cutover)
 
+- Deployment follow-up: pushed `0300d83`; GitHub Pages deployment `43041892450` succeeded, V2 config/preview/module respond HTTP 200. Added explicit Pages workflow dispatch after scheduled V2 data commits, following https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow . Render's old URL returns 503 and its connector requires reauthentication; not repaired or claimed live. The Pages URL is the verified fallback.
+
 - Synced the external-drive working copy to `09e9692` before modifications. Audited the legacy data: 31 daily simulation records, gross 20,190 / costs 54,546.06 / net -34,356.05 TWD; historical simulated results have timing/fill biases and are not actual performance. Preserved all old candidate/position/simulation archives.
 - Added `strategy-v2-config.json`, independent deterministic scoring in `market-risk-scanner/scripts/strategy-v2.js`, dated preparation/publication in `scripts/run-strategy-v2.js`, whole-market daily TWSE repair in `scripts/strategy-v2-data.js`, observed-quote simulation and separate summaries/LINE formatting in `scripts/strategy-v2-*.js`.
 - Applied the explicit 5-long / 10-short maximum, no padding, trend regime gate, isolated contrarian observation pool, strict dates/61-session coverage, immutable report hashes, no assumed adjustments/broker eligibility, realistic bid/ask/slippage and fee/tax accounting, unresolved gaps/exits, same-signal ATR versus 6%/4% comparison. Added cutoff/activation routes to existing CLI entry points; old data is not rewritten after 11/12.

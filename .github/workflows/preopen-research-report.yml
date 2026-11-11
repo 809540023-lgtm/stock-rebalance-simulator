@@ -15,6 +15,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: strategy-v2-data-writer
   cancel-in-progress: false
@@ -54,6 +55,10 @@ jobs:
             sleep 3
           done
           exit 1
+      - name: Publish updated static data
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-pages.yml --repo "$GITHUB_REPOSITORY" --ref main
       - name: Send report status to LINE
         if: (github.event.schedule == '0 23 * * 0-4' || inputs.mode == 'publish') && env.LINE_USER_ID != '' && (env.LINE_CHANNEL_ACCESS_TOKEN != '' || (env.LINE_CHANNEL_ID != '' && env.LINE_CHANNEL_SECRET != ''))
         run: node market-risk-scanner/scripts/send-preopen-line.js
