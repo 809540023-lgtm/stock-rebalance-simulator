@@ -1,9 +1,9 @@
 {
   "version": "preopen-research-v1",
-  "generatedAt": "2026-11-10T07:13:34.926Z",
+  "generatedAt": "2026-11-11T05:49:40.906Z",
   "timezone": "Asia/Taipei",
   "intendedRunTime": "07:00",
-  "dataDate": "2026-11-10",
+  "dataDate": "2026-11-11",
   "sourceFiles": [
     "data/shared/bullish-latest.json",
     "data/shared/bearish-latest.json"
@@ -207,12 +207,12 @@
     {
       "rank": 5,
       "side": "short",
-      "code": "6243",
-      "name": "迅杰",
+      "code": "2425",
+      "name": "承啟",
       "market": "上市",
-      "close": 31,
+      "close": 27.85,
       "score": 100,
-      "predictedChangePct": -3.58,
+      "predictedChangePct": -4.42,
       "reasons": [
         "跌破短均線",
         "低點下移",
@@ -226,6 +226,26 @@
     },
     {
       "rank": 6,
+      "side": "short",
+      "code": "3312",
+      "name": "弘憶股",
+      "market": "上市",
+      "close": 41.25,
+      "score": 100,
+      "predictedChangePct": -6.23,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足"
+      ],
+      "action": "watch-short",
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+    },
+    {
+      "rank": 7,
       "side": "short",
       "code": "3550",
       "name": "聯穎",
@@ -245,7 +265,27 @@
       "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
     },
     {
-      "rank": 7,
+      "rank": 8,
+      "side": "short",
+      "code": "6243",
+      "name": "迅杰",
+      "market": "上市",
+      "close": 31,
+      "score": 100,
+      "predictedChangePct": -3.58,
+      "reasons": [
+        "跌破短均線",
+        "低點下移",
+        "近期走弱",
+        "反彈失敗",
+        "下跌量能放大",
+        "流動性充足"
+      ],
+      "action": "watch-short",
+      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
+    },
+    {
+      "rank": 9,
       "side": "short",
       "code": "2457",
       "name": "飛宏",
@@ -265,27 +305,7 @@
       "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
     },
     {
-      "rank": 8,
-      "side": "short",
-      "code": "2543",
-      "name": "皇昌",
-      "market": "上市",
-      "close": 28.5,
-      "score": 100,
-      "predictedChangePct": -3.23,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足"
-      ],
-      "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
-    },
-    {
-      "rank": 9,
+      "rank": 10,
       "side": "short",
       "code": "1536",
       "name": "和大",
@@ -300,26 +320,6 @@
         "下跌量能放大",
         "流動性充足",
         "跌破 37.57 觸發"
-      ],
-      "action": "watch-short",
-      "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
-    },
-    {
-      "rank": 10,
-      "side": "short",
-      "code": "2425",
-      "name": "承啟",
-      "market": "上市",
-      "close": 27.85,
-      "score": 100,
-      "predictedChangePct": -4.42,
-      "reasons": [
-        "跌破短均線",
-        "低點下移",
-        "近期走弱",
-        "反彈失敗",
-        "下跌量能放大",
-        "流動性充足"
       ],
       "action": "watch-short",
       "caution": "需另外確認券商庫存、可先賣後買、借券或融券限制。"
