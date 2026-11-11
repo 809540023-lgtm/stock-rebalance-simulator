@@ -11,6 +11,7 @@ The dated checklists below document legacy implementation, not validation of liv
 - [x] ATR risk model and same-signal 6% / 4% exit baseline; costs, slippage, missing-data states, zero-return observations and version-separated summaries.
 - [x] V2 scanner desktop/mobile views and pre-open/daily/weekly LINE integration; credentials remain outside the repository.
 - [x] Local verification: 108 Node tests; 33 Playwright tests passed, 1 skipped (existing suite), including the standalone order page. Official-data 11/12 preview: 0 long / 10 short, all unverified/observation-only.
+- [x] Diagnose cloud CI's Ubuntu-mirror DNS stall; remove redundant system-package installation and bound installation/job time without bypassing tests.
 - [ ] Confirm first 11/12 scheduled prepare, report publication and LINE acceptance; do not call a configured future schedule an observed successful run.
 - [ ] Connect verifiable corporate-action, eligibility and broker inventory/price-rule/cost evidence. Current candidates remain watch-only; do not fill these fields with assumed true/false values.
 - [ ] Add complete TPEx historical coverage and point-in-time delisted/changed-security coverage; the initial pool is TWSE ordinary shares, not all Taiwan stocks.
