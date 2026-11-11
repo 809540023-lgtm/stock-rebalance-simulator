@@ -76,8 +76,8 @@ export function roundToTaiwanTick(price, mode = "nearest") {
   const tick = taiwanTickSize(price);
   const value = Number(price);
   const scaled = value / tick;
-  if (mode === "down") return Number((Math.floor(scaled) * tick).toFixed(2));
-  if (mode === "up") return Number((Math.ceil(scaled) * tick).toFixed(2));
+  if (mode === "down") return Number((Math.floor(scaled + 1e-9) * tick).toFixed(2));
+  if (mode === "up") return Number((Math.ceil(scaled - 1e-9) * tick).toFixed(2));
   return Number((Math.round(scaled) * tick).toFixed(2));
 }
 
@@ -237,7 +237,7 @@ export function netTradeReturn({ side, entryPrice, exitPrice, shares = 1000, day
   const entry = Number(entryPrice);
   const exit = Number(exitPrice);
   const quantity = Number(shares);
-  if (entry <= 0 || exit <= 0 || !Number.isInteger(quantity) || quantity <= 0) {
+  if (!["long", "short"].includes(side) || !Number.isFinite(entry) || !Number.isFinite(exit) || entry <= 0 || exit <= 0 || !Number.isInteger(quantity) || quantity <= 0) {
     throw new Error("entryPrice, exitPrice, and integer shares are required");
   }
   const entryNotional = entry * quantity;
@@ -254,7 +254,7 @@ export function netTradeReturn({ side, entryPrice, exitPrice, shares = 1000, day
     commission: Number(commission.toFixed(2)),
     tax: Number(tax.toFixed(2)),
     net: Number(net.toFixed(2)),
-    netReturnPct: Number((net / buyNotional * 100).toFixed(2))
+    netReturnPct: Number((net / entryNotional * 100).toFixed(2))
   };
 }
 

@@ -1,5 +1,10 @@
 import { test, expect } from "@playwright/test";
 
+// Legacy UI coverage stays anchored before the explicit strategy cutover.
+test.beforeEach(async ({ page }) => {
+  await page.clock.setFixedTime(new Date("2026-11-11T12:00:00+08:00"));
+});
+
 test("standalone risk scanner renders its own snapshot", async ({ page }) => {
   await page.goto("/market-risk-scanner/index.html");
   await expect(page.locator("h1")).toHaveText("台股下跌速度與風險掃描器");

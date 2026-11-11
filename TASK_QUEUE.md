@@ -1,5 +1,22 @@
 # Task Queue
 
+## Current Priority: V2 Cutover on 2026-11-12
+
+The dated checklists below document legacy implementation, not validation of live trading performance. V2 supersedes their execution behavior.
+
+- [x] Preserve legacy records and paper holdings; add separate versioned reports, simulations and summaries.
+- [x] Independent long/short scores, regime gate and separate contrarian experiment; enforce user-requested maxima of 5 long / 10 short without padding.
+- [x] Repair partial current-month index cache; fetch whole-market TWSE OHLCV by trading date with schema/date checks; reject gaps/future bars and unknown qualifications.
+- [x] Prepare 06:10 / publish 07:00 workflows; immutable on-time report, no late fallback, observed fills instead of prior-close fills.
+- [x] ATR risk model and same-signal 6% / 4% exit baseline; costs, slippage, missing-data states, zero-return observations and version-separated summaries.
+- [x] V2 scanner desktop/mobile views and pre-open/daily/weekly LINE integration; credentials remain outside the repository.
+- [x] Local verification: 108 Node tests; 33 Playwright tests passed, 1 skipped (existing suite), including the standalone order page. Official-data 11/12 preview: 0 long / 10 short, all unverified/observation-only.
+- [ ] Confirm first 11/12 scheduled prepare, report publication and LINE acceptance; do not call a configured future schedule an observed successful run.
+- [ ] Connect verifiable corporate-action, eligibility and broker inventory/price-rule/cost evidence. Current candidates remain watch-only; do not fill these fields with assumed true/false values.
+- [ ] Add complete TPEx historical coverage and point-in-time delisted/changed-security coverage; the initial pool is TWSE ordinary shares, not all Taiwan stocks.
+- [ ] Collect a clean prospective sample, then validate on longer adjusted history using chronological walk-forward splits; report uncertainty, turnover, costs, regime performance and incomplete-day coverage. No automatic model promotion from a short profitable period.
+- [ ] Replace best-effort GitHub intraday sampling with an appropriately monitored quote service before any claim of precise intraday execution.
+
 ## Priority 1: Separate Bullish and Bearish Models
 
 - [x] Create separate deterministic scores for bullish reversal confirmation and bearish continuation.
@@ -59,7 +76,7 @@
 - [x] Add a 07:00 Asia/Taipei GitHub Actions workflow that refreshes scanner data and publishes `data/shared/preopen-report.json` plus immutable `data/shared/preopen-history.json`.
 - [x] Keep the published report capped at 5 long candidates and 10 short candidates, and filter out legacy rows that are ineligible, DR listings, or direction-conflicting with the OLS prediction.
 - [x] Persist 61+ trading days of OHLCV history per stock so `preopen-research.js` can fully replace the legacy snapshot ranking in the published report. Added `market-risk-scanner/scripts/persist-ohlcv-history.js` (official TWSE STOCK_DAY for listed, TPEx OpenAPI for OTC, TAIEX via MI_5MINS_HIST), incremental with bounded concurrency; `build-preopen-report.js` now prefers the strict engine when candidate OHLCV + index align through the report data date, otherwise falls back to legacy ranking (`modelStatus` reflects which path was used).
-- [x] Add broker-side short inventory / borrow availability confirmation before labeling any short candidate as tradable. `persist-ohlcv-history.js` now fetches the official TWSE `MI_MARGN` margin report and stores per-code `shortAvailability` in `ohlcv-history.json`; `buildStrictPreopenReport` marks each short candidate `shortTradable` only when the next-session short limit > 0 and no `X` suspension note, and lists unconfirmed codes as a report warning (`shortEligibilityDate`, `shortNextDayLimit`). A specific broker's live inventory is still a separate, per-broker confirmation.
+- [ ] Broker-side inventory confirmation remains unimplemented. Legacy `MI_MARGN` quotas were incorrectly treated as sufficient for a tradability badge; V2 never infers broker inventory from those quotas. See the current verification integration task above.
 - [x] Add a UI panel for `preopen-report.json` so non-technical users can view the 07:00 long/short report directly on the scanner page.
 
 ## Priority 6: Daily Pre-open Candidate Intraday Simulator

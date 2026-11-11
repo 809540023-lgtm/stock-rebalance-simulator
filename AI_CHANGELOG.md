@@ -1,5 +1,15 @@
 # AI Changelog
 
+## 2026-11-11 Codex (11/12 versioned strategy cutover)
+
+- Synced the external-drive working copy to `09e9692` before modifications. Audited the legacy data: 31 daily simulation records, gross 20,190 / costs 54,546.06 / net -34,356.05 TWD; historical simulated results have timing/fill biases and are not actual performance. Preserved all old candidate/position/simulation archives.
+- Added `strategy-v2-config.json`, independent deterministic scoring in `market-risk-scanner/scripts/strategy-v2.js`, dated preparation/publication in `scripts/run-strategy-v2.js`, whole-market daily TWSE repair in `scripts/strategy-v2-data.js`, observed-quote simulation and separate summaries/LINE formatting in `scripts/strategy-v2-*.js`.
+- Applied the explicit 5-long / 10-short maximum, no padding, trend regime gate, isolated contrarian observation pool, strict dates/61-session coverage, immutable report hashes, no assumed adjustments/broker eligibility, realistic bid/ask/slippage and fee/tax accounting, unresolved gaps/exits, same-signal ATR versus 6%/4% comparison. Added cutoff/activation routes to existing CLI entry points; old data is not rewritten after 11/12.
+- Updated pre-open/simulation/weekly workflows and scanner UI; configured 06:10 preparation, 07:00 publication and best-effort 5-minute observations. Daily LINE retries use stable keys and acceptance state; no credentials or recipients were embedded. Retry behavior follows https://developers.line.biz/en/docs/messaging-api/retrying-api-request/ .
+- Live data repair: 587 TWSE ordinary-share pool, index through 11/11, 61-session required histories fetched via whole-market reports; 380 stocks excluded. Preview for 11/12: 0 long / 10 short, 7 experimental observations. No broker verification is configured, so **none is eligible for simulated execution**. No actual transaction or formal future-dated report was created.
+- Tests: `npm test` (108 Node tests and 33 Playwright tests passed, 1 existing skip); desktop/mobile V2 screenshots inspected. New tests cover independent caps, partial cache repair, date/quote validation, late reports, immutable archives, qualification failure, entry slippage, gap exits, conservative short tax/costs, incomplete results and notification deduplication. The standalone order page also uses V2 and its broken live-price relative path is corrected. Workflow YAML syntax and `git diff --check` passed.
+- Remaining: first scheduled 11/12 run and delivery are not yet observed; broker/corporate-action verification, complete OTC point-in-time history, longer chronological validation and reliable real-time infrastructure remain outstanding. No claim of proven profitability or automatic actual trading.
+
 ## 2026-09-19 Copilot (global quant strategy reference)
 
 - Added `docs/global-quant-strategies.md`, a cited, curated reference of the strongest global quantitative trading strategies (momentum, trend/CTA, factor/smart beta, volatility risk premium, pairs/stat-arb, PEAD, merger arb, HFT/ML) with evidence levels (backtested vs live), capacity/decay, and retail/Taiwan short-selling feasibility notes.

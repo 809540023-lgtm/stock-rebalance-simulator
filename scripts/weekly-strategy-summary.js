@@ -3,6 +3,7 @@
 // Pure logic lives in buildWeeklyReport(records) so it can be unit-tested.
 import { appendFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
+import { activeV2 } from "../market-risk-scanner/scripts/strategy-v2.js";
 
 const ROOT = new URL("../", import.meta.url);
 const historyPath = new URL("data/preopen-simulation-history.json", ROOT);
@@ -150,6 +151,13 @@ async function pushLine(text) {
 }
 
 async function main() {
+  if (activeV2()) {
+    const report = await (await import("./strategy-v2-summary.js")).runV2Summary();
+    const text = `新版策略累計（自 2026-11-12）\n完整紀錄 ${report.completeDays} 日；待核對 ${report.incompleteDays} 日\n波動度出場淨損益 ${report.books.atr.netPnl ?? "尚無成交"}\n原6%/4%出場淨損益 ${report.books.baseline.netPnl ?? "尚無成交"}\n觀測價模擬，不是實際成交；舊版紀錄分開保留。`;
+    console.log(text);
+    if (!dryRun) await pushLine(text);
+    return;
+  }
   const history = await readJson(historyPath, { simulations: [] });
   const records = history.simulations || [];
   const report = buildWeeklyReport(records);

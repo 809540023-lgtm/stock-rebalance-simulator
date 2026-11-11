@@ -2,9 +2,9 @@ name: Simulate pre-open candidates
 
 on:
   schedule:
-    # Taipei 09:00-13:30 every 30 min = UTC 01:00-05:30 every 30 min.
-    # Weekdays only.
-    - cron: "0,30 1-5 * * 1-5"
+    # Best-effort 5-minute observations, Taipei 09:00-13:55 weekdays.
+    # Missed windows remain unresolved, never synthesized as fills.
+    - cron: "*/5 1-5 * * 1-5"
   workflow_dispatch:
     inputs:
       force_run:
@@ -17,8 +17,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: preopen-candidate-simulation
-  cancel-in-progress: true
+  group: strategy-v2-data-writer
+  cancel-in-progress: false
 
 jobs:
   simulate:
@@ -43,12 +43,15 @@ jobs:
 
       - name: Commit simulation snapshots
         run: |
-          if git diff --quiet -- data/preopen-simulation-latest.json data/preopen-simulation-history.json; then
-            echo "Simulation data unchanged."
-            exit 0
-          fi
+          node scripts/strategy-v2-summary.js
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/preopen-simulation-latest.json data/preopen-simulation-history.json
-          git commit -m "Record pre-open candidate simulation"
-          git push
+          git add data/shared data/preopen-simulation-latest.json data/preopen-simulation-history.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record versioned candidate observations"
+          for attempt in 1 2 3; do
+            git pull --rebase
+            if git push; then exit 0; fi
+            sleep 3
+          done
+          exit 1

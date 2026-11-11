@@ -11,6 +11,7 @@
 // Optional: pushes a plain-text summary to LINE when LINE_USER_ID is set.
 import { appendFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
+import { activeV2 } from "../market-risk-scanner/scripts/strategy-v2.js";
 
 const ROOT = new URL("../", import.meta.url);
 const reportPath = new URL("data/shared/preopen-report.json", ROOT);
@@ -325,23 +326,45 @@ async function getLineAccessToken() {
   return payload.access_token || null;
 }
 
-async function pushLine(text) {
+async function pushLine(text, retryKey = null) {
   const userId = process.env.LINE_USER_ID?.trim();
   const token = await getLineAccessToken();
   if (!userId || !token) {
     console.log("（LINE 未設定或缺少憑證，跳過推播）");
-    return;
+    return false;
   }
   const response = await fetch("https://api.line.me/v2/bot/message/push", {
     method: "POST",
-    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+    headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json", ...(retryKey ? { "X-Line-Retry-Key": retryKey } : {}) },
     signal: AbortSignal.timeout(15000),
     body: JSON.stringify({ to: userId, messages: [{ type: "text", text }] })
   });
-  if (!response.ok) throw new Error(`LINE push failed: HTTP ${response.status}`);
+  if (!response.ok && !(retryKey && response.status === 409 && response.headers.get("x-line-accepted-request-id"))) throw new Error(`LINE push failed: HTTP ${response.status}`);
+  return true;
 }
 
 async function main() {
+  if (activeV2()) {
+    const snapshot = await (await import("./strategy-v2-simulation.js")).runV2Simulation();
+    console.log(`V2 ${snapshot.marketDate}: ${snapshot.status}; legacy records unchanged.`);
+    const { notifyV2Daily, v2DailyMessage } = await import("./strategy-v2-line.js");
+    await writeSummary(v2DailyMessage(snapshot));
+    if (!dryRun) {
+      const { atomicJson } = await import("./run-strategy-v2.js");
+      const statePath = new URL("data/shared/strategy-v2-notification-state.json", ROOT);
+      const sent = await readJson(statePath, {});
+      try {
+        const updated = await notifyV2Daily({ snapshot, sent, send: pushLine });
+        if (updated !== sent) await atomicJson(statePath, updated);
+      } catch (e) {
+        // Persist the observation even when notification fails; a later poll
+        // retries with the same key without rewriting the finalized record.
+        console.error(`V2 LINE pending retry: ${e.message}`);
+        await writeSummary(`LINE 通知未成功，等待下次重試：${e.message}`);
+      }
+    }
+    return;
+  }
   const now = taipeiNow();
   const report = await readJson(reportPath, null);
   if (!report) {

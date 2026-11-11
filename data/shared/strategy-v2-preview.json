@@ -1,0 +1,2094 @@
+{
+  "version": "strategy-v2-20261112",
+  "effectiveDate": "2026-11-12",
+  "tradeDate": "2026-11-12",
+  "dataDate": "2026-11-11",
+  "generatedAt": "2026-11-11T14:40:30.389Z",
+  "cutoff": "2026-11-12T07:00:00+08:00",
+  "timezone": "Asia/Taipei",
+  "preview": true,
+  "modelStatus": "strategy-v2",
+  "status": "ready",
+  "config": {
+    "version": "strategy-v2-20261112",
+    "effectiveDate": "2026-11-12",
+    "timezone": "Asia/Taipei",
+    "cutoff": "07:00:00",
+    "maxPrice": 50,
+    "minPrice": 5,
+    "minBars": 61,
+    "minAvgVolume20": 500000,
+    "minAvgTurnover20": 10000000,
+    "maxLongCandidates": 5,
+    "maxShortCandidates": 10,
+    "minScore": 70,
+    "initialCapital": 300000,
+    "riskPerTradePct": 0.25,
+    "maxPositionPct": 10,
+    "lotSize": 1000,
+    "stopAtrMultiple": 1.5,
+    "targetRiskMultiple": 1.5,
+    "minStopPct": 1,
+    "maxStopPct": 4,
+    "maxEntryGapPct": 2,
+    "entryStart": "09:05:00",
+    "entryDeadline": "10:00:00",
+    "forceClose": "13:00:00",
+    "forceCloseGraceSeconds": 90,
+    "maxQuoteAgeSeconds": 90,
+    "maxObservationGapSeconds": 360,
+    "commissionRate": 0.001425,
+    "minCommission": 20,
+    "saleTaxRate": 0.003,
+    "slippageBps": 10,
+    "baselineTargetPct": 6,
+    "baselineStopPct": 4
+  },
+  "warnings": [
+    "大盤為空頭排列，做多反轉組暫停；跌深實驗池僅觀察，不補入做多清單。",
+    "380 檔未通過資料或流動性驗證，已排除。",
+    "分數為條件符合度，不是勝率。原始價格未調整的候選只供觀察；資格未確認不模擬成交。",
+    "研究股票池非完整上市櫃全市場；停牌、臨時休市與券商限制須另行確認。",
+    "GitHub 排程可能延遲；逾 07:00 不補發可執行名單。"
+  ],
+  "longCandidates": [],
+  "shortCandidates": [
+    {
+      "code": "2444",
+      "market": "上市",
+      "name": "兆勁",
+      "side": "short",
+      "close": 13.5,
+      "score": 100,
+      "reasons": [
+        "短中期空頭排列",
+        "短線斜率向下",
+        "低點下移",
+        "持續弱於大盤",
+        "下跌量能確認",
+        "中短期同步轉弱"
+      ],
+      "strategy": "short-continuation",
+      "atr14": 1.1035714285714284,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 12.75,
+      "relative5Pct": -13.345041044753149,
+      "dailyReturnPct": -4.929577464788726,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "觀察：資格未確認",
+      "caution": "缺少當日資格驗證；adjustmentVerified: 未確認；commonStock: 未確認；dayTradeAllowed: 未確認；disposition: 未排除；suspended: 未排除；alteredTrading: 未排除；sellFirstAllowed: 未確認；brokerInventoryVerified: 未確認；shortPriceRuleVerified: 未確認；未確認可用券數；未確認借券成本；未確認放空價格限制",
+      "predictedChangePct": null,
+      "rank": 1
+    },
+    {
+      "code": "6994",
+      "market": "上市",
+      "name": "富威電力",
+      "side": "short",
+      "close": 20.3,
+      "score": 100,
+      "reasons": [
+        "短中期空頭排列",
+        "短線斜率向下",
+        "低點下移",
+        "持續弱於大盤",
+        "下跌量能確認",
+        "中短期同步轉弱"
+      ],
+      "strategy": "short-continuation",
+      "atr14": 1.1571428571428566,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 20,
+      "relative5Pct": -13.023864773491788,
+      "dailyReturnPct": -1.4563106796116498,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "觀察：資格未確認",
+      "caution": "缺少當日資格驗證；adjustmentVerified: 未確認；commonStock: 未確認；dayTradeAllowed: 未確認；disposition: 未排除；suspended: 未排除；alteredTrading: 未排除；sellFirstAllowed: 未確認；brokerInventoryVerified: 未確認；shortPriceRuleVerified: 未確認；未確認可用券數；未確認借券成本；未確認放空價格限制",
+      "predictedChangePct": null,
+      "rank": 2
+    },
+    {
+      "code": "6909",
+      "market": "上市",
+      "name": "創控",
+      "side": "short",
+      "close": 40.85,
+      "score": 100,
+      "reasons": [
+        "短中期空頭排列",
+        "短線斜率向下",
+        "低點下移",
+        "持續弱於大盤",
+        "下跌量能確認",
+        "中短期同步轉弱"
+      ],
+      "strategy": "short-continuation",
+      "atr14": 2.917857142857143,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 40.4,
+      "relative5Pct": -12.469541048436362,
+      "dailyReturnPct": -6.414662084765165,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "觀察：資格未確認",
+      "caution": "缺少當日資格驗證；adjustmentVerified: 未確認；commonStock: 未確認；dayTradeAllowed: 未確認；disposition: 未排除；suspended: 未排除；alteredTrading: 未排除；sellFirstAllowed: 未確認；brokerInventoryVerified: 未確認；shortPriceRuleVerified: 未確認；未確認可用券數；未確認借券成本；未確認放空價格限制",
+      "predictedChangePct": null,
+      "rank": 3
+    },
+    {
+      "code": "2331",
+      "market": "上市",
+      "name": "精英",
+      "side": "short",
+      "close": 15.35,
+      "score": 100,
+      "reasons": [
+        "短中期空頭排列",
+        "短線斜率向下",
+        "低點下移",
+        "持續弱於大盤",
+        "下跌量能確認",
+        "中短期同步轉弱"
+      ],
+      "strategy": "short-continuation",
+      "atr14": 0.7892857142857145,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 15.1,
+      "relative5Pct": -12.217635355630097,
+      "dailyReturnPct": -1.602564102564108,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "觀察：資格未確認",
+      "caution": "缺少當日資格驗證；adjustmentVerified: 未確認；commonStock: 未確認；dayTradeAllowed: 未確認；disposition: 未排除；suspended: 未排除；alteredTrading: 未排除；sellFirstAllowed: 未確認；brokerInventoryVerified: 未確認；shortPriceRuleVerified: 未確認；未確認可用券數；未確認借券成本；未確認放空價格限制",
+      "predictedChangePct": null,
+      "rank": 4
+    },
+    {
+      "code": "3041",
+      "market": "上市",
+      "name": "揚智",
+      "side": "short",
+      "close": 20,
+      "score": 100,
+      "reasons": [
+        "短中期空頭排列",
+        "短線斜率向下",
+        "低點下移",
+        "持續弱於大盤",
+        "下跌量能確認",
+        "中短期同步轉弱"
+      ],
+      "strategy": "short-continuation",
+      "atr14": 1.2500000000000002,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 19.75,
+      "relative5Pct": -11.929864601765082,
+      "dailyReturnPct": -5.213270142180104,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "觀察：資格未確認",
+      "caution": "缺少當日資格驗證；adjustmentVerified: 未確認；commonStock: 未確認；dayTradeAllowed: 未確認；disposition: 未排除；suspended: 未排除；alteredTrading: 未排除；sellFirstAllowed: 未確認；brokerInventoryVerified: 未確認；shortPriceRuleVerified: 未確認；未確認可用券數；未確認借券成本；未確認放空價格限制",
+      "predictedChangePct": null,
+      "rank": 5
+    },
+    {
+      "code": "8163",
+      "market": "上市",
+      "name": "達方",
+      "side": "short",
+      "close": 24.8,
+      "score": 100,
+      "reasons": [
+        "短中期空頭排列",
+        "短線斜率向下",
+        "低點下移",
+        "持續弱於大盤",
+        "下跌量能確認",
+        "中短期同步轉弱"
+      ],
+      "strategy": "short-continuation",
+      "atr14": 0.9749999999999994,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 24.65,
+      "relative5Pct": -11.363967482198255,
+      "dailyReturnPct": -1.195219123505975,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "觀察：資格未確認",
+      "caution": "缺少當日資格驗證；adjustmentVerified: 未確認；commonStock: 未確認；dayTradeAllowed: 未確認；disposition: 未排除；suspended: 未排除；alteredTrading: 未排除；sellFirstAllowed: 未確認；brokerInventoryVerified: 未確認；shortPriceRuleVerified: 未確認；未確認可用券數；未確認借券成本；未確認放空價格限制",
+      "predictedChangePct": null,
+      "rank": 6
+    },
+    {
+      "code": "2362",
+      "market": "上市",
+      "name": "藍天",
+      "side": "short",
+      "close": 40.3,
+      "score": 100,
+      "reasons": [
+        "短中期空頭排列",
+        "短線斜率向下",
+        "低點下移",
+        "持續弱於大盤",
+        "下跌量能確認",
+        "中短期同步轉弱"
+      ],
+      "strategy": "short-continuation",
+      "atr14": 1.489285714285715,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 40.05,
+      "relative5Pct": -10.931752008208306,
+      "dailyReturnPct": -3.125000000000011,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "觀察：資格未確認",
+      "caution": "缺少當日資格驗證；adjustmentVerified: 未確認；commonStock: 未確認；dayTradeAllowed: 未確認；disposition: 未排除；suspended: 未排除；alteredTrading: 未排除；sellFirstAllowed: 未確認；brokerInventoryVerified: 未確認；shortPriceRuleVerified: 未確認；未確認可用券數；未確認借券成本；未確認放空價格限制",
+      "predictedChangePct": null,
+      "rank": 7
+    },
+    {
+      "code": "1316",
+      "market": "上市",
+      "name": "上曜",
+      "side": "short",
+      "close": 9.19,
+      "score": 100,
+      "reasons": [
+        "短中期空頭排列",
+        "短線斜率向下",
+        "低點下移",
+        "持續弱於大盤",
+        "下跌量能確認",
+        "中短期同步轉弱"
+      ],
+      "strategy": "short-continuation",
+      "atr14": 0.31571428571428584,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 9.13,
+      "relative5Pct": -10.869508133727724,
+      "dailyReturnPct": -0.7559395248380119,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "觀察：資格未確認",
+      "caution": "缺少當日資格驗證；adjustmentVerified: 未確認；commonStock: 未確認；dayTradeAllowed: 未確認；disposition: 未排除；suspended: 未排除；alteredTrading: 未排除；sellFirstAllowed: 未確認；brokerInventoryVerified: 未確認；shortPriceRuleVerified: 未確認；未確認可用券數；未確認借券成本；未確認放空價格限制",
+      "predictedChangePct": null,
+      "rank": 8
+    },
+    {
+      "code": "1312",
+      "market": "上市",
+      "name": "國喬",
+      "side": "short",
+      "close": 12.55,
+      "score": 100,
+      "reasons": [
+        "短中期空頭排列",
+        "短線斜率向下",
+        "低點下移",
+        "持續弱於大盤",
+        "下跌量能確認",
+        "中短期同步轉弱"
+      ],
+      "strategy": "short-continuation",
+      "atr14": 0.6749999999999999,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 12.25,
+      "relative5Pct": -10.766625957788122,
+      "dailyReturnPct": -0.7905138339920903,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "觀察：資格未確認",
+      "caution": "缺少當日資格驗證；adjustmentVerified: 未確認；commonStock: 未確認；dayTradeAllowed: 未確認；disposition: 未排除；suspended: 未排除；alteredTrading: 未排除；sellFirstAllowed: 未確認；brokerInventoryVerified: 未確認；shortPriceRuleVerified: 未確認；未確認可用券數；未確認借券成本；未確認放空價格限制",
+      "predictedChangePct": null,
+      "rank": 9
+    },
+    {
+      "code": "2106",
+      "market": "上市",
+      "name": "建大",
+      "side": "short",
+      "close": 15,
+      "score": 100,
+      "reasons": [
+        "短中期空頭排列",
+        "短線斜率向下",
+        "低點下移",
+        "持續弱於大盤",
+        "下跌量能確認",
+        "中短期同步轉弱"
+      ],
+      "strategy": "short-continuation",
+      "atr14": 0.3928571428571431,
+      "stopPct": 3.9285714285714315,
+      "targetPct": 5.892857142857148,
+      "triggerPrice": 14.8,
+      "relative5Pct": -10.453445129901418,
+      "dailyReturnPct": -2.9126213592232997,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "觀察：資格未確認",
+      "caution": "缺少當日資格驗證；adjustmentVerified: 未確認；commonStock: 未確認；dayTradeAllowed: 未確認；disposition: 未排除；suspended: 未排除；alteredTrading: 未排除；sellFirstAllowed: 未確認；brokerInventoryVerified: 未確認；shortPriceRuleVerified: 未確認；未確認可用券數；未確認借券成本；未確認放空價格限制",
+      "predictedChangePct": null,
+      "rank": 10
+    }
+  ],
+  "contrarianWatchlist": [
+    {
+      "code": "2610",
+      "market": "上市",
+      "name": "華航",
+      "side": "long",
+      "close": 23.5,
+      "score": 85,
+      "reasons": [
+        "站回短中期均線",
+        "短線斜率轉正",
+        "低點墊高",
+        "相對大盤轉強",
+        "上漲量能確認"
+      ],
+      "strategy": "contrarian-experiment",
+      "atr14": 0.6678571428571425,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 23.55,
+      "relative5Pct": 11.588108618969397,
+      "dailyReturnPct": 3.0701754385964897,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "跌深買進實驗觀察",
+      "caution": "僅在大盤普跌時觀察事前固定名單；不可假設跌停能成交。",
+      "predictedChangePct": null,
+      "rank": 1
+    },
+    {
+      "code": "3576",
+      "market": "上市",
+      "name": "聯合再生",
+      "side": "long",
+      "close": 17.75,
+      "score": 85,
+      "reasons": [
+        "站回短中期均線",
+        "短線斜率轉正",
+        "相對大盤轉強",
+        "上漲量能確認",
+        "跌後反轉確認"
+      ],
+      "strategy": "contrarian-experiment",
+      "atr14": 1.0107142857142861,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 18.15,
+      "relative5Pct": 8.239228735186256,
+      "dailyReturnPct": 2.3054755043227626,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "跌深買進實驗觀察",
+      "caution": "僅在大盤普跌時觀察事前固定名單；不可假設跌停能成交。",
+      "predictedChangePct": null,
+      "rank": 2
+    },
+    {
+      "code": "2516",
+      "market": "上市",
+      "name": "新建",
+      "side": "long",
+      "close": 16.5,
+      "score": 85,
+      "reasons": [
+        "站回短中期均線",
+        "短線斜率轉正",
+        "低點墊高",
+        "相對大盤轉強",
+        "上漲量能確認"
+      ],
+      "strategy": "contrarian-experiment",
+      "atr14": 0.46785714285714314,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 16.6,
+      "relative5Pct": 1.0549086497457338,
+      "dailyReturnPct": 0.6097560975609762,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "跌深買進實驗觀察",
+      "caution": "僅在大盤普跌時觀察事前固定名單；不可假設跌停能成交。",
+      "predictedChangePct": null,
+      "rank": 3
+    },
+    {
+      "code": "3049",
+      "market": "上市",
+      "name": "精金",
+      "side": "long",
+      "close": 11.65,
+      "score": 85,
+      "reasons": [
+        "站回短中期均線",
+        "短線斜率轉正",
+        "相對大盤轉強",
+        "上漲量能確認",
+        "跌後反轉確認"
+      ],
+      "strategy": "contrarian-experiment",
+      "atr14": 0.6071428571428569,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 12.15,
+      "relative5Pct": 0.05130741024934604,
+      "dailyReturnPct": -5.284552845528456,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "跌深買進實驗觀察",
+      "caution": "僅在大盤普跌時觀察事前固定名單；不可假設跌停能成交。",
+      "predictedChangePct": null,
+      "rank": 4
+    },
+    {
+      "code": "6443",
+      "market": "上市",
+      "name": "元晶",
+      "side": "long",
+      "close": 27.6,
+      "score": 70,
+      "reasons": [
+        "站回短中期均線",
+        "短線斜率轉正",
+        "相對大盤轉強",
+        "上漲量能確認"
+      ],
+      "strategy": "contrarian-experiment",
+      "atr14": 1.9107142857142851,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 27.65,
+      "relative5Pct": 17.21540018600274,
+      "dailyReturnPct": 3.370786516853941,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "跌深買進實驗觀察",
+      "caution": "僅在大盤普跌時觀察事前固定名單；不可假設跌停能成交。",
+      "predictedChangePct": null,
+      "rank": 5
+    },
+    {
+      "code": "3703",
+      "market": "上市",
+      "name": "欣陸",
+      "side": "long",
+      "close": 23.85,
+      "score": 70,
+      "reasons": [
+        "站回短中期均線",
+        "短線斜率轉正",
+        "相對大盤轉強",
+        "上漲量能確認"
+      ],
+      "strategy": "contrarian-experiment",
+      "atr14": 0.7892857142857144,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 24.15,
+      "relative5Pct": 10.525390848934556,
+      "dailyReturnPct": -0.41753653444676075,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "跌深買進實驗觀察",
+      "caution": "僅在大盤普跌時觀察事前固定名單；不可假設跌停能成交。",
+      "predictedChangePct": null,
+      "rank": 6
+    },
+    {
+      "code": "2618",
+      "market": "上市",
+      "name": "長榮航",
+      "side": "long",
+      "close": 47.6,
+      "score": 70,
+      "reasons": [
+        "站回短中期均線",
+        "短線斜率轉正",
+        "相對大盤轉強",
+        "上漲量能確認"
+      ],
+      "strategy": "contrarian-experiment",
+      "atr14": 1.4892857142857154,
+      "stopPct": 4,
+      "targetPct": 6,
+      "triggerPrice": 47.75,
+      "relative5Pct": 5.753962277505997,
+      "dailyReturnPct": 3.1419284940411796,
+      "executionEligible": false,
+      "verification": null,
+      "shortTradable": false,
+      "action": "跌深買進實驗觀察",
+      "caution": "僅在大盤普跌時觀察事前固定名單；不可假設跌停能成交。",
+      "predictedChangePct": null,
+      "rank": 7
+    }
+  ],
+  "rejected": [
+    {
+      "code": "1528",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3024",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2427",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6550",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "5531",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2102",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3716",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3712",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2601",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1611",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2538",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2816",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3311",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1437",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6108",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6272",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1909",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1568",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3346",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3591",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "3652",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8476",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8213",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6189",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6235",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2022",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3257",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3031",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6573",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1522",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2323",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "2025",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1460",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1526",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1618",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1517",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8104",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3021",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1444",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3060",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8473",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2497",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8105",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1529",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2332",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2536",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1219",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2461",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2613",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6949",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "2442",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4564",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2390",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1466",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2540",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3011",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1467",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2425",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1218",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "6243",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6142",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1447",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2032",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1416",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2417",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2537",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4960",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3003",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2305",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2434",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4155",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "6873",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2543",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1103",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1108",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1109",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1110",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1203",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1213",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1217",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1220",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1225",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1233",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1234",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1235",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1236",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1321",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1323",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1324",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1338",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1339",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1410",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1413",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1414",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1417",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1418",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1423",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1432",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1435",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1436",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1438",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1439",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1441",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1442",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1443",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1445",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1446",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1449",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1451",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1452",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1453",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1454",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1456",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1457",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1459",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1463",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1464",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1465",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1468",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1470",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1471",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1473",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1474",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1475",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1506",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1512",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1516",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1521",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1524",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1527",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1530",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1531",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1532",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1533",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1535",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1539",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1540",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1541",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1583",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "1587",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1598",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1603",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1604",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1614",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1616",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1626",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1702",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1713",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1725",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1731",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1732",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1733",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1734",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1735",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1737",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1752",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1760",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1762",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1776",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1783",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1805",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1806",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1817",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1903",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "1906",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2007",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2008",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2012",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2013",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2017",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2024",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "2028",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2029",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2038",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2062",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2107",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2109",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2115",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2227",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2237",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2239",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2243",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2250",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2258",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2314",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "2321",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "2380",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2387",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2414",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2415",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2424",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2430",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2431",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2432",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2433",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2438",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2440",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2450",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2460",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2462",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2477",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2482",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2488",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2505",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2506",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2509",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2511",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2514",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2524",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2545",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2608",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2616",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2642",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2701",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2702",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2704",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2705",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2706",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2712",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2722",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2739",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2748",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2849",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2852",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2901",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2904",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2906",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2908",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2910",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "2911",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2923",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2929",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "2939",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "2945",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "3002",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3015",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3018",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "3025",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3027",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3038",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3040",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3043",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3050",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3052",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3057",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3058",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3092",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3150",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3164",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "3168",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "3266",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3296",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3308",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3419",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3432",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "3447",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3494",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3501",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3530",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3557",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3588",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3593",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "3607",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3622",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3669",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "3686",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4106",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4108",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4119",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4133",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4148",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4164",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4178",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4190",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "4195",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4414",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4426",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4440",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4545",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4552",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4555",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4560",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4562",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4581",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "4582",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4807",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4930",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4935",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4942",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4943",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4952",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "4999",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5215",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5225",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5244",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5258",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5283",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5484",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5515",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5519",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5525",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5533",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5538",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5546",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5706",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "5906",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "6115",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6128",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6136",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6164",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6184",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6201",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6216",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6281",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6283",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6431",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6504",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6541",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6552",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6558",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6582",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6591",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6598",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6606",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6614",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6641",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "6645",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6657",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6666",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6671",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "6674",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6698",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6722",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6743",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6754",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6771",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6790",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6796",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6807",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "6835",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6838",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6885",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6887",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6908",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6916",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6928",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6931",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6936",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6952",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "6958",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6969",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "6988",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "7705",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "7760",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "7791",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "7803",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "7821",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "7835",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "7855",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "7867",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "8011",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8045",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8072",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8101",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8201",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8222",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8249",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8367",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8404",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8411",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8429",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8442",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8443",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "8463",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8466",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8481",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "8482",
+      "reason": "價格、量能或急漲跌門檻"
+    },
+    {
+      "code": "8488",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "8908",
+      "reason": "Missing trading sessions"
+    },
+    {
+      "code": "8940",
+      "reason": "價格、量能或急漲跌門檻"
+    }
+  ],
+  "sourceFiles": [
+    "data/shared/ohlcv-history.json"
+  ],
+  "executionMode": "research-only",
+  "universeSize": 607,
+  "regime": "bear",
+  "dataHealth": {
+    "universe": 587,
+    "rejected": 380,
+    "historyFetchErrors": 0,
+    "indexDate": "2026-11-11"
+  },
+  "reportId": "e57c5a512083776717099c1cb4eec337d4dadba9d6fae7b87fee88cc9e10be31"
+}

@@ -166,6 +166,15 @@ export function monthsNotPresent(existingBars, months) {
   return months.filter((month) => !present.has(month));
 }
 
+// A partial month is not a complete cache entry. Refresh the active month and
+// repair historical holes against the exchange's observed trading sessions.
+export function monthsToRefresh(existingBars, months, indexBars = []) {
+  const dates = new Set((existingBars || []).map((bar) => bar.date));
+  const missing = new Set(monthsNotPresent(existingBars, months));
+  return months.filter((month, i) => i === 0 || missing.has(month)
+    || indexBars.some((bar) => bar.date.startsWith(month) && !dates.has(bar.date)));
+}
+
 // Bounded concurrency over an array of items.
 async function mapLimit(items, limit, fn) {
   const results = new Array(items.length);
@@ -215,12 +224,12 @@ export function readCandidateUniverse(bullish, bearish, maxCandidates = DEFAULT_
 }
 
 // Fetch the OHLCV pieces that are still missing and merge them into what exists.
-export async function refreshOhlcvHistory({ bullish, bearish, existingIndex, existingStocks, maxCandidates }) {
-  const universe = readCandidateUniverse(bullish, bearish, maxCandidates);
+export async function refreshOhlcvHistory({ bullish, bearish, existingIndex, existingStocks, maxCandidates, universe: suppliedUniverse, asOfDate }) {
+  const universe = suppliedUniverse || readCandidateUniverse(bullish, bearish, maxCandidates);
   const listed = universe.filter((s) => s.market === "上市");
   const otc = universe.filter((s) => s.market === "上櫃");
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = asOfDate || new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Taipei" }).format(new Date());
   const months = listMonthsEndingAt(today, DEFAULT_OHLCV_CONFIG.lookbackMonths);
   const otcLookbackTo = addDays(today, -DEFAULT_OHLCV_CONFIG.otcLookbackDays);
   const daysForOtc = eachMondayToFriday(otcLookbackTo, today);
@@ -234,12 +243,12 @@ export async function refreshOhlcvHistory({ bullish, bearish, existingIndex, exi
   const sources = { index: {}, listed: {}, otc: {} };
   const skipped = [];
 
-  // Index (TAIEX) — only fetch months not already represented.
-  await mapLimit(monthsNotPresent(existingIndex, months), concurrency, async (month) => {
+  // Six index requests also repair partially cached older months.
+  await mapLimit(months, concurrency, async (month) => {
     const date = `${month}-01`;
     try {
       const payload = await fetchJson(`${TWSE_BASE}/rwd/zh/TAIEX/MI_5MINS_HIST?response=json&date=${date.replaceAll("-", "")}`);
-      const bars = parseTaiexMonth(payload);
+      const bars = parseTaiexMonth(payload).filter((bar) => bar.date <= today);
       index.push(...mergeBars([], bars));
       sources.index[month] = { fetched: bars.length, at: new Date().toISOString() };
     } catch (error) {
@@ -253,7 +262,7 @@ export async function refreshOhlcvHistory({ bullish, bearish, existingIndex, exi
   const listedJobs = [];
   for (const stock of listed) {
     const key = `${stock.code}|${stock.market}`;
-    for (const month of monthsNotPresent(stocks[key] || [], months)) {
+    for (const month of monthsToRefresh(stocks[key] || [], months, index.filter((bar) => bar.date <= today))) {
       listedJobs.push({ key, stock, month });
     }
   }
@@ -262,7 +271,7 @@ export async function refreshOhlcvHistory({ bullish, bearish, existingIndex, exi
     const date = `${month}-01`;
     try {
       const payload = await fetchJson(`${TWSE_BASE}/rwd/zh/afterTrading/STOCK_DAY?response=json&date=${date.replaceAll("-", "")}&stockNo=${stock.code}`);
-      const bars = parseTwseStockDayMonth(payload);
+      const bars = parseTwseStockDayMonth(payload).filter((bar) => bar.date <= today);
       stocks[key] = mergeBars(stocks[key] || [], bars);
       sources.listed[key] = sources.listed[key] || {};
       sources.listed[key][month] = { fetched: bars.length };
@@ -284,7 +293,7 @@ export async function refreshOhlcvHistory({ bullish, bearish, existingIndex, exi
         const dayBars = parseTpexOpenapiDay(payload);
         for (const code of otcCodes) {
           const bar = dayBars[code];
-          if (bar) {
+          if (bar && bar.date === day && bar.date <= today) {
             const key = `${code}|上櫃`;
             stocks[key] = mergeBars(stocks[key] || [], [bar]);
             sources.otc[key] = sources.otc[key] || { days: {} };
@@ -306,7 +315,7 @@ export async function refreshOhlcvHistory({ bullish, bearish, existingIndex, exi
 // availability so the report can confirm a short candidate is actually shortable
 // (borrowable) before labeling it tradable. This is the official short-eligibility
 // proxy; a specific broker's live inventory must still be confirmed at order time.
-async function fetchShortAvailability(asOfDate) {
+export async function fetchShortAvailability(asOfDate) {
   const compact = (value) => value.replaceAll("-", "");
   const byCode = {};
   let date = asOfDate;

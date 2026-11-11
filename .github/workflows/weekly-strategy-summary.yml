@@ -10,8 +10,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: weekly-strategy-summary
-  cancel-in-progress: true
+  group: strategy-v2-data-writer
+  cancel-in-progress: false
 
 jobs:
   summarize:
@@ -42,8 +42,8 @@ jobs:
           # git diff ignores brand-new (untracked) files, so mark the weekly
           # outputs intent-to-add first or a first run would wrongly skip the
           # commit and never publish them.
-          git add -N data/shared/strategy-weekly-latest.json data/shared/strategy-weekly-history.json || true
-          if git diff --quiet -- data/shared/strategy-weekly-latest.json data/shared/strategy-weekly-history.json; then
+          git add data/shared
+          if git diff --cached --quiet; then
             echo "Weekly summary unchanged."
             exit 0
           fi
@@ -51,7 +51,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/shared/strategy-weekly-latest.json data/shared/strategy-weekly-history.json
           git commit -m "Update weekly strategy summary"
-          git push
+          for attempt in 1 2 3; do
+            git pull --rebase
+            if git push; then exit 0; fi
+            sleep 3
+          done
+          exit 1
 
       - name: Commit daily history (if missing from repo)
         run: |

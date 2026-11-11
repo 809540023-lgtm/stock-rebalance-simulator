@@ -1,6 +1,24 @@
 # Project State
 
-Last updated: 2026-09-19
+Last updated: 2026-11-11
+
+## Active Cutover: 2026-11-12 (Taipei)
+
+This section supersedes the dated legacy strategy/automation descriptions below. Canonical working copy: `/Volumes/ag/練習學一支股票放空/stock-rebalance-simulator`. The earlier Documents path no longer exists.
+
+- User-approved V2: **up to 5 long and 10 short research candidates**, no padding when conditions fail. Independent deterministic long-reversal / short-continuation rules; market-regime gate; the former buy-the-largest-decliner rule is an isolated observation-only experiment, not an entry instruction.
+- Configuration: `data/shared/strategy-v2-config.json`; version `strategy-v2-20261112`. Effective at Taipei midnight on November 12. Price range TWD 5-50; 61 aligned official sessions; 20-session average volume >= 500,000 shares and turnover >= TWD 10 million; near-limit moves excluded. Scores measure rule conformity, not calibrated win probability.
+- `scripts/strategy-v2-data.js` repairs current-month TAIEX data and uses TWSE whole-market daily OHLCV reports to build a price-filtered ordinary-share pool independently of old rankings. Live preview has 587 TWSE stocks, index current through 11/11, 380 exclusions, 0 long / 10 short, and 7 experimental watch names. This is **not full listed + OTC coverage**; missing/invalid dates are excluded, never synthesized.
+- `scripts/run-strategy-v2.js`: prepare at 06:10, freeze before 07:00, publish at 07:00. Reports are date-keyed, hash-checked and create-once under `data/shared/strategy-v2-reports/`; `strategy-v2-latest.json` is the current pointer. Today only `strategy-v2-preview.json` has been generated, not a formal 11/12 report. Late/missing data blocks selection rather than falling back to V1. GitHub cron is best-effort, not exact-time or real-time infrastructure.
+- `scripts/strategy-v2-simulation.js`: separate `strategy-v2-simulations/` daily records and `strategy-v2-simulation-latest.json`; observed bid/ask plus adverse tick-rounded slippage, 09:05-10:00 entry window, 13:00 force-close with 90-second grace. Missing/stale observations, observation gaps > 360 seconds and missed exits become unresolved, not invented fills. The 5-minute scheduled sampler cannot reconstruct every intraday tick.
+- Conservative research sizing: TWD 300,000 virtual capital per comparison book, 0.25% per-entry risk budget and 10% maximum position notional; these are modeling assumptions, not the user's account balance. ATR stop (1-4%) / 1.5R target compared with original 6% / 4% exits **on the same new signals**, not a rerun of old model selection. Every closed trade includes two-sided commissions, minimum charges, 0.3% sale tax, slippage and verified short borrowing cost. No unverified discounted day-trade tax or margin-leverage return uplift.
+- **Current execution gate is closed.** No broker/adjustment/eligibility verification feed has been configured; all live preview candidates are research-only. `STRATEGY_VERIFICATION_FILE` may point to a separately maintained JSON map keyed by `code|market`. Required proof fields: `tradeDate`, `source`, `verifiedAt`; `adjustmentVerified/commonStock/dayTradeAllowed=true`; `disposition/suspended/alteredTrading=false`. Shorts additionally require `sellFirstAllowed/brokerInventoryVerified/shortPriceRuleVerified=true`, `availableShares`, `borrowCostTwd`, `minimumShortPrice`. The file contains verification results, not credentials, and only whitelisted fields are published. Exchange margin quotas alone are NOT broker inventory confirmation. No automatic actual orders or purchased positions are created.
+- `scripts/strategy-v2-summary.js`: only complete, same-version days are aggregated; incomplete days stay visible; no fills produce null performance, not a success rate. Initial 20-30-session observation is for diagnosis, not proof of an edge. Longer point-in-time, corporate-action-adjusted history and walk-forward validation remain pending.
+- Scanner top section shows V2 status, dates, both candidate groups, experiment pool and separate performance. Legacy candidates are not substituted after cutover. LINE uses existing environment-backed recipient/auth settings: pre-open report/status, one finalized daily observation summary with retry deduplication, and weekly V2 summary. No production LINE message was sent during local testing; the first automatic 11/12 delivery still requires observation.
+
+### Historical Audit
+
+The existing `data/preopen-simulation-history.json` contains **31 daily simulation records**, not 61 trading-day performance observations. Raw sums through 11/11: gross TWD 20,190; recorded costs TWD 54,546.06; net TWD -34,356.05 (rounding difference of one cent between aggregate columns). These are legacy simulated values with timing/fill biases, not verified actual trading returns. Signal-close fills, post-entry use of daily extrema, late force-close prices and rewritable daily outputs must not be treated as executable performance. All old daily records, candidate archives and paper positions are preserved; V2 starts a separate series.
 
 ## Purpose
 
@@ -80,7 +98,7 @@ These are research references only — not guaranteed-profit signals. When integ
 - The scanner UI has a "今日下單追蹤" tab that auto-loads the top 10 bullish (buy) and top 10 bearish (short) candidates, lets the user enter fill price/quantity, and computes live P/L (stored in localStorage).
 - Live prices are fetched server-side by GitHub Actions (`update-live-prices.yml` + `scripts/fetch-live-prices.js`) into `data/shared/live-prices.json` because TWSE blocks browser cross-origin; the site reads that file.
 - A mobile-friendly page `market-risk-scanner/today-orders.html` lets users enter daily orders on a phone; it shares the same localStorage records.
-- Note: the TAIEX index for the current month is only available after month-end, so the index series may lag the stock quotes.
+- Correction (11/11 audit): current-month TAIEX daily data is available before month-end. The cache was skipping a partially populated month; V2 refreshes it and rejects stale closes.
 
 - **Visual Interface (Priority 3)**
 
@@ -107,9 +125,9 @@ These are research references only — not guaranteed-profit signals. When integ
 - The intraday analyzer must use the latest complete daily snapshot as its base. Do not feed a partial trading-day response into `market-risk.json` as if it were a completed close.
 - LINE workflows are active: GitHub Actions secrets `LINE_CHANNEL_ID`, `LINE_CHANNEL_SECRET`, and `LINE_USER_ID` are set for repo `809540023-lgtm/stock-rebalance-simulator`. A live test push was confirmed received on 2026-09-15. Pre-open report (08:00), candidate simulation summaries, and paper-trade alert monitors can all push to the user's LINE account.
 - On 2026-09-16 the 08:00 pre-open report stopped firing because the send step's `if:` referenced `secrets.*` directly, which GitHub rejects at workflow validation and silently disables the schedule. Fixed by moving the secrets into job-level `env` and having the step `if` read them via the `env` context. If the 08:00 push is still absent after deploy, re-run the pre-open workflow manually once so GitHub re-registers the schedule.
-- No-short-below-flat ("平盤以下禁空") filtering is intentionally NOT implemented because shorting is the main strategy side.
+- Superseded legacy omission: V2 requires verified short-sale price restrictions and enforces `minimumShortPrice`. A strategy preference cannot override market/broker restrictions.
 - Added `scripts/weekly-strategy-summary.js` + a Monday 09:00 Taipei workflow (`weekly-strategy-summary.yml`). It aggregates every day in `data/preopen-simulation-history.json` into a cumulative P/L, win rate, expected value, max drawdown and exit breakdown, writes `data/shared/strategy-weekly-latest.json` / `strategy-weekly-history.json`, and pushes the summary to LINE. As of 2026-09-18 the rolling sample is only 3 days (9/15–9/17) — too small to judge the strategy; we are accumulating samples daily before judging viability.
-- Previous GitHub CLI authentication became invalid. Local commits may be ahead of `origin/main`; inspect before pushing.
+- Inspect Git state before each session. On 11/11, the external-drive copy was fast-forwarded from the stale September state to `09e9692` before editing; do not assume the old local tree was current.
 
 ## Verification
 

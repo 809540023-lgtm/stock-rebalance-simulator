@@ -2,6 +2,7 @@
 // snapshots. This is a publishable research report, not an order list.
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { DEFAULT_PREOPEN_CONFIG, PREOPEN_VERSION, rankPreopenCandidates } from "./preopen-research.js";
+import { activeV2 } from "./strategy-v2.js";
 
 const SHARED_DIR = new URL("../../data/shared/", import.meta.url);
 const REPORT_PATH = new URL("preopen-report.json", SHARED_DIR);
@@ -269,6 +270,6 @@ export async function savePreopenReport() {
 }
 
 if (process.argv[1] && import.meta.url.endsWith(process.argv[1].split("/").at(-1))) {
-  const report = await savePreopenReport();
+  const report = activeV2() ? await (await import("../../scripts/run-strategy-v2.js")).runV2() : await savePreopenReport();
   console.log(`Saved pre-open report for ${report.dataDate || "unknown date"}: ${report.longCandidates.length} long, ${report.shortCandidates.length} short (${report.modelStatus}).`);
 }

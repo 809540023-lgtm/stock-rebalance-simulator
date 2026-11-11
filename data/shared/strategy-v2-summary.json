@@ -1,0 +1,43 @@
+{
+  "version": "strategy-v2-20261112",
+  "effectiveDate": "2026-11-12",
+  "generatedAt": "2026-11-11T14:26:45.759Z",
+  "completeDays": 0,
+  "incompleteDays": 0,
+  "books": {
+    "atr": {
+      "initialCapital": 300000,
+      "closedCount": 0,
+      "netPnl": null,
+      "netPct": null,
+      "maxDrawdownPct": null,
+      "winDays": 0,
+      "lossDays": 0,
+      "flatDays": 0,
+      "winRate": null,
+      "noTradeDays": 0,
+      "perDay": [],
+      "incompleteCoverage": false
+    },
+    "baseline": {
+      "initialCapital": 300000,
+      "closedCount": 0,
+      "netPnl": null,
+      "netPct": null,
+      "maxDrawdownPct": null,
+      "winDays": 0,
+      "lossDays": 0,
+      "flatDays": 0,
+      "winRate": null,
+      "noTradeDays": 0,
+      "perDay": [],
+      "incompleteCoverage": false
+    }
+  },
+  "promotionApproved": false,
+  "warnings": [
+    "僅統計完整模擬日；無成交不等於策略成功，缺漏日不得當作零損益。",
+    "比較的是同一新版訊號的兩種出場方式，並非舊選股模型已重跑完成。",
+    "至少先持續觀察 20-30 個交易日，再配合更長歷史及時間順序驗證；不以單段獲利自動升級。"
+  ]
+}

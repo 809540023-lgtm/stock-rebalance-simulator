@@ -4,9 +4,12 @@
 // LINE scripts). Reads the recipient from LINE_USER_ID.
 // Secrets are read from the environment only; never commit them.
 import { readFile } from "node:fs/promises";
+import { activeV2, taipeiDate, taipeiTime } from "./strategy-v2.js";
+import { reportUsable } from "../../scripts/strategy-v2-simulation.js";
+import { lineRetryKey } from "../../scripts/strategy-v2-line.js";
 
 const SHARED_DIR = new URL("../../data/shared/", import.meta.url);
-const REPORT_PATH = new URL("preopen-report.json", SHARED_DIR);
+const REPORT_PATH = new URL(activeV2() ? "strategy-v2-latest.json" : "preopen-report.json", SHARED_DIR);
 
 const MESSAGING_API = "https://api.line.me/v2/bot/message/push";
 const userId = process.env.LINE_USER_ID?.trim();
@@ -56,14 +59,27 @@ report.shortCandidates.forEach((c) => lines.push(rowLine(c)));
 lines.push("");
 lines.push("⚠️ 研究候選清單，非保證獲利、非自動下單。放空需確認庫存/融券限制，做多待開盤確認價位。");
 
-const message = lines.join("\n");
+let message = lines.join("\n");
+if (activeV2()) {
+  const current = reportUsable(report, taipeiDate()) && taipeiTime() < "09:00:00";
+  const rows = [...(report.longCandidates || []), ...(report.shortCandidates || [])];
+  message = [
+    `台股新版策略｜${taipeiDate()}｜11/12 起獨立記錄`,
+    `報告狀態：${current ? "盤前名單已固定" : "僅狀態通知，無當前可執行名單"}`,
+    `資料日：${report.dataDate || "未確認"}`,
+    ...(current ? rows.map((r) => `${r.side === "long" ? "多" : "空"} ${r.code} ${r.name}｜條件分 ${r.score}｜觸發參考 ${r.triggerPrice}｜${r.executionEligible ? "待觸發，僅模擬" : "資格未確認，只觀察"}`) : []),
+    ...(report.warnings || []).slice(0, 3),
+    "最多5多/10空，不湊數。未接券商，不代表實際可成交；研究訊號不是下單指令。"
+  ].join("\n");
+}
 const token = await getLineAccessToken();
 
 const response = await fetch(MESSAGING_API, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`
+    Authorization: `Bearer ${token}`,
+    ...(activeV2() ? { "X-Line-Retry-Key": lineRetryKey(taipeiDate(), "preopen") } : {})
   },
   signal: AbortSignal.timeout(15000),
   body: JSON.stringify({
@@ -72,10 +88,10 @@ const response = await fetch(MESSAGING_API, {
   })
 });
 
-if (!response.ok) {
+if (!response.ok && !(activeV2() && response.status === 409 && response.headers.get("x-line-accepted-request-id"))) {
   const body = await response.text();
   console.error(`LINE send failed (HTTP ${response.status}): ${body}`);
   process.exit(1);
 }
 
-console.log(`LINE push sent to ${userId} (${message.length} chars).`);
+console.log(`LINE push sent (${message.length} chars).`);
