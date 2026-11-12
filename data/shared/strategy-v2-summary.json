@@ -1,9 +1,9 @@
 {
   "version": "strategy-v2-20261112",
   "effectiveDate": "2026-11-12",
-  "generatedAt": "2026-11-11T14:26:45.759Z",
+  "generatedAt": "2026-11-12T08:02:24.791Z",
   "completeDays": 0,
-  "incompleteDays": 0,
+  "incompleteDays": 1,
   "books": {
     "atr": {
       "initialCapital": 300000,
@@ -17,7 +17,7 @@
       "winRate": null,
       "noTradeDays": 0,
       "perDay": [],
-      "incompleteCoverage": false
+      "incompleteCoverage": true
     },
     "baseline": {
       "initialCapital": 300000,
@@ -31,7 +31,7 @@
       "winRate": null,
       "noTradeDays": 0,
       "perDay": [],
-      "incompleteCoverage": false
+      "incompleteCoverage": true
     }
   },
   "promotionApproved": false,
