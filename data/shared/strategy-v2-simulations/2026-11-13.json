@@ -1,0 +1,11 @@
+{
+  "version": "strategy-v2-20261112",
+  "marketDate": "2026-11-13",
+  "status": "blocked",
+  "finalized": true,
+  "simulatedAt": "2026-11-13T07:40:32.066Z",
+  "positions": [],
+  "warnings": [
+    "缺少當日有效盤前固定名單；不模擬、不使用舊報告。"
+  ]
+}
