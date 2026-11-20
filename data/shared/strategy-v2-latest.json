@@ -3,7 +3,7 @@
   "effectiveDate": "2026-11-12",
   "tradeDate": "2026-11-20",
   "dataDate": null,
-  "generatedAt": "2026-11-20T03:08:55.901Z",
+  "generatedAt": "2026-11-20T03:53:07.775Z",
   "cutoff": "2026-11-20T07:00:00+08:00",
   "modelStatus": "strategy-v2",
   "status": "missed-cutoff",
