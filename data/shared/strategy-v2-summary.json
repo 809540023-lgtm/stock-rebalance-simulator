@@ -1,9 +1,9 @@
 {
   "version": "strategy-v2-20261112",
   "effectiveDate": "2026-11-12",
-  "generatedAt": "2026-11-23T08:43:48.687Z",
+  "generatedAt": "2026-11-24T10:44:28.303Z",
   "completeDays": 0,
-  "incompleteDays": 8,
+  "incompleteDays": 9,
   "books": {
     "atr": {
       "initialCapital": 300000,
