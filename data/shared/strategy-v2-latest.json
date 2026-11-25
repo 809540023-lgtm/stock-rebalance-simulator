@@ -1,10 +1,10 @@
 {
   "version": "strategy-v2-20261112",
   "effectiveDate": "2026-11-12",
-  "tradeDate": "2026-11-24",
+  "tradeDate": "2026-11-25",
   "dataDate": null,
-  "generatedAt": "2026-11-24T06:48:26.418Z",
-  "cutoff": "2026-11-24T07:00:00+08:00",
+  "generatedAt": "2026-11-25T04:53:08.594Z",
+  "cutoff": "2026-11-25T07:00:00+08:00",
   "modelStatus": "strategy-v2",
   "status": "missed-cutoff",
   "config": {
